@@ -17,7 +17,7 @@ var chartData;
 var chartOptions;
 
 // paint data
-var paintIndex = 'tossup';
+var paintIndex = 'Tossup';
 var maxColorValue = 2;
 
 var ctrlPressed = false;
@@ -130,8 +130,8 @@ function initChart() {
 // empty the list of candidates and insert the tossup candidate
 function initCandidates() {
 	candidates = {};
-	candidates['tossup'] = 
-	new Candidate('tossup', ['#000000', '#ffffff', '#ff00ff']);
+	candidates['Tossup'] = 
+	new Candidate('Tossup', ['#000000', '#ffffff', '#ff00ff']);
 }
 
 function buttonClick(clickElement) {
@@ -326,9 +326,9 @@ function verifyPaintIndex() {
 	var legendDiv = document.getElementById('legend-div');
 	
 	if(typeof candidates[paintIndex] === 'undefined') {
-		paintIndex = 'tossup';
+		paintIndex = 'Tossup';
 	//	legendDiv.style.backgroundColor = '#ff00ff';
-	} else if(paintIndex == 'tossup') {
+	} else if(paintIndex == 'Tossup') {
 	//	legendDiv.style.backgroundColor = '#ff00ff';
 	} else {
 		var color = candidates[paintIndex].colors[0]; 
@@ -341,7 +341,7 @@ function verifyMap() {
 	states.forEach(function(state) {
 		if(typeof candidates[state.candidate] === 'undefined') {
 			// if the current color is out of bounds set it to white
-			state.setColor('tossup', 1);
+			state.setColor('Tossup', 1);
 		} else { 
 			// the candidate the state thinks its controled by
 			var currentCandidate = state.getCandidate();
@@ -351,10 +351,10 @@ function verifyMap() {
 			var currentCandidate
 			// if these values differ, change the state to tossup
 			if(currentCandidate !== shouldCandidate) {
-				state.setColor('tossup',1);
+				state.setColor('Tossup',1);
 			}
 
-			if(currentCandidate !== 'tossup' &&
+			if(currentCandidate !== 'Tossup' &&
 				state.getColorValue() > maxColorValue) {
 				state.setColor(state.getCandidate(),
 					maxColorValue);
@@ -375,7 +375,7 @@ function verifyMap() {
 // sets all states to white
 function clearMap() {
 	states.forEach(function(state) {
-		state.setColor('tossup', 1);
+		state.setColor('Tossup', 1);
 	});
 
 	buttons.forEach(function(button) {

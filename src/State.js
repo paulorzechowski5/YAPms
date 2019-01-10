@@ -4,7 +4,7 @@ class State {
 		this.colorValue = 1;
 		this.voteCount = ec[name];
 		this.htmlElement = htmlElement;
-		this.candidate = 'tossup';
+		this.candidate = 'Tossup';
 	}
 
 	getCandidate() { 
@@ -44,7 +44,7 @@ class State {
 		}
 
 		// keep the color value within bounds
-		if(this.candidate === 'tossup') {
+		if(this.candidate === 'Tossup') {
 			// if the candidate is tossup go to max
 			if(this.colorValue >= 3) {
 				this.colorValue = 0;
@@ -61,7 +61,7 @@ class State {
 		this.candidate = candidate;
 
 		// skip black color for tossup candidate
-		if(this.candidate === 'tossup' && this.colorValue == 0) {
+		if(this.candidate === 'Tossup' && this.colorValue == 0) {
 			this.colorValue += 1;
 		}
 
@@ -78,7 +78,7 @@ class State {
 		this.candidate = candidate;
 
 		// prevent black color
-		if(candidate === 'tossup' && colorValue == 0) {
+		if(candidate === 'Tossup' && colorValue == 0) {
 			colorValue = 1;
 		}
 
