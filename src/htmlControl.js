@@ -20,5 +20,20 @@ function selectCandidateDisplay(html) {
 }
 
 function toggleText() {
-	var html = document.get
+	var texts = document.querySelectorAll('[id$="text"]');
+
+	for(var index = 0; index < texts.length; ++index) {
+		var text = texts[index];
+
+		if(text.id.includes('button')) {
+			continue;
+		}
+	
+		if(text.style.display === '') {
+			text.style.display = 'none';
+		} else {
+			text.style.display = '';
+		}
+	}
 }
+

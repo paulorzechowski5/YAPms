@@ -20,6 +20,11 @@ var chartOptions;
 var paintIndex = 'tossup';
 var maxColorValue = 2;
 
+var ctrlPressed = false;
+window.addEventListener('click', function(e) {
+	ctrlPressed = e.ctrlKey;
+}, true);
+
 function initSVG() {
 	// get list of all html state elements
 	var htmlElements = document.getElementById('outlines').children;
@@ -215,7 +220,7 @@ function districtClick(clickElement) {
 }
 
 //called when a state is clicked
-function stateClick(clickElement) {
+function stateClick(clickElement, e) {
 	var id = clickElement.getAttribute('id');
 	// first element is the state
 	// second element might be button
@@ -223,31 +228,32 @@ function stateClick(clickElement) {
 	// get state where state.name equals the id attribute
 	var state = states.find(state => state.name === split[0]);
 
-	// regular state click
-	if(split.length == 1) {
-		// increment the states color
-		state.incrementCandidateColor(paintIndex);
+	// increment the states color
+	state.incrementCandidateColor(paintIndex);
 
-		// get associated elements
-		var elements = document.querySelectorAll('[id^="'
-			+ split[0] + '"]');
+	// get associated elements
+	var elements = document.querySelectorAll('[id^="'
+		+ split[0] + '"]');
 
-		for(var i = 0; i < elements.length; ++i) {
-			var element = elements[i];
+	for(var i = 0; i < elements.length; ++i) {
+		var element = elements[i];
 
-			// change the color of the button elements to
-			// the states color
-			if (element.id.includes('button')) {
-				element.style.fill = state.getDisplayColor();
-			} else if (element.id.includes('-D')) {
-				var district = states.find(state => state.name === element.id);
-				var candidate = state.getCandidate();
-				var colorValue = state.getColorValue();
-				district.setColor(candidate, colorValue);
+		// change the color of the button elements to
+		// the states color
+		if (element.id.includes('button')) {
+			element.style.fill = state.getDisplayColor();
+		} else if (element.id.includes('-D')) {
+			var district = states.find(state => state.name === element.id);
+			var candidate = state.getCandidate();
+			var colorValue = state.getColorValue();
+			district.setColor(candidate, colorValue);
 
-			}
 		}
-	} 
+	}
+
+	if(ctrlPressed) {
+		alert('hello world');
+	}
 
 	countVotes();
 	updateChart();

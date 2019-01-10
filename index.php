@@ -89,6 +89,15 @@
 	</div>
 </div>
 
+<!--
+<div id="ecedit" class="popup">
+	<h3 id="statename">
+		NY
+	</h3>
+	<input type="number" name="value" min="1" max="9999">
+	<button onclick="setEC(this)">submit</button>
+</div>
+-->
 </body>
 
 <script src="src/main.js"></script>
