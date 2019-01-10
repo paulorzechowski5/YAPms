@@ -1,10 +1,24 @@
 #menu-div {
-	background-color: #4f5e77;
+	background-color: #36393f;
+	background-color: #202225;
+	background-color: #2f3136;
 	text-align: left;
+
+	box-shadow: 0px 2px 4px #000000;
+}
+
+#menu-left {
+	float: left;
 	display: flex;
 }
 
+#menu-right {
+	display: flex;
+	justify-content: flex-end;
+}
+
 .click-button {
+	background-color: #eeeeee;
 	cursor: pointer;
 	border: none;
 }
@@ -15,6 +29,7 @@
 
 .dropdown {
 	position: relative;
+	display: block;
 }
 
 .toggle-dropdown {
@@ -22,6 +37,7 @@
 }
 
 .dropdown-button {
+	background-color: #eeeeee;
 	cursor: pointer;
 	border: none;
 }
@@ -33,9 +49,14 @@
 .dropdown-content {
 	display: none;
 	position: absolute;
-	background-color: #f1f1f1;
+	background-color: #ffffff;
 	min-width: 120px;
 	z-index: 1;
+}
+
+#menu-right .dropdown-content {
+	right: 0;
+	left: auto;
 }
 
 .dropdown-content a {

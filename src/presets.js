@@ -8,15 +8,16 @@ function loadPresetEmpty() {
 	updateChart();
 	chart.generateLegend();
 	updateLegend();
+	verifyTextToggle();
 }
 
 // republicans vs democrats
 function loadPresetClassic() {
 	initCandidates();
 	var republican = new Candidate('Republican', 
-		['#ff0000', '#ff4040', '#ff9999']);
+		['#D22532', '#FF5865', '#FF8B98']);
 	var democrat = new Candidate('Democrat',
-		['#0000ff', '#4040ff', '#9999ff'])
+		['#244999', '#577CCC', '#8AAFFF'])
 
 	candidates['Republican'] = republican;
 	candidates['Democrat'] = democrat;
@@ -27,15 +28,16 @@ function loadPresetClassic() {
 	updateChart();
 	chart.generateLegend();
 	updateLegend();
+	verifyTextToggle();
 }
 
 // republican vs democrat vs libertarian
 function loadPresetLibertarian() {
 	initCandidates();
 	var republican = new Candidate('Republican', 
-		['#ff0000', '#ff4040', '#ff9999']);
+		['#D22532', '#FF5865', '#FF8B98']);
 	var democrat = new Candidate('Democrat',
-		['#0000ff', '#4040ff', '#9999ff'])
+		['#244999', '#577CCC', '#8AAFFF'])
 	var libertarian = new Candidate('Libertarian',
 		['#ffcc00', '#ffd83f', '#ffe377']);
 
@@ -50,17 +52,18 @@ function loadPresetLibertarian() {
 	updateChart();
 	chart.generateLegend();
 	updateLegend();
+	verifyTextToggle();
 }
 
 // republican vs democrat vs green
 function loadPresetGreen() {
 	initCandidates();
 	var republican = new Candidate('Republican', 
-		['#ff0000', '#ff4040', '#ff9999']);
+		['#D22532', '#FF5865', '#FF8B98']);
 	var democrat = new Candidate('Democrat',
-		['#0000ff', '#4040ff', '#9999ff'])
+		['#244999', '#577CCC', '#8AAFFF'])
 	var green = new Candidate('Green',
-		['#00ff00', '#40ff40', '#99ff99']);
+		['#25c136', '#50c85e', '#88da91']);
 
 	candidates['Republican'] = republican;
 	candidates['Democrat'] = democrat;
@@ -72,15 +75,16 @@ function loadPresetGreen() {
 	updateChart();
 	chart.generateLegend();
 	updateLegend();
+	verifyTextToggle();
 }
 
 // republican vs democrat vs green vs libertarian
 function loadPresetMajors() {
 	initCandidates();
 	var republican = new Candidate('Republican', 
-		['#ff0000', '#ff4040', '#ff9999']);
+		['#D22532', '#FF5865', '#FF8B98']);
 	var democrat = new Candidate('Democrat',
-		['#0000ff', '#4040ff', '#9999ff'])
+		['#244999', '#577CCC', '#8AAFFF'])
 	var green = new Candidate('Green',
 		['#00ff00', '#40ff40', '#99ff99']);
 	var libertarian = new Candidate('Libertarian',
@@ -97,4 +101,5 @@ function loadPresetMajors() {
 	updateChart();
 	chart.generateLegend();
 	updateLegend();
+	verifyTextToggle();
 }

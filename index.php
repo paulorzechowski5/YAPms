@@ -12,66 +12,80 @@
 	<script src="src/presets.js"></script>
 </head>
 
-<body>
+<body id="body">
 <div id="menu-div">
-	<button class="click-button" onclick="loadPresetEmpty()">
-		Clear
-	</button>
 
-	<div class="dropdown">
-		<button class="dropdown-button">
-			Presets
+	<div id="menu-left">
+
+		<button class="click-button" onclick="loadPresetEmpty()">
+			Clear
 		</button>
-		<div class="dropdown-content">
-			<a onclick='loadPresetClassic()'>Classic</a>
-			<a onclick='loadPresetLibertarian()'>Libertarian</a>
-			<a onclick='loadPresetGreen()'>Green</a>
-			<a onclick='loadPresetMajors()'>Majors</a>
+
+		<div class="dropdown">
+			<button class="dropdown-button">
+				Presets
+			</button>
+			<div class="dropdown-content">
+				<a onclick='loadPresetClassic()'>Classic</a>
+				<a onclick='loadPresetLibertarian()'>Libertarian</a>
+				<a onclick='loadPresetGreen()'>Green</a>
+				<a onclick='loadPresetMajors()'>Majors</a>
+			</div>
 		</div>
-	</div>
-	
-	<div class="dropdown">
-		<button class="dropdown-button">
-			Charts
-		</button>
-		<div class="dropdown-content">
-			<a onclick='setChart("pie")'>Pie</a>
-			<a onclick='setChart("bar")'>Bar</a>
-			<a onclick='setChart("none")'>None</a>
+		
+		<div class="dropdown">
+			<button class="dropdown-button">
+				Charts
+			</button>
+			<div class="dropdown-content">
+				<a onclick='setChart("pie")'>Pie</a>
+				<a onclick='setChart("horizontalBar")'>Bar</a>
+				<a onclick='setChart("none")'>None</a>
+			</div>
 		</div>
+
+		<div class="dropdown">
+			<button class="dropdown-button">
+				Modes
+			</button>
+			<div class="dropdown-content">
+				<a onclick='setMaxPaintIndex(2)'>Normal</a>
+				<a onclick='setMaxPaintIndex(1)'>Solid/Likely</a>
+				<a onclick='setMaxPaintIndex(0)'>Solid Only</a>
+			</div>
+		</div>
+
+		<div class="dropdown">
+			<button class="dropdown-button" onclick="showAddCandidate()">
+				Add Candidate
+			</button>
+			<div id="addCandidateDropdown" class="dropdown-content">
+				<a>Name <input id="name" type="text"></a>
+				<a>Solid <input id="solid" type="color"></a>
+				<a>Likely <input id="likely" type="color"></a>
+				<a>Leaning <input id="leaning" type="color"></a>
+				<a>Image <input id="image-upload" type="file" accept="image/*"></a>
+				<a onclick="addCandidate()">Add</a>
+			</div>
+		</div>
+
 	</div>
 
-	<div class="dropdown">
-		<button class="dropdown-button">
-			Modes
-		</button>
-		<div class="dropdown-content">
-			<a onclick='setMaxPaintIndex(2)'>Normal</a>
-			<a onclick='setMaxPaintIndex(1)'>Solid/Likely</a>
-			<a onclick='setMaxPaintIndex(0)'>Solid Only</a>
-		</div>
-	</div>
+	<div id="menu-right">
 
-	<div class="dropdown">
-		<button class="dropdown-button">
-			Misc
-		</button>
-		<div class="dropdown-content">
-			<a onclick='toggleText()'>Toggle Text</a>
+		<div class="dropdown" class="right-justify">
+			<button class="dropdown-button">
+				Misc
+			</button>
+			<div class="dropdown-content">
+				<a onclick='darkPalette()'>Dark</a>
+				<a onclick='lightPalette()'>Light</a>
+				<a onclick='contrastPalette()'>Contrast</a>
+				<a onclick='metallicPalette()'>Metalic</a>
+				<a onclick='toggleText()'>Toggle Text</a>
+			</div>
 		</div>
-	</div>
 
-	<div class="dropdown">
-		<button class="dropdown-button" onclick="showAddCandidate()">
-			Add Candidate
-		</button>
-		<div id="addCandidateDropdown" class="dropdown-content">
-			<a>Name <input id="name" type="text"></a>
-			<a>Solid <input id="solid" type="color"></a>
-			<a>Likely <input id="likely" type="color"></a>
-			<a>Leaning <input id="leaning" type="color"></a>
-			<a onclick="addCandidate()">Add</a>
-		</div>
 	</div>
 </div>
 

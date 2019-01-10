@@ -15,6 +15,8 @@ var candidates = {};
 var chart;
 var chartData;
 var chartOptions;
+var chartPieScales;
+var chartBarScales;
 
 // paint data
 var paintIndex = 'Tossup';
@@ -38,23 +40,31 @@ function initSVG() {
 			// dont include text as states
 			// make sure you can't click them
 			htmlElement.style.pointerEvents = 'none';
+			//htmlElement.style.fontSize = '14px';
+			//htmlElement.style.fontWeight = 'bold';
+			//console.log(htmlElement);
 		} else if(name.includes('button')) {
 			// don't include buttons as states
 			htmlElement.setAttribute('onclick',
 				'buttonClick(this)');
+			htmlElement.style.fill = '#bbb7b2';
 			buttons.push(htmlElement);
 
 		} else if(name.includes('land')) {
 			htmlElement.setAttribute('onclick', 'landClick(this)');
+			htmlElement.style.fill = '#bbb7b2';
 			lands.push(htmlElement);
 		} else if(name.includes('-D')) {
 			htmlElement.setAttribute('onclick', 'districtClick(this)');
+			htmlElement.style.fill = '#bbb7b2';
 			states.push(new State(name, htmlElement));
 
 		} else {
 			// set click function
 			htmlElement.setAttribute('onclick', 
 				'stateClick(this)');
+			htmlElement.style.fill = '#bbb7b2';
+
 			// add the state to the list
 			states.push(new State(name, htmlElement));
 		}
@@ -84,27 +94,72 @@ function initChart() {
 					legendElement.style.backgroundColor = candidate.colors[2];
 				}
 				legendElement.style.padding = 5;
-				var text = document.createTextNode(candidate.name);
-				legendElement.appendChild(text);
 				legendDiv.appendChild(legendElement);
+
+				var legendText = document.createElement('div');
+				legendText.setAttribute('id', candidate.name + '-text');	
+				legendText.setAttribute('class', 'legend-button-text');
+				legendText.innerHTLM = candidate.name;
+				legendElement.appendChild(legendText);
+
+				if(typeof candidate.img !== 'undefined') { 
+					var img = document.createElement('IMG');
+					var reader = new FileReader();
+
+					reader.onload = function(event) {
+						url = event.target.result;
+						img.src = url;
+						img.style.width = '60';
+						img.style.height = '60';
+						legendElement.append(img);
+					}
+
+					reader.readAsDataURL(candidate.img);
+				}
 			}
 		},
 		// do not display the build in legend for the chart
 		legend: {
-			display: false,
+			display: false
 		},
 		// turn off animation
-		animation: false,
-		// make sure that the bar chart begins at 0
-		scales: {
+		animation: false
+	}
+
+	chartBarScales = {
 			yAxes: [{
+				gridLines: {
+					display: false
+				},
+				ticks: {
+					fontSize: 15,
+					fontColor: '#E8E8E7',
+					fontFamily: 'Roboto'
+				}
+			}],
+			xAxes: [{
+				gridLines: {
+					display: false
+				},
 				ticks: {
 					beginAtZero: true,
-					min: 0
+					fontSize: 15,
+					fontColor: '#e8e8e7',
+					fontFamily: 'Roboto'
 				}
 			}]
-		}
 	}
+
+	chartPieScales = {
+			yAxes: [{
+				display: false
+			}],
+			xAxes: [{
+				display: false
+			}]
+	}
+
+	chartOptions.scales = chartPieScales;
 	
 	// get the context
 	var ctx = document.getElementById('chart').getContext('2d');
@@ -131,7 +186,7 @@ function initChart() {
 function initCandidates() {
 	candidates = {};
 	candidates['Tossup'] = 
-	new Candidate('Tossup', ['#000000', '#ffffff', '#ff00ff']);
+	new Candidate('Tossup', ['#000000', '#ff00ff', '#bbb7b2']);
 }
 
 function buttonClick(clickElement) {
@@ -240,7 +295,7 @@ function stateClick(clickElement, e) {
 
 		// change the color of the button elements to
 		// the states color
-		if (element.id.includes('button')) {
+		if (element.id.includes('button') && !element.id.includes('text')) {
 			element.style.fill = state.getDisplayColor();
 		} else if (element.id.includes('-D')) {
 			var district = states.find(state => state.name === element.id);
@@ -275,6 +330,14 @@ function setChart(type) {
 	htmldiv.style.position = 'relative';
 	html.style.display = 'inline-block';
 
+	console.log(type);
+	// set the proper scales
+	if(type === 'horizontalBar') {
+		chartOptions.scales = chartBarScales;
+	} else if(type === 'pie') {
+		chartOptions.scales = chartPieScales;
+	}
+
 	// first destroy the chart
 	chart.destroy();
 	// then rebuild
@@ -301,8 +364,9 @@ function addCandidate() {
 	var likely = document.getElementById('likely').value;
 	var leaning = document.getElementById('leaning').value;
 
+	var img = document.getElementById('image-upload').files[0];
 
-	var candidate = new Candidate(name, [solid, likely, leaning]);
+	var candidate = new Candidate(name, [solid, likely, leaning], img);
 	candidates[name] = candidate;
 
 	verifyMap();
@@ -310,29 +374,21 @@ function addCandidate() {
 	countVotes();
 	updateChart();
 	chart.generateLegend();
+	updateLegend();
+	verifyTextToggle();
 }
 
 // when a button on the legend is clicked, it saves the selected candidate
 // to a variable, so that you can paint with it
 function legendClick(candidate, button) {
 	paintIndex = candidate;
-	//console.log(button);
-	//button.parentElement.parentElement.style.backgroundColor = button.style.backgroundColor;
 }
 
 // if paint index is invalid, change it to tossup
 // ( WORK IN PROGRESS)
 function verifyPaintIndex() {
-	var legendDiv = document.getElementById('legend-div');
-	
 	if(typeof candidates[paintIndex] === 'undefined') {
 		paintIndex = 'Tossup';
-	//	legendDiv.style.backgroundColor = '#ff00ff';
-	} else if(paintIndex == 'Tossup') {
-	//	legendDiv.style.backgroundColor = '#ff00ff';
-	} else {
-		var color = candidates[paintIndex].colors[0]; 
-	//	legendDiv.style.backgroundColor = color;
 	}
 }
 
@@ -341,7 +397,7 @@ function verifyMap() {
 	states.forEach(function(state) {
 		if(typeof candidates[state.candidate] === 'undefined') {
 			// if the current color is out of bounds set it to white
-			state.setColor('Tossup', 1);
+			state.setColor('Tossup', 2);
 		} else { 
 			// the candidate the state thinks its controled by
 			var currentCandidate = state.getCandidate();
@@ -351,7 +407,7 @@ function verifyMap() {
 			var currentCandidate
 			// if these values differ, change the state to tossup
 			if(currentCandidate !== shouldCandidate) {
-				state.setColor('Tossup',1);
+				state.setColor('Tossup',2);
 			}
 
 			if(currentCandidate !== 'Tossup' &&
@@ -375,15 +431,15 @@ function verifyMap() {
 // sets all states to white
 function clearMap() {
 	states.forEach(function(state) {
-		state.setColor('Tossup', 1);
+		state.setColor('Tossup', 2);
 	});
 
 	buttons.forEach(function(button) {
-		button.style.fill = '#ffffff';
+		button.style.fill = candidates['Tossup'].colors[2];
 	});
 
 	lands.forEach(function(land) {
-		land.style.fill = '#ffffff';	
+		land.style.fill = candidates['Tossup'].colors[2];	
 	});
 }
 
@@ -439,8 +495,9 @@ function updateChart() {
 		var name = candidate.name;
 		var voteCount = candidate.voteCount;
 		var color = candidate.colors[0];
-		if(index == 0)
-			color = '#ff00ff';
+		if(index == 0) {
+			color = candidates['Tossup'].colors[2];
+		}
 		// append the candidate label
 		chartData.labels[index] = name;
 		// append the vote count
@@ -460,14 +517,14 @@ function updateLegend() {
 	for(var key in candidates) {
 		var candidate = candidates[key];
 		++index;
-		var html = document.getElementById(candidate.name);
+		var html = document.getElementById(candidate.name + '-text');
 
 		var newHTML = candidate.name + ' ' + candidate.voteCount;
 		
 		html.innerHTML = newHTML;
 
 		if(key === paintIndex) {
-			selectCandidateDisplay(html);
+			selectCandidateDisplay(html.parentElement);
 		}
 	}
 }

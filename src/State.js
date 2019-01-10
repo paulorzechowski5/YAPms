@@ -61,8 +61,8 @@ class State {
 		this.candidate = candidate;
 
 		// skip black color for tossup candidate
-		if(this.candidate === 'Tossup' && this.colorValue == 0) {
-			this.colorValue += 1;
+		if(this.candidate === 'Tossup' && this.colorValue != 2) {
+			this.colorValue = 2;
 		}
 
 		// get color
