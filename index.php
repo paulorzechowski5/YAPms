@@ -85,6 +85,7 @@
 				<a onclick='lightPalette()'>Light</a>
 				<a onclick='contrastPalette()'>Contrast</a>
 				<a onclick='metallicPalette()'>Metallic</a>
+				<a onclick='toggleLegendCounter()'>Legend Counter</a>
 			</div>
 		</div>
 

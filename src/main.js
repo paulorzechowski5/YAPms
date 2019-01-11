@@ -24,10 +24,7 @@ var maxColorValue = 2;
 
 var mode = 'paint';
 
-var ctrlPressed = false;
-window.addEventListener('click', function(e) {
-	ctrlPressed = e.ctrlKey;
-}, true);
+var legendCounter = true;
 
 function initSVG() {
 	// get list of all html state elements
@@ -440,6 +437,11 @@ function setChart(type) {
 	updateChart();
 }
 
+function toggleLegendCounter() {
+	legendCounter = !legendCounter;
+	updateLegend();
+}
+
 function setMaxPaintIndex(value) {
 	maxColorValue = value;	
 	verifyMap();
@@ -637,8 +639,12 @@ function updateLegend() {
 		++index;
 		var html = document.getElementById(candidate.name + '-text');
 
-		var newHTML = candidate.name + ' ' + candidate.voteCount;;
-		
+		var newHTML = candidate.name;
+
+		if(legendCounter == true) {
+			newHTML += ' ' + candidate.voteCount;
+		}
+
 		html.innerHTML = newHTML;
 
 		if(key === paintIndex) {
