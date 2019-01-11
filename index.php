@@ -5,9 +5,10 @@
 	<title>LTE Map</title>
 	<link rel="stylesheet" type="text/css" href="style.css">
 	<link rel="stylesheet" type="text/css" href="menu.css">
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
-	<script src="src/htmlControl.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@0.5.0"></script> 
 	<script src="src/State.js"></script>
+	<script src="src/htmlControl.js"></script>
 	<script src="src/Candidate.js"></script>
 	<script src="src/presets.js"></script>
 </head>
@@ -40,6 +41,7 @@
 			<div class="dropdown-content">
 				<a onclick='setChart("pie")'>Pie</a>
 				<a onclick='setChart("horizontalBar")'>Bar</a>
+				<a onclick='setChart("doughnut")'>Doughnut</a>
 				<a onclick='setChart("none")'>None</a>
 			</div>
 		</div>
@@ -49,14 +51,13 @@
 				Modes
 			</button>
 			<div class="dropdown-content">
-				<a onclick='setMaxPaintIndex(2)'>Normal</a>
-				<a onclick='setMaxPaintIndex(1)'>Solid/Likely</a>
-				<a onclick='setMaxPaintIndex(0)'>Solid Only</a>
+				<a onclick='setMode("paint")'>Paint</a>
+				<a onclick='setMode("ec")'>EC Edit</a>
 			</div>
 		</div>
 
-		<div class="dropdown">
-			<button class="dropdown-button" onclick="showAddCandidate()">
+		<div>
+			<button class="click-button" onclick="showAddCandidate()">
 				Add Candidate
 			</button>
 			<div id="addCandidateDropdown" class="dropdown-content">
@@ -70,7 +71,9 @@
 		</div>
 
 	</div>
-
+	<span id="menu-middle">
+		Mode - Paint 
+	</span>
 	<div id="menu-right">
 
 		<div class="dropdown" class="right-justify">
@@ -81,8 +84,7 @@
 				<a onclick='darkPalette()'>Dark</a>
 				<a onclick='lightPalette()'>Light</a>
 				<a onclick='contrastPalette()'>Contrast</a>
-				<a onclick='metallicPalette()'>Metalic</a>
-				<a onclick='toggleText()'>Toggle Text</a>
+				<a onclick='metallicPalette()'>Metallic</a>
 			</div>
 		</div>
 
@@ -103,15 +105,14 @@
 	</div>
 </div>
 
-<!--
 <div id="ecedit" class="popup">
-	<h3 id="statename">
-		NY
+	<h3 id="ecedit-message">
 	</h3>
-	<input type="number" name="value" min="1" max="9999">
-	<button onclick="setEC(this)">submit</button>
+	<input id="state-ec" type="number" name="value" min="1" max="9999">
+	<input id="state-id" type="hidden">
+	<button onclick="setEC(this)">set</button>
 </div>
--->
+
 </body>
 
 <script src="src/main.js"></script>

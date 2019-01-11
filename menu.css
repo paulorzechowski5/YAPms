@@ -1,30 +1,40 @@
 #menu-div {
-	background-color: #36393f;
-	background-color: #202225;
 	background-color: #2f3136;
 	text-align: left;
 
 	box-shadow: 0px 2px 4px #000000;
+
+	display: flex;
+	align-items: stretch;
+	flex-direction: row;
+	width: 100%;
 }
 
 #menu-left {
-	float: left;
-	display: flex;
+	display: inline-flex;
+}
+
+#menu-middle {
+	color: white;
+	font-size: 15px;
+	text-align: center;
+	flex: 1;
 }
 
 #menu-right {
-	display: flex;
+	display: inline-flex;
 	justify-content: flex-end;
 }
 
 .click-button {
 	background-color: #eeeeee;
+	color: #000000;
 	cursor: pointer;
 	border: none;
 }
 
 .click-button:hover {
-	background-color: #9dadc6;
+	background-color: #aaaaaa;
 }
 
 .dropdown {
@@ -32,18 +42,32 @@
 	display: block;
 }
 
+#addCandidateDropDown {
+	min-width: 10px;
+}
+
+#addCandidateDropDown .dropdown-content {
+	display: inline-flex;
+}
+
+#addCandidateDropDown input {
+	border: none;
+	width: 100%;
+}
+
 .toggle-dropdown {
 	position: relative;
 }
 
 .dropdown-button {
-	background-color: #eeeeee;
+	background-color: inherit;
+	color: #ffffff;
 	cursor: pointer;
 	border: none;
 }
 
 .dropdown-button:hover {
-	background-color: #9dadc6;
+	background-color: #252525;
 }
 
 .dropdown-content {
@@ -67,7 +91,7 @@
 }
 
 .dropdown-content a:hover {
-	background-color: #9dadc6;
+	background-color: #eeeeee;
 }
 
 .dropdown:hover .dropdown-content {

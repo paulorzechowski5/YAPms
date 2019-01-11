@@ -70,6 +70,10 @@ function darkPalette() {
 	
 	var legend = document.getElementById('legend-div');
 	legend.style.borderColor = '#2f3136';
+	
+	chartBarScales.yAxes[0].ticks.fontColor = '#ffffff';
+	chartBarScales.xAxes[0].ticks.fontColor = '#ffffff';
+	setChart(chart.config.type);
 }
 
 function lightPalette() {
@@ -82,18 +86,26 @@ function lightPalette() {
 	
 	var legend = document.getElementById('legend-div');
 	legend.style.borderColor = '#202225';
+	
+	chartBarScales.yAxes[0].ticks.fontColor = '#ffffff';
+	chartBarScales.xAxes[0].ticks.fontColor = '#ffffff';
+	setChart(chart.config.type);
 }
 
 function contrastPalette() {
 	var body = document.getElementById('body');
-	body.style.backgroundColor = '#454545';
+	body.style.backgroundColor = '#dbdbdb';
 	body.style.backgroundImage  = '';
 
 	var menu = document.getElementById('menu-div');
-	menu.style.backgroundColor = '#111111'
+	menu.style.backgroundColor = '#151515'
 
 	var legend = document.getElementById('legend-div');
-	legend.style.borderColor = '#111111';
+	legend.style.borderColor = '#151515';
+
+	chartBarScales.yAxes[0].ticks.fontColor = '#000000';
+	chartBarScales.xAxes[0].ticks.fontColor = '#000000';
+	setChart(chart.config.type);
 }
 
 function metallicPalette() {
@@ -107,4 +119,8 @@ function metallicPalette() {
 	
 	var legend = document.getElementById('legend-div');
 	legend.style.borderColor = '#2f3136';
+	
+	chartBarScales.yAxes[0].ticks.fontColor = '#ffffff';
+	chartBarScales.xAxes[0].ticks.fontColor = '#ffffff';
+	setChart(chart.config.type);
 }

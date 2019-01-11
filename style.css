@@ -29,11 +29,13 @@ button {
 }
 
 #chart-div {
-	width: 25vw;
+	width: 30vw;
+	flex-grow: 1;
 }
 
 #map-div {
-	width: 65vw;
+	width: 60vw;
+	flex-grow: 0;
 }
 
 #toolbar-div {
@@ -43,7 +45,6 @@ button {
 
 #legend-div {
 	border-color: #2f3136;
-
 }
 
 #application {
@@ -58,8 +59,8 @@ button {
 	font-weight: 'bold';
 	display: inline-block;
 	cursor: pointer;
-	border: 5px solid #2f3136;
-	border-top: 2px solid #2f3136;
+	border: 4px solid #2f3136;
+	border-top: 4px solid #2f3136;
 	border-color: inherit;
 	border-radius: 0px 0px 4px 4px;
 	margin-left: 3px;
@@ -69,7 +70,6 @@ button {
 	box-shadow: 0px 2px 4px #000000;
 	min-width: 16px;
 	min-height: 16px;
-	z-index: -1;
 }
 
 .legend-button-text {
@@ -85,17 +85,28 @@ button {
 .state {
 	cursor: pointer;
 	fill: #ffffff;
+	stroke: #000000;
+	stroke-width: 1.5;
 }
 
 #ecedit {
-	background-color: #4f5e77;
-	border: 4px solid #324c77;
+	display: none;
+	background-color: #ffffff;
+	border: 3px solid #000000;
+	border-radius: 2px;
 
-	padding: 4px;
+	padding: 10px;
 
 	position: absolute;
 	left: 50%;
 	top: 50%;
 	transform: translate(-50%, -50%);
+}
+
+#ecedit button {
+	border: none;
+	color: black;
+	background-color: #cfcfcf;
+	box-shadow: 1px 1px 1px #000000;
 }
 

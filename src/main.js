@@ -1,5 +1,5 @@
 // list of electoral vote counts
-ec = {'AL': 9, 'AK': 3, 'AZ': 11, 'AR': 6, 'CA': 55, 'CO': 9, 'CT': 7, 'DE': 3, 'FL': 29, 'GA': 16, 'HI': 4, 'ID': 4, 'IL': 20, 'IN': 11, 'IA': 6, 'KS': 6, 'KY': 8, 'LA': 8, 'ME': 4, 'ME-D1': 2, 'ME-D2': 1, 'ME-D3': 1, 'MD': 10, 'MA': 11, 'MI': 16, 'MN': 10, 'MS': 6, 'MO': 10, 'MT': 3, 'NE': 5, 'NE-D1': 2, 'NE-D2': 1, 'NE-D3': 1, 'NE-D4': 1, 'NV': 6, 'NH': 4, 'NJ': 14, 'NM': 5, 'NY': 29, 'NC': 15, 'ND': 3, 'OH': 18, 'OK': 7, 'OR': 7, 'PA': 20, 'RI': 4, 'SC': 9, 'SD': 3, 'TN': 11, 'TX': 38, 'UT': 6, 'VT': 3, 'VA': 13, 'WA': 12, 'WV': 5, 'WI': 10, 'WY': 3, 'DC': 3};
+ec = {'AL': 9, 'AK': 3, 'AZ': 11, 'AR': 6, 'CA': 55, 'CO': 9, 'CT': 7, 'DE': 3, 'FL': 29, 'GA': 16, 'HI': 4, 'ID': 4, 'IL': 20, 'IN': 11, 'IA': 6, 'KS': 6, 'KY': 8, 'LA': 8, 'ME': 4, 'ME-AL': 2, 'ME-D1': 1, 'ME-D2': 1, 'MD': 10, 'MA': 11, 'MI': 16, 'MN': 10, 'MS': 6, 'MO': 10, 'MT': 3, 'NE': 5, 'NE-AL': 2, 'NE-D1': 1, 'NE-D2': 1, 'NE-D3': 1, 'NV': 6, 'NH': 4, 'NJ': 14, 'NM': 5, 'NY': 29, 'NC': 15, 'ND': 3, 'OH': 18, 'OK': 7, 'OR': 7, 'PA': 20, 'RI': 4, 'SC': 9, 'SD': 3, 'TN': 11, 'TX': 38, 'UT': 6, 'VT': 3, 'VA': 13, 'WA': 12, 'WV': 5, 'WI': 10, 'WY': 3, 'DC': 3};
 
 // list of states
 var states = [];
@@ -21,6 +21,8 @@ var chartBarScales;
 // paint data
 var paintIndex = 'Tossup';
 var maxColorValue = 2;
+
+var mode = 'paint';
 
 var ctrlPressed = false;
 window.addEventListener('click', function(e) {
@@ -54,12 +56,12 @@ function initSVG() {
 			htmlElement.setAttribute('onclick', 'landClick(this)');
 			htmlElement.style.fill = '#bbb7b2';
 			lands.push(htmlElement);
-		} else if(name.includes('-D')) {
+		} else if(name.includes('-D') || name.includes('-A')) {
 			htmlElement.setAttribute('onclick', 'districtClick(this)');
 			htmlElement.style.fill = '#bbb7b2';
 			states.push(new State(name, htmlElement));
 
-		} else {
+		} else if(name.length == 2) {
 			// set click function
 			htmlElement.setAttribute('onclick', 
 				'stateClick(this)');
@@ -123,28 +125,50 @@ function initChart() {
 			display: false
 		},
 		// turn off animation
-		animation: false
+		animation: false,
+		plugins: {
+			datalabels: {
+				//display: 'auto',
+				display: function(context) {
+					return context.dataset.data[context.dataIndex] !== 0;
+				},
+				backgroundColor: 'white',
+				borderColor: 'black',
+				borderRadius: 5,
+				borderWidth: 2,
+				color: 'black',
+				font: {
+					family: 'Roboto',
+					size: 15,
+					weight: 700
+				}
+			}
+		}
 	}
 
 	chartBarScales = {
 			yAxes: [{
 				gridLines: {
-					display: false
+					display: false,
+					drawBorder: false
 				},
 				ticks: {
 					fontSize: 15,
-					fontColor: '#E8E8E7',
-					fontFamily: 'Roboto'
+					fontColor: '#ffffff',
+					fontFamily: 'Roboto',
+					fontStyle: 500
 				}
 			}],
 			xAxes: [{
 				gridLines: {
-					display: false
+					display: false,
+					drawBorder: false
 				},
 				ticks: {
 					beginAtZero: true,
 					fontSize: 15,
-					fontColor: '#e8e8e7',
+					fontColor: '#ffffff',
+					fontStyle: 500,
 					fontFamily: 'Roboto'
 				}
 			}]
@@ -160,9 +184,12 @@ function initChart() {
 	}
 
 	chartOptions.scales = chartPieScales;
+
+	Chart.defaults.global.elements.rectangle.borderWidth = 2;
 	
 	// get the context
 	var ctx = document.getElementById('chart').getContext('2d');
+	ctx.height = 600;
 
 	// create the chart
 	chart = new Chart(ctx, {
@@ -176,7 +203,8 @@ function initChart() {
 				data:[]
 			}],
 		},
-		options: chartOptions
+		options: chartOptions,
+		maintainAspectRatio: true
 	});
 
 	chart.generateLegend();
@@ -193,11 +221,23 @@ function buttonClick(clickElement) {
 	var id = clickElement.getAttribute('id');
 	var split = id.split('-');
 	var state = states.find(state => state.name === split[0]);
-	state.incrementCandidateColor(paintIndex);
-	clickElement.style.fill = state.getDisplayColor();
-	countVotes();
-	updateChart();
-	updateLegend();
+
+	if(mode === 'paint') {
+		state.incrementCandidateColor(paintIndex);
+		clickElement.style.fill = state.getDisplayColor();
+		countVotes();
+		updateChart();
+		updateLegend();
+	} else if(mode === 'ec') {
+		var ecedit = document.getElementById('ecedit');
+		var eceditText = document.getElementById('ecedit-message');
+		var input = document.getElementById('state-ec');
+		var stateId = document.getElementById('state-id');
+		eceditText.innerHTML = 'Set ' + split[0] + ' electoral college';
+		input.value = state.voteCount;
+		stateId.value = split[0];
+		ecedit.style.display = 'inline';
+	}
 }
 
 function landClick(clickElement) {
@@ -262,16 +302,28 @@ function districtClick(clickElement) {
 	var id = clickElement.getAttribute('id');
 	var split = id.split('-');
 	var district = states.find(state => state.name === id);
-	//var state = states.find(state => state.name === split[0]);
-	//state.setColor('tossup', 1);
-	district.incrementCandidateColor(paintIndex);
-	var landId = split[0] + '-' + split[1] + '-land';
-	var land = document.getElementById(landId);
-	land.style.fill = district.getDisplayColor();
-	
-	countVotes();
-	updateChart();
-	updateLegend();
+
+	if(mode === 'paint') {
+		//var state = states.find(state => state.name === split[0]);
+		//state.setColor('tossup', 1);
+		district.incrementCandidateColor(paintIndex);
+		var landId = split[0] + '-' + split[1] + '-land';
+		var land = document.getElementById(landId);
+		land.style.fill = district.getDisplayColor();
+		
+		countVotes();
+		updateChart();
+		updateLegend();
+	} else if(mode === 'ec') {
+		var ecedit = document.getElementById('ecedit');
+		var eceditText = document.getElementById('ecedit-message');
+		var input = document.getElementById('state-ec');
+		var stateId = document.getElementById('state-id');
+		eceditText.innerHTML = 'Set ' + id + ' electoral college';
+		input.value = district.voteCount;
+		stateId.value = id;
+		ecedit.style.display = 'inline';
+	}
 }
 
 //called when a state is clicked
@@ -282,37 +334,78 @@ function stateClick(clickElement, e) {
 	var split = id.split('-');
 	// get state where state.name equals the id attribute
 	var state = states.find(state => state.name === split[0]);
+	
+	if(mode === 'ec') {
+		var ecedit = document.getElementById('ecedit');
+		var eceditText = document.getElementById('ecedit-message');
+		var input = document.getElementById('state-ec');
+		var stateId = document.getElementById('state-id');
+		eceditText.innerHTML = 'Set ' + id + ' electoral college';
+		input.value = state.voteCount;
+		stateId.value = id;
+		ecedit.style.display = 'inline';
+	} else if(mode === 'paint') {
 
-	// increment the states color
-	state.incrementCandidateColor(paintIndex);
+		// increment the states color
+		state.incrementCandidateColor(paintIndex);
 
-	// get associated elements
-	var elements = document.querySelectorAll('[id^="'
-		+ split[0] + '"]');
+		// get associated elements
+		var elements = document.querySelectorAll('[id^="'
+			+ split[0] + '"]');
 
-	for(var i = 0; i < elements.length; ++i) {
-		var element = elements[i];
+		for(var i = 0; i < elements.length; ++i) {
+			var element = elements[i];
 
-		// change the color of the button elements to
-		// the states color
-		if (element.id.includes('button') && !element.id.includes('text')) {
-			element.style.fill = state.getDisplayColor();
-		} else if (element.id.includes('-D')) {
-			var district = states.find(state => state.name === element.id);
-			var candidate = state.getCandidate();
-			var colorValue = state.getColorValue();
-			district.setColor(candidate, colorValue);
+			// change the color of the button elements to
+			// the states color
+			if (element.id.includes('button') && !element.id.includes('text')) {
+				element.style.fill = state.getDisplayColor();
+			} else if (element.id.includes('-D')) {
+				var district = states.find(state => state.name === element.id);
+				var candidate = state.getCandidate();
+				var colorValue = state.getColorValue();
+				district.setColor(candidate, colorValue);
 
+			}
 		}
-	}
 
-	if(ctrlPressed) {
-		alert('hello world');
+		countVotes();
+		updateChart();
+		updateLegend();
 	}
+}
 
+function setEC(e) {
+	// get the popup window
+	var ecedit = document.getElementById("ecedit");
+	// make it disappear
+	ecedit.style.display = 'none';
+
+	// get the stateId and input value
+	var stateId = e.parentElement.querySelector('#state-id').value;
+	var input = e.parentElement.querySelector('#state-ec').value;
+
+	// get the state and set its new vote count
+	states.forEach(function(element) {
+		if(element.getName() === stateId) {
+			element.voteCount = parseInt(input);
+		}
+	});
+
+
+	// update the html text display
+	var stateText = document.getElementById(stateId + '-text');
+	// if the id has a dash then remove it
+	if(stateId.includes('-')) {
+		var split = stateId.split('-');
+		stateId = split[0] + split[1];
+	}
+	var text = stateId + ' ' + input;
+	stateText.innerHTML = text;
+
+	// recount the votes
 	countVotes();
 	updateChart();
-	updateLegend();
 }
 
 // dynamically change the chart from one form to another
@@ -330,11 +423,10 @@ function setChart(type) {
 	htmldiv.style.position = 'relative';
 	html.style.display = 'inline-block';
 
-	console.log(type);
 	// set the proper scales
 	if(type === 'horizontalBar') {
 		chartOptions.scales = chartBarScales;
-	} else if(type === 'pie') {
+	} else if(type === 'pie' || type === 'doughnut') {
 		chartOptions.scales = chartPieScales;
 	}
 
@@ -348,6 +440,21 @@ function setChart(type) {
 function setMaxPaintIndex(value) {
 	maxColorValue = value;	
 	verifyMap();
+}
+
+function setMode(set) {
+	mode = set;
+
+	var modeHTML = document.getElementById('menu-middle');
+
+	var text;
+	if(set == 'paint') {
+		text = 'Mode - Paint';
+	} if(set == 'ec') {
+		text = 'Mode - EC Edit';
+	}
+
+	modeHTML.innerHTML = text;
 }
 
 // add candidate to the list
@@ -432,6 +539,7 @@ function verifyMap() {
 function clearMap() {
 	states.forEach(function(state) {
 		state.setColor('Tossup', 2);
+		state.setVoteCount(ec[state.getName()]);
 	});
 
 	buttons.forEach(function(button) {
@@ -441,6 +549,9 @@ function clearMap() {
 	lands.forEach(function(land) {
 		land.style.fill = candidates['Tossup'].colors[2];	
 	});
+	
+	countVotes();
+	updateChart();
 }
 
 // iterate over each state and delegate votes to the candidate
@@ -519,7 +630,7 @@ function updateLegend() {
 		++index;
 		var html = document.getElementById(candidate.name + '-text');
 
-		var newHTML = candidate.name + ' ' + candidate.voteCount;
+		var newHTML = candidate.name;
 		
 		html.innerHTML = newHTML;
 
@@ -527,6 +638,16 @@ function updateLegend() {
 			selectCandidateDisplay(html.parentElement);
 		}
 	}
+}
+
+// make sure the map has the proper labels
+function updateMap() {
+	states.forEach(function(element) {
+		var stateText = document.getElementById(element.getName() + '-text');
+		var text = element.getName() + ' ' + element.getVoteCount();
+
+		stateText.innerHTML = text;
+	});
 }
 
 initCandidates();

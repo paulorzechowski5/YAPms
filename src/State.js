@@ -23,6 +23,10 @@ class State {
 		return this.voteCount; 
 	}
 
+	setVoteCount(value) {
+		this.voteCount = value;
+	}
+
 	getHtml() { 
 		return this.htmlElement; 
 	}

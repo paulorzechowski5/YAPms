@@ -15,9 +15,9 @@ function loadPresetEmpty() {
 function loadPresetClassic() {
 	initCandidates();
 	var republican = new Candidate('Republican', 
-		['#D22532', '#FF5865', '#FF8B98']);
+		['#BF1D29', '#FF5865', '#FF8B98']);
 	var democrat = new Candidate('Democrat',
-		['#244999', '#577CCC', '#8AAFFF'])
+		['#1C408C', '#577CCC', '#8AAFFF'])
 
 	candidates['Republican'] = republican;
 	candidates['Democrat'] = democrat;
@@ -35,9 +35,9 @@ function loadPresetClassic() {
 function loadPresetLibertarian() {
 	initCandidates();
 	var republican = new Candidate('Republican', 
-		['#D22532', '#FF5865', '#FF8B98']);
+		['#BF1D29', '#FF5865', '#FF8B98']);
 	var democrat = new Candidate('Democrat',
-		['#244999', '#577CCC', '#8AAFFF'])
+		['#1C408C', '#577CCC', '#8AAFFF'])
 	var libertarian = new Candidate('Libertarian',
 		['#ffcc00', '#ffd83f', '#ffe377']);
 
@@ -59,9 +59,9 @@ function loadPresetLibertarian() {
 function loadPresetGreen() {
 	initCandidates();
 	var republican = new Candidate('Republican', 
-		['#D22532', '#FF5865', '#FF8B98']);
+		['#BF1D29', '#FF5865', '#FF8B98']);
 	var democrat = new Candidate('Democrat',
-		['#244999', '#577CCC', '#8AAFFF'])
+		['#1C408C', '#577CCC', '#8AAFFF'])
 	var green = new Candidate('Green',
 		['#25c136', '#50c85e', '#88da91']);
 
@@ -82,9 +82,9 @@ function loadPresetGreen() {
 function loadPresetMajors() {
 	initCandidates();
 	var republican = new Candidate('Republican', 
-		['#D22532', '#FF5865', '#FF8B98']);
+		['#BF1D29', '#FF5865', '#FF8B98']);
 	var democrat = new Candidate('Democrat',
-		['#244999', '#577CCC', '#8AAFFF'])
+		['#1C408C', '#577CCC', '#8AAFFF'])
 	var green = new Candidate('Green',
 		['#00ff00', '#40ff40', '#99ff99']);
 	var libertarian = new Candidate('Libertarian',
