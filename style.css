@@ -91,6 +91,10 @@ button {
 	stroke-width: 1.5;
 }
 
+.rect {
+	stroke-width: 7;
+}
+
 #ecedit {
 	display: none;
 	background-color: #ffffff;

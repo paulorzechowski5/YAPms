@@ -5,8 +5,10 @@
 	<title>LTE Map</title>
 	<link rel="stylesheet" type="text/css" href="style.css">
 	<link rel="stylesheet" type="text/css" href="menu.css">
+	<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.min.js"></script>
 	<script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@0.5.0"></script> 
+	<script src="src/data.js"></script>
 	<script src="src/State.js"></script>
 	<script src="src/htmlControl.js"></script>
 	<script src="src/Candidate.js"></script>
@@ -33,6 +35,17 @@
 				<a onclick='loadPresetMajors()'>Majors</a>
 			</div>
 		</div>
+
+		<div class="dropdown">
+			<button class="dropdown-button">
+				Maps
+			</button>
+
+			<div class="dropdown-content">
+				<a onclick='loadMap("../usa.svg", "usa_ec");'>Presidential</a>
+				<a onclick='loadMap("../lte.svg", "lte_ec");'>LTE Discord</a>
+			</div>
+		</div>
 		
 		<div class="dropdown">
 			<button class="dropdown-button">
@@ -43,6 +56,18 @@
 				<a onclick='setChart("horizontalBar")'>Bar</a>
 				<a onclick='setChart("doughnut")'>Doughnut</a>
 				<a onclick='setChart("none")'>None</a>
+			</div>
+		</div>
+
+		<div class="dropdown">
+			<button class="dropdown-button">
+				Themes
+			</button>
+			<div class="dropdown-content">
+				<a onclick='darkPalette()'>Dark</a>
+				<a onclick='lightPalette()'>Light</a>
+				<a onclick='contrastPalette()'>Contrast</a>
+				<a onclick='metallicPalette()'>Metallic</a>
 			</div>
 		</div>
 
@@ -81,10 +106,6 @@
 				Misc
 			</button>
 			<div class="dropdown-content">
-				<a onclick='darkPalette()'>Dark</a>
-				<a onclick='lightPalette()'>Light</a>
-				<a onclick='contrastPalette()'>Contrast</a>
-				<a onclick='metallicPalette()'>Metallic</a>
 				<a onclick='toggleLegendCounter()'>Legend Counter</a>
 			</div>
 		</div>
@@ -102,7 +123,8 @@
 	</div>
 
 	<div id="map-div">
-		<?php echo file_get_contents("usa.svg"); ?>
+		<?php //echo file_get_contents("usa.svg"); ?>
+		<?php //echo file_get_contents("lte.svg"); ?>
 	</div>
 </div>
 

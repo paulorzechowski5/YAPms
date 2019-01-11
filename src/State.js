@@ -1,10 +1,15 @@
 class State {
-	constructor(name, htmlElement) {
+	constructor(name, htmlElement, dataid) {
 		this.name = name;
 		this.colorValue = 1;
-		this.voteCount = ec[name];
 		this.htmlElement = htmlElement;
 		this.candidate = 'Tossup';
+		this.dataid = dataid;
+		this.resetVoteCount();
+	}
+
+	resetVoteCount() {
+		this.voteCount = data[this.dataid][this.name];
 	}
 
 	getCandidate() { 

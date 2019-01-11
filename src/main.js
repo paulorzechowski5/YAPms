@@ -1,11 +1,5 @@
-// list of electoral vote counts
-ec = {'AL': 9, 'AK': 3, 'AZ': 11, 'AR': 6, 'CA': 55, 'CO': 9, 'CT': 7, 'DE': 3, 'FL': 29, 'GA': 16, 'HI': 4, 'ID': 4, 'IL': 20, 'IN': 11, 'IA': 6, 'KS': 6, 'KY': 8, 'LA': 8, 'ME': 4, 'ME-AL': 2, 'ME-D1': 1, 'ME-D2': 1, 'MD': 10, 'MA': 11, 'MI': 16, 'MN': 10, 'MS': 6, 'MO': 10, 'MT': 3, 'NE': 5, 'NE-AL': 2, 'NE-D1': 1, 'NE-D2': 1, 'NE-D3': 1, 'NV': 6, 'NH': 4, 'NJ': 14, 'NM': 5, 'NY': 29, 'NC': 15, 'ND': 3, 'OH': 18, 'OK': 7, 'OR': 7, 'PA': 20, 'RI': 4, 'SC': 9, 'SD': 3, 'TN': 11, 'TX': 38, 'UT': 6, 'VT': 3, 'VA': 13, 'WA': 12, 'WV': 5, 'WI': 10, 'WY': 3, 'DC': 3};
-
-// list of states
 var states = [];
 var lands = [];
-
-// list of buttons
 var buttons = [];
 
 // list of candidates
@@ -24,24 +18,42 @@ var maxColorValue = 2;
 
 var mode = 'paint';
 
+var map = 'presidential';
+map = 'lte_discord';
+
 var legendCounter = true;
 
-function initSVG() {
+// loads the svg element into the HTML
+function loadMap(filename, dataid) {
+	console.log('loading ' + filename);
+	$('#map-div').load(filename, function() {
+		console.log('done loading ' + filename);	
+		initData(dataid);
+
+		countVotes();
+		updateChart();
+		updateLegend();
+	});
+}
+
+// reads through the SVG and sets up states and buttons
+function initData(dataid) {
+	// clear any previously loaded data
+	states = [];
+	buttons = [];
+	lands = [];
+
 	// get list of all html state elements
 	var htmlElements = document.getElementById('outlines').children;
 
 	// iterate over each element
 	for(var index = 0; index < htmlElements.length; ++index) {
-	//for(let htmlElement of htmlElements) {
 		var htmlElement = htmlElements[index];
 		var name = htmlElement.getAttribute('id');
 		if(name.includes('text')) {
 			// dont include text as states
 			// make sure you can't click them
 			htmlElement.style.pointerEvents = 'none';
-			//htmlElement.style.fontSize = '14px';
-			//htmlElement.style.fontWeight = 'bold';
-			//console.log(htmlElement);
 		} else if(name.includes('button')) {
 			// don't include buttons as states
 			htmlElement.setAttribute('onclick',
@@ -56,7 +68,7 @@ function initSVG() {
 		} else if(name.includes('-D') || name.includes('-A')) {
 			htmlElement.setAttribute('onclick', 'districtClick(this)');
 			htmlElement.style.fill = '#bbb7b2';
-			states.push(new State(name, htmlElement));
+			states.push(new State(name, htmlElement, dataid));
 
 		} else if(name.length == 2) {
 			// set click function
@@ -65,7 +77,7 @@ function initSVG() {
 			htmlElement.style.fill = '#bbb7b2';
 
 			// add the state to the list
-			states.push(new State(name, htmlElement));
+			states.push(new State(name, htmlElement, dataid));
 		}
 	}
 }
@@ -208,6 +220,11 @@ function initChart() {
 	});
 
 	chart.generateLegend();
+	
+	var htmldiv = document.getElementById('chart-div');
+	var html = document.getElementById('chart');
+	htmldiv.style.position = 'absolute';
+	html.style.display = 'none';
 }
 
 // empty the list of candidates and insert the tossup candidate
@@ -375,6 +392,12 @@ function stateClick(clickElement, e) {
 	}
 }
 
+// when a button on the legend is clicked, it saves the selected candidate
+// to a variable, so that you can paint with it
+function legendClick(candidate, button) {
+	paintIndex = candidate;
+}
+
 function setEC(e) {
 	// get the popup window
 	var ecedit = document.getElementById("ecedit");
@@ -442,11 +465,6 @@ function toggleLegendCounter() {
 	updateLegend();
 }
 
-function setMaxPaintIndex(value) {
-	maxColorValue = value;	
-	verifyMap();
-}
-
 function setMode(set) {
 	mode = set;
 
@@ -490,11 +508,6 @@ function addCandidate() {
 	verifyTextToggle();
 }
 
-// when a button on the legend is clicked, it saves the selected candidate
-// to a variable, so that you can paint with it
-function legendClick(candidate, button) {
-	paintIndex = candidate;
-}
 
 // if paint index is invalid, change it to tossup
 // ( WORK IN PROGRESS)
@@ -658,10 +671,13 @@ function updateLegend() {
 	}
 }
 
-initCandidates();
-initSVG();
-initChart();
-countVotes();
-updateChart();
-updateLegend();
-lightPalette();
+function start() {
+	initCandidates();
+	initChart();
+	
+	loadMap('../usa.svg', 'usa_ec');
+
+	lightPalette();
+}
+
+start();
