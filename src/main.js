@@ -545,9 +545,14 @@ function clearMap() {
 	states.forEach(function(state) {
 		state.setColor('Tossup', 2);
 		state.setVoteCount(ec[state.getName()]);
-		console.log(state.getName() + '-text');
 		var htmlText = document.getElementById(state.getName() + '-text');
 		var text = state.getName() + ' ' + state.getVoteCount();
+		
+		if(text.includes('-')) {
+			var split = text.split('-');
+			text = split[0] + split[1];
+		}
+
 		htmlText.innerHTML = text;
 	});
 
