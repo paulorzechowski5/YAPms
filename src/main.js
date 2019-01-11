@@ -557,7 +557,7 @@ function verifyMap() {
 function clearMap() {
 	states.forEach(function(state) {
 		state.setColor('Tossup', 2);
-		state.setVoteCount(ec[state.getName()]);
+		state.resetVoteCount();
 		var htmlText = document.getElementById(state.getName() + '-text');
 		var text = state.getName() + ' ' + state.getVoteCount();
 		
