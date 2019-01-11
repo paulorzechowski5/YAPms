@@ -16,7 +16,8 @@
 
 #menu-middle {
 	color: white;
-	font-size: 15px;
+	font-size: 16px;
+	font-weight: 350;
 	text-align: center;
 	flex: 1;
 }
@@ -28,6 +29,8 @@
 
 .click-button {
 	background-color: #eeeeee;
+	border-radius: 0px 0px 4px 4px;
+	font-weight: 500;
 	color: #000000;
 	cursor: pointer;
 	border: none;
@@ -63,6 +66,7 @@
 	background-color: inherit;
 	color: #ffffff;
 	cursor: pointer;
+	font-weight: 575;
 	border: none;
 }
 

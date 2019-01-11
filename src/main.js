@@ -124,6 +124,9 @@ function initChart() {
 		legend: {
 			display: false
 		},
+		tooltips: {
+			display: false
+		},
 		// turn off animation
 		animation: false,
 		plugins: {
@@ -540,6 +543,10 @@ function clearMap() {
 	states.forEach(function(state) {
 		state.setColor('Tossup', 2);
 		state.setVoteCount(ec[state.getName()]);
+		console.log(state.getName() + '-text');
+		var htmlText = document.getElementById(state.getName() + '-text');
+		var text = state.getName() + ' ' + state.getVoteCount();
+		htmlText.innerHTML = text;
 	});
 
 	buttons.forEach(function(button) {
@@ -630,7 +637,7 @@ function updateLegend() {
 		++index;
 		var html = document.getElementById(candidate.name + '-text');
 
-		var newHTML = candidate.name;
+		var newHTML = candidate.name + ' ' + candidate.voteCount;;
 		
 		html.innerHTML = newHTML;
 
@@ -640,19 +647,10 @@ function updateLegend() {
 	}
 }
 
-// make sure the map has the proper labels
-function updateMap() {
-	states.forEach(function(element) {
-		var stateText = document.getElementById(element.getName() + '-text');
-		var text = element.getName() + ' ' + element.getVoteCount();
-
-		stateText.innerHTML = text;
-	});
-}
-
 initCandidates();
 initSVG();
 initChart();
 countVotes();
 updateChart();
 updateLegend();
+lightPalette();

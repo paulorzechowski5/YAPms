@@ -28,14 +28,15 @@ button {
 	user-select: none;
 }
 
+#chart {
+}
+
 #chart-div {
-	width: 30vw;
-	flex-grow: 1;
+	width: 25vw;
 }
 
 #map-div {
-	width: 60vw;
-	flex-grow: 0;
+	width: 65vw;
 }
 
 #toolbar-div {
@@ -51,6 +52,7 @@ button {
 	margin-top: 10px;
 	display: flex;
 	justify-content: center;
+	vertical-align: middle;
 	align-items: center;
 }
 

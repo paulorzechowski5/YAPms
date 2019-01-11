@@ -97,7 +97,7 @@
 
 <div id="application">
 	<div id="chart-div">
-		<canvas id="chart"></canvas>
+		<canvas id="chart" width="100" height="100"></canvas>
 	</div>
 
 	<div id="map-div">
