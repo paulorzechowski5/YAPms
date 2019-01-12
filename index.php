@@ -5,6 +5,7 @@
 	<title>LTE Map</title>
 	<link rel="stylesheet" type="text/css" href="style.css">
 	<link rel="stylesheet" type="text/css" href="menu.css">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
 	<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.min.js"></script>
 	<script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@0.5.0"></script> 
@@ -42,8 +43,8 @@
 			</button>
 
 			<div class="dropdown-content">
-				<a onclick='loadMap("../usa.svg", "usa_ec");'>Presidential</a>
-				<a onclick='loadMap("../lte.svg", "lte_ec");'>LTE Discord</a>
+				<a onclick='loadMap("../usa.svg", "usa_ec", 16);'>Presidential</a>
+				<a onclick='loadMap("../lte.svg", "lte_ec", 35);'>LTE Discord</a>
 			</div>
 		</div>
 		
@@ -68,6 +69,7 @@
 				<a onclick='lightPalette()'>Light</a>
 				<a onclick='contrastPalette()'>Contrast</a>
 				<a onclick='metallicPalette()'>Metallic</a>
+				<a onclick='toWinPalette()'>270</a>
 			</div>
 		</div>
 

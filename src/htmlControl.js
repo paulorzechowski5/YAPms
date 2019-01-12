@@ -71,6 +71,14 @@ function darkPalette() {
 	var legend = document.getElementById('legend-div');
 	legend.style.borderColor = '#2f3136';
 	
+	setTossupColor('#bbb7b2');
+	setMapStyle('black', 1.5);
+	setTextStyle('black', 'normal');
+	setChartBorderStyle(2, 'black');
+	
+	chartOptions.plugins.datalabels.borderWidth = 2;
+	chartOptions.plugins.datalabels.borderRadius = 4;
+
 	chartBarScales.yAxes[0].ticks.fontColor = '#ffffff';
 	chartBarScales.xAxes[0].ticks.fontColor = '#ffffff';
 	setChart(chart.config.type);
@@ -78,7 +86,7 @@ function darkPalette() {
 
 function lightPalette() {
 	var body = document.getElementById('body');
-	body.style.backgroundColor = '#2f3136';
+	body.style.backgroundColor = '#30353f';
 	body.style.backgroundImage  = '';
 
 	var menu = document.getElementById('menu-div');
@@ -86,6 +94,14 @@ function lightPalette() {
 	
 	var legend = document.getElementById('legend-div');
 	legend.style.borderColor = '#202225';
+
+	setTossupColor('#bbb7b2');
+	setMapStyle('black', 1.5);
+	setTextStyle('black', 'normal');
+	setChartBorderStyle(2, 'black');
+	
+	chartOptions.plugins.datalabels.borderWidth = 2;
+	chartOptions.plugins.datalabels.borderRadius = 4;
 	
 	chartBarScales.yAxes[0].ticks.fontColor = '#ffffff';
 	chartBarScales.xAxes[0].ticks.fontColor = '#ffffff';
@@ -102,6 +118,14 @@ function contrastPalette() {
 
 	var legend = document.getElementById('legend-div');
 	legend.style.borderColor = '#151515';
+	
+	setTossupColor('#bbb7b2');
+	setMapStyle('black', 1.5);
+	setTextStyle('black', 'normal');
+	setChartBorderStyle(2, 'black');
+	
+	chartOptions.plugins.datalabels.borderWidth = 2;
+	chartOptions.plugins.datalabels.borderRadius = 4;
 
 	chartBarScales.yAxes[0].ticks.fontColor = '#000000';
 	chartBarScales.xAxes[0].ticks.fontColor = '#000000';
@@ -109,7 +133,6 @@ function contrastPalette() {
 }
 
 function metallicPalette() {
-	
 	var body = document.getElementById('body');
 	//body.style.backgroundImage  = 'radial-gradient(#2f3136, #181922)';
 	body.style.backgroundImage  = 'linear-gradient(#333333, #000000)';
@@ -120,7 +143,70 @@ function metallicPalette() {
 	var legend = document.getElementById('legend-div');
 	legend.style.borderColor = '#2f3136';
 	
+	setTossupColor('#bbb7b2');
+	setMapStyle('black', 1.5);
+	setTextStyle('black', 'normal');
+	setChartBorderStyle(2, 'black');
+	
+	chartOptions.plugins.datalabels.borderWidth = 2;
+	chartOptions.plugins.datalabels.borderRadius = 4;
+	
 	chartBarScales.yAxes[0].ticks.fontColor = '#ffffff';
 	chartBarScales.xAxes[0].ticks.fontColor = '#ffffff';
 	setChart(chart.config.type);
+}
+
+function toWinPalette() {
+	var body = document.getElementById('body');
+	//body.style.backgroundImage  = 'radial-gradient(#2f3136, #181922)';
+	body.style.backgroundColor = '#ffffff';
+	body.style.backgroundImage  = '';
+
+	var menu = document.getElementById('menu-div');
+	menu.style.backgroundColor = '#000000';
+	
+	var legend = document.getElementById('legend-div');
+	legend.style.borderColor = '#000000';
+
+	setTossupColor('#bbaa90');
+	setMapStyle('white', 1);
+	setTextStyle('white', 'bold');
+	setChartBorderStyle(2, 'white');
+
+	chartOptions.plugins.datalabels.borderWidth = 0;
+	chartOptions.plugins.datalabels.borderRadius = 2;
+
+	chartBarScales.yAxes[0].ticks.fontColor = '#000000';
+	chartBarScales.xAxes[0].ticks.fontColor = '#000000';
+	setChart(chart.config.type);
+}
+
+function setChartBorderStyle(width, color) {
+	chartBorderWidth = width;
+	chartBorderColor = color;
+	updateChart();
+}
+
+function setTossupColor(color) {
+	TOSSUP.colors[2] = color;
+	var tossupLegend = document.getElementById('Tossup');
+	tossupLegend.style.background = color;
+	verifyMap();
+}
+
+function setMapStyle(color, strokeWidth) {
+	var states = document.getElementById('outlines').children;
+	
+	for(var index = 0; index < states.length; ++index) {
+		var state = states[index];
+		state.style.stroke = color;
+		state.style.strokeWidth = strokeWidth;
+	}
+}
+
+function setTextStyle(color, weight) {
+	var text = document.getElementById('text');
+	text.style.strokeWidth = 0;
+	text.style.fontWeight = weight;
+	text.style.fill = color;
 }

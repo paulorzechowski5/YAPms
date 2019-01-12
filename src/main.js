@@ -16,6 +16,9 @@ var chartBarScales;
 var paintIndex = 'Tossup';
 var maxColorValue = 2;
 
+var chartBorderWidth = 2;
+var chartBorderColor = '#000000';
+
 var mode = 'paint';
 
 var map = 'presidential';
@@ -24,15 +27,21 @@ map = 'lte_discord';
 var legendCounter = true;
 
 // loads the svg element into the HTML
-function loadMap(filename, dataid) {
+function loadMap(filename, dataid, fontsize) {
 	console.log('loading ' + filename);
 	$('#map-div').load(filename, function() {
-		console.log('done loading ' + filename);	
+		console.log('done loading ' + filename);
+
+		var textHTML = document.getElementById('text');
+		textHTML.style.fontSize = fontsize;
+
 		initData(dataid);
 
 		countVotes();
 		updateChart();
 		updateLegend();
+
+		lightPalette();
 	});
 }
 
@@ -53,7 +62,7 @@ function initData(dataid) {
 		if(name.includes('text')) {
 			// dont include text as states
 			// make sure you can't click them
-			htmlElement.style.pointerEvents = 'none';
+			//htmlElement.style.pointerEvents = 'none';
 		} else if(name.includes('button')) {
 			// don't include buttons as states
 			htmlElement.setAttribute('onclick',
@@ -102,7 +111,7 @@ function initChart() {
 
 				// if its the 0th candidate, make sure its purple
 				if(index == 0) {
-					legendElement.style.backgroundColor = candidate.colors[2];
+					legendElement.style.backgroundColor = candidate.colors[tossupColor];
 				}
 				legendElement.style.padding = 5;
 				legendDiv.appendChild(legendElement);
@@ -212,6 +221,7 @@ function initChart() {
 				label: "",
 				backgroundColor: '#ffffff',
 				borderColor: '#ffffff',
+				borderWidth: 0,
 				data:[]
 			}],
 		},
@@ -230,8 +240,8 @@ function initChart() {
 // empty the list of candidates and insert the tossup candidate
 function initCandidates() {
 	candidates = {};
-	candidates['Tossup'] = 
-	new Candidate('Tossup', ['#000000', '#ff00ff', '#bbb7b2']);
+	candidates['Tossup'] = TOSSUP;
+	//new Candidate('Tossup', ['#000000', '#ff00ff', '#bbb7b2']);
 }
 
 function buttonClick(clickElement) {
@@ -522,7 +532,7 @@ function verifyMap() {
 	states.forEach(function(state) {
 		if(typeof candidates[state.candidate] === 'undefined') {
 			// if the current color is out of bounds set it to white
-			state.setColor('Tossup', 2);
+			state.setColor('Tossup', tossupColor);
 		} else { 
 			// the candidate the state thinks its controled by
 			var currentCandidate = state.getCandidate();
@@ -532,13 +542,16 @@ function verifyMap() {
 			var currentCandidate
 			// if these values differ, change the state to tossup
 			if(currentCandidate !== shouldCandidate) {
-				state.setColor('Tossup',2);
+				state.setColor('Tossup', tossupColor);
 			}
 
 			if(currentCandidate !== 'Tossup' &&
 				state.getColorValue() > maxColorValue) {
 				state.setColor(state.getCandidate(),
 					maxColorValue);
+			} if(currentCandidate === 'Tossup') {
+				state.setColor('Tossup', tossupColor);
+				console.log('test');
 			}
 
 			var land = document.getElementById(state.name + '-land');
@@ -556,7 +569,7 @@ function verifyMap() {
 // sets all states to white
 function clearMap() {
 	states.forEach(function(state) {
-		state.setColor('Tossup', 2);
+		state.setColor('Tossup', tossupColor);
 		state.resetVoteCount();
 		var htmlText = document.getElementById(state.getName() + '-text');
 		var text = state.getName() + ' ' + state.getVoteCount();
@@ -570,11 +583,11 @@ function clearMap() {
 	});
 
 	buttons.forEach(function(button) {
-		button.style.fill = candidates['Tossup'].colors[2];
+		button.style.fill = candidates['Tossup'].colors[tossupColor];
 	});
 
 	lands.forEach(function(land) {
-		land.style.fill = candidates['Tossup'].colors[2];	
+		land.style.fill = candidates['Tossup'].colors[tossupColor];	
 	});
 	
 	countVotes();
@@ -620,7 +633,8 @@ function updateChart() {
 		datasets: [{
 			label: "",
 			backgroundColor: [],
-			borderColor: '#000000',
+			borderColor: chartBorderColor,
+			borderWidth: chartBorderWidth,
 			data:[]
 		}]
 	}
@@ -634,7 +648,7 @@ function updateChart() {
 		var voteCount = candidate.voteCount;
 		var color = candidate.colors[0];
 		if(index == 0) {
-			color = candidates['Tossup'].colors[2];
+			color = candidates['Tossup'].colors[tossupColor];
 		}
 		// append the candidate label
 		chartData.labels[index] = name;
@@ -675,9 +689,7 @@ function start() {
 	initCandidates();
 	initChart();
 	
-	loadMap('../usa.svg', 'usa_ec');
-
-	lightPalette();
+	loadMap('../usa.svg', 'usa_ec', 16);
 }
 
 start();

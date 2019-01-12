@@ -6,3 +6,6 @@ class Candidate {
 		this.img = img;
 	}
 };
+
+var tossupColor = 2;
+var TOSSUP = new Candidate('Tossup', ['#000000', '#bbaa90', '#bbb7b2']);

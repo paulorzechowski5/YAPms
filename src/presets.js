@@ -39,7 +39,7 @@ function loadPresetLibertarian() {
 	var democrat = new Candidate('Democrat',
 		['#1C408C', '#577CCC', '#8AAFFF'])
 	var libertarian = new Candidate('Libertarian',
-		['#ffcc00', '#ffd83f', '#ffe377']);
+		['#e6b700', '#e8c84d', '#ffe78a']);
 
 
 	candidates['Republican'] = republican;
@@ -63,7 +63,7 @@ function loadPresetGreen() {
 	var democrat = new Candidate('Democrat',
 		['#1C408C', '#577CCC', '#8AAFFF'])
 	var green = new Candidate('Green',
-		['#25c136', '#50c85e', '#88da91']);
+		['#1c8c28', '#50c85e', '#8aff97']);
 
 	candidates['Republican'] = republican;
 	candidates['Democrat'] = democrat;
@@ -86,9 +86,9 @@ function loadPresetMajors() {
 	var democrat = new Candidate('Democrat',
 		['#1C408C', '#577CCC', '#8AAFFF'])
 	var green = new Candidate('Green',
-		['#00ff00', '#40ff40', '#99ff99']);
+		['#1c8c28', '#50c85e', '#8aff97']);
 	var libertarian = new Candidate('Libertarian',
-		['#ffcc00', '#ffd83f', '#ffe377']);
+		['#e6b700', '#e8c84d', '#ffe78a']);
 
 	candidates['Republican'] = republican;
 	candidates['Democrat'] = democrat;
