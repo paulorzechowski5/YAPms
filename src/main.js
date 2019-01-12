@@ -7,10 +7,21 @@ var candidates = {};
 
 // data for the chart
 var chart;
-var chartData;
+var chartData = {
+	labels:[],
+	datasets: [{
+		label: "",
+		backgroundColor: [],
+		borderColor: chartBorderColor,
+		borderWidth: chartBorderWidth,
+		data:[]
+	}]
+}
 var chartOptions;
 var chartPieScales;
 var chartBarScales;
+// disable all tooltips
+Chart.defaults.global.tooltips.enabled = false;
 
 // paint data
 var paintIndex = 'Tossup';
@@ -146,7 +157,10 @@ function initChart() {
 			display: false
 		},
 		// turn off animation
-		animation: false,
+		animation: {
+			animateRotate: false,
+			animateScale: true
+		},
 		plugins: {
 			datalabels: {
 				//display: 'auto',
@@ -551,7 +565,6 @@ function verifyMap() {
 					maxColorValue);
 			} if(currentCandidate === 'Tossup') {
 				state.setColor('Tossup', tossupColor);
-				console.log('test');
 			}
 
 			var land = document.getElementById(state.name + '-land');
@@ -628,16 +641,12 @@ function countVotes() {
 // updates the information of the chart (so the numbers change)
 function updateChart() {
 	// reset the chart data
-	chartData = {
-		labels:[],
-		datasets: [{
-			label: "",
-			backgroundColor: [],
-			borderColor: chartBorderColor,
-			borderWidth: chartBorderWidth,
-			data:[]
-		}]
-	}
+	chartData.labels = [];
+	chartData.datasets[0].data = [];
+
+	// make sure the borders are correct
+	chartData.datasets[0].borderColor = chartBorderColor;
+	chartData.datasets[0].borderWidth = chartBorderWidth;
 
 	// loop though candidates
 	var index = -1;

@@ -163,10 +163,10 @@ function toWinPalette() {
 	body.style.backgroundImage  = '';
 
 	var menu = document.getElementById('menu-div');
-	menu.style.backgroundColor = '#000000';
+	menu.style.backgroundColor = '#202020';
 	
 	var legend = document.getElementById('legend-div');
-	legend.style.borderColor = '#000000';
+	legend.style.borderColor = '#202020';
 
 	setTossupColor('#bbaa90');
 	setMapStyle('white', 1);
