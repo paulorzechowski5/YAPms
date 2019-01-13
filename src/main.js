@@ -33,13 +33,13 @@ var chartBorderColor = '#000000';
 var mode = 'paint';
 
 var map = 'presidential';
-map = 'lte_discord';
 
 var legendCounter = true;
 
 // loads the svg element into the HTML
 function loadMap(filename, dataid, fontsize) {
 	console.log('loading ' + filename);
+	map = dataid;
 	$('#map-div').load(filename, function() {
 		console.log('done loading ' + filename);
 
@@ -55,6 +55,28 @@ function loadMap(filename, dataid, fontsize) {
 		lightPalette();
 	});
 }
+
+/*
+function initSenateData() {
+	states = [];
+	buttons = [];
+
+	var htmlElements = document.getElementById('outlines').children;
+
+	for(var index = 0; index < htmlElements.length; ++index) {
+		var htmlElement = htmlElements[index];
+		var name = htmlElement.getAttribute('id');
+
+		if(name.includes('text')) {
+
+		} else if(name.includes('button')) {
+
+		} else {
+
+		}
+	}
+}
+*/
 
 // reads through the SVG and sets up states and buttons
 function initData(dataid) {
@@ -122,7 +144,16 @@ function initChart() {
 
 				// if its the 0th candidate, make sure its purple
 				if(index == 0) {
-					legendElement.style.backgroundColor = candidate.colors[tossupColor];
+					var color = candidate.colors[tossupColor];
+					legendElement.style.backgroundColor = color;
+					console.log(color);
+					if(color === '#000000' ||
+						color === 'black') {
+						legendElement.style.color = 'white';
+					} else {
+						legendElement.style.color = 'black';
+
+					}
 				}
 				legendElement.style.padding = 5;
 				legendDiv.appendChild(legendElement);
@@ -295,42 +326,51 @@ function landClick(clickElement) {
 		}
 	});
 
-	// check if each district has the same candidate and color value
-	var sameColor = true;
-	var candidate = districts[0].getCandidate();
-	var colorValue = districts[0].getColorValue();
+	if(mode === 'paint') {
+		// check if each district has the same candidate and color value
+		var sameColor = true;
+		var candidate = districts[0].getCandidate();
+		var colorValue = districts[0].getColorValue();
 
-	for(var index = 1; index < districts.length; ++index) {
-		var district = districts[index];
-		if(candidate !== district.getCandidate() ||
-			colorValue !== district.getColorValue()) {
-			sameColor = false;
-			break;
+		for(var index = 1; index < districts.length; ++index) {
+			var district = districts[index];
+			if(candidate !== district.getCandidate() ||
+				colorValue !== district.getColorValue()) {
+				sameColor = false;
+				break;
+			}
 		}
-	}
 
+		var color;
+		if(sameColor == true) {
+			// if same color then increment all district colors
+			districts.forEach(function(district) {
+				district.incrementCandidateColor(paintIndex);
+				color = district.getDisplayColor();
+			});
+			lands.forEach(function(land) {
+				if(land.id.includes(stateName)) {
+					land.style.fill = color;
+				}
+			});
+		} else {
+			districts.forEach(function(district) {
+				district.setColor(paintIndex, 0);
+				color = district.getDisplayColor();
+			});
+			lands.forEach(function(land) {
+				if(land.id.includes(stateName)) {
+					land.style.fill = color;
+				}
+			});
+		}
+	} else if(mode === 'delete') {
+		var textHTML = document.getElementById(split[0] + '-text');
+		textHTML.style.visibility = 'hidden';
 
-	var color;
-	if(sameColor == true) {
-		// if same color then increment all district colors
 		districts.forEach(function(district) {
-			district.incrementCandidateColor(paintIndex);
-			color = district.getDisplayColor();
-		});
-		lands.forEach(function(land) {
-			if(land.id.includes(stateName)) {
-				land.style.fill = color;
-			}
-		});
-	} else {
-		districts.forEach(function(district) {
-			district.setColor(paintIndex, 0);
-			color = district.getDisplayColor();
-		});
-		lands.forEach(function(land) {
-			if(land.id.includes(stateName)) {
-				land.style.fill = color;
-			}
+			district.hide();
+			district.setVoteCount(0);
 		});
 	}
 	
@@ -352,6 +392,35 @@ function districtClick(clickElement) {
 		var land = document.getElementById(landId);
 		land.style.fill = district.getDisplayColor();
 		
+		countVotes();
+		updateChart();
+		updateLegend();
+	} else if(mode === 'delete') {
+		// delete all districts and text
+		console.log(split[0] + '-text');
+
+		var al = states.find(state => state.name == split[0] + '-AL');
+		if(al != null) {
+			al.hide();
+			al.setVoteCount(0);
+		}
+		
+		var d1 = states.find(state => state.name == split[0] + '-D1');
+		if(d1 != null) {
+			d1.hide();
+			d1.setVoteCount(0);
+		}
+		var d2 = states.find(state => state.name == split[0] + '-D2');
+		if(d2 != null) {
+			d2.hide();
+			d2.setVoteCount(0);
+		}
+		var d3 = states.find(state => state.name == split[0] + '-D3');
+		if(d3 != null) {
+			d3.hide();
+			d3.setVoteCount(0);
+		}
+
 		countVotes();
 		updateChart();
 		updateLegend();
@@ -385,6 +454,9 @@ function stateClick(clickElement, e) {
 		input.value = state.voteCount;
 		stateId.value = id;
 		ecedit.style.display = 'inline';
+	} else if(mode === 'delete') {
+		state.hide();
+		state.setVoteCount(0);
 	} else if(mode === 'paint') {
 
 		// increment the states color
@@ -497,8 +569,10 @@ function setMode(set) {
 	var text;
 	if(set == 'paint') {
 		text = 'Mode - Paint';
-	} if(set == 'ec') {
+	} else if(set == 'ec') {
 		text = 'Mode - EC Edit';
+	} else if(set == 'delete') {
+		text = 'Mode - Delete';
 	}
 
 	modeHTML.innerHTML = text;
@@ -582,6 +656,7 @@ function verifyMap() {
 // sets all states to white
 function clearMap() {
 	states.forEach(function(state) {
+		state.show();
 		state.setColor('Tossup', tossupColor);
 		state.resetVoteCount();
 		var htmlText = document.getElementById(state.getName() + '-text');

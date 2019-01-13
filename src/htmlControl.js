@@ -84,6 +84,36 @@ function darkPalette() {
 	setChart(chart.config.type);
 }
 
+function dark2Palette() {
+	darkPalette();
+
+	setChartBorderStyle(2, '#ffffff');
+	setMapStyle('white', 1.5);
+	setChart(chart.config.type);
+}
+
+function terminalPalette() {
+	var body = document.getElementById('body');
+	body.style.backgroundColor = '#000000';
+	body.style.backgroundImage  = '';
+	
+	var menu = document.getElementById('menu-div');
+	menu.style.backgroundColor = '#2f3136'
+
+	setTossupColor('black');
+	setChartBorderStyle(2, '#ffffff');
+	setTextStyle('white', 'bold');
+	setMapStyle('white', 1.5);
+	
+	chartOptions.plugins.datalabels.borderWidth = 2;
+	chartOptions.plugins.datalabels.borderRadius = 4;
+	
+	chartBarScales.yAxes[0].ticks.fontColor = '#ffffff';
+	chartBarScales.xAxes[0].ticks.fontColor = '#ffffff';
+	setChart(chart.config.type);
+	setChart(chart.config.type);
+}
+
 function lightPalette() {
 	var body = document.getElementById('body');
 	body.style.backgroundColor = '#30353f';
@@ -97,6 +127,7 @@ function lightPalette() {
 
 	setTossupColor('#bbb7b2');
 	setMapStyle('black', 1.5);
+	
 	setTextStyle('black', 'normal');
 	setChartBorderStyle(2, 'black');
 	
@@ -192,6 +223,23 @@ function setTossupColor(color) {
 	var tossupLegend = document.getElementById('Tossup');
 	tossupLegend.style.background = color;
 	verifyMap();
+
+	if(color === 'black') {
+		tossupLegend.style.color = 'white';
+	} else {
+		tossupLegend.style.color = 'black';
+	}
+}
+
+function setButtonStyle(color, strokeWidth) {
+
+	var states = document.getElementById('outlines').children;
+	
+	for(var index = 0; index < states.length; ++index) {
+		var state = states[index];
+		state.style.stroke = color;
+		state.style.strokeWidth = strokeWidth;
+	}
 }
 
 function setMapStyle(color, strokeWidth) {

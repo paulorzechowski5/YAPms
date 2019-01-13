@@ -11,7 +11,7 @@
    viewBox="0 0 959 593"
    version="1.1"
    id="svg3846"
-   sodipodi:docname="usa.svg"
+   sodipodi:docname="usa_senate.svg"
    inkscape:version="0.92.1 r15371"
    inkscape:export-filename="/home/jacob/Programming/270/usa.png"
    inkscape:export-xdpi="96"
@@ -43,13 +43,13 @@
      id="namedview3848"
      showgrid="true"
      inkscape:pagecheckerboard="true"
-     inkscape:zoom="2.3048695"
-     inkscape:cx="460.52651"
-     inkscape:cy="158.26238"
+     inkscape:zoom="1.1524348"
+     inkscape:cx="582.62197"
+     inkscape:cy="319.09375"
      inkscape:window-x="0"
      inkscape:window-y="0"
      inkscape:window-maximized="1"
-     inkscape:current-layer="text"
+     inkscape:current-layer="outlines"
      inkscape:snap-center="true"
      inkscape:snap-grids="false"
      inkscape:snap-object-midpoints="true"
@@ -84,7 +84,7 @@
     <color-profile
        name="sRGB"
        xlink:href="/usr/share/color/icc/colord/sRGB.icc"
-       id="color-profile325" />
+       id="color-profile4800" />
     <inkscape:tag
        id="Set 3"
        inkscape:expanded="true">
@@ -428,18 +428,10 @@
        sodipodi:nodetypes="ccccccccccccccccccccccccccccccccccccccccccccccsccccccccccccccccccccccccccsccc" />
     <path
        style="fill:#ffffff;fill-opacity:1"
-       d="m 891.5,36.900391 -1.80078,1.798828 -4,2.90039 v 1 l -0.79883,0.800782 -2.70117,-0.59961 L 880.90039,40.5 v -1.099609 l -1.30078,-0.201172 h -1.29883 l -2.10156,4.201172 -2.89844,8.90039 -1.80078,4.798828 0.19922,4.800782 0.20117,1.5 -0.80078,2.699218 -0.79883,1 v 6 l 1.89844,2.400391 -1.5,4 -2.59961,4.699219 -0.79883,5.5 v 2.601562 l -1.5,-0.40039 -1.30078,0.169921 9.75195,31.201168 2.32224,-0.0429 0.60546,-0.60352 -0.15015,-2.66325 2.40186,-4.04247 1.75842,-0.47007 0.21753,2.05555 2.20488,0.49163 2.69401,-3.8734 2.84809,-1.01817 -0.23155,-1.11837 -2.81191,-0.65921 0.44756,-3.22028 3.09479,-0.52542 1.17448,-0.75628 -0.1491,-3.95785 2.21369,-0.47278 1.73869,3.89958 6.05747,1.24697 L 900.5,105.5 901.30078,104.19922 901,103.09961 l -1.30078,-1.5 2.10156,-1.29883 1.79883,3.19922 1.5,-0.30078 0.30078,1.30078 v 1.59961 l 1.90039,0.20117 0.5,-2.70117 0.5,-0.59961 -1.60156,-1.5 1,-1.5 2.40039,-1.5 1,-1.5 1.80078,-0.199219 c 0,0 0.4,2.09961 1,2.09961 h 1.29883 l 4.80078,-5.5 3.40039,-3.09961 1.90039,-0.601562 L 927.40039,85 v -1.900391 l -2.30078,-3.699218 -1.90039,-2.09961 -2.79883,0.5 0.5,1.09961 -0.20117,0.5 h -0.79883 L 917,77.099609 916.80078,72.300781 916,70.400391 h -6 L 900.90039,40.5 899,39.5 893,37.099609 Z m 20.90039,61.798828 -2,0.701172 L 909,101.59961 910.80078,103.5 c 0,0 1.29883,0.10078 1.29883,-0.19922 0,-0.3 0.20117,-2 0.20117,-2 L 913.19922,100.5 Z M 903.80078,106 l -1.5,1.5 1.79883,2.90039 1.70117,-0.90039 -0.60156,-2.40039 z"
-       id="ME-D2-land"
+       d="m 891.5,36.900391 -1.80078,1.798828 -4,2.90039 v 1 l -0.79883,0.800782 -2.70117,-0.59961 L 880.90039,40.5 v -1.099609 l -1.30078,-0.201172 h -1.29883 l -2.10156,4.201172 -2.89844,8.90039 -1.80078,4.798828 0.19922,4.800782 0.20117,1.5 -0.80078,2.699218 -0.79883,1 v 6 l 1.89844,2.400391 -1.5,4 -2.59961,4.699219 -0.79883,5.5 v 2.601562 l -1.5,-0.40039 -1.30078,0.169921 11.69727,37.433598 0.20117,2.5 4,1.09961 0.5,3.0996 2.19922,0.9004 1.09961,-6.29883 0.20117,-4.40039 1.5,-1.30078 -1,-3.19922 3.09961,-3.59961 1.59961,1.5 1.30078,-0.5 5.29883,-3.10157 0.30078,-2.89843 2.90039,-0.5 1.59961,-2.60157 -0.19922,-1.5996 -0.0449,-0.008 0.0137,-0.0137 L 900.5,105.5 901.30078,104.19922 901,103.09961 l -1.30078,-1.5 2.10156,-1.29883 1.79883,3.19922 1.5,-0.30078 0.30078,1.30078 v 1.59961 l 1.90039,0.20117 0.5,-2.70117 0.5,-0.59961 -1.60156,-1.5 1,-1.5 2.40039,-1.5 1,-1.5 1.80078,-0.199219 1,2.09961 h 1.29883 l 4.80078,-5.5 3.40039,-3.09961 1.90039,-0.601562 L 927.40039,85 v -1.900391 l -2.30078,-3.699218 -1.90039,-2.09961 -2.79883,0.5 0.5,1.09961 -0.20117,0.5 h -0.79883 L 917,77.099609 916.80078,72.300781 916,70.400391 h -6 L 900.90039,40.5 899,39.5 893,37.099609 Z m 20.90039,61.798828 -2,0.701172 L 909,101.59961 910.80078,103.5 c 0,0 1.29883,0.10078 1.29883,-0.19922 0,-0.3 0.20117,-2 0.20117,-2 L 913.19922,100.5 Z M 903.80078,106 l -1.5,1.5 1.79883,2.90039 1.70117,-0.90039 -0.60156,-2.40039 z"
+       id="ME"
        inkscape:connector-curvature="0"
-       sodipodi:nodetypes="cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccsccccccccccccccccccccccccsccccccccc"
-       inkscape:label="med2land" />
-    <path
-       style="fill:#ffffff;fill-opacity:1"
-       d="m 891.49219,103.71682 0.25386,3.88865 -1.4021,1.20907 -2.86717,0.22451 -0.24241,1.60943 0.2109,0.21677 v 0.002 l 2.43494,0.49597 0.34131,2.21609 -3.19644,1.42365 -2.87301,4.10462 -3.66748,-0.78453 -0.0698,-1.66567 -0.50779,0.16796 -1.91796,3.44366 0.23069,2.78712 -0.9258,1.0177 -2.66404,0.10908 1.56641,5.32046 0.20117,2.5 4,1.09961 0.5,3.09961 2.19922,0.90039 1.09961,-6.29883 0.20117,-4.40039 1.5,-1.30078 -1,-3.19922 3.09961,-3.59961 1.59961,1.5 1.30078,-0.5 5.29883,-3.10156 0.30078,-2.89844 2.90039,-0.5 1.59961,-2.60156 -0.19922,-1.59961 -6.80279,-1.30448 v 0.002 l -1.49087,-3.90853 z"
-       id="ME-D1-land"
-       inkscape:connector-curvature="0"
-       sodipodi:nodetypes="ccccccccccccccccccccccccccccccccccccccc"
-       inkscape:label="med1land" />
+       sodipodi:nodetypes="ccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccsccccccccc" />
     <path
        id="MI"
        d="m 644.5,211 19.1,-1.9 0.2,1.1 9.9,-1.5 12,-1.7 0.1,-0.6 0.2,-1.5 2.1,-3.7 2,-1.7 -0.2,-5.1 1.6,-1.6 1.1,-0.3 0.2,-3.6 1.5,-3 1.1,0.6 0.2,0.6 0.8,0.2 1.9,-1 -0.4,-9.1 -3.2,-8.2 -2.3,-9.1 -2.4,-3.2 -2.6,-1.8 -1.6,1.1 -3.9,1.8 -1.9,5 -2.7,3.7 -1.1,0.6 -1.5,-0.6 c 0,0 -2.6,-1.5 -2.4,-2.1 0.2,-0.6 0.5,-5 0.5,-5 l 3.4,-1.3 0.8,-3.4 0.6,-2.6 2.4,-1.6 -0.3,-10 -1.6,-2.3 -1.3,-0.8 -0.8,-2.1 0.8,-0.8 1.6,0.3 0.2,-1.6 -2.6,-2.2 -1.3,-2.6 h -2.6 l -4.5,-1.5 -5.5,-3.4 h -2.7 l -0.6,0.6 -1,-0.5 -3.1,-2.3 -2.9,1.8 -2.9,2.3 0.3,3.6 1,0.3 2.1,0.5 0.5,0.8 -2.6,0.8 -2.6,0.3 -1.5,1.8 -0.3,2.1 0.3,1.6 0.3,5.5 -3.6,2.1 -0.6,-0.2 v -4.2 l 1.3,-2.4 0.6,-2.4 -0.8,-0.8 -1.9,0.8 -1,4.2 -2.7,1.1 -1.8,1.9 -0.2,1 0.6,0.8 -0.6,2.6 -2.3,0.5 v 1.1 l 0.8,2.4 -1.1,6.1 -1.6,4 0.6,4.7 0.5,1.1 -0.8,2.4 -0.3,0.8 -0.3,2.7 3.6,6 2.9,6.5 1.5,4.8 -0.8,4.7 -1,6 -2.4,5.2 -0.3,2.7 -3.2,3.1 z m -33.3,-72.4 -1.3,-1.1 -1.8,-10.4 -3.7,-1.3 -1.7,-2.3 -12.6,-2.8 -2.8,-1.1 -8.1,-2.2 -7.8,-1 -3.9,-5.3 0.7,-0.5 2.7,-0.8 3.6,-2.3 v -1 l 0.6,-0.6 6,-1 2.4,-1.9 4.4,-2.1 0.2,-1.3 1.9,-2.9 1.8,-0.8 1.3,-1.8 2.3,-2.3 4.4,-2.4 4.7,-0.5 1.1,1.1 -0.3,1 -3.7,1 -1.5,3.1 -2.3,0.8 -0.5,2.4 -2.4,3.2 -0.3,2.6 0.8,0.5 1,-1.1 3.6,-2.9 1.3,1.3 h 2.3 l 3.2,1 1.5,1.1 1.5,3.1 2.7,2.7 3.9,-0.2 1.5,-1 1.6,1.3 1.6,0.5 1.3,-0.8 h 1.1 l 1.6,-1 4,-3.6 3.4,-1.1 6.6,-0.3 4.5,-1.9 2.6,-1.3 1.5,0.2 v 5.7 l 0.5,0.3 2.9,0.8 1.9,-0.5 6.1,-1.6 1.1,-1.1 1.5,0.5 v 7 l 3.2,3.1 1.3,0.6 1.3,1 -1.3,0.3 -0.8,-0.3 -3.7,-0.5 -2.1,0.6 -2.3,-0.2 -3.2,1.5 h -1.8 l -5.8,-1.3 -5.2,0.2 -1.9,2.6 -7,0.6 -2.4,0.8 -1.1,3.1 -1.3,1.1 -0.5,-0.2 -1.5,-1.6 -4.5,2.4 h -0.6 l -1.1,-1.6 -0.8,0.2 -1.9,4.4 -1,4 -3.2,6.9 z m -29.6,-56.5 1.8,-2.1 2.2,-0.8 5.4,-3.9 2.3,-0.6 0.5,0.5 -5.1,5.1 -3.3,1.9 -2.1,0.9 z m 86.2,32.1 0.6,2.5 3.2,0.2 1.3,-1.2 c 0,0 -0.1,-1.5 -0.4,-1.6 -0.3,-0.2 -1.6,-1.9 -1.6,-1.9 l -2.2,0.2 -1.6,0.2 -0.3,1.1 z"
@@ -582,16 +574,6 @@
        d="m 353,161.9 -1.5,25.4 -4.4,44 -2.7,-0.3 -83.3,-9.1 -27.9,-3 2,-12 6.9,-41 3.8,-24.2 1.3,-11.2 48.2,7 59.1,6.5 z"
        inkscape:connector-curvature="0"
        style="fill:#ffffff;fill-opacity:1" />
-    <rect
-       style="opacity:1;fill:#fffff3;fill-opacity:1;stroke:#000000;stroke-width:2;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-       id="DC"
-       width="50"
-       height="19.999998"
-       x="869"
-       y="424.39999"
-       inkscape:label="#DC"
-       ry="3"
-       rx="3" />
     <text
        xml:space="preserve"
        style="font-style:normal;font-weight:normal;font-size:40px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none"
@@ -693,97 +675,12 @@
        inkscape:label="hibutton"
        ry="3"
        rx="3" />
-    <rect
-       style="opacity:1;fill:#fffff3;fill-opacity:1;stroke:#000000;stroke-width:2;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-       id="ME-AL"
-       width="74.290161"
-       height="90.290161"
-       x="733.01764"
-       y="10.035334"
-       inkscape:label="med1"
-       ry="7"
-       rx="7" />
-    <rect
-       style="opacity:1;fill:#fffff3;fill-opacity:1;stroke:#000000;stroke-width:2;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:0.95454544"
-       id="ME-D1"
-       width="60"
-       height="19.999998"
-       x="740"
-       y="44"
-       inkscape:label="med2"
-       rx="3"
-       ry="3" />
-    <rect
-       style="opacity:1;fill:#fffff3;fill-opacity:1;stroke:#000000;stroke-width:2;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:0.95454544"
-       id="ME-D2"
-       width="60"
-       height="19.999998"
-       x="740"
-       y="71"
-       inkscape:label="med3"
-       rx="3"
-       ry="3" />
-    <rect
-       style="opacity:1;fill:#fffff1;fill-opacity:1;stroke:#000000;stroke-width:2;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
-       id="NE-AL"
-       width="141"
-       height="61.035789"
-       x="582.02216"
-       y="9.9642096"
-       inkscape:label="ned1"
-       ry="6.9999995"
-       rx="6.9999995" />
-    <rect
-       style="opacity:1;fill:#fffffb;fill-opacity:1;stroke:#000000;stroke-width:2;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-       id="NE-D1"
-       width="60"
-       height="19.999998"
-       x="656"
-       y="17"
-       inkscape:label="ned2"
-       ry="3"
-       rx="3" />
-    <rect
-       style="opacity:1;fill:#fffffa;fill-opacity:1;stroke:#000000;stroke-width:2;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:0.97520662"
-       id="NE-D2"
-       width="60"
-       height="19.999998"
-       x="589"
-       y="44.000004"
-       inkscape:label="ned3"
-       rx="3"
-       ry="3" />
-    <rect
-       style="opacity:1;fill:#fffff6;fill-opacity:1;stroke:#000000;stroke-width:2;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-       id="NE-D3"
-       width="60"
-       height="19.999998"
-       x="656"
-       y="44"
-       inkscape:label="ned4"
-       rx="3"
-       ry="3" />
     <path
        style="opacity:1;fill:#ffffff;fill-opacity:1"
-       d="m 352.40039,187.69922 -4.30078,43.70117 33.05078,3.29883 c 0.0248,-0.022 0.0664,0 0.0996,0 l -1.44922,21.10156 21.69922,1 10.15039,0.29883 7.29883,0.25 c 0,-0.006 -10e-6,-0.0117 0,-0.0176 l 0.10156,0.006 v 0.0117 l 0.44727,0.0117 0.20703,0.0117 0.002,-0.006 12.24219,0.33203 10.15039,0.30078 5.47461,0.0742 0.77539,0.0137 v -0.0508 h 0.0996 v 0.0508 l 10.07617,0.13672 5.47461,0.0762 5.47461,0.0742 5.47461,0.0742 5.47656,0.0762 5.47461,0.0742 h 4.5 l -2.20117,-3 -2.59961,-3.90039 0.0996,-2.29883 -0.44141,-0.85156 -0.90625,-0.0488 h -19.88281 v -4.91602 H 454.3125 l 0.30664,-8.14062 h -9.21875 l 0.18555,-4.43555 3.69336,-2.92578 0.11523,-1.49414 -1.51562,-3.12695 H 445.875 l 0.16797,-11.58985 19.96289,-0.30859 v -5.38281 h 7.38672 l -0.35423,-3.0004 -2.23904,-2.94342 -1.65339,0.0495 -3.24553,-1.48456 -4.80078,-1.5 -2.19922,-1.20117 -2.59961,0.0996 -3.70117,0.40039 -4.10742,1.18945 -0.19141,-0.0215 -5.90039,-4.06836 -2.20117,-2 -10.69922,0.60156 -9.25977,-0.5332 -0.002,-0.01 -0.43359,-0.0156 -0.75391,-0.043 v 0.0176 l -0.10156,-0.004 c -9e-5,-0.005 9e-5,-0.009 0,-0.0137 L 408.75,191.09961 398.375,190.5 381.25,189.42188 c -9.26045,-0.23487 -19.30155,-1.11524 -28.84961,-1.72266 z"
-       id="NE-D3-land"
-       inkscape:label="ned3land"
+       d="m 352.40039,187.69922 -4.30078,43.70117 33.05078,3.29883 c 0.0248,-0.022 0.0664,0 0.0996,0 l -1.44922,21.10156 21.69922,1 10.15039,0.29883 7.29883,0.25 c 0,-0.006 -1e-5,-0.0117 0,-0.0176 l 0.10156,0.006 v 0.0117 l 0.44727,0.0117 0.20703,0.0117 0.002,-0.006 12.24219,0.33203 10.15039,0.30078 5.47461,0.0742 0.77539,0.0137 v -0.0508 h 0.0996 v 0.0508 l 10.07617,0.13672 5.47461,0.0762 5.47461,0.0742 5.47461,0.0742 5.47656,0.0762 5.47461,0.0742 h 4.5 l -2.20117,-3 -2.59961,-3.90039 0.0996,-2.29883 -0.44141,-0.85156 h -0.0176 l -1.16015,-2.45117 -1.67969,-4.59766 -0.55469,-6.54492 -0.0684,0.0293 0.002,-0.004 -0.375,-1.47656 -1.30469,-7.80664 -2.29883,-3.69922 -1,-4.69922 -2.80078,-7.90039 -0.625,-3.375 -0.33594,-2.84375 -2.24023,-2.94336 -1.65235,0.0488 -3.24609,-1.48438 -4.80078,-1.5 -2.19922,-1.20117 -2.59961,0.0996 -3.70117,0.40039 -4.10742,1.18945 -0.19141,-0.0215 -5.90039,-4.06836 -2.20117,-2 -10.69922,0.60156 -9.25977,-0.5332 -0.002,-0.01 -0.43359,-0.0156 -0.75391,-0.043 v 0.0176 l -0.10156,-0.004 c -9e-5,-0.005 9e-5,-0.009 0,-0.0137 L 408.75,191.09961 398.375,190.5 381.25,189.42188 c -9.26045,-0.23488 -19.30155,-1.11524 -28.84961,-1.72266 z"
+       id="NE"
        inkscape:connector-curvature="0"
-       sodipodi:nodetypes="ccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc" />
-    <path
-       style="opacity:1;fill:#ffffff;fill-opacity:1"
-       d="m 473.57227,207.12695 -0.3086,0.0508 h -6.25781 v 5.36719 l -19.97656,0.3086 -0.13868,9.41564 1.69001,-0.0271 1.9905,4.0144 -0.0829,2.38958 -3.84239,3.07481 -0.094,2.74769 9.10637,-0.0271 -0.30859,8.14062 h 10.11914 V 247.5 h 18.8125 l 0.4082,-0.0508 -0.38867,-0.75 -1.9004,-5.1992 -0.55378,-6.54583 -9.56545,4.05284 -4.26966,-12.15433 12.27952,0.76062 -0.19141,-1.91601 -2.29883,-3.69922 -1,-4.69922 L 474,209.39844 Z"
-       id="NE-D1-land"
-       inkscape:label="ned1land"
-       inkscape:connector-curvature="0"
-       sodipodi:nodetypes="cccccccccccccccccccccccccccc" />
-    <path
-       style="opacity:1;fill:#ffffff;fill-opacity:1"
-       d="m 469.59804,228.15207 3.33943,8.96545 8.57987,-3.06754 -1.12735,-5.45679 z"
-       id="NE-D2-land"
-       inkscape:connector-curvature="0"
-       sodipodi:nodetypes="ccccc"
-       inkscape:label="#ned2land" />
+       sodipodi:nodetypes="cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc" />
   </g>
   <g
      inkscape:groupmode="layer"
@@ -891,13 +788,13 @@
          id="tspan8988-2-9">MS 6</tspan></text>
     <text
        xml:space="preserve"
-       x="527.64545"
-       y="443.13791"
+       x="536.32275"
+       y="473.50839"
        id="LA-text"
        inkscape:label="fltext"><tspan
          sodipodi:role="line"
-         x="527.64545"
-         y="443.13791"
+         x="536.32275"
+         y="473.50839"
          id="tspan8988-2-2">LA 8</tspan></text>
     <text
        xml:space="preserve"
@@ -914,51 +811,46 @@
        x="282.82227"
        y="377.76562"
        id="NM-text"
-       inkscape:label="nmtext"><tspan
+       inkscape:label="nmtext"
+       style="-inkscape-font-specification:'sans-serif, Normal';font-family:sans-serif;font-weight:normal;font-style:normal;font-stretch:normal;font-variant:normal;font-size:12px;text-anchor:start;text-align:start;writing-mode:lr;font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;"><tspan
          sodipodi:role="line"
-         x="282.82227"
-         y="377.76562"
-         id="tspan8988-2-6">NM 5</tspan></text>
+         id="tspan5110">NM</tspan></text>
     <text
        xml:space="preserve"
        x="176.65363"
        y="362.85352"
        id="AZ-text"
-       inkscape:label="aztext"><tspan
+       inkscape:label="aztext"
+       style="-inkscape-font-specification:'sans-serif, Normal';font-family:sans-serif;font-weight:normal;font-style:normal;font-stretch:normal;font-variant:normal;font-size:12px;text-anchor:start;text-align:start;writing-mode:lr;font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;"><tspan
          sodipodi:role="line"
-         x="176.65363"
-         y="362.85352"
-         id="tspan8988-2-29">AZ 11</tspan></text>
+         id="tspan5108">AZ</tspan></text>
     <text
        xml:space="preserve"
        x="51.653625"
        y="292.85352"
        id="CA-text"
-       inkscape:label="catext"><tspan
+       inkscape:label="catext"
+       style="-inkscape-font-specification:'sans-serif, Normal';font-family:sans-serif;font-weight:normal;font-style:normal;font-stretch:normal;font-variant:normal;font-size:12px;text-anchor:start;text-align:start;writing-mode:lr;font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;"><tspan
          sodipodi:role="line"
-         x="51.653625"
-         y="292.85352"
-         id="tspan8988-2-1">CA 55</tspan></text>
+         id="tspan5102">CA</tspan></text>
     <text
        xml:space="preserve"
        x="119.09644"
        y="242.91568"
        id="NV-text"
-       inkscape:label="nvtext"><tspan
+       inkscape:label="nvtext"
+       style="-inkscape-font-specification:'sans-serif, Normal';font-family:sans-serif;font-weight:normal;font-style:normal;font-stretch:normal;font-variant:normal;font-size:12px;text-anchor:start;text-align:start;writing-mode:lr;font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;"><tspan
          sodipodi:role="line"
-         x="119.09644"
-         y="242.91568"
-         id="tspan8988-2-4">NV 6</tspan></text>
+         id="tspan5104">NV</tspan></text>
     <text
        xml:space="preserve"
        x="204.51823"
        y="257.85352"
        id="UT-text"
-       inkscape:label="uttext"><tspan
+       inkscape:label="uttext"
+       style="-inkscape-font-specification:'sans-serif, Normal';font-family:sans-serif;font-weight:normal;font-style:normal;font-stretch:normal;font-variant:normal;font-size:12px;text-anchor:start;text-align:start;writing-mode:lr;font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;"><tspan
          sodipodi:role="line"
-         x="204.51823"
-         y="257.85352"
-         id="tspan8988-2-8">UT 6</tspan></text>
+         id="tspan5106">UT</tspan></text>
     <text
        xml:space="preserve"
        x="100.18555"
@@ -974,91 +866,82 @@
        x="82.618073"
        y="127.88765"
        id="OR-text"
-       inkscape:label="ortext"><tspan
+       inkscape:label="ortext"
+       style="-inkscape-font-specification:'sans-serif, Normal';font-family:sans-serif;font-weight:normal;font-style:normal;font-stretch:normal;font-variant:normal;font-size:12px;text-anchor:start;text-align:start;writing-mode:lr;font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;"><tspan
          sodipodi:role="line"
-         x="82.618073"
-         y="127.88765"
-         id="tspan8988-2-3">OR 7</tspan></text>
+         id="tspan5100">OR</tspan></text>
     <text
        xml:space="preserve"
        x="98.618652"
        y="54.7425"
        id="WA-text"
-       inkscape:label="watext"><tspan
+       inkscape:label="watext"
+       style="-inkscape-font-specification:'sans-serif, Normal';font-family:sans-serif;font-weight:normal;font-style:normal;font-stretch:normal;font-variant:normal;font-size:12px;text-anchor:start;text-align:start;writing-mode:lr;font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;"><tspan
          sodipodi:role="line"
-         x="98.618652"
-         y="54.7425"
-         id="tspan8988-2-10">WA 12</tspan></text>
+         id="tspan5088">WA</tspan></text>
     <text
        xml:space="preserve"
        x="176.25977"
        y="157.86003"
        id="ID-text"
-       inkscape:label="idtext"><tspan
+       inkscape:label="idtext"
+       style="-inkscape-font-specification:'sans-serif, Normal';font-family:sans-serif;font-weight:normal;font-style:normal;font-stretch:normal;font-variant:normal;font-size:12px;text-anchor:start;text-align:start;writing-mode:lr;font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;"><tspan
          sodipodi:role="line"
-         x="176.25977"
-         y="157.86003"
-         id="tspan8988-2-32">ID 4</tspan></text>
+         id="tspan5098">ID</tspan></text>
     <text
        xml:space="preserve"
        x="263.68491"
        y="97.853516"
        id="MT-text"
-       inkscape:label="mttext"><tspan
+       inkscape:label="mttext"
+       style="-inkscape-font-specification:'sans-serif, Normal';font-family:sans-serif;font-weight:normal;font-style:normal;font-stretch:normal;font-variant:normal;font-size:12px;text-anchor:start;text-align:start;writing-mode:lr;font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;"><tspan
          sodipodi:role="line"
-         x="263.68491"
-         y="97.853516"
-         id="tspan8988-2-61">MT 3</tspan></text>
+         id="tspan5090">MT</tspan></text>
     <text
        xml:space="preserve"
        x="276.31979"
        y="185.0751"
        id="WY-text"
-       inkscape:label="wvtext"><tspan
+       inkscape:label="wvtext"
+       style="-inkscape-font-specification:'sans-serif, Normal';font-family:sans-serif;font-weight:normal;font-style:normal;font-stretch:normal;font-variant:normal;font-size:12px;text-anchor:start;text-align:start;writing-mode:lr;font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;"><tspan
          sodipodi:role="line"
-         x="276.31979"
-         y="185.0751"
-         id="tspan4124">WY 3</tspan></text>
+         id="tspan5096">WY</tspan></text>
     <text
        xml:space="preserve"
        x="300.92163"
        y="277.30353"
        id="CO-text"
-       inkscape:label="cotext"><tspan
+       inkscape:label="cotext"
+       style="-inkscape-font-specification:'sans-serif, Normal';font-family:sans-serif;font-weight:normal;font-style:normal;font-stretch:normal;font-variant:normal;font-size:12px;text-anchor:start;text-align:start;writing-mode:lr;font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;"><tspan
          sodipodi:role="line"
-         x="300.92163"
-         y="277.30353"
-         id="tspan8988-2-65">CO 9</tspan></text>
+         id="tspan5112">CO</tspan></text>
     <text
        xml:space="preserve"
        x="398.01151"
        y="100.67806"
        id="ND-text"
-       inkscape:label="ndtext"><tspan
+       inkscape:label="ndtext"
+       style="-inkscape-font-specification:'sans-serif, Normal';font-family:sans-serif;font-weight:normal;font-style:normal;font-stretch:normal;font-variant:normal;font-size:12px;text-anchor:start;text-align:start;writing-mode:lr;font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;"><tspan
          sodipodi:role="line"
-         x="398.01151"
-         y="100.67806"
-         id="tspan8988-2-93">ND 3</tspan></text>
+         id="tspan5092">ND</tspan></text>
     <text
        xml:space="preserve"
        x="397.88556"
        y="163.68591"
        id="SD-text"
-       inkscape:label="sdtext"><tspan
+       inkscape:label="sdtext"
+       style="-inkscape-font-specification:'sans-serif, Normal';font-family:sans-serif;font-weight:normal;font-style:normal;font-stretch:normal;font-variant:normal;font-size:12px;text-anchor:start;text-align:start;writing-mode:lr;font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;"><tspan
          sodipodi:role="line"
-         x="397.88556"
-         y="163.68591"
-         id="tspan8988-2-45">SD 3</tspan></text>
+         id="tspan5094">SD</tspan></text>
     <text
        xml:space="preserve"
        x="396.79337"
        y="230.2476"
        id="NE-text"
-       inkscape:label="netext"><tspan
+       inkscape:label="netext"
+       style="-inkscape-font-specification:'sans-serif, Normal';font-family:sans-serif;font-weight:normal;font-style:normal;font-stretch:normal;font-variant:normal;font-size:12px;text-anchor:start;text-align:start;writing-mode:lr;font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;"><tspan
          sodipodi:role="line"
-         x="396.79337"
-         y="230.2476"
-         id="tspan8988-2-47">NE 5</tspan></text>
+         id="tspan5114">NE</tspan></text>
     <text
        xml:space="preserve"
        x="424.59491"
@@ -1104,41 +987,37 @@
        x="508.60468"
        y="220.08672"
        id="IA-text"
-       inkscape:label="iatext"><tspan
+       inkscape:label="iatext"
+       style="-inkscape-font-specification:'sans-serif, Normal';font-family:sans-serif;font-weight:normal;font-style:normal;font-stretch:normal;font-variant:normal;font-size:12px;text-anchor:start;text-align:start;writing-mode:lr;font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;"><tspan
          sodipodi:role="line"
-         x="508.60468"
-         y="220.08672"
-         id="tspan8988-2-92">IA 6</tspan></text>
+         id="tspan5116">IA</tspan></text>
     <text
        xml:space="preserve"
-       x="478.06204"
-       y="124.90408"
+       x="479.36365"
+       y="129.24272"
        id="MN-text"
-       inkscape:label="mntext"><tspan
+       inkscape:label="mntext"
+       style="-inkscape-font-specification:'sans-serif, Normal';font-family:sans-serif;font-weight:normal;font-style:normal;font-stretch:normal;font-variant:normal;font-size:12px;text-anchor:start;text-align:start;writing-mode:lr;font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;"><tspan
          sodipodi:role="line"
-         x="478.06204"
-         y="124.90408"
-         id="tspan8988-2-68">MN 10</tspan></text>
+         id="tspan5120">MN</tspan></text>
     <text
        xml:space="preserve"
        x="556.05792"
        y="157.85352"
        id="WI-text"
-       inkscape:label="witext"><tspan
+       inkscape:label="witext"
+       style="-inkscape-font-specification:'sans-serif, Normal';font-family:sans-serif;font-weight:normal;font-style:normal;font-stretch:normal;font-variant:normal;font-size:12px;text-anchor:start;text-align:start;writing-mode:lr;font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;"><tspan
          sodipodi:role="line"
-         x="556.05792"
-         y="157.85352"
-         id="tspan8988-2-26">WI 10</tspan></text>
+         id="tspan5122">WI</tspan></text>
     <text
        xml:space="preserve"
        x="575.73132"
        y="259.51764"
        id="IL-text"
-       inkscape:label="iltext"><tspan
+       inkscape:label="iltext"
+       style="-inkscape-font-specification:'sans-serif, Normal';font-family:sans-serif;font-weight:normal;font-style:normal;font-stretch:normal;font-variant:normal;font-size:12px;text-anchor:start;text-align:start;writing-mode:lr;font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;"><tspan
          sodipodi:role="line"
-         x="575.73132"
-         y="259.51764"
-         id="tspan8988-2-49">IL 20</tspan></text>
+         id="tspan5124">IL</tspan></text>
     <text
        xml:space="preserve"
        x="626.16711"
@@ -1199,16 +1078,6 @@
          x="874.81689"
          y="90.47953"
          id="tspan8988-2-59-0-7-1-7-7-5-9-9">ME 4</tspan></text>
-    <text
-       xml:space="preserve"
-       x="877.04016"
-       y="439.55045"
-       id="DC-text"
-       inkscape:label="dctext"><tspan
-         sodipodi:role="line"
-         x="877.04016"
-         y="439.55045"
-         id="tspan8988-2-59">DC 3</tspan></text>
     <text
        xml:space="preserve"
        x="870.73798"
@@ -1299,75 +1168,5 @@
          x="260.15173"
          y="568.63818"
          id="tspan8988-2-59-0-0">HI 4</tspan></text>
-    <text
-       xml:space="preserve"
-       x="742.71875"
-       y="32.799999"
-       id="ME-AL-text"
-       inkscape:label="med1text"><tspan
-         sodipodi:role="line"
-         x="742.71875"
-         y="32.799999"
-         id="tspan8988-2-59-0-7-1-7-7-5-9-1-5">MEAL 2 </tspan></text>
-    <text
-       xml:space="preserve"
-       x="742.71875"
-       y="59.707001"
-       id="ME-D1-text"
-       inkscape:label="med2text"><tspan
-         sodipodi:role="line"
-         x="742.71875"
-         y="59.707001"
-         id="tspan8988-2-59-0-7-1-7-7-5-9-1-5-6">ME-1 1 </tspan></text>
-    <text
-       xml:space="preserve"
-       x="742.71875"
-       y="86.765503"
-       id="ME-D2-text"
-       inkscape:label="med3text"><tspan
-         sodipodi:role="line"
-         x="742.71875"
-         y="86.765503"
-         id="tspan8988-2-59-0-7-1-7-7-5-9-1-5-5">ME-2 1 </tspan></text>
-    <text
-       xml:space="preserve"
-       x="593.03076"
-       y="32.707001"
-       id="NE-AL-text"
-       inkscape:label="ned1text"><tspan
-         sodipodi:role="line"
-         x="593.03076"
-         y="32.707001"
-         id="tspan8988-2-59-0-7-1-7-7-5-9-1-5-1">NEAL 2 </tspan></text>
-    <text
-       xml:space="preserve"
-       x="660.03076"
-       y="32.707001"
-       id="NE-D1-text"
-       inkscape:label="ned1text"><tspan
-         sodipodi:role="line"
-         x="660.03076"
-         y="32.707001"
-         id="tspan8988-2-59-0-7-1-7-7-5-9-1-5-1-8">NE-1 1 </tspan></text>
-    <text
-       xml:space="preserve"
-       x="593.03076"
-       y="59.765499"
-       id="NE-D2-text"
-       inkscape:label="ned1text"><tspan
-         sodipodi:role="line"
-         x="593.03076"
-         y="59.765499"
-         id="tspan8988-2-59-0-7-1-7-7-5-9-1-5-1-0">NE-2 1 </tspan></text>
-    <text
-       xml:space="preserve"
-       x="660.03076"
-       y="59.84375"
-       id="NE-D3-text"
-       inkscape:label="ned1text"><tspan
-         sodipodi:role="line"
-         x="660.03076"
-         y="59.84375"
-         id="tspan8988-2-59-0-7-1-7-7-5-9-1-5-1-04">NE-3 1 </tspan></text>
   </g>
 </svg>

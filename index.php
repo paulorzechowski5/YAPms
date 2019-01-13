@@ -66,6 +66,8 @@
 			</button>
 			<div class="dropdown-content">
 				<a onclick='darkPalette()'>Dark</a>
+				<a onclick='dark2Palette()'>Dark2</a>
+				<a onclick='terminalPalette()'>Terminal</a>
 				<a onclick='lightPalette()'>Light</a>
 				<a onclick='contrastPalette()'>Contrast</a>
 				<a onclick='metallicPalette()'>Metallic</a>
@@ -79,6 +81,7 @@
 			</button>
 			<div class="dropdown-content">
 				<a onclick='setMode("paint")'>Paint</a>
+				<a onclick='setMode("delete")'>Delete</a>
 				<a onclick='setMode("ec")'>EC Edit</a>
 			</div>
 		</div>

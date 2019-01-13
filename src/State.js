@@ -9,7 +9,11 @@ class State {
 	}
 
 	resetVoteCount() {
-		this.voteCount = data[this.dataid][this.name];
+		if(this.dataid === 'senate') {
+			this.voteCount = 2;
+		} else {
+			this.voteCount = data[this.dataid][this.name];
+		}
 	}
 
 	getCandidate() { 
@@ -98,5 +102,58 @@ class State {
 			.colors[colorValue];
 
 		this.htmlElement.style.fill = color;
+	}
+
+	// hide the state and its associated elements
+	hide() {
+		this.htmlElement.style.visibility = 'hidden';
+
+		var text = document.getElementById(this.getName() + '-text');
+		text.style.visibility = 'hidden';
+
+		var button = document.getElementById(this.getName() + '-button');
+		if(button != null) {
+			button.style.visibility = 'hidden';
+		}
+
+		var land = document.getElementById(this.getName() + '-land');
+		if(land != null) {
+			land.style.visibility = 'hidden';
+		}
+
+		if(this.getName().includes('-AL')) {
+			var split = this.getName().split('-');
+			var mapText = document.getElementById(split[0] + '-text');
+			mapText.style.visibility = 'hidden';
+		}
+	}
+
+	show() {
+		this.htmlElement.style.visibility = 'visible';
+		var text = document.getElementById(this.getName() + '-text');
+		text.style.visibility = 'visible';
+
+		var button = document.getElementById(this.getName() + '-button');
+		if(button != null) {
+			button.style.visibility = 'visible';
+		}
+
+		var land = document.getElementById(this.getName() + '-land');
+		if(land != null) {
+			land.style.visibility = 'visible';
+		}
+		
+		if(this.getName().includes('-AL')) {
+			var split = this.getName().split('-');
+			var mapText = document.getElementById(split[0] + '-text');
+			mapText.style.visibility = 'visible';
+		}
+	}
+
+	setVoteCount(value) {
+		this.voteCount = value;
+		countVotes();
+		updateChart();
+		updateLegend();
 	}
 };
