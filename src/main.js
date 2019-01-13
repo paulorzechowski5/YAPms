@@ -525,6 +525,7 @@ function setEC(e) {
 	// recount the votes
 	countVotes();
 	updateChart();
+	updateLegend();
 }
 
 // dynamically change the chart from one form to another
