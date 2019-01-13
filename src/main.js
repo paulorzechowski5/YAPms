@@ -24,6 +24,8 @@ var chartBarScales;
 var chartPolarScales;
 var chartRadarScales;
 
+var chartLeans = true;
+
 // disable all tooltips
 Chart.defaults.global.tooltips.enabled = false;
 
@@ -595,9 +597,39 @@ function setChart(type) {
 	updateChart();
 }
 
+function rebuildChart() {
+	var html = document.getElementById('chart');
+	var ctx = html.getContext('2d');
+	// save type
+	var type = chart.config.type;
+	chart.destroy();
+	chart = new Chart(ctx, {type: type, data: chartData, options: chartOptions});
+	updateChart();
+}
+
 function toggleLegendCounter() {
 	legendCounter = !legendCounter;
 	updateLegend();
+}
+
+function toggleChartLabels() {
+
+	if(chartOptions.plugins.datalabels.display != false) {
+		chartOptions.plugins.datalabels.display = false;
+	} else {
+		chartOptions.plugins.datalabels.display = function(context) {
+			return context.dataset.data[context.dataIndex] !== 0;
+		}
+	}
+
+	rebuildChart();
+	//setChart(chart.config.type);
+}
+
+function toggleChartLeans() {
+	chartLeans = !chartLeans;
+	//rebuildChart();
+	updateChart();
 }
 
 function setMode(set) {
@@ -751,11 +783,7 @@ function countVotes() {
 // updates the information of the chart (so the numbers change)
 function updateChart() {
 
-	if(chartType !== 'radar') {
-		updateNonRadarChart();	
-	} else {
-		updateRadarChart();
-	}
+	updateNonRadarChart();	
 
 	chart.config.data = chartData;
 	chart.update();
@@ -774,11 +802,13 @@ function updateNonRadarChart() {
 		}]
 	};*/
 
+
+	chartData.labels = [];
+
 	chartData.datasets[0].data = [];
 	chartData.datasets[0].backgroundColor = [];
 	chartData.datasets[0].borderColor = chartBorderColor;
 	chartData.datasets[0].borderWidth = chartBorderWidth;
-	
 
 	// loop though candidates
 	var candidateIndex = -1;
@@ -796,8 +826,7 @@ function updateNonRadarChart() {
 			chartData.datasets[0].data[0] = voteCount;
 			// change the background color of the visual
 			chartData.datasets[0].backgroundColor.push(color);
-		} else {
-
+		} else if(chartLeans) {
 
 			for(var probIndex = 0; probIndex < 3; ++probIndex) {
 				var count = candidate.probVoteCounts[probIndex];
@@ -807,58 +836,14 @@ function updateNonRadarChart() {
 				chartData.datasets[0].data[index] = count;
 				chartData.datasets[0].backgroundColor.push(color);
 			}
-		}
-	}
-}
-
-function updateRadarChart() {
-	// reset the chart data
-	chartData.labels = ['Solid', 'Likely', 'Leaning'];
-	/*chartData = {
-		labels:[],
-		datasets: [{
-			label: "",
-			backgroundColor: [],
-			borderColor: chartBorderColor,
-			borderWidth: chartBorderWidth,
-			data:[]
-		}]
-	};*/
-
-	chartData.datasets = [];
-	//chartData.datasets[0].backgroundColor = [];
-	//chartData.datasets[0].borderColor = chartBorderColor;
-	//chartData.datasets[0].borderWidth = chartBorderWidth;
-
-	chartData.datasets = [];
-	// make sure the borders are correct
-	//chartData.datasets[0].borderColor = chartBorderColor;
-	//chartData.datasets[0].borderWidth = chartBorderWidth;
-
-	var candidateIndex = -1;
-	for(var key in candidates) {
-		++candidateIndex;
-		var candidate = candidates[key];
-		var name = candidate.name;
-		var voteCount = candidate.voteCount;
-		var color = candidate.colors[0];
-		if(candidateIndex == 0) {
 		} else {
-			var dataSet = {}
-			var color = candidate.colors[0] + '66';
-			dataSet.backgroundColor = color;
-			var data = [];
-			for(var probIndex = 0; probIndex < 3; ++probIndex) {
-				var count = candidate.probVoteCounts[probIndex];
-				data.push(count);
-			}
-			dataSet.data = data;
-			chartData.datasets.push(dataSet);
-			//chartData.datasets[candidateIndex].data = dataSet;
-			//chartData.datasets[candidateIndex].backgroundColor[index] = color;
+			var count = candidate.voteCount;
+			color = candidate.colors[0];
+			chartData.labels[candidateIndex] = name;
+			chartData.datasets[0].data[candidateIndex] = count;
+			chartData.datasets[0].backgroundColor.push(color);
 		}
 	}
-
 }
 
 // displays the vote count on the legend
