@@ -18,8 +18,12 @@ var chartData = {
 	}]
 }
 var chartOptions;
+var chartType;
 var chartPieScales;
 var chartBarScales;
+var chartPolarScales;
+var chartRadarScales;
+
 // disable all tooltips
 Chart.defaults.global.tooltips.enabled = false;
 
@@ -146,7 +150,6 @@ function initChart() {
 				if(index == 0) {
 					var color = candidate.colors[tossupColor];
 					legendElement.style.backgroundColor = color;
-					console.log(color);
 					if(color === '#000000' ||
 						color === 'black') {
 						legendElement.style.color = 'white';
@@ -213,40 +216,54 @@ function initChart() {
 	}
 
 	chartBarScales = {
-			yAxes: [{
-				gridLines: {
-					display: false,
-					drawBorder: false
-				},
-				ticks: {
-					fontSize: 15,
-					fontColor: '#ffffff',
-					fontFamily: 'Roboto',
-					fontStyle: 500
-				}
-			}],
-			xAxes: [{
-				gridLines: {
-					display: false,
-					drawBorder: false
-				},
-				ticks: {
-					beginAtZero: true,
-					fontSize: 15,
-					fontColor: '#ffffff',
-					fontStyle: 500,
-					fontFamily: 'Roboto'
-				}
-			}]
+		yAxes: [{
+			gridLines: {
+				display: false,
+				drawBorder: false
+			},
+			ticks: {
+				fontSize: 15,
+				fontColor: '#ffffff',
+				fontFamily: 'Roboto',
+				fontStyle: 500
+			}
+		}],
+		xAxes: [{
+			gridLines: {
+				display: false,
+				drawBorder: false
+			},
+			ticks: {
+				beginAtZero: true,
+				fontSize: 15,
+				fontColor: '#ffffff',
+				fontStyle: 500,
+				fontFamily: 'Roboto'
+			}
+		}]
 	}
 
 	chartPieScales = {
-			yAxes: [{
-				display: false
-			}],
-			xAxes: [{
-				display: false
-			}]
+		yAxes: [{
+			display: false
+		}],
+		xAxes: [{
+			display: false
+		}]
+	}
+	
+	chartPolarScales = {
+	/*	yAxes: [{
+			display: false,
+		}],
+		xAxes: [{
+			display: false
+		}],*/
+		display: false
+	}
+
+	chartRadarScales = {
+		display: false
 	}
 
 	chartOptions.scales = chartPieScales;
@@ -397,7 +414,6 @@ function districtClick(clickElement) {
 		updateLegend();
 	} else if(mode === 'delete') {
 		// delete all districts and text
-		console.log(split[0] + '-text');
 
 		var al = states.find(state => state.name == split[0] + '-AL');
 		if(al != null) {
@@ -539,15 +555,44 @@ function setChart(type) {
 		html.style.display = 'none';
 		return;
 	}
+	
+	chartData = {
+		labels:[],
+		datasets: [{
+			label: "",
+			backgroundColor: [],
+			borderColor: chartBorderColor,
+			borderWidth: chartBorderWidth,
+			data:[]
+		}]
+	};
+
+	chartType = type;
 
 	htmldiv.style.position = 'relative';
 	html.style.display = 'inline-block';
 
+	/*
+	chartOptions.scale = {};
+	chartOptions.scales = {};
+	*/
+
+	console.log(chartOptions);
+
 	// set the proper scales
 	if(type === 'horizontalBar') {
 		chartOptions.scales = chartBarScales;
+		delete chartOptions.scale;
 	} else if(type === 'pie' || type === 'doughnut') {
 		chartOptions.scales = chartPieScales;
+		delete chartOptions.scale;
+	} else if(type === 'polarArea') {
+		chartOptions.scales = chartPolarScales;	
+		chartOptions.scale =  {
+			display: false
+		}
+	} else if(type === 'radar') {
+		chartOptions.scale = chartRadarScales;	
 	}
 
 	// first destroy the chart
@@ -692,23 +737,19 @@ function countVotes() {
 		var candidate = candidates[key];
 		++candidateIndex;
 		candidate.voteCount = 0;
+		candidate.probVoteCounts = [0,0,0];
 		// iterate over every state
 		for(var stateIndex = 0; 
 			stateIndex < states.length; ++stateIndex) {
 
 			var state = states[stateIndex];
 
-			// skip white states
-			if(state.candidateValue == 0 && 
-				state.colorValue == 1) {
-				continue;
-			}
-
 			// if the candidate value of the state
 			// equals the index value of the candidate
 			// add the vote count to the candidate 
-			if(state.candidate == key) {
+			if(state.candidate === key) {
 				candidate.voteCount += state.voteCount;
+				candidate.probVoteCounts[state.colorValue] += state.voteCount;
 			}
 		}
 	}
@@ -716,35 +757,118 @@ function countVotes() {
 
 // updates the information of the chart (so the numbers change)
 function updateChart() {
-	// reset the chart data
-	chartData.labels = [];
-	chartData.datasets[0].data = [];
 
-	// make sure the borders are correct
-	chartData.datasets[0].borderColor = chartBorderColor;
-	chartData.datasets[0].borderWidth = chartBorderWidth;
-
-	// loop though candidates
-	var index = -1;
-	for(var key in candidates) {
-		++index;
-		var candidate = candidates[key];
-		var name = candidate.name;
-		var voteCount = candidate.voteCount;
-		var color = candidate.colors[0];
-		if(index == 0) {
-			color = candidates['Tossup'].colors[tossupColor];
-		}
-		// append the candidate label
-		chartData.labels[index] = name;
-		// append the vote count
-		chartData.datasets[0].data[index] = voteCount;
-		// change the background color of the visual
-		chartData.datasets[0].backgroundColor[index] = color;
+	if(chartType !== 'radar') {
+		updateNonRadarChart();	
+	} else {
+		updateRadarChart();
 	}
 
 	chart.config.data = chartData;
 	chart.update();
+}
+
+function updateNonRadarChart() {
+	// reset the chart data
+	/*chartData = {
+		labels:[],
+		datasets: [{
+			label: "",
+			backgroundColor: [],
+			borderColor: chartBorderColor,
+			borderWidth: chartBorderWidth,
+			data:[]
+		}]
+	};*/
+
+	chartData.datasets[0].data = [];
+	chartData.datasets[0].backgroundColor = [];
+	chartData.datasets[0].borderColor = chartBorderColor;
+	chartData.datasets[0].borderWidth = chartBorderWidth;
+	
+
+	// loop though candidates
+	var candidateIndex = -1;
+	for(var key in candidates) {
+		++candidateIndex;
+		var candidate = candidates[key];
+		var name = candidate.name;
+		var voteCount = candidate.voteCount;
+		var color = candidate.colors[0];
+		if(candidateIndex == 0) {
+			color = candidates['Tossup'].colors[tossupColor];
+			// append the candidate label
+			chartData.labels[0] = 'Tossup';
+			// append the vote count
+			chartData.datasets[0].data[0] = voteCount;
+			// change the background color of the visual
+			chartData.datasets[0].backgroundColor.push(color);
+		} else {
+
+
+			for(var probIndex = 0; probIndex < 3; ++probIndex) {
+				var count = candidate.probVoteCounts[probIndex];
+				color = candidate.colors[probIndex];
+				var index = (probIndex + (candidateIndex * 3)) - 2;
+				chartData.labels[index] = name;
+				chartData.datasets[0].data[index] = count;
+				chartData.datasets[0].backgroundColor.push(color);
+			}
+		}
+	}
+
+	console.log(chartData.datasets[0]);
+
+}
+
+function updateRadarChart() {
+	// reset the chart data
+	chartData.labels = ['Solid', 'Likely', 'Leaning'];
+	/*chartData = {
+		labels:[],
+		datasets: [{
+			label: "",
+			backgroundColor: [],
+			borderColor: chartBorderColor,
+			borderWidth: chartBorderWidth,
+			data:[]
+		}]
+	};*/
+
+	chartData.datasets = [];
+	//chartData.datasets[0].backgroundColor = [];
+	//chartData.datasets[0].borderColor = chartBorderColor;
+	//chartData.datasets[0].borderWidth = chartBorderWidth;
+
+	chartData.datasets = [];
+	// make sure the borders are correct
+	//chartData.datasets[0].borderColor = chartBorderColor;
+	//chartData.datasets[0].borderWidth = chartBorderWidth;
+
+	var candidateIndex = -1;
+	for(var key in candidates) {
+		++candidateIndex;
+		var candidate = candidates[key];
+		var name = candidate.name;
+		var voteCount = candidate.voteCount;
+		var color = candidate.colors[0];
+		if(candidateIndex == 0) {
+		} else {
+			var dataSet = {}
+			var color = candidate.colors[0] + '66';
+			dataSet.backgroundColor = color;
+			var data = [];
+			for(var probIndex = 0; probIndex < 3; ++probIndex) {
+				var count = candidate.probVoteCounts[probIndex];
+				data.push(count);
+			}
+			dataSet.data = data;
+			chartData.datasets.push(dataSet);
+			//chartData.datasets[candidateIndex].data = dataSet;
+			//chartData.datasets[candidateIndex].backgroundColor[index] = color;
+		}
+	}
+
 }
 
 // displays the vote count on the legend

@@ -6,9 +6,9 @@
 	<link rel="stylesheet" type="text/css" href="style.css">
 	<link rel="stylesheet" type="text/css" href="menu.css">
 	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
-	<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.min.js"></script>
 	<script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@0.5.0"></script> 
+	<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
 	<script src="src/data.js"></script>
 	<script src="src/State.js"></script>
 	<script src="src/htmlControl.js"></script>
@@ -54,8 +54,11 @@
 			</button>
 			<div class="dropdown-content">
 				<a onclick='setChart("pie")'>Pie</a>
-				<a onclick='setChart("horizontalBar")'>Bar</a>
 				<a onclick='setChart("doughnut")'>Doughnut</a>
+				<a onclick='setChart("horizontalBar")'>Bar</a>
+				<a onclick='setChart("polarArea")'>Polar</a>
+				<a onclick='setChart("radar")'>Radar</a>
+
 				<a onclick='setChart("none")'>None</a>
 			</div>
 		</div>
