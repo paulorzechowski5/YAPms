@@ -572,13 +572,6 @@ function setChart(type) {
 	htmldiv.style.position = 'relative';
 	html.style.display = 'inline-block';
 
-	/*
-	chartOptions.scale = {};
-	chartOptions.scales = {};
-	*/
-
-	console.log(chartOptions);
-
 	// set the proper scales
 	if(type === 'horizontalBar') {
 		chartOptions.scales = chartBarScales;
@@ -816,9 +809,6 @@ function updateNonRadarChart() {
 			}
 		}
 	}
-
-	console.log(chartData.datasets[0]);
-
 }
 
 function updateRadarChart() {
