@@ -101,6 +101,9 @@ function terminalPalette() {
 	
 	var menu = document.getElementById('menu-div');
 	menu.style.backgroundColor = '#2f3136'
+	
+	var legend = document.getElementById('legend-div');
+	legend.style.borderColor = '#2f3136';
 
 	setTossupColor('black');
 	setChartBorderStyle(2, '#ffffff');

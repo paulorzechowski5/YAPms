@@ -881,7 +881,7 @@ function start() {
 	initCandidates();
 	initChart();
 	
-	loadMap('../usa.svg', 'usa_ec', 16);
+	loadMap('../presidential.svg', 'usa_ec', 16);
 }
 
 start();
