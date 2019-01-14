@@ -483,7 +483,7 @@ function stateClick(clickElement, e) {
 function legendClick(candidate, button) {
 	if(mode === 'paint') {
 		paintIndex = candidate;
-	} else if(mode === 'candidate') {
+	} else if(mode === 'candidate' && candidate !== 'Tossup') {
 		var candidateedit = document.getElementById('candidateedit');
 		candidateedit.style.display = 'inline';
 		var nameinput = document.getElementById('candidate-name');
