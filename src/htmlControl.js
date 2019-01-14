@@ -88,7 +88,7 @@ function dark2Palette() {
 	darkPalette();
 
 	setTextStyle('white', 'bold');
-	setTossupColor('#999591');
+	setTossupColor('#665544');
 	setChartBorderStyle(2, '#ffffff');
 	setMapStyle('white', 1.5);
 	setChart(chart.config.type);

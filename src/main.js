@@ -15,7 +15,7 @@ var chartData = {
 		borderColor: chartBorderColor,
 		borderWidth: chartBorderWidth,
 		data:[]
-	}]
+	}, {}, {}, {}]
 }
 var chartOptions;
 var chartType;
@@ -25,9 +25,6 @@ var chartPolarScales;
 var chartRadarScales;
 
 var chartLeans = true;
-
-// disable all tooltips
-Chart.defaults.global.tooltips.enabled = false;
 
 // paint data
 var paintIndex = 'Tossup';
@@ -190,7 +187,15 @@ function initChart() {
 			display: false
 		},
 		tooltips: {
-			display: false
+			display: true,
+			position: 'average',
+			titleFontColor: 'black',
+			bodyFontColor: 'black',
+			backgroundColor: 'white',
+			borderColor: 'black',
+			borderWidth: 2,
+			caretSize: 0,
+			cornerRadius: 0
 		},
 		// turn off animation
 		animation: {
@@ -214,11 +219,15 @@ function initChart() {
 					weight: 700
 				}
 			}
-		}
+		},
+		barStrokeWidth: 0
 	}
+//Chart.defaults.global.barPercentage = 0;
+//Chart.defaults.global.categoryPercentage = 0;
 
 	chartBarScales = {
 		yAxes: [{
+			stacked: true,
 			gridLines: {
 				display: false,
 				drawBorder: false
@@ -231,6 +240,7 @@ function initChart() {
 			}
 		}],
 		xAxes: [{
+			stacked: true,
 			gridLines: {
 				display: false,
 				drawBorder: false
@@ -287,7 +297,7 @@ function initChart() {
 				borderColor: '#ffffff',
 				borderWidth: 0,
 				data:[]
-			}],
+			}, {}, {}, {}],
 		},
 		options: chartOptions,
 		maintainAspectRatio: true
@@ -309,26 +319,36 @@ function initCandidates() {
 }
 
 function buttonClick(clickElement) {
+	if(mode === 'paint') {
+		buttonClickPaint(clickElement);
+	} else if(mode === 'ec') {
+		buttonClickEC(clickElement);
+	}
+}
+
+function buttonClickPaint(clickElement) {
 	var id = clickElement.getAttribute('id');
 	var split = id.split('-');
 	var state = states.find(state => state.name === split[0]);
+	state.incrementCandidateColor(paintIndex);
+	clickElement.style.fill = state.getDisplayColor();
+	countVotes();
+	updateChart();
+	updateLegend();
+}
 
-	if(mode === 'paint') {
-		state.incrementCandidateColor(paintIndex);
-		clickElement.style.fill = state.getDisplayColor();
-		countVotes();
-		updateChart();
-		updateLegend();
-	} else if(mode === 'ec') {
-		var ecedit = document.getElementById('ecedit');
-		var eceditText = document.getElementById('ecedit-message');
-		var input = document.getElementById('state-ec');
-		var stateId = document.getElementById('state-id');
-		eceditText.innerHTML = 'Set ' + split[0] + ' electoral college';
-		input.value = state.voteCount;
-		stateId.value = split[0];
-		ecedit.style.display = 'inline';
-	}
+function buttonClickEC(clickElement) {
+	var id = clickElement.getAttribute('id');
+	var split = id.split('-');
+	var state = states.find(state => state.name === split[0]);
+	var ecedit = document.getElementById('ecedit');
+	var eceditText = document.getElementById('ecedit-message');
+	var input = document.getElementById('state-ec');
+	var stateId = document.getElementById('state-id');
+	eceditText.innerHTML = 'Set ' + split[0] + ' electoral college';
+	input.value = state.voteCount;
+	stateId.value = split[0];
+	ecedit.style.display = 'inline';
 }
 
 function landClick(clickElement) {
@@ -336,53 +356,26 @@ function landClick(clickElement) {
 	var split = id.split('-');
 	var stateName = split[0];
 
+	var AL;
 	var districts = [];
 
 	// get each district
 	states.forEach(function(state, index) {
 		if(state.name.includes(stateName)) {
 			districts.push(state);
+
+			if(state.name.includes('AL')) {
+				AL = state;
+			}
 		}
 	});
 
 	if(mode === 'paint') {
 		// check if each district has the same candidate and color value
-		var sameColor = true;
-		var candidate = districts[0].getCandidate();
-		var colorValue = districts[0].getColorValue();
-
-		for(var index = 1; index < districts.length; ++index) {
-			var district = districts[index];
-			if(candidate !== district.getCandidate() ||
-				colorValue !== district.getColorValue()) {
-				sameColor = false;
-				break;
-			}
-		}
-
-		var color;
-		if(sameColor == true) {
-			// if same color then increment all district colors
-			districts.forEach(function(district) {
-				district.incrementCandidateColor(paintIndex);
-				color = district.getDisplayColor();
-			});
-			lands.forEach(function(land) {
-				if(land.id.includes(stateName)) {
-					land.style.fill = color;
-				}
-			});
-		} else {
-			districts.forEach(function(district) {
-				district.setColor(paintIndex, 0);
-				color = district.getDisplayColor();
-			});
-			lands.forEach(function(land) {
-				if(land.id.includes(stateName)) {
-					land.style.fill = color;
-				}
-			});
-		}
+		AL.incrementCandidateColor(paintIndex);
+		districts.forEach(function(district) {
+			district.setColor(AL.getCandidate(), AL.getColorValue());
+		});
 	} else if(mode === 'delete') {
 		var textHTML = document.getElementById(split[0] + '-text');
 		textHTML.style.visibility = 'hidden';
@@ -392,7 +385,7 @@ function landClick(clickElement) {
 			district.setVoteCount(0);
 		});
 	}
-	
+
 	countVotes();
 	updateChart();
 	updateLegend();
@@ -409,7 +402,9 @@ function districtClick(clickElement) {
 		district.incrementCandidateColor(paintIndex);
 		var landId = split[0] + '-' + split[1] + '-land';
 		var land = document.getElementById(landId);
-		land.style.fill = district.getDisplayColor();
+		if(land != null) {
+			land.style.fill = district.getDisplayColor();
+		}
 		
 		countVotes();
 		updateChart();
@@ -476,30 +471,7 @@ function stateClick(clickElement, e) {
 		state.hide();
 		state.setVoteCount(0);
 	} else if(mode === 'paint') {
-
-		// increment the states color
 		state.incrementCandidateColor(paintIndex);
-
-		// get associated elements
-		var elements = document.querySelectorAll('[id^="'
-			+ split[0] + '"]');
-
-		for(var i = 0; i < elements.length; ++i) {
-			var element = elements[i];
-
-			// change the color of the button elements to
-			// the states color
-			if (element.id.includes('button') && !element.id.includes('text')) {
-				element.style.fill = state.getDisplayColor();
-			} else if (element.id.includes('-D')) {
-				var district = states.find(state => state.name === element.id);
-				var candidate = state.getCandidate();
-				var colorValue = state.getColorValue();
-				district.setColor(candidate, colorValue);
-
-			}
-		}
-
 		countVotes();
 		updateChart();
 		updateLegend();
@@ -561,8 +533,6 @@ function setChart(type) {
 	chartData = {
 		labels:[],
 		datasets: [{
-			label: "",
-			backgroundColor: [],
 			borderColor: chartBorderColor,
 			borderWidth: chartBorderWidth,
 			data:[]
@@ -578,6 +548,14 @@ function setChart(type) {
 	if(type === 'horizontalBar') {
 		chartOptions.scales = chartBarScales;
 		delete chartOptions.scale;
+		// horizontal bar needs multiple datasets
+		for(var i = 0; i < 3; ++i) {
+			chartData.datasets.push({
+				borderColor: chartBorderColor,
+				borderWidth: chartBorderWidth,
+				data:[]
+			});
+		}
 	} else if(type === 'pie' || type === 'doughnut') {
 		chartOptions.scales = chartPieScales;
 		delete chartOptions.scale;
@@ -594,6 +572,7 @@ function setChart(type) {
 	chart.destroy();
 	// then rebuild
 	chart = new Chart(ctx, {type: type, data: chartData, options: chartOptions});
+	countVotes();
 	updateChart();
 }
 
@@ -783,10 +762,41 @@ function countVotes() {
 // updates the information of the chart (so the numbers change)
 function updateChart() {
 
-	updateNonRadarChart();	
+	if(chartType === 'horizontalBar') {
+		updateBarChart();
+	} else {
+		updateNonRadarChart();	
+	}
 
 	chart.config.data = chartData;
 	chart.update();
+}
+
+function updateBarChart() {
+	chartData.labels = [];
+	chartData.datasets[0].data = [];
+	chartData.datasets[0].backgroundColor = [];
+	chartData.datasets[1].data = [];
+	chartData.datasets[1].backgroundColor = [];
+	chartData.datasets[2].data = [];
+	chartData.datasets[2].backgroundColor = [];
+	
+	// each label is a candidate
+	for(var key in candidates) {
+		chartData.labels.push(key);
+	}
+
+	for(var probIndex = 0; probIndex < 3; ++probIndex) {
+		for(var key in candidates) {
+			var candidate = candidates[key];
+			var name = candidate.name;
+			var count = candidate.probVoteCounts[probIndex];
+			chartData.datasets[probIndex].data.push(count);
+
+			var color = candidate.colors[probIndex];
+			chartData.datasets[probIndex].backgroundColor.push(color);
+		}
+	}
 }
 
 function updateNonRadarChart() {
@@ -801,8 +811,6 @@ function updateNonRadarChart() {
 			data:[]
 		}]
 	};*/
-
-
 	chartData.labels = [];
 
 	chartData.datasets[0].data = [];
