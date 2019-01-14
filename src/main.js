@@ -481,14 +481,59 @@ function stateClick(clickElement, e) {
 // when a button on the legend is clicked, it saves the selected candidate
 // to a variable, so that you can paint with it
 function legendClick(candidate, button) {
-	paintIndex = candidate;
+	if(mode === 'paint') {
+		paintIndex = candidate;
+	} else if(mode === 'candidate') {
+		var candidateedit = document.getElementById('candidateedit');
+		candidateedit.style.display = 'inline';
+		var nameinput = document.getElementById('candidate-name');
+		nameinput.value = candidate;
+		var solidinput = document.getElementById('candidate-solid');
+		solidinput.value = candidates[candidate].colors[0];
+		var likelyinput = document.getElementById('candidate-likely');
+		likelyinput.value = candidates[candidate].colors[1];
+		var leaninput = document.getElementById('candidate-lean');
+		leaninput.value = candidates[candidate].colors[2];
+		var hiddeninput = document.getElementById('candidate-originalName');
+		var message = document.getElementById('candidateedit-message');
+		message.innerHTML = 'Edit ' + candidate;
+		hiddeninput.value = candidate;
+	}
+}
+
+function setCandidate(e) {
+	// hide the popup window
+	e.parentElement.style.display = 'none';
+
+	var candidateid = e.parentElement.querySelector('#candidate-originalName').value;
+	var newname = e.parentElement.querySelector('#candidate-name').value;
+	var solidColor = e.parentElement.querySelector('#candidate-solid').value;
+	var likelyColor = e.parentElement.querySelector('#candidate-likely').value;
+	var leanColor = e.parentElement.querySelector('#candidate-lean').value;
+
+	// only rename the property if the name changed
+	if(newname !== candidateid) {
+		Object.defineProperty(candidates, newname,
+			Object.getOwnPropertyDescriptor(candidates, candidateid));
+		delete candidates[candidateid];
+	}
+
+	var candidate = candidates[newname];
+	candidate.name = newname;
+	candidate.colors[0] = solidColor;
+	candidate.colors[1] = likelyColor;
+	candidate.colors[2] = leanColor;
+
+	chart.generateLegend();
+	countVotes();
+	updateLegend();
+	verifyMap();
+	updateChart();
 }
 
 function setEC(e) {
-	// get the popup window
-	var ecedit = document.getElementById("ecedit");
-	// make it disappear
-	ecedit.style.display = 'none';
+	// hide the popup window
+	e.parentElement.style.display = 'none';
 
 	// get the stateId and input value
 	var stateId = e.parentElement.querySelector('#state-id').value;
@@ -623,6 +668,8 @@ function setMode(set) {
 		text = 'Mode - EC Edit';
 	} else if(set == 'delete') {
 		text = 'Mode - Delete';
+	} else if(set == 'candidate') {
+		text = 'Mode - Candidate';
 	}
 
 	modeHTML.innerHTML = text;
@@ -665,6 +712,7 @@ function verifyPaintIndex() {
 	}
 }
 
+// make sure states are proper colors
 // if states have invalid colors, turn them white
 function verifyMap() {
 	states.forEach(function(state) {
@@ -677,30 +725,17 @@ function verifyMap() {
 			// the candidate the state should be controle by
 			var shouldCandidate = candidates[state.getCandidate()].name;
 
-			var currentCandidate
 			// if these values differ, change the state to tossup
 			if(currentCandidate !== shouldCandidate) {
 				state.setColor('Tossup', tossupColor);
+			} else if(state.getCandidate() === 'Tossup') {
+				state.setColor('Tossup', 2);	
+			}else {
+				state.setColor(state.getCandidate(), state.getColorValue());
 			}
-
-			if(currentCandidate !== 'Tossup' &&
-				state.getColorValue() > maxColorValue) {
-				state.setColor(state.getCandidate(),
-					maxColorValue);
-			} if(currentCandidate === 'Tossup') {
-				state.setColor('Tossup', tossupColor);
-			}
-
-			var land = document.getElementById(state.name + '-land');
-			if(land != null)
-				land.style.fill = state.getDisplayColor();
-
-			var button = document.getElementById(state.name + '-button');
-
-			if(button != null)
-				button.style.fill = state.getDisplayColor();
 		}
 	});
+				
 }
 
 // sets all states to white
