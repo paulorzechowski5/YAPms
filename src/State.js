@@ -128,7 +128,7 @@ class State {
 	
 		// set color
 		this.htmlElement.style.fill = color;
-		
+
 		var land = document.getElementById(this.name + '-land');
 		if(land != null) {
 			land.style.fill = color;

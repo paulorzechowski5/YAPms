@@ -83,6 +83,8 @@ function darkPalette() {
 	chartBarScales.yAxes[0].ticks.fontColor = '#ffffff';
 	chartBarScales.xAxes[0].ticks.fontColor = '#ffffff';
 	setChart(chart.config.type);
+	verifyMap();
+	previousPalette = darkPalette;
 }
 
 function dark2Palette() {
@@ -94,6 +96,8 @@ function dark2Palette() {
 	setChartBorderStyle(2, '#ffffff');
 	setMapStyle('white', 1.5);
 	setChart(chart.config.type);
+	verifyMap();
+	previousPalette = dark2Palette;
 }
 
 function terminalPalette() {
@@ -120,6 +124,8 @@ function terminalPalette() {
 	chartBarScales.xAxes[0].ticks.fontColor = '#ffffff';
 	setChart(chart.config.type);
 	setChart(chart.config.type);
+	verifyMap();
+	previousPalette = terminalPalette;
 }
 
 function lightPalette() {
@@ -146,6 +152,8 @@ function lightPalette() {
 	chartBarScales.yAxes[0].ticks.fontColor = '#ffffff';
 	chartBarScales.xAxes[0].ticks.fontColor = '#ffffff';
 	setChart(chart.config.type);
+	verifyMap();
+	previousPalette = lightPalette;
 }
 
 function contrastPalette() {
@@ -171,6 +179,8 @@ function contrastPalette() {
 	chartBarScales.yAxes[0].ticks.fontColor = '#000000';
 	chartBarScales.xAxes[0].ticks.fontColor = '#000000';
 	setChart(chart.config.type);
+	verifyMap();
+	previousPalette = contrastPalette;
 }
 
 function metallicPalette() {
@@ -196,6 +206,8 @@ function metallicPalette() {
 	chartBarScales.yAxes[0].ticks.fontColor = '#ffffff';
 	chartBarScales.xAxes[0].ticks.fontColor = '#ffffff';
 	setChart(chart.config.type);
+	verifyMap();
+	previousPalette = metallicPalette;
 }
 
 function toWinPalette() {
@@ -222,6 +234,9 @@ function toWinPalette() {
 	chartBarScales.yAxes[0].ticks.fontColor = '#000000';
 	chartBarScales.xAxes[0].ticks.fontColor = '#000000';
 	setChart(chart.config.type);
+	verifyMap();
+	previousPalette = toWinPalette;
+	console.log(this);
 }
 
 function setChartBorderStyle(width, color) {
@@ -231,16 +246,15 @@ function setChartBorderStyle(width, color) {
 }
 
 function setDisableColor(color) {
-	console.log(color);
 	TOSSUP.colors[1] = color;
-	verifyMap();
+	//verifyMap();
 }
 
 function setTossupColor(color) {
 	TOSSUP.colors[2] = color;
 	var tossupLegend = document.getElementById('Tossup');
 	tossupLegend.style.background = color;
-	verifyMap();
+	//verifyMap();
 
 	if(color === 'black') {
 		tossupLegend.style.color = 'white';

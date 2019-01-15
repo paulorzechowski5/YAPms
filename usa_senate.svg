@@ -43,9 +43,9 @@
      id="namedview3848"
      showgrid="true"
      inkscape:pagecheckerboard="true"
-     inkscape:zoom="4.6097392"
-     inkscape:cx="664.82442"
-     inkscape:cy="336.3874"
+     inkscape:zoom="2.3048696"
+     inkscape:cx="374.52187"
+     inkscape:cy="406.01917"
      inkscape:window-x="0"
      inkscape:window-y="0"
      inkscape:window-maximized="1"
@@ -1339,43 +1339,43 @@
      style="display:inline">
     <text
        xml:space="preserve"
-       x="792.30566"
-       y="165.45259"
+       x="804.8877"
+       y="158.94463"
        id="NY-text"
        inkscape:label="nytext"><tspan
          sodipodi:role="line"
          id="tspan4864"
-         x="792.30566"
-         y="165.45259">NY</tspan></text>
+         x="804.8877"
+         y="158.94463">NY</tspan></text>
     <text
        xml:space="preserve"
-       x="763.32867"
-       y="215.80351"
+       x="771.57208"
+       y="217.97284"
        id="PA-text"
        inkscape:label="patext"><tspan
          sodipodi:role="line"
-         x="763.32867"
-         y="215.80351"
+         x="771.57208"
+         y="217.97284"
          id="tspan8878">PA</tspan></text>
     <text
        xml:space="preserve"
-       x="679.31226"
-       y="241.25351"
+       x="687.55566"
+       y="239.95192"
        id="OH-text"
        inkscape:label="ohtext"><tspan
          sodipodi:role="line"
-         x="679.31226"
-         y="241.25351"
+         x="687.55566"
+         y="239.95192"
          id="tspan3064">OH</tspan></text>
     <text
        xml:space="preserve"
-       x="763.51312"
-       y="292.07837"
+       x="773.05811"
+       y="295.98315"
        id="VA-text"
        inkscape:label="vatext"><tspan
          sodipodi:role="line"
-         x="763.51312"
-         y="292.07837"
+         x="773.05811"
+         y="295.98315"
          id="tspan8922">VA</tspan></text>
     <text
        xml:space="preserve"
@@ -1399,13 +1399,13 @@
          id="tspan8966">SC</tspan></text>
     <text
        xml:space="preserve"
-       x="694.47125"
-       y="413.92426"
+       x="698.37604"
+       y="402.20993"
        id="GA-text"
        inkscape:label="gatext"><tspan
          sodipodi:role="line"
-         x="694.47125"
-         y="413.92426"
+         x="698.37604"
+         y="402.20993"
          id="tspan8988">GA</tspan></text>
     <text
        xml:space="preserve"
@@ -1419,23 +1419,23 @@
          id="tspan8988-2">FL</tspan></text>
     <text
        xml:space="preserve"
-       x="632.74304"
-       y="414.58792"
+       x="639.68488"
+       y="403.30746"
        id="AL-text"
        inkscape:label="altext"><tspan
          sodipodi:role="line"
-         x="632.74304"
-         y="414.58792"
+         x="639.68488"
+         y="403.30746"
          id="tspan8988-2-7">AL</tspan></text>
     <text
        xml:space="preserve"
-       x="578.83057"
-       y="419.81815"
+       x="585.3385"
+       y="408.10382"
        id="MS-text"
        inkscape:label="mstext"><tspan
          sodipodi:role="line"
-         x="578.83057"
-         y="419.81815"
+         x="585.3385"
+         y="408.10382"
          id="tspan8988-2-9">MS</tspan></text>
     <text
        xml:space="preserve"
@@ -1449,24 +1449,24 @@
          id="tspan8988-2-2">LA</tspan></text>
     <text
        xml:space="preserve"
-       x="400.74268"
-       y="460.47302"
+       x="409.85382"
+       y="453.53119"
        id="TX-text"
        inkscape:label="txtext"><tspan
          sodipodi:role="line"
-         x="400.74268"
-         y="460.47302"
+         x="409.85382"
+         y="453.53119"
          id="tspan8988-2-97">TX</tspan></text>
     <text
        xml:space="preserve"
-       x="282.82227"
-       y="377.76562"
+       x="287.59476"
+       y="376.03018"
        id="NM-text"
        inkscape:label="nmtext"><tspan
          sodipodi:role="line"
          id="tspan5110"
-         x="282.82227"
-         y="377.76562">NM</tspan></text>
+         x="287.59476"
+         y="376.03018">NM</tspan></text>
     <text
        xml:space="preserve"
        x="176.65363"
@@ -1479,14 +1479,14 @@
          y="362.85352">AZ</tspan></text>
     <text
        xml:space="preserve"
-       x="51.653625"
-       y="292.85352"
+       x="46.013393"
+       y="255.97507"
        id="CA-text"
        inkscape:label="catext"><tspan
          sodipodi:role="line"
          id="tspan5102"
-         x="51.653625"
-         y="292.85352">CA</tspan></text>
+         x="46.013393"
+         y="255.97507">CA</tspan></text>
     <text
        xml:space="preserve"
        x="119.09644"
@@ -1499,54 +1499,54 @@
          y="242.91568">NV</tspan></text>
     <text
        xml:space="preserve"
-       x="204.51823"
-       y="257.85352"
+       x="209.72461"
+       y="251.34555"
        id="UT-text"
        inkscape:label="uttext"><tspan
          sodipodi:role="line"
          id="tspan5106"
-         x="204.51823"
-         y="257.85352">UT</tspan></text>
+         x="209.72461"
+         y="251.34555">UT</tspan></text>
     <text
        xml:space="preserve"
-       x="100.18555"
-       y="497.85352"
+       x="113.20147"
+       y="493.51486"
        id="AK-text"
        inkscape:label="aktext"><tspan
          sodipodi:role="line"
-         x="100.18555"
-         y="497.85352"
+         x="113.20147"
+         y="493.51486"
          id="tspan8988-2-5">AK</tspan></text>
     <text
        xml:space="preserve"
-       x="82.618073"
+       x="73.506927"
        y="127.88765"
        id="OR-text"
        inkscape:label="ortext"><tspan
          sodipodi:role="line"
          id="tspan5100"
-         x="82.618073"
+         x="73.506927"
          y="127.88765">OR</tspan></text>
     <text
        xml:space="preserve"
-       x="97.391502"
-       y="57.350197"
+       x="94.788315"
+       y="52.577694"
        id="WA-text"
        inkscape:label="watext"><tspan
          sodipodi:role="line"
          id="tspan5088"
-         x="97.391502"
-         y="57.350197">WA</tspan></text>
+         x="94.788315"
+         y="52.577694">WA</tspan></text>
     <text
        xml:space="preserve"
-       x="176.25977"
-       y="157.86003"
+       x="174.52431"
+       y="152.2198"
        id="ID-text"
        inkscape:label="idtext"><tspan
          sodipodi:role="line"
          id="tspan5098"
-         x="176.25977"
-         y="157.86003">ID</tspan></text>
+         x="174.52431"
+         y="152.2198">ID</tspan></text>
     <text
        xml:space="preserve"
        x="263.68491"
@@ -1569,14 +1569,14 @@
          y="185.0751">WY</tspan></text>
     <text
        xml:space="preserve"
-       x="300.92163"
-       y="277.30353"
+       x="309.59891"
+       y="273.39874"
        id="CO-text"
        inkscape:label="cotext"><tspan
          sodipodi:role="line"
          id="tspan5112"
-         x="300.92163"
-         y="277.30353">CO</tspan></text>
+         x="309.59891"
+         y="273.39874">CO</tspan></text>
     <text
        xml:space="preserve"
        x="398.01151"
@@ -1599,14 +1599,14 @@
          y="163.68591">SD</tspan></text>
     <text
        xml:space="preserve"
-       x="396.79337"
-       y="230.2476"
+       x="407.20612"
+       y="228.94601"
        id="NE-text"
        inkscape:label="netext"><tspan
          sodipodi:role="line"
          id="tspan5114"
-         x="396.79337"
-         y="230.2476">NE</tspan></text>
+         x="407.20612"
+         y="228.94601">NE</tspan></text>
     <text
        xml:space="preserve"
        x="424.59491"
@@ -1629,83 +1629,83 @@
          id="tspan8988-2-78">OK</tspan></text>
     <text
        xml:space="preserve"
-       x="525.34259"
-       y="369.44516"
+       x="534.0199"
+       y="364.2388"
        id="AR-text"
        inkscape:label="artext"><tspan
          sodipodi:role="line"
-         x="525.34259"
-         y="369.44516"
+         x="534.0199"
+         y="364.2388"
          id="tspan8988-2-88">AR</tspan></text>
     <text
        xml:space="preserve"
-       x="516.79559"
-       y="303.06592"
+       x="527.20837"
+       y="290.05002"
        id="MO-text"
        inkscape:label="motext"><tspan
          sodipodi:role="line"
-         x="516.79559"
-         y="303.06592"
+         x="527.20837"
+         y="290.05002"
          id="tspan8988-2-31">MO</tspan></text>
     <text
        xml:space="preserve"
-       x="499.70782"
-       y="213.64417"
+       x="501.00943"
+       y="217.54893"
        id="IA-text"
        inkscape:label="iatext"><tspan
          sodipodi:role="line"
          id="tspan5116"
-         x="499.70782"
-         y="213.64417">IA</tspan></text>
+         x="501.00943"
+         y="217.54893">IA</tspan></text>
     <text
        xml:space="preserve"
-       x="479.36365"
-       y="129.24272"
+       x="492.37958"
+       y="120.13158"
        id="MN-text"
        inkscape:label="mntext"><tspan
          sodipodi:role="line"
          id="tspan5120"
-         x="479.36365"
-         y="129.24272">MN</tspan></text>
+         x="492.37958"
+         y="120.13158">MN</tspan></text>
     <text
        xml:space="preserve"
-       x="556.05792"
-       y="157.85352"
+       x="560.83044"
+       y="148.74237"
        id="WI-text"
        inkscape:label="witext"><tspan
          sodipodi:role="line"
          id="tspan5122"
-         x="556.05792"
-         y="157.85352">WI</tspan></text>
+         x="560.83044"
+         y="148.74237">WI</tspan></text>
     <text
        xml:space="preserve"
-       x="575.73132"
-       y="259.51764"
+       x="589.18109"
+       y="252.14195"
        id="IL-text"
        inkscape:label="iltext"><tspan
          sodipodi:role="line"
          id="tspan5124"
-         x="575.73132"
-         y="259.51764">IL</tspan></text>
+         x="589.18109"
+         y="252.14195">IL</tspan></text>
     <text
        xml:space="preserve"
-       x="629.20416"
-       y="255.62521"
+       x="636.14594"
+       y="250.41884"
        id="IN-text"
        inkscape:label="intext"><tspan
          sodipodi:role="line"
-         x="629.20416"
-         y="255.62521"
+         x="636.14594"
+         y="250.41884"
          id="tspan3060">IN</tspan></text>
     <text
        xml:space="preserve"
-       x="660.22137"
-       y="307.85352"
+       x="662.39069"
+       y="310.4567"
        id="KY-text"
        inkscape:label="kytext"><tspan
          sodipodi:role="line"
-         x="660.22137"
-         y="307.85352"
+         x="662.39069"
+         y="310.4567"
          id="tspan8988-2-87">KY</tspan></text>
     <text
        xml:space="preserve"
@@ -1719,42 +1719,42 @@
          id="tspan8988-2-72">TN</tspan></text>
     <text
        xml:space="preserve"
-       x="645.97247"
-       y="187.85352"
+       x="651.61267"
+       y="186.11806"
        id="MI-text"
        inkscape:label="mitext"><tspan
          sodipodi:role="line"
-         x="645.97247"
-         y="187.85352"
+         x="651.61267"
+         y="186.11806"
          id="tspan8988-2-22">MI</tspan></text>
     <text
        xml:space="preserve"
-       x="716.87817"
-       y="281.17679"
+       x="721.2168"
+       y="283.3461"
        id="WV-text"
        inkscape:label="wvtext"><tspan
          sodipodi:role="line"
-         x="716.87817"
-         y="281.17679"
+         x="721.2168"
+         y="283.3461"
          id="tspan8988-2-106">WV</tspan></text>
     <text
        xml:space="preserve"
-       x="874.81689"
-       y="90.47953"
+       x="881.75873"
+       y="83.537704"
        id="ME-text"
        inkscape:label="metext"><tspan
          sodipodi:role="line"
-         x="874.81689"
-         y="90.47953"
+         x="881.75873"
+         y="83.537704"
          id="tspan8988-2-59-0-7-1-7-7-5-9-9">ME</tspan></text>
     <text
        xml:space="preserve"
-       x="870.73798"
+       x="876.73798"
        y="414.93405"
        id="MD-text"
        inkscape:label="mdtext"><tspan
          sodipodi:role="line"
-         x="870.73798"
+         x="876.73798"
          y="414.93405"
          id="tspan8988-2-59-0">MD</tspan></text>
     <text
@@ -1769,12 +1769,12 @@
          id="tspan8988-2-59-0-7">DE</tspan></text>
     <text
        xml:space="preserve"
-       x="872.40625"
+       x="878.40625"
        y="365.0289"
        id="NJ-text"
        inkscape:label="njtext"><tspan
          sodipodi:role="line"
-         x="872.40625"
+         x="878.40625"
          y="365.0289"
          id="tspan8988-2-59-0-7-1">NJ</tspan></text>
     <text
@@ -1799,12 +1799,12 @@
          id="tspan8988-2-59-0-7-1-7-7">RI</tspan></text>
     <text
        xml:space="preserve"
-       x="871.55078"
+       x="877.55078"
        y="290.10703"
        id="MA-text"
        inkscape:label="matext"><tspan
          sodipodi:role="line"
-         x="871.55078"
+         x="877.55078"
          y="290.10703"
          id="tspan8988-2-59-0-7-1-7-7-5">MA</tspan></text>
     <text
