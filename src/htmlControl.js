@@ -60,6 +60,15 @@ function verifyTextToggle() {
 	}
 }
 
+function displayNotification(title, text) {
+	var notification = document.getElementById('notification');
+	var messageHTML = notification.querySelector('#notification-message');
+	var titleHTML = notification.querySelector('#notification-title');
+	notification.style.display = 'inline';
+	messageHTML.innerHTML = text;
+	titleHTML.innerHTML = title;
+}
+
 function darkPalette() {
 	var body = document.getElementById('body');
 	body.style.backgroundColor = '#181922';
@@ -71,7 +80,7 @@ function darkPalette() {
 	var legend = document.getElementById('legend-div');
 	legend.style.borderColor = '#2f3136';
 	
-	setDisableColor('#333333');
+	setDisableColor('#212326');
 	setTossupColor('#bbb7b2');
 	setMapStyle('black', 1.5);
 	setTextStyle('black', 'normal');
@@ -90,7 +99,7 @@ function darkPalette() {
 function dark2Palette() {
 	darkPalette();
 
-	setDisableColor('#222222');
+	setDisableColor('#212326');
 	setTextStyle('white', 'bold');
 	setTossupColor('#665544');
 	setChartBorderStyle(2, '#ffffff');
@@ -111,7 +120,8 @@ function terminalPalette() {
 	var legend = document.getElementById('legend-div');
 	legend.style.borderColor = '#2f3136';
 
-	setDisableColor('#bfbfbf');
+	//setDisableColor('#bfbfbf');
+	setDisableColor('#bcc8d9');
 	setTossupColor('black');
 	setChartBorderStyle(2, '#ffffff');
 	setTextStyle('white', 'bold');
@@ -130,7 +140,9 @@ function terminalPalette() {
 
 function lightPalette() {
 	var body = document.getElementById('body');
-	body.style.backgroundColor = '#30353f';
+	//body.style.backgroundColor = '#30353f';
+	//body.style.backgroundColor = '#3a3f45';
+	body.style.backgroundColor = '#3d4147';
 	body.style.backgroundImage  = '';
 
 	var menu = document.getElementById('menu-div');
@@ -139,7 +151,8 @@ function lightPalette() {
 	var legend = document.getElementById('legend-div');
 	legend.style.borderColor = '#202225';
 
-	setDisableColor('#333333');
+	//setDisableColor('#333333');
+	setDisableColor('#212326');
 	setTossupColor('#bbb7b2');
 	setMapStyle('black', 1.5);
 	
@@ -167,7 +180,7 @@ function contrastPalette() {
 	var legend = document.getElementById('legend-div');
 	legend.style.borderColor = '#151515';
 	
-	setDisableColor('#333333');
+	setDisableColor('#212326');
 	setTossupColor('#bbb7b2');
 	setMapStyle('black', 1.5);
 	setTextStyle('black', 'normal');
@@ -194,7 +207,7 @@ function metallicPalette() {
 	var legend = document.getElementById('legend-div');
 	legend.style.borderColor = '#2f3136';
 	
-	setDisableColor('#333333');
+	setDisableColor('#212326');
 	setTossupColor('#bbb7b2');
 	setMapStyle('black', 1.5);
 	setTextStyle('black', 'normal');

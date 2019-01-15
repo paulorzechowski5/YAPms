@@ -3,8 +3,8 @@
 
 <head>
 	<title>LTE Map</title>
-	<link rel="stylesheet" type="text/css" href="style.css">
-	<link rel="stylesheet" type="text/css" href="menu.css">
+	<link rel="stylesheet" type="text/css" href="style/style.css">
+	<link rel="stylesheet" type="text/css" href="style/menu.css">
 	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.min.js"></script>
 	<script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@0.5.0"></script> 
@@ -31,11 +31,11 @@
 				Presets
 			</button>
 			<div class="dropdown-content">
-				<a onclick='loadPresetTossup()'>None</a>
-				<a onclick='loadPresetClassic()'>Classic</a>
-				<a onclick='loadPresetLibertarian()'>Libertarian</a>
-				<a onclick='loadPresetGreen()'>Green</a>
-				<a onclick='loadPresetMajors()'>Majors</a>
+				<a onclick='loadPreset("tossup")'>None</a>
+				<a onclick='loadPreset("classic")'>Classic</a>
+				<a onclick='loadPreset("libertarian")'>Libertarian</a>
+				<a onclick='loadPreset("green")'>Green</a>
+				<a onclick='loadPreset("majors")'>Majors</a>
 			</div>
 		</div>
 
@@ -45,11 +45,13 @@
 			</button>
 
 			<div class="dropdown-content">
-				<a onclick='loadMap("../presidential.svg", "usa_ec", 16);'>Presidential</a>
-				<a onclick='loadMap("../usa_no_districts.svg", "usa_no_districts_ec", 16)'>No Districts</a>
-				<a onclick='loadMap("../usa_senate.svg", "usa_senate", 16, "../senate_2020")'>Senate 2020</a>
-				<a onclick='loadMap("../usa_senate.svg", "usa_senate", 16, "../senate_open")'>Senate Open</a>
-				<a onclick='loadMap("../lte.svg", "lte_ec", 35);'>LTE Discord</a>
+				<a onclick='loadMap("../res/presidential.svg", "usa_ec", 16, "presidential", "open");'>Presidential</a>
+				<a onclick='loadMap("../res/usa_senate.svg", "usa_senate", 16, "senatorial", "2020")'>Senatorial<br>2020</a>
+				<a onclick='loadMap("../res/usa_gubernatorial.svg", "usa_gubernatorial", 16, "gubernatorial", "2020")'>Gubernatorial 2020</a>
+				<a onclick='loadMap("../res/usa_no_districts.svg", "usa_no_districts_ec", 16, "presidential", "open")'>Presidential Take All</a>
+				<a onclick='loadMap("../res/usa_senate.svg", "usa_senate", 16, "senatorial", "open")'>Senatorial<br>Open</a>
+				<a onclick='loadMap("../res/usa_gubernatorial.svg", "usa_gubernatorial", 16, "gubernatorial", "open")'>Gubernatorial<br>Open</a>
+				<a onclick='loadMap("../res/lte.svg", "lte_ec", 35);'>LTE Discord</a>
 			</div>
 		</div>
 		

@@ -3,20 +3,36 @@ function blockPresetNotify() {
 	var notification = document.getElementById('notification');
 	notification.style.display = 'inline';
 	var message = notification.querySelector('#notification-message');
-	var notificationText = 'Presets cannot be changed for this map';
+	var notificationText = 'Presets cannot be changed while editing a historical ' + mapType + ' map';
 	message.innerHTML = notificationText;
 	var title = notification.querySelector('#notification-title');
 	title.innerHTML = 'Sorry';
 }
 
-// clear the candidate list, and map
-function loadPresetTossup() {
+function loadPreset(value) {
 	if(blockPresets) {
 		blockPresetNotify();
 		return;
 	}
-
+	
 	initCandidates();
+
+	switch(value) {
+		case 'tossup':
+			break;
+		case 'classic':
+			loadPresetClassic();
+			break;
+		case 'libertarian':
+			loadPresetLibertarian();
+			break;
+		case 'green':
+			loadPresetGreen();
+			break;
+		case 'majors':
+			loadPresetMajors();
+			break;
+	}
 	
 	verifyMap();
 	verifyPaintIndex();
@@ -29,12 +45,6 @@ function loadPresetTossup() {
 
 // republicans vs democrats
 function loadPresetClassic() {
-	if(blockPresets) {
-		blockPresetNotify();
-		return;
-	}
-
-	initCandidates();
 	var republican = new Candidate('Republican', 
 		['#BF1D29', '#FF5865', '#FF8B98']);
 	var democrat = new Candidate('Democrat',
@@ -42,24 +52,10 @@ function loadPresetClassic() {
 
 	candidates['Republican'] = republican;
 	candidates['Democrat'] = democrat;
-
-	verifyMap();
-	verifyPaintIndex();
-	countVotes();
-	updateChart();
-	chart.generateLegend();
-	updateLegend();
-	verifyTextToggle();
 }
 
 // republican vs democrat vs libertarian
 function loadPresetLibertarian() {
-	if(blockPresets) {
-		blockPresetNotify();
-		return;	
-	}
-
-	initCandidates();
 	var republican = new Candidate('Republican', 
 		['#BF1D29', '#FF5865', '#FF8B98']);
 	var democrat = new Candidate('Democrat',
@@ -67,28 +63,13 @@ function loadPresetLibertarian() {
 	var libertarian = new Candidate('Libertarian',
 		['#e6b700', '#e8c84d', '#ffe78a']);
 
-
 	candidates['Republican'] = republican;
 	candidates['Democrat'] = democrat;
 	candidates['Libertarian'] = libertarian;
-
-	verifyMap();
-	verifyPaintIndex();
-	countVotes();
-	updateChart();
-	chart.generateLegend();
-	updateLegend();
-	verifyTextToggle();
 }
 
 // republican vs democrat vs green
 function loadPresetGreen() {
-	if(blockPresets) {
-		blockPresetNotify();
-		return;
-	}
-
-	initCandidates();
 	var republican = new Candidate('Republican', 
 		['#BF1D29', '#FF5865', '#FF8B98']);
 	var democrat = new Candidate('Democrat',
@@ -99,24 +80,10 @@ function loadPresetGreen() {
 	candidates['Republican'] = republican;
 	candidates['Democrat'] = democrat;
 	candidates['Green'] = green;
-
-	verifyMap();
-	verifyPaintIndex();
-	countVotes();
-	updateChart();
-	chart.generateLegend();
-	updateLegend();
-	verifyTextToggle();
 }
 
 // republican vs democrat vs green vs libertarian
 function loadPresetMajors() {
-	if(blockPresets) {
-		blockPresetNotify();
-		return;
-	}
-
-	initCandidates();
 	var republican = new Candidate('Republican', 
 		['#BF1D29', '#FF5865', '#FF8B98']);
 	var democrat = new Candidate('Democrat',
@@ -130,12 +97,4 @@ function loadPresetMajors() {
 	candidates['Democrat'] = democrat;
 	candidates['Green'] = green;
 	candidates['Libertarian'] = libertarian;
-
-	verifyMap();
-	verifyPaintIndex();
-	countVotes();
-	updateChart();
-	chart.generateLegend();
-	updateLegend();
-	verifyTextToggle();
 }

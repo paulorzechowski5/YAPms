@@ -7,6 +7,8 @@ data = {
 
 'usa_senate': {'AL': 1, 'AL-S': 1, 'AK': 1, 'AK-S': 1, 'AZ': 1, 'AZ-S': 1, 'AR': 1, 'AR-S': 1, 'CA': 1, 'CA-S': 1, 'CO': 1, 'CO-S': 1, 'CT': 1, 'CT-S': 1, 'DE': 1, 'DE-S': 1, 'FL': 1, 'FL-S': 1, 'GA': 1, 'GA-S': 1, 'HI': 1, 'HI-S': 1, 'ID': 1, 'ID-S': 1, 'IL': 1, 'IL-S': 1, 'IN': 1, 'IN-S': 1, 'IA': 1, 'IA-S': 1, 'KS': 1, 'KS-S': 1, 'KY': 1, 'KY-S': 1, 'LA': 1, 'LA-S': 1, 'ME': 1, 'ME-S': 1, 'MD': 1, 'MD-S': 1, 'MA': 1, 'MA-S': 1, 'MI': 1, 'MI-S': 1, 'MN': 1, 'MN-S': 1, 'MS': 1, 'MS-S': 1, 'MO': 1, 'MO-S': 1, 'MT': 1, 'MT-S': 1, 'NE': 1, 'NE-S': 1, 'NV': 1, 'NV-S': 1, 'NH': 1, 'NH-S': 1, 'NJ': 1, 'NJ-S': 1, 'NM': 1, 'NM-S': 1, 'NY': 1, 'NY-S': 1, 'NC': 1, 'NC-S': 1, 'ND': 1, 'ND-S': 1, 'OH': 1, 'OH-S': 1, 'OK': 1, 'OK-S': 1, 'OR': 1, 'OR-S': 1, 'PA': 1, 'PA-S': 1, 'RI': 1, 'RI-S': 1, 'SC': 1,'SC-S': 1, 'SD': 1, 'SD-S': 1, 'TN': 1, 'TN-S': 1, 'TX': 1, 'TX-S': 1, 'UT': 1, 'UT-S': 1, 'VT': 1, 'VT-S': 1, 'VA': 1, 'VA-S': 1, 'WA': 1, 'WA-S': 1, 'WV': 1, 'WV-S': 1, 'WI': 1, 'WI-S': 1, 'WY': 1, 'WY-S': 1},
 
+'usa_gubernatorial': {'AL': 1, 'AK': 1, 'AZ': 1, 'AR': 1, 'CA': 1, 'CO': 1, 'CT': 1, 'DE': 1, 'FL': 1, 'GA': 1, 'HI': 1, 'ID': 1, 'IL': 1, 'IN': 1, 'IA': 1, 'KS': 1, 'KY': 1, 'LA': 1, 'ME': 1,'MD': 1, 'MA': 1, 'MI': 1, 'MN': 1, 'MS': 1, 'MO': 1, 'MT': 1, 'NE': 1, 'NV': 1, 'NH': 1, 'NJ': 1, 'NM': 1, 'NY': 1, 'NC': 1, 'ND': 1, 'OH': 1, 'OK': 1, 'OR': 1, 'PA': 1, 'RI': 1, 'SC': 1, 'SD': 1, 'TN': 1, 'TX': 1, 'UT': 1, 'VT': 1, 'VA': 1, 'WA': 1, 'WV': 1, 'WI': 1, 'WY': 1},
+
 'lte_ec': {'NE': 7, 'SE': 6, 'MW': 6, 'WE': 4, 'SW': 3, 'OV': 6}
 
 }

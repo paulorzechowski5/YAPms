@@ -36,6 +36,8 @@ var chartBorderColor = '#000000';
 var mode = 'paint';
 
 var mapType = 'presidential';
+var mapYear = 'open';
+
 var blockPresets = false;
 
 var legendCounter = true;
@@ -44,7 +46,8 @@ var loadConfig = {
 	filename: '', 
 	dataid: '', 
 	fontsize: 16, 
-	senatefile: ''
+	type: '',
+	year: ''
 };
 
 var previousPalette = function() {
@@ -52,12 +55,20 @@ var previousPalette = function() {
 };
 
 // loads the svg element into the HTML
-function loadMap(filename, dataid, fontsize, senatefile) {
+function loadMap(filename, dataid, fontsize, type, year) {
+	var mapHTML = document.getElementById('map-div');
+	mapHTML.style.visibility = 'hidden';
+
+	mapType = type;
+	mapYear = year;
+	var dataname = '../data/' + type + '_' + year;
+
 	loadConfig = {
 		filename: filename,
 		dataid: dataid,
 		fontsize: fontsize,
-		senatefile: senatefile
+		type: type,
+		year: year
 	}
 
 	console.log('Loading ' + filename);
@@ -69,26 +80,79 @@ function loadMap(filename, dataid, fontsize, senatefile) {
 		textHTML.style.fontSize = fontsize;
 
 		initData(dataid);
+		
+		previousPalette();
 
+		// count the votes and update the displayed
+		// numbers on the chart and legend
 		countVotes();
 		updateChart();
 		updateLegend();
-
-		previousPalette();
 		
-		mapType = 'presidential';
 		blockPresets = false;
 
-		if(senatefile != null) {
-			console.log('Loading ' + senatefile);
-			loadSenateFile(senatefile);
+		if(type === 'senatorial') {
+			loadSenateFile(dataname);
+		} else if(type === 'gubernatorial') {
+			loadGubernatorialFile(dataname);
+		} else {
+			mapHTML.style.visibility = 'visible';
 		}
+	});
+}
+
+function loadGubernatorialFile(gubernatorialfile) {
+	setMode('paint');
+
+	if(gubernatorialfile.includes('open') == false) {
+		blockPresets = true;
+	}
+
+	initCandidates();
+	
+	var candidateNames = {};
+
+	$.get(gubernatorialfile, function(data) {
+		console.log('Done loading ' + gubernatorialfile);
+
+		var loadMode = 'candidate';
+		var lines = data.split('\n');
+		// if the last element is empty remove it
+		if(lines[lines.length - 1] === '') {
+			lines.pop();
+		}
+		for(var index = 0; index < lines.length; ++index) {
+			var line = lines[index].trim();
+			if(loadMode === 'candidate') {
+				if(line === '!') {
+					loadMode = 'disable';
+				} else {
+					var split = line.split(' ');
+					candidateNames[split[0]] = split[1];
+					var candidate = new Candidate(split[1], [split[2], split[3], split[4]]);
+					candidates[split[1]] = candidate;
+				}
+
+			} else if(loadMode === 'disable') {
+				var split = line.split(' ');
+				var state = states.find(state => state.name === split[0]);
+				var candidate = candidateNames[split[1]];
+
+				if(split[1] === 'o') {
+					state.setColor('Tossup', 2);
+				} else {
+					state.setColor(candidate, 0);
+					state.toggleDisable();
+				}
+			}
+		}
+
+		finishDataLoad();
 	});
 }
 
 function loadSenateFile(senatefile) {
 	setMode('paint');
-	mapType = 'senate';
 
 	if(senatefile.includes('open') == false) {
 		blockPresets = true;
@@ -98,11 +162,15 @@ function loadSenateFile(senatefile) {
 
 	var candidateNames = {};
 
+	console.log(senatefile);
 	$.get(senatefile, function(data) {
 		console.log('Done loading ' + senatefile);
 	
 		var loadMode = 'candidate';
 		var lines = data.split('\n');
+		if(lines[lines.length - 1] === '') {
+			lines.pop();
+		}
 		for(var index = 0; index < lines.length; ++index) {
 			var line = lines[index].trim();
 			if(loadMode === 'candidate') {
@@ -119,40 +187,41 @@ function loadSenateFile(senatefile) {
 				var split = line.split(' ');
 				var state = states.find(state => state.name === split[0]);
 				var special = states.find(state => state.name === split[0] + '-S');
-				var senatorA = candidateNames[split[1]];
-				var senatorB = candidateNames[split[2]];
 
-				if(typeof state !== 'undefined') {
-					if(split[1] === 'o') {
-						state.setColor('Tossup', 2);
-					} else {
-						state.setColor(senatorA, 0);
-						state.toggleDisable();
-					}
+				if(split[1] === 'o') {
+					state.setColor('Tossup', 2);
 				} else {
-					console.log(split[0]);
+					state.setColor(
+						candidateNames[split[1]], 0);
+					state.toggleDisable();
 				}
-				if(typeof special !== 'undefined') {
-					if(split[2] === 'o') {
-						special.setColor('Tossup', 2);
-					} else {
-						special.setColor(senatorB, 0);
-						special.toggleDisable();
-					}
+
+				if(split[2] === 'o') {
+					special.setColor('Tossup', 2);
 				} else {
-					console.log(split[0] + '-S');
+					special.setColor(
+						candidateNames[split[2]], 0);
+					special.toggleDisable();
 				}
 			}
 		}
 
-		verifyMap();
-		verifyPaintIndex();
-		chart.generateLegend();
-		countVotes();
-		updateChart();
-		updateLegend();
-		verifyTextToggle();
+		finishDataLoad();
 	});
+}
+
+function finishDataLoad() {
+	verifyMap();
+	verifyPaintIndex();
+	chart.generateLegend();
+	countVotes();
+	updateLegend();
+	updateChart();
+	updateLegend();
+	verifyTextToggle();
+
+	var mapHTML = document.getElementById('map-div');
+	mapHTML.style.visibility = 'visible';
 }
 
 // reads through the SVG and sets up states and buttons
@@ -527,10 +596,13 @@ function setChart(type) {
 function rebuildChart() {
 	var html = document.getElementById('chart');
 	var ctx = html.getContext('2d');
-	// save type
-	var type = chart.config.type;
+	//var type = chart.config.type;
 	chart.destroy();
-	chart = new Chart(ctx, {type: type, data: chartData, options: chartOptions});
+	chart = new Chart(ctx, {
+		type: chart.config.type, 
+		data: chartData, 
+		options: chartOptions
+	});
 	updateChart();
 }
 
@@ -560,20 +632,48 @@ function toggleChartLeans() {
 }
 
 function setMode(set) {
-	// if editing a senate map disble delete ec and candidte
-	if(mapType === 'senate' && (set === 'ec' || set === 'candidate' ||
-		set === 'delete')) {
-		var notification = document.getElementById('notification');
-		notification.style.display = 'inline';
-		var message = notification.querySelector('#notification-message');
-		
-		var notificationText = 'This mode is not available while editing a senate map';
-		message.innerHTML = notificationText;
-		var title = notification.querySelector('#notification-title');
-		title.innerHTML = 'Sorry';
 
-		return;
+	console.log('mode ' +  mode + ' | set ' + set + 
+		' | mapType ' + mapType + ' | mapYear ' + mapYear);
+
+	var notification = document.getElementById('notification');
+	var message = notification.querySelector('#notification-message');
+	var title = notification.querySelector('#notification-title');
+
+	if(mapYear !== 'open') {
+		if(set === 'ec' || set === 'candidate' || set === 'delete') {
+			title.innerHTML = 'Sorry';
+			message.innerHTML = 'This mode is not available while editing a historical ' + mapType + ' map';
+			notification.style.display = 'inline';
+			console.log('denied');
+			return;
+		}
 	}
+
+	if(mapType === 'gubernatorial') {
+		if(set === 'ec') {
+			title.innerHTML = 'Sorry';
+			message.innerHTML = 'This mode is not available while editing a guberatorial map';
+			notification.style.display = 'inline';
+			console.log('denied');
+			return;
+		}
+	}
+
+	if(mapType === 'senatorial') {
+		if(set === 'delete' || set === 'ec') {
+			title.innerHTML = 'Sorry';
+			message.innerHTML = 'This mode is not available while editing a senatorial map';
+			notification.style.display = 'inline';
+			console.log('denied');
+			return;
+
+		}
+	}
+	
+	console.log('allowed');
+
+
 	mode = set;
 
 	var modeHTML = document.getElementById('menu-middle');
@@ -676,7 +776,7 @@ function verifyMap() {
 
 // sets all states to white
 function clearMap() {
-	loadMap(loadConfig.filename, loadConfig.dataid, loadConfig.fontsize, loadConfig.senatefile);
+	loadMap(loadConfig.filename, loadConfig.dataid, loadConfig.fontsize, loadConfig.type, loadConfig.year);
 }
 
 // iterate over each state and delegate votes to the candidate
@@ -690,11 +790,8 @@ function countVotes() {
 		candidate.voteCount = 0;
 		candidate.probVoteCounts = [0,0,0];
 		// iterate over every state
-		for(var stateIndex = 0; 
-			stateIndex < states.length; ++stateIndex) {
-
+		for(var stateIndex = 0; stateIndex < states.length; ++stateIndex) {
 			var state = states[stateIndex];
-
 			// if the candidate value of the state
 			// equals the index value of the candidate
 			// add the vote count to the candidate 
@@ -747,17 +844,6 @@ function updateBarChart() {
 }
 
 function updateNonRadarChart() {
-	// reset the chart data
-	/*chartData = {
-		labels:[],
-		datasets: [{
-			label: "",
-			backgroundColor: [],
-			borderColor: chartBorderColor,
-			borderWidth: chartBorderWidth,
-			data:[]
-		}]
-	};*/
 	chartData.labels = [];
 
 	chartData.datasets[0].data = [];
@@ -827,7 +913,10 @@ function updateLegend() {
 function start() {
 	initCandidates();
 	initChart();
-	loadMap('../presidential.svg', 'usa_ec', 16);
+	loadMap('../res/presidential.svg', 'usa_ec', 16, "presidential", "open");
+
+	displayNotification('Welcome!', 'This software is in beta, so please bear with us as we work out the bugs.  Thank you! <br><br>' +
+	'<b>New Stuff:</b> Senatorial and Gubernatorial maps!');
 }
 
 start();
