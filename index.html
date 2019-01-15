@@ -9,6 +9,7 @@
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.min.js"></script>
 	<script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@0.5.0"></script> 
 	<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+	<script src="src/click.js"></script>
 	<script src="src/data.js"></script>
 	<script src="src/State.js"></script>
 	<script src="src/htmlControl.js"></script>
@@ -21,7 +22,7 @@
 
 	<div id="menu-left">
 
-		<button class="click-button" onclick="loadPresetEmpty()">
+		<button class="click-button" onclick="clearMap()">
 			Clear
 		</button>
 
@@ -30,6 +31,7 @@
 				Presets
 			</button>
 			<div class="dropdown-content">
+				<a onclick='loadPresetTossup()'>None</a>
 				<a onclick='loadPresetClassic()'>Classic</a>
 				<a onclick='loadPresetLibertarian()'>Libertarian</a>
 				<a onclick='loadPresetGreen()'>Green</a>
@@ -45,6 +47,8 @@
 			<div class="dropdown-content">
 				<a onclick='loadMap("../presidential.svg", "usa_ec", 16);'>Presidential</a>
 				<a onclick='loadMap("../usa_no_districts.svg", "usa_no_districts_ec", 16)'>No Districts</a>
+				<a onclick='loadMap("../usa_senate.svg", "usa_senate", 16, "../senate_2020")'>Senate 2020</a>
+				<a onclick='loadMap("../usa_senate.svg", "usa_senate", 16, "../senate_open")'>Senate Open</a>
 				<a onclick='loadMap("../lte.svg", "lte_ec", 35);'>LTE Discord</a>
 			</div>
 		</div>
@@ -167,6 +171,12 @@
 	Lean:<input id="candidate-lean" type="color"><br>
 	<input id="candidate-originalName" type="hidden">
 	<button onclick="setCandidate(this)">set</button>
+</div>
+
+<div id="notification" class="popup">
+	<h3 id="notification-title"></h3>
+	<p id="notification-message"></p>
+	<button onclick="closeNotification(this)">Ok</button>
 </div>
 
 </body>

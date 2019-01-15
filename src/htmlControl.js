@@ -71,6 +71,7 @@ function darkPalette() {
 	var legend = document.getElementById('legend-div');
 	legend.style.borderColor = '#2f3136';
 	
+	setDisableColor('#333333');
 	setTossupColor('#bbb7b2');
 	setMapStyle('black', 1.5);
 	setTextStyle('black', 'normal');
@@ -87,6 +88,7 @@ function darkPalette() {
 function dark2Palette() {
 	darkPalette();
 
+	setDisableColor('#222222');
 	setTextStyle('white', 'bold');
 	setTossupColor('#665544');
 	setChartBorderStyle(2, '#ffffff');
@@ -105,6 +107,7 @@ function terminalPalette() {
 	var legend = document.getElementById('legend-div');
 	legend.style.borderColor = '#2f3136';
 
+	setDisableColor('#bfbfbf');
 	setTossupColor('black');
 	setChartBorderStyle(2, '#ffffff');
 	setTextStyle('white', 'bold');
@@ -130,6 +133,7 @@ function lightPalette() {
 	var legend = document.getElementById('legend-div');
 	legend.style.borderColor = '#202225';
 
+	setDisableColor('#333333');
 	setTossupColor('#bbb7b2');
 	setMapStyle('black', 1.5);
 	
@@ -155,6 +159,7 @@ function contrastPalette() {
 	var legend = document.getElementById('legend-div');
 	legend.style.borderColor = '#151515';
 	
+	setDisableColor('#333333');
 	setTossupColor('#bbb7b2');
 	setMapStyle('black', 1.5);
 	setTextStyle('black', 'normal');
@@ -179,6 +184,7 @@ function metallicPalette() {
 	var legend = document.getElementById('legend-div');
 	legend.style.borderColor = '#2f3136';
 	
+	setDisableColor('#333333');
 	setTossupColor('#bbb7b2');
 	setMapStyle('black', 1.5);
 	setTextStyle('black', 'normal');
@@ -204,6 +210,7 @@ function toWinPalette() {
 	var legend = document.getElementById('legend-div');
 	legend.style.borderColor = '#202020';
 
+	setDisableColor('#dddddd');
 	setTossupColor('#bbaa90');
 	setMapStyle('white', 1);
 	setTextStyle('white', 'bold');
@@ -223,6 +230,12 @@ function setChartBorderStyle(width, color) {
 	updateChart();
 }
 
+function setDisableColor(color) {
+	console.log(color);
+	TOSSUP.colors[1] = color;
+	verifyMap();
+}
+
 function setTossupColor(color) {
 	TOSSUP.colors[2] = color;
 	var tossupLegend = document.getElementById('Tossup');
@@ -236,24 +249,15 @@ function setTossupColor(color) {
 	}
 }
 
-function setButtonStyle(color, strokeWidth) {
-
-	var states = document.getElementById('outlines').children;
-	
-	for(var index = 0; index < states.length; ++index) {
-		var state = states[index];
-		state.style.stroke = color;
-		state.style.strokeWidth = strokeWidth;
-	}
-}
-
 function setMapStyle(color, strokeWidth) {
-	var states = document.getElementById('outlines').children;
-	
-	for(var index = 0; index < states.length; ++index) {
-		var state = states[index];
-		state.style.stroke = color;
-		state.style.strokeWidth = strokeWidth;
+	var outlines = document.getElementById('outlines');
+	outlines.style.stroke = color;
+	outlines.style.strokeWidth = strokeWidth;
+
+	var special = document.getElementById('special');
+	if(special != null) {
+		special.style.stroke = color;
+		special.style.strokeWidth = strokeWidth;
 	}
 }
 

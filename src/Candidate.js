@@ -9,4 +9,4 @@ class Candidate {
 };
 
 var tossupColor = 2;
-var TOSSUP = new Candidate('Tossup', ['#000000', '#bbaa90', '#bbb7b2']);
+var TOSSUP = new Candidate('Tossup', ['#000000', '#ffffff', '#bbb7b2']);

@@ -6,6 +6,7 @@ class State {
 		this.candidate = 'Tossup';
 		this.dataid = dataid;
 		this.resetVoteCount();
+		this.disabled = false;
 	}
 
 	resetVoteCount() {
@@ -44,9 +45,52 @@ class State {
 		return this.htmlElement.style.fill;
 	}
 
+	setDisplayColor(color) {
+		this.htmlElement.style.fill = color;
+
+		var button = document.getElementById(this.name + '-button');
+		if(button != null) {
+			button.style.fill = color;
+		}
+	}
+
+	verifyDisabledColor() {
+		if(this.disabled) {
+			this.setDisplayColor(candidates['Tossup'].colors[1]);
+		}
+	}
+
+	enable() {
+		this.disabled = false;
+		this.setColor(this.getCandidate(), this.getColorValue());
+		if(this.name.includes('-S')) {
+			this.htmlElement.style.visibility = 'visible';
+		}
+	}
+
+	toggleDisable() {
+		if(this.disabled == false) {
+			this.setDisplayColor(candidates['Tossup'].colors[1]);
+			this.disabled = !this.disabled;
+			if(this.name.includes('-S')) {
+				this.htmlElement.style.visibility = 'hidden';
+			}
+		} else if(this.disabled == true) {
+			this.disabled = !this.disabled;
+			this.setColor(this.getCandidate(), this.getColorValue());
+			if(this.name.includes('-S')) {
+				this.htmlElement.style.visibility = 'visible';
+			}
+		}
+	}
+
 	// only incrememnt though the colors of the specified candidate
 	// if the state isn't this candidates color, start at solid
 	incrementCandidateColor(candidate) {
+		if(this.disabled) {
+			return;
+		}
+
 		// if changing color set to solor
 		if(this.candidate !== candidate) {
 			this.colorValue = 0;
@@ -98,6 +142,10 @@ class State {
 
 	// directly change the color of a state (add error checking pls)
 	setColor(candidate, colorValue) {
+		if(this.disabled) {
+			return;
+		}
+
 		this.candidate = candidate;
 
 		// prevent black color
@@ -151,7 +199,9 @@ class State {
 	show() {
 		this.htmlElement.style.visibility = 'visible';
 		var text = document.getElementById(this.getName() + '-text');
-		text.style.visibility = 'visible';
+		if(text != null) {
+			text.style.visibility = 'visible';
+		}
 
 		var button = document.getElementById(this.getName() + '-button');
 		if(button != null) {

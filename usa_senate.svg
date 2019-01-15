@@ -43,17 +43,17 @@
      id="namedview3848"
      showgrid="true"
      inkscape:pagecheckerboard="true"
-     inkscape:zoom="1.1524348"
-     inkscape:cx="582.62197"
-     inkscape:cy="319.09375"
+     inkscape:zoom="4.6097392"
+     inkscape:cx="664.82442"
+     inkscape:cy="336.3874"
      inkscape:window-x="0"
      inkscape:window-y="0"
      inkscape:window-maximized="1"
-     inkscape:current-layer="outlines"
-     inkscape:snap-center="true"
+     inkscape:current-layer="text"
+     inkscape:snap-center="false"
      inkscape:snap-grids="false"
-     inkscape:snap-object-midpoints="true"
-     inkscape:snap-midpoints="true"
+     inkscape:snap-object-midpoints="false"
+     inkscape:snap-midpoints="false"
      inkscape:snap-bbox="false"
      inkscape:snap-others="true"
      inkscape:snap-perpendicular="false"
@@ -61,17 +61,18 @@
      inkscape:snap-path-clip="false"
      inkscape:snap-path-mask="false"
      inkscape:snap-to-guides="true"
-     inkscape:snap-text-baseline="false"
-     inkscape:snap-nodes="false"
+     inkscape:snap-text-baseline="true"
+     inkscape:snap-nodes="true"
      inkscape:snap-page="false"
      inkscape:bbox-paths="false"
      inkscape:bbox-nodes="false"
      inkscape:snap-bbox-edge-midpoints="false"
      inkscape:snap-bbox-midpoints="false"
-     inkscape:snap-smooth-nodes="true"
+     inkscape:snap-smooth-nodes="false"
      inkscape:snap-intersection-paths="true"
-     inkscape:object-paths="true"
-     inkscape:snap-global="false">
+     inkscape:object-paths="false"
+     inkscape:snap-global="false"
+     inkscape:object-nodes="false">
     <inkscape:grid
        type="xygrid"
        id="grid4836"
@@ -81,13 +82,166 @@
   </sodipodi:namedview>
   <defs
      id="defs3789">
+    <inkscape:tag
+       id="Set 1"
+       inkscape:expanded="true">
+      <inkscape:tagref
+         xlink:href="#WA-S"
+         id="tagref849" />
+      <inkscape:tagref
+         xlink:href="#OR-S"
+         id="tagref851" />
+      <inkscape:tagref
+         xlink:href="#CA-S"
+         id="tagref853" />
+      <inkscape:tagref
+         xlink:href="#NV-S"
+         id="tagref855" />
+      <inkscape:tagref
+         xlink:href="#UT-S"
+         id="tagref857" />
+      <inkscape:tagref
+         xlink:href="#AZ-S"
+         id="tagref859" />
+      <inkscape:tagref
+         xlink:href="#NM-S"
+         id="tagref861" />
+      <inkscape:tagref
+         xlink:href="#AK-S"
+         id="tagref863" />
+      <inkscape:tagref
+         xlink:href="#HI-S"
+         id="tagref865" />
+      <inkscape:tagref
+         xlink:href="#TX-S"
+         id="tagref867" />
+      <inkscape:tagref
+         xlink:href="#OK-S"
+         id="tagref869" />
+      <inkscape:tagref
+         xlink:href="#KS-S"
+         id="tagref871" />
+      <inkscape:tagref
+         xlink:href="#CO-S"
+         id="tagref873" />
+      <inkscape:tagref
+         xlink:href="#NE-S"
+         id="tagref875" />
+      <inkscape:tagref
+         xlink:href="#WY-S"
+         id="tagref877" />
+      <inkscape:tagref
+         xlink:href="#MT-s"
+         id="tagref879" />
+      <inkscape:tagref
+         xlink:href="#ID-S"
+         id="tagref881" />
+      <inkscape:tagref
+         xlink:href="#ND-S"
+         id="tagref883" />
+      <inkscape:tagref
+         xlink:href="#SD-S"
+         id="tagref885" />
+      <inkscape:tagref
+         xlink:href="#MN-S"
+         id="tagref887" />
+      <inkscape:tagref
+         xlink:href="#WI-S"
+         id="tagref889" />
+      <inkscape:tagref
+         xlink:href="#IA-S"
+         id="tagref891" />
+      <inkscape:tagref
+         xlink:href="#IL-S"
+         id="tagref893" />
+      <inkscape:tagref
+         xlink:href="#MO-S"
+         id="tagref895" />
+      <inkscape:tagref
+         xlink:href="#AR-S"
+         id="tagref897" />
+      <inkscape:tagref
+         xlink:href="#LA-S"
+         id="tagref899" />
+      <inkscape:tagref
+         xlink:href="#MS-S"
+         id="tagref901" />
+      <inkscape:tagref
+         xlink:href="#AL-S"
+         id="tagref903" />
+      <inkscape:tagref
+         xlink:href="#GA-S"
+         id="tagref905" />
+      <inkscape:tagref
+         xlink:href="#FL-S"
+         id="tagref907" />
+      <inkscape:tagref
+         xlink:href="#SC-S"
+         id="tagref909" />
+      <inkscape:tagref
+         xlink:href="#NC-S"
+         id="tagref911" />
+      <inkscape:tagref
+         xlink:href="#TN-S"
+         id="tagref913" />
+      <inkscape:tagref
+         xlink:href="#KY-S"
+         id="tagref915" />
+      <inkscape:tagref
+         xlink:href="#WV-S"
+         id="tagref917" />
+      <inkscape:tagref
+         xlink:href="#VA-S"
+         id="tagref919" />
+      <inkscape:tagref
+         xlink:href="#OH-S"
+         id="tagref921" />
+      <inkscape:tagref
+         xlink:href="#IN-S"
+         id="tagref923" />
+      <inkscape:tagref
+         xlink:href="#MI-S"
+         id="tagref925" />
+      <inkscape:tagref
+         xlink:href="#PA-S"
+         id="tagref927" />
+      <inkscape:tagref
+         xlink:href="#NY-S"
+         id="tagref929" />
+      <inkscape:tagref
+         xlink:href="#ME-S"
+         id="tagref931" />
+      <inkscape:tagref
+         xlink:href="#NH-S"
+         id="tagref933" />
+      <inkscape:tagref
+         xlink:href="#VT-S"
+         id="tagref935" />
+      <inkscape:tagref
+         xlink:href="#MA-S"
+         id="tagref937" />
+      <inkscape:tagref
+         xlink:href="#RI-S"
+         id="tagref939" />
+      <inkscape:tagref
+         xlink:href="#CT-S"
+         id="tagref941" />
+      <inkscape:tagref
+         xlink:href="#NJ-S"
+         id="tagref943" />
+      <inkscape:tagref
+         xlink:href="#DE-S"
+         id="tagref945" />
+      <inkscape:tagref
+         xlink:href="#MD-S"
+         id="tagref947" />
+    </inkscape:tag>
     <color-profile
        name="sRGB"
        xlink:href="/usr/share/color/icc/colord/sRGB.icc"
-       id="color-profile4800" />
+       id="color-profile449" />
     <inkscape:tag
-       id="Set 3"
-       inkscape:expanded="true">
+       id="Set 3">
       <inkscape:tagref
          xlink:href="#WA-text"
          id="tagref4251" />
@@ -574,19 +728,8 @@
        d="m 353,161.9 -1.5,25.4 -4.4,44 -2.7,-0.3 -83.3,-9.1 -27.9,-3 2,-12 6.9,-41 3.8,-24.2 1.3,-11.2 48.2,7 59.1,6.5 z"
        inkscape:connector-curvature="0"
        style="fill:#ffffff;fill-opacity:1" />
-    <text
-       xml:space="preserve"
-       style="font-style:normal;font-weight:normal;font-size:40px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none"
-       x="770"
-       y="328"
-       id="text8928"
-       inkscape:label="text8928"><tspan
-         sodipodi:role="line"
-         id="tspan8926"
-         x="770"
-         y="363.39062" /></text>
     <rect
-       style="opacity:1;fill:#fffff3;fill-opacity:1;stroke:#000000;stroke-width:2;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       style="opacity:1;fill:#fffff3;fill-opacity:1;"
        id="MD-button"
        width="50"
        height="19.999998"
@@ -596,7 +739,7 @@
        ry="3"
        rx="3" />
     <rect
-       style="opacity:1;fill:#fffff3;fill-opacity:1;stroke:#000000;stroke-width:2;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       style="opacity:1;fill:#fffff3;fill-opacity:1;"
        id="DE-button"
        width="50"
        height="19.999998"
@@ -606,7 +749,7 @@
        ry="3"
        rx="3" />
     <rect
-       style="opacity:1;fill:#fffff3;fill-opacity:1;stroke:#000000;stroke-width:2;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       style="opacity:1;fill:#fffff3;fill-opacity:1;"
        id="NJ-button"
        width="50"
        height="19.999998"
@@ -616,7 +759,7 @@
        ry="3"
        rx="3" />
     <rect
-       style="opacity:1;fill:#fffff3;fill-opacity:1;stroke:#000000;stroke-width:2;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       style="opacity:1;fill:#fffff3;fill-opacity:1;"
        id="CT-button"
        width="50"
        height="19.999998"
@@ -626,7 +769,7 @@
        ry="3"
        rx="3" />
     <rect
-       style="opacity:1;fill:#fffff3;fill-opacity:1;stroke:#000000;stroke-width:2;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       style="opacity:1;fill:#fffff3;fill-opacity:1;"
        id="RI-button"
        width="50"
        height="19.999998"
@@ -636,7 +779,7 @@
        ry="3"
        rx="3" />
     <rect
-       style="opacity:1;fill:#fffff3;fill-opacity:1;stroke:#000000;stroke-width:2;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       style="opacity:1;fill:#fffff3;fill-opacity:1;"
        id="MA-button"
        width="50"
        height="19.999998"
@@ -646,7 +789,7 @@
        ry="3"
        rx="3" />
     <rect
-       style="opacity:1;fill:#fffff3;fill-opacity:1;stroke:#000000;stroke-width:2;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:0.94214872"
+       style="opacity:1;fill:#fffff3;fill-opacity:1;"
        id="VT-button"
        width="50"
        height="19.999998"
@@ -656,7 +799,7 @@
        ry="3"
        rx="3" />
     <rect
-       style="opacity:1;fill:#fffff3;fill-opacity:1;stroke:#000000;stroke-width:2;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       style="opacity:1;fill:#fffff3;fill-opacity:1;"
        id="NH-button"
        width="50"
        height="19.999998"
@@ -666,7 +809,7 @@
        ry="3"
        rx="3" />
     <rect
-       style="opacity:1;fill:#fffff3;fill-opacity:1;stroke:#000000;stroke-width:2;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       style="opacity:1;fill:#fffff3;fill-opacity:1;"
        id="HI-button"
        width="50"
        height="19.999998"
@@ -684,8 +827,516 @@
   </g>
   <g
      inkscape:groupmode="layer"
+     id="special"
+     class="state"
+     inkscape:label="special"
+     style="display:inline">
+    <rect
+       style="display:inline;opacity:1;fill:#d3d3d3;fill-opacity:1"
+       id="WA-S"
+       width="30"
+       height="30"
+       x="130.42691"
+       y="51.648262"
+       rx="15"
+       ry="15"
+       inkscape:label="was" />
+    <rect
+       style="display:inline;opacity:1;fill:#d3d3d3;fill-opacity:1"
+       id="OR-S"
+       width="30"
+       height="30"
+       x="111.38151"
+       y="136.54755"
+       rx="15"
+       ry="15"
+       inkscape:label="ors" />
+    <rect
+       style="display:inline;opacity:1;fill:#d3d3d3;fill-opacity:1"
+       id="CA-S"
+       width="30"
+       height="30"
+       x="100.28385"
+       y="332.52109"
+       rx="15"
+       ry="15"
+       inkscape:label="cas" />
+    <rect
+       style="display:inline;opacity:1;fill:#d3d3d3;fill-opacity:1"
+       id="NV-S"
+       width="30"
+       height="30"
+       x="131.24301"
+       y="272.54321"
+       rx="15"
+       ry="15"
+       inkscape:label="nvs" />
+    <rect
+       style="display:inline;opacity:1;fill:#d3d3d3;fill-opacity:1"
+       id="UT-S"
+       width="30"
+       height="30"
+       x="221.39047"
+       y="270.57916"
+       rx="15"
+       ry="15"
+       inkscape:label="uts" />
+    <rect
+       style="display:inline;opacity:1;fill:#d3d3d3;fill-opacity:1"
+       id="AZ-S"
+       width="30"
+       height="30"
+       x="200.37251"
+       y="391.54001"
+       rx="15"
+       ry="15"
+       inkscape:label="azs" />
+    <rect
+       style="display:inline;opacity:1;fill:#d3d3d3;fill-opacity:1"
+       id="NM-S"
+       width="30"
+       height="30"
+       x="314.15018"
+       y="394.08154"
+       rx="15"
+       ry="15"
+       inkscape:label="nms" />
+    <rect
+       style="display:inline;opacity:1;fill:#d3d3d3;fill-opacity:1"
+       id="AK-S"
+       width="30"
+       height="30"
+       x="78.059647"
+       y="503.71985"
+       rx="15"
+       ry="15"
+       inkscape:label="aks" />
+    <rect
+       style="display:inline;opacity:1;fill:#d3d3d3;fill-opacity:1;stroke-width:0.99999994"
+       id="HI-S"
+       width="13"
+       height="13"
+       x="282.26682"
+       y="556.71924"
+       rx="14.999999"
+       ry="14.999999"
+       inkscape:label="his" />
+    <rect
+       style="display:inline;opacity:1;fill:#d3d3d3;fill-opacity:1"
+       id="TX-S"
+       width="30"
+       height="30"
+       x="453.52206"
+       y="476.96231"
+       rx="15"
+       ry="15"
+       inkscape:label="txs" />
+    <rect
+       style="display:inline;opacity:1;fill:#d3d3d3;fill-opacity:1"
+       id="OK-S"
+       width="30"
+       height="30"
+       x="471.02396"
+       y="360.36722"
+       rx="15"
+       ry="15"
+       inkscape:label="oks" />
+    <rect
+       style="display:inline;opacity:1;fill:#d3d3d3;fill-opacity:1"
+       id="KS-S"
+       width="30"
+       height="30"
+       x="469.23212"
+       y="290.86548"
+       rx="15"
+       ry="15"
+       inkscape:label="kss" />
+    <rect
+       style="display:inline;opacity:1;fill:#d3d3d3;fill-opacity:1"
+       id="CO-S"
+       width="30"
+       height="30"
+       x="340.9317"
+       y="285.55383"
+       rx="15"
+       ry="15"
+       inkscape:label="cos" />
+    <rect
+       style="display:inline;opacity:1;fill:#d3d3d3;fill-opacity:1"
+       id="NE-S"
+       width="30"
+       height="30"
+       x="447.9946"
+       y="223.68727"
+       rx="15"
+       ry="15"
+       inkscape:label="nes" />
+    <rect
+       style="display:inline;opacity:1;fill:#d3d3d3;fill-opacity:1"
+       id="WY-S"
+       width="30"
+       height="30"
+       x="315.078"
+       y="193.34387"
+       rx="15"
+       ry="15"
+       inkscape:label="wys" />
+    <rect
+       style="display:inline;opacity:1;fill:#d3d3d3;fill-opacity:1"
+       id="MT-S"
+       width="30"
+       height="30"
+       x="321.23181"
+       y="105.74694"
+       rx="15"
+       ry="15"
+       inkscape:label="mts" />
+    <rect
+       style="display:inline;opacity:1;fill:#d3d3d3;fill-opacity:1"
+       id="ID-S"
+       width="30"
+       height="30"
+       x="206.04887"
+       y="157.40387"
+       rx="15"
+       ry="15"
+       inkscape:label="ids" />
+    <rect
+       style="display:inline;opacity:1;fill:#d3d3d3;fill-opacity:1"
+       id="ND-S"
+       width="30"
+       height="30"
+       x="433.4447"
+       y="91.976044"
+       rx="15"
+       ry="15"
+       inkscape:label="nds" />
+    <rect
+       style="display:inline;opacity:1;fill:#d3d3d3;fill-opacity:1"
+       id="SD-S"
+       width="30"
+       height="30"
+       x="435.88998"
+       y="156.15335"
+       rx="15"
+       ry="15"
+       inkscape:label="sds" />
+    <rect
+       style="display:inline;opacity:1;fill:#d3d3d3;fill-opacity:1"
+       id="MN-S"
+       width="30"
+       height="30"
+       x="495.70154"
+       y="146.1505"
+       rx="15"
+       ry="15"
+       inkscape:label="mns" />
+    <rect
+       style="display:inline;opacity:1;fill:#d3d3d3;fill-opacity:1"
+       id="WI-S"
+       width="30"
+       height="30"
+       x="573.75348"
+       y="161.05667"
+       rx="15"
+       ry="15"
+       inkscape:label="wis" />
+    <rect
+       style="display:inline;opacity:1;fill:#d3d3d3;fill-opacity:1"
+       id="IA-S"
+       width="30"
+       height="30"
+       x="527.77295"
+       y="208.26967"
+       rx="15"
+       ry="15"
+       inkscape:label="ias" />
+    <rect
+       style="display:inline;opacity:1;fill:#d3d3d3;fill-opacity:1"
+       id="IL-S"
+       width="30"
+       height="30"
+       x="587.19049"
+       y="268.3114"
+       rx="15"
+       ry="15"
+       inkscape:label="ils" />
+    <rect
+       style="display:inline;opacity:1;fill:#d3d3d3;fill-opacity:1"
+       id="MO-S"
+       width="30"
+       height="30"
+       x="551.01434"
+       y="300.19775"
+       rx="15"
+       ry="15"
+       inkscape:label="mos" />
+    <rect
+       style="display:inline;opacity:1;fill:#d3d3d3;fill-opacity:1"
+       id="AR-S"
+       width="30"
+       height="30"
+       x="534.00867"
+       y="379.84"
+       rx="15"
+       ry="15"
+       inkscape:label="ars" />
+    <rect
+       style="display:inline;opacity:1;fill:#d3d3d3;fill-opacity:1"
+       id="LA-S"
+       width="30"
+       height="30"
+       x="565.87103"
+       y="460.50784"
+       rx="15"
+       ry="15"
+       inkscape:label="las" />
+    <rect
+       style="display:inline;opacity:1;fill:#d3d3d3;fill-opacity:1"
+       id="MS-S"
+       width="30"
+       height="30"
+       x="586.50616"
+       y="422.24966"
+       rx="15"
+       ry="15"
+       inkscape:label="mss" />
+    <rect
+       style="display:inline;opacity:1;fill:#d3d3d3;fill-opacity:1"
+       id="AL-S"
+       width="30"
+       height="30"
+       x="644.18835"
+       y="417.21396"
+       rx="15"
+       ry="15"
+       inkscape:label="als" />
+    <rect
+       style="display:inline;opacity:1;fill:#d3d3d3;fill-opacity:1"
+       id="GA-S"
+       width="30"
+       height="30"
+       x="718.1701"
+       y="414.61981"
+       rx="15"
+       ry="15"
+       inkscape:label="gas" />
+    <rect
+       style="display:inline;opacity:1;fill:#d3d3d3;fill-opacity:1"
+       id="FL-S"
+       width="30"
+       height="30"
+       x="760.76318"
+       y="512.18658"
+       rx="15"
+       ry="15"
+       inkscape:label="fls" />
+    <rect
+       style="display:inline;opacity:1;fill:#d3d3d3;fill-opacity:1"
+       id="SC-S"
+       width="30"
+       height="30"
+       x="764.94763"
+       y="373.71701"
+       rx="15"
+       ry="15"
+       inkscape:label="scs" />
+    <rect
+       style="display:inline;opacity:1;fill:#d3d3d3;fill-opacity:1"
+       id="NC-S"
+       width="30"
+       height="30"
+       x="801.47571"
+       y="319.64563"
+       rx="15"
+       ry="15"
+       inkscape:label="ncs" />
+    <rect
+       style="display:inline;opacity:1;fill:#d3d3d3;fill-opacity:1"
+       id="TN-S"
+       width="30"
+       height="30"
+       x="653.91315"
+       y="325.95584"
+       rx="15"
+       ry="15"
+       inkscape:label="tns" />
+    <rect
+       style="display:inline;opacity:1;fill:#d3d3d3;fill-opacity:1;stroke-width:0.99999994"
+       id="KY-S"
+       width="13"
+       height="13"
+       x="672.57446"
+       y="277.70401"
+       rx="14.999999"
+       ry="14.999999"
+       inkscape:label="kys" />
+    <rect
+       style="display:inline;opacity:1;fill:#d3d3d3;fill-opacity:1;stroke-width:0.99999994"
+       id="WV-S"
+       width="13"
+       height="13"
+       x="741.40997"
+       y="247.89447"
+       rx="14.999999"
+       ry="14.999999"
+       inkscape:label="wvs" />
+    <rect
+       style="display:inline;opacity:1;fill:#d3d3d3;fill-opacity:1;stroke-width:0.99999994"
+       id="VA-S"
+       width="13"
+       height="13"
+       x="778.40649"
+       y="260.42389"
+       rx="14.999999"
+       ry="14.999999"
+       inkscape:label="vas" />
+    <rect
+       style="display:inline;opacity:1;fill:#d3d3d3;fill-opacity:1;stroke-width:0.99999994"
+       id="OH-S"
+       width="13"
+       height="13"
+       x="699.76813"
+       y="250.21422"
+       rx="14.999999"
+       ry="14.999999"
+       inkscape:label="ohs" />
+    <rect
+       style="display:inline;opacity:1;fill:#d3d3d3;fill-opacity:1;stroke-width:0.99999994"
+       id="IN-S"
+       width="13"
+       height="13"
+       x="644.53503"
+       y="269.90503"
+       rx="14.999999"
+       ry="14.999999"
+       inkscape:label="ins" />
+    <rect
+       style="display:inline;opacity:1;fill:#d3d3d3;fill-opacity:1;stroke-width:0.99999994"
+       id="MI-S"
+       width="13"
+       height="13"
+       x="671.81201"
+       y="190.77483"
+       rx="14.999999"
+       ry="14.999999"
+       inkscape:label="mis" />
+    <rect
+       style="display:inline;opacity:1;fill:#d3d3d3;fill-opacity:1;stroke-width:0.99999994"
+       id="PA-S"
+       width="13"
+       height="13"
+       x="809.68982"
+       y="211.15742"
+       rx="14.999999"
+       ry="14.999999"
+       inkscape:label="pas" />
+    <rect
+       style="display:inline;opacity:1;fill:#d3d3d3;fill-opacity:1;stroke-width:0.99999994"
+       id="NY-S"
+       width="13"
+       height="13"
+       x="825.83008"
+       y="167.61839"
+       rx="14.999999"
+       ry="14.999999"
+       inkscape:label="nys" />
+    <rect
+       style="display:inline;opacity:1;fill:#d3d3d3;fill-opacity:1;stroke-width:0.99999994"
+       id="ME-S"
+       width="13"
+       height="13"
+       x="878.48395"
+       y="95.680435"
+       rx="14.999999"
+       ry="14.999999"
+       inkscape:label="mes" />
+    <rect
+       style="display:inline;opacity:1;fill:#d3d3d3;fill-opacity:1;stroke-width:1"
+       id="NH-S"
+       width="13"
+       height="13"
+       x="903"
+       y="228.23485"
+       rx="15"
+       ry="15"
+       inkscape:label="nhs" />
+    <rect
+       style="display:inline;opacity:1;fill:#d3d3d3;fill-opacity:1;stroke-width:0.99999994"
+       id="VT-S"
+       width="13"
+       height="13"
+       x="903"
+       y="253.64528"
+       rx="14.999999"
+       ry="14.999999"
+       inkscape:label="vts" />
+    <rect
+       style="display:inline;opacity:1;fill:#d3d3d3;fill-opacity:1;stroke-width:0.99999994"
+       id="MA-S"
+       width="13"
+       height="13"
+       x="903"
+       y="278.06232"
+       rx="14.999999"
+       ry="14.999999"
+       inkscape:label="mas" />
+    <rect
+       style="display:inline;opacity:1;fill:#d3d3d3;fill-opacity:1;stroke-width:0.99999994"
+       id="RI-S"
+       width="13"
+       height="13"
+       x="903"
+       y="303.22644"
+       rx="14.999999"
+       ry="14.999999"
+       inkscape:label="ris" />
+    <rect
+       style="display:inline;opacity:1;fill:#d3d3d3;fill-opacity:1;stroke-width:0.99999994"
+       id="CT-S"
+       width="13"
+       height="13"
+       x="903"
+       y="327.96759"
+       rx="15"
+       ry="14.999999"
+       inkscape:label="cts" />
+    <rect
+       style="display:inline;opacity:1;fill:#d3d3d3;fill-opacity:1;stroke-width:0.99999994"
+       id="NJ-S"
+       width="13"
+       height="13"
+       x="903"
+       y="352.77679"
+       rx="14.999999"
+       ry="14.999999"
+       inkscape:label="njs" />
+    <rect
+       style="display:inline;opacity:1;fill:#d3d3d3;fill-opacity:1;stroke-width:0.99999994"
+       id="DE-S"
+       width="13"
+       height="13"
+       x="903"
+       y="377.70853"
+       rx="14.999999"
+       ry="14.999999"
+       inkscape:label="des" />
+    <rect
+       style="display:inline;opacity:1;fill:#d3d3d3;fill-opacity:1;stroke-width:0.99999994"
+       id="MD-S"
+       width="13"
+       height="13"
+       x="903"
+       y="403.29565"
+       rx="14.999999"
+       ry="14.999999"
+       inkscape:label="mds" />
+  </g>
+  <g
+     inkscape:groupmode="layer"
      id="text"
-     inkscape:label="text">
+     inkscape:label="text"
+     style="display:inline">
     <text
        xml:space="preserve"
        x="792.30566"
@@ -695,7 +1346,7 @@
          sodipodi:role="line"
          id="tspan4864"
          x="792.30566"
-         y="165.45259">NY 29</tspan></text>
+         y="165.45259">NY</tspan></text>
     <text
        xml:space="preserve"
        x="763.32867"
@@ -705,7 +1356,7 @@
          sodipodi:role="line"
          x="763.32867"
          y="215.80351"
-         id="tspan8878">PA 20</tspan></text>
+         id="tspan8878">PA</tspan></text>
     <text
        xml:space="preserve"
        x="679.31226"
@@ -715,7 +1366,7 @@
          sodipodi:role="line"
          x="679.31226"
          y="241.25351"
-         id="tspan8900">OH 18</tspan></text>
+         id="tspan3064">OH</tspan></text>
     <text
        xml:space="preserve"
        x="763.51312"
@@ -725,7 +1376,7 @@
          sodipodi:role="line"
          x="763.51312"
          y="292.07837"
-         id="tspan8922">VA 13</tspan></text>
+         id="tspan8922">VA</tspan></text>
     <text
        xml:space="preserve"
        x="762.11945"
@@ -735,7 +1386,7 @@
          sodipodi:role="line"
          x="762.11945"
          y="335.13416"
-         id="tspan8922-1">NC 15</tspan></text>
+         id="tspan8922-1">NC</tspan></text>
     <text
        xml:space="preserve"
        x="741.06763"
@@ -745,7 +1396,7 @@
          sodipodi:role="line"
          x="741.06763"
          y="377.39044"
-         id="tspan8966">SC 9</tspan></text>
+         id="tspan8966">SC</tspan></text>
     <text
        xml:space="preserve"
        x="694.47125"
@@ -755,27 +1406,27 @@
          sodipodi:role="line"
          x="694.47125"
          y="413.92426"
-         id="tspan8988">GA 16</tspan></text>
+         id="tspan8988">GA</tspan></text>
     <text
        xml:space="preserve"
-       x="749.59747"
-       y="525.63776"
+       x="742.54132"
+       y="494.95892"
        id="FL-text"
        inkscape:label="fltext"><tspan
          sodipodi:role="line"
-         x="749.59747"
-         y="525.63776"
-         id="tspan8988-2">FL 29</tspan></text>
+         x="742.54132"
+         y="494.95892"
+         id="tspan8988-2">FL</tspan></text>
     <text
        xml:space="preserve"
-       x="634.89056"
-       y="418.26938"
+       x="632.74304"
+       y="414.58792"
        id="AL-text"
        inkscape:label="altext"><tspan
          sodipodi:role="line"
-         x="634.89056"
-         y="418.26938"
-         id="tspan8988-2-7">AL 9</tspan></text>
+         x="632.74304"
+         y="414.58792"
+         id="tspan8988-2-7">AL</tspan></text>
     <text
        xml:space="preserve"
        x="578.83057"
@@ -785,7 +1436,7 @@
          sodipodi:role="line"
          x="578.83057"
          y="419.81815"
-         id="tspan8988-2-9">MS 6</tspan></text>
+         id="tspan8988-2-9">MS</tspan></text>
     <text
        xml:space="preserve"
        x="536.32275"
@@ -795,7 +1446,7 @@
          sodipodi:role="line"
          x="536.32275"
          y="473.50839"
-         id="tspan8988-2-2">LA 8</tspan></text>
+         id="tspan8988-2-2">LA</tspan></text>
     <text
        xml:space="preserve"
        x="400.74268"
@@ -805,52 +1456,57 @@
          sodipodi:role="line"
          x="400.74268"
          y="460.47302"
-         id="tspan8988-2-97">TX 38</tspan></text>
+         id="tspan8988-2-97">TX</tspan></text>
     <text
        xml:space="preserve"
        x="282.82227"
        y="377.76562"
        id="NM-text"
-       inkscape:label="nmtext"
-       style="-inkscape-font-specification:'sans-serif, Normal';font-family:sans-serif;font-weight:normal;font-style:normal;font-stretch:normal;font-variant:normal;font-size:12px;text-anchor:start;text-align:start;writing-mode:lr;font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;"><tspan
+       inkscape:label="nmtext"><tspan
          sodipodi:role="line"
-         id="tspan5110">NM</tspan></text>
+         id="tspan5110"
+         x="282.82227"
+         y="377.76562">NM</tspan></text>
     <text
        xml:space="preserve"
        x="176.65363"
        y="362.85352"
        id="AZ-text"
-       inkscape:label="aztext"
-       style="-inkscape-font-specification:'sans-serif, Normal';font-family:sans-serif;font-weight:normal;font-style:normal;font-stretch:normal;font-variant:normal;font-size:12px;text-anchor:start;text-align:start;writing-mode:lr;font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;"><tspan
+       inkscape:label="aztext"><tspan
          sodipodi:role="line"
-         id="tspan5108">AZ</tspan></text>
+         id="tspan5108"
+         x="176.65363"
+         y="362.85352">AZ</tspan></text>
     <text
        xml:space="preserve"
        x="51.653625"
        y="292.85352"
        id="CA-text"
-       inkscape:label="catext"
-       style="-inkscape-font-specification:'sans-serif, Normal';font-family:sans-serif;font-weight:normal;font-style:normal;font-stretch:normal;font-variant:normal;font-size:12px;text-anchor:start;text-align:start;writing-mode:lr;font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;"><tspan
+       inkscape:label="catext"><tspan
          sodipodi:role="line"
-         id="tspan5102">CA</tspan></text>
+         id="tspan5102"
+         x="51.653625"
+         y="292.85352">CA</tspan></text>
     <text
        xml:space="preserve"
        x="119.09644"
        y="242.91568"
        id="NV-text"
-       inkscape:label="nvtext"
-       style="-inkscape-font-specification:'sans-serif, Normal';font-family:sans-serif;font-weight:normal;font-style:normal;font-stretch:normal;font-variant:normal;font-size:12px;text-anchor:start;text-align:start;writing-mode:lr;font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;"><tspan
+       inkscape:label="nvtext"><tspan
          sodipodi:role="line"
-         id="tspan5104">NV</tspan></text>
+         id="tspan5104"
+         x="119.09644"
+         y="242.91568">NV</tspan></text>
     <text
        xml:space="preserve"
        x="204.51823"
        y="257.85352"
        id="UT-text"
-       inkscape:label="uttext"
-       style="-inkscape-font-specification:'sans-serif, Normal';font-family:sans-serif;font-weight:normal;font-style:normal;font-stretch:normal;font-variant:normal;font-size:12px;text-anchor:start;text-align:start;writing-mode:lr;font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;"><tspan
+       inkscape:label="uttext"><tspan
          sodipodi:role="line"
-         id="tspan5106">UT</tspan></text>
+         id="tspan5106"
+         x="204.51823"
+         y="257.85352">UT</tspan></text>
     <text
        xml:space="preserve"
        x="100.18555"
@@ -860,88 +1516,97 @@
          sodipodi:role="line"
          x="100.18555"
          y="497.85352"
-         id="tspan8988-2-5">AK 3</tspan></text>
+         id="tspan8988-2-5">AK</tspan></text>
     <text
        xml:space="preserve"
        x="82.618073"
        y="127.88765"
        id="OR-text"
-       inkscape:label="ortext"
-       style="-inkscape-font-specification:'sans-serif, Normal';font-family:sans-serif;font-weight:normal;font-style:normal;font-stretch:normal;font-variant:normal;font-size:12px;text-anchor:start;text-align:start;writing-mode:lr;font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;"><tspan
+       inkscape:label="ortext"><tspan
          sodipodi:role="line"
-         id="tspan5100">OR</tspan></text>
+         id="tspan5100"
+         x="82.618073"
+         y="127.88765">OR</tspan></text>
     <text
        xml:space="preserve"
-       x="98.618652"
-       y="54.7425"
+       x="97.391502"
+       y="57.350197"
        id="WA-text"
-       inkscape:label="watext"
-       style="-inkscape-font-specification:'sans-serif, Normal';font-family:sans-serif;font-weight:normal;font-style:normal;font-stretch:normal;font-variant:normal;font-size:12px;text-anchor:start;text-align:start;writing-mode:lr;font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;"><tspan
+       inkscape:label="watext"><tspan
          sodipodi:role="line"
-         id="tspan5088">WA</tspan></text>
+         id="tspan5088"
+         x="97.391502"
+         y="57.350197">WA</tspan></text>
     <text
        xml:space="preserve"
        x="176.25977"
        y="157.86003"
        id="ID-text"
-       inkscape:label="idtext"
-       style="-inkscape-font-specification:'sans-serif, Normal';font-family:sans-serif;font-weight:normal;font-style:normal;font-stretch:normal;font-variant:normal;font-size:12px;text-anchor:start;text-align:start;writing-mode:lr;font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;"><tspan
+       inkscape:label="idtext"><tspan
          sodipodi:role="line"
-         id="tspan5098">ID</tspan></text>
+         id="tspan5098"
+         x="176.25977"
+         y="157.86003">ID</tspan></text>
     <text
        xml:space="preserve"
        x="263.68491"
        y="97.853516"
        id="MT-text"
-       inkscape:label="mttext"
-       style="-inkscape-font-specification:'sans-serif, Normal';font-family:sans-serif;font-weight:normal;font-style:normal;font-stretch:normal;font-variant:normal;font-size:12px;text-anchor:start;text-align:start;writing-mode:lr;font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;"><tspan
+       inkscape:label="mttext"><tspan
          sodipodi:role="line"
-         id="tspan5090">MT</tspan></text>
+         id="tspan5090"
+         x="263.68491"
+         y="97.853516">MT</tspan></text>
     <text
        xml:space="preserve"
        x="276.31979"
        y="185.0751"
        id="WY-text"
-       inkscape:label="wvtext"
-       style="-inkscape-font-specification:'sans-serif, Normal';font-family:sans-serif;font-weight:normal;font-style:normal;font-stretch:normal;font-variant:normal;font-size:12px;text-anchor:start;text-align:start;writing-mode:lr;font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;"><tspan
+       inkscape:label="wvtext"><tspan
          sodipodi:role="line"
-         id="tspan5096">WY</tspan></text>
+         id="tspan5096"
+         x="276.31979"
+         y="185.0751">WY</tspan></text>
     <text
        xml:space="preserve"
        x="300.92163"
        y="277.30353"
        id="CO-text"
-       inkscape:label="cotext"
-       style="-inkscape-font-specification:'sans-serif, Normal';font-family:sans-serif;font-weight:normal;font-style:normal;font-stretch:normal;font-variant:normal;font-size:12px;text-anchor:start;text-align:start;writing-mode:lr;font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;"><tspan
+       inkscape:label="cotext"><tspan
          sodipodi:role="line"
-         id="tspan5112">CO</tspan></text>
+         id="tspan5112"
+         x="300.92163"
+         y="277.30353">CO</tspan></text>
     <text
        xml:space="preserve"
        x="398.01151"
        y="100.67806"
        id="ND-text"
-       inkscape:label="ndtext"
-       style="-inkscape-font-specification:'sans-serif, Normal';font-family:sans-serif;font-weight:normal;font-style:normal;font-stretch:normal;font-variant:normal;font-size:12px;text-anchor:start;text-align:start;writing-mode:lr;font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;"><tspan
+       inkscape:label="ndtext"><tspan
          sodipodi:role="line"
-         id="tspan5092">ND</tspan></text>
+         id="tspan5092"
+         x="398.01151"
+         y="100.67806">ND</tspan></text>
     <text
        xml:space="preserve"
        x="397.88556"
        y="163.68591"
        id="SD-text"
-       inkscape:label="sdtext"
-       style="-inkscape-font-specification:'sans-serif, Normal';font-family:sans-serif;font-weight:normal;font-style:normal;font-stretch:normal;font-variant:normal;font-size:12px;text-anchor:start;text-align:start;writing-mode:lr;font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;"><tspan
+       inkscape:label="sdtext"><tspan
          sodipodi:role="line"
-         id="tspan5094">SD</tspan></text>
+         id="tspan5094"
+         x="397.88556"
+         y="163.68591">SD</tspan></text>
     <text
        xml:space="preserve"
        x="396.79337"
        y="230.2476"
        id="NE-text"
-       inkscape:label="netext"
-       style="-inkscape-font-specification:'sans-serif, Normal';font-family:sans-serif;font-weight:normal;font-style:normal;font-stretch:normal;font-variant:normal;font-size:12px;text-anchor:start;text-align:start;writing-mode:lr;font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;"><tspan
+       inkscape:label="netext"><tspan
          sodipodi:role="line"
-         id="tspan5114">NE</tspan></text>
+         id="tspan5114"
+         x="396.79337"
+         y="230.2476">NE</tspan></text>
     <text
        xml:space="preserve"
        x="424.59491"
@@ -951,7 +1616,7 @@
          sodipodi:role="line"
          x="424.59491"
          y="295.9035"
-         id="tspan8988-2-43">KS 6</tspan></text>
+         id="tspan8988-2-43">KS</tspan></text>
     <text
        xml:space="preserve"
        x="442.81979"
@@ -961,17 +1626,17 @@
          sodipodi:role="line"
          x="442.81979"
          y="362.48419"
-         id="tspan8988-2-78">OK 7</tspan></text>
+         id="tspan8988-2-78">OK</tspan></text>
     <text
        xml:space="preserve"
-       x="526.56976"
-       y="377.11487"
+       x="525.34259"
+       y="369.44516"
        id="AR-text"
        inkscape:label="artext"><tspan
          sodipodi:role="line"
-         x="526.56976"
-         y="377.11487"
-         id="tspan8988-2-88">AR 6</tspan></text>
+         x="525.34259"
+         y="369.44516"
+         id="tspan8988-2-88">AR</tspan></text>
     <text
        xml:space="preserve"
        x="516.79559"
@@ -981,53 +1646,57 @@
          sodipodi:role="line"
          x="516.79559"
          y="303.06592"
-         id="tspan8988-2-31">MO 10</tspan></text>
+         id="tspan8988-2-31">MO</tspan></text>
     <text
        xml:space="preserve"
-       x="508.60468"
-       y="220.08672"
+       x="499.70782"
+       y="213.64417"
        id="IA-text"
-       inkscape:label="iatext"
-       style="-inkscape-font-specification:'sans-serif, Normal';font-family:sans-serif;font-weight:normal;font-style:normal;font-stretch:normal;font-variant:normal;font-size:12px;text-anchor:start;text-align:start;writing-mode:lr;font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;"><tspan
+       inkscape:label="iatext"><tspan
          sodipodi:role="line"
-         id="tspan5116">IA</tspan></text>
+         id="tspan5116"
+         x="499.70782"
+         y="213.64417">IA</tspan></text>
     <text
        xml:space="preserve"
        x="479.36365"
        y="129.24272"
        id="MN-text"
-       inkscape:label="mntext"
-       style="-inkscape-font-specification:'sans-serif, Normal';font-family:sans-serif;font-weight:normal;font-style:normal;font-stretch:normal;font-variant:normal;font-size:12px;text-anchor:start;text-align:start;writing-mode:lr;font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;"><tspan
+       inkscape:label="mntext"><tspan
          sodipodi:role="line"
-         id="tspan5120">MN</tspan></text>
+         id="tspan5120"
+         x="479.36365"
+         y="129.24272">MN</tspan></text>
     <text
        xml:space="preserve"
        x="556.05792"
        y="157.85352"
        id="WI-text"
-       inkscape:label="witext"
-       style="-inkscape-font-specification:'sans-serif, Normal';font-family:sans-serif;font-weight:normal;font-style:normal;font-stretch:normal;font-variant:normal;font-size:12px;text-anchor:start;text-align:start;writing-mode:lr;font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;"><tspan
+       inkscape:label="witext"><tspan
          sodipodi:role="line"
-         id="tspan5122">WI</tspan></text>
+         id="tspan5122"
+         x="556.05792"
+         y="157.85352">WI</tspan></text>
     <text
        xml:space="preserve"
        x="575.73132"
        y="259.51764"
        id="IL-text"
-       inkscape:label="iltext"
-       style="-inkscape-font-specification:'sans-serif, Normal';font-family:sans-serif;font-weight:normal;font-style:normal;font-stretch:normal;font-variant:normal;font-size:12px;text-anchor:start;text-align:start;writing-mode:lr;font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;"><tspan
+       inkscape:label="iltext"><tspan
          sodipodi:role="line"
-         id="tspan5124">IL</tspan></text>
+         id="tspan5124"
+         x="575.73132"
+         y="259.51764">IL</tspan></text>
     <text
        xml:space="preserve"
-       x="626.16711"
-       y="261.69931"
+       x="629.20416"
+       y="255.62521"
        id="IN-text"
        inkscape:label="intext"><tspan
          sodipodi:role="line"
-         x="626.16711"
-         y="261.69931"
-         id="tspan8988-2-0">IN 11</tspan></text>
+         x="629.20416"
+         y="255.62521"
+         id="tspan3060">IN</tspan></text>
     <text
        xml:space="preserve"
        x="660.22137"
@@ -1037,17 +1706,17 @@
          sodipodi:role="line"
          x="660.22137"
          y="307.85352"
-         id="tspan8988-2-87">KY 8</tspan></text>
+         id="tspan8988-2-87">KY</tspan></text>
     <text
        xml:space="preserve"
-       x="635.96356"
-       y="347.86002"
+       x="619.00427"
+       y="350.58911"
        id="TN-text"
        inkscape:label="tntext"><tspan
          sodipodi:role="line"
-         x="635.96356"
-         y="347.86002"
-         id="tspan8988-2-72">TN 11</tspan></text>
+         x="619.00427"
+         y="350.58911"
+         id="tspan8988-2-72">TN</tspan></text>
     <text
        xml:space="preserve"
        x="645.97247"
@@ -1057,7 +1726,7 @@
          sodipodi:role="line"
          x="645.97247"
          y="187.85352"
-         id="tspan8988-2-22">MI 16</tspan></text>
+         id="tspan8988-2-22">MI</tspan></text>
     <text
        xml:space="preserve"
        x="716.87817"
@@ -1067,7 +1736,7 @@
          sodipodi:role="line"
          x="716.87817"
          y="281.17679"
-         id="tspan8988-2-106">WV 5</tspan></text>
+         id="tspan8988-2-106">WV</tspan></text>
     <text
        xml:space="preserve"
        x="874.81689"
@@ -1077,7 +1746,7 @@
          sodipodi:role="line"
          x="874.81689"
          y="90.47953"
-         id="tspan8988-2-59-0-7-1-7-7-5-9-9">ME 4</tspan></text>
+         id="tspan8988-2-59-0-7-1-7-7-5-9-9">ME</tspan></text>
     <text
        xml:space="preserve"
        x="870.73798"
@@ -1087,7 +1756,7 @@
          sodipodi:role="line"
          x="870.73798"
          y="414.93405"
-         id="tspan8988-2-59-0">MD 10</tspan></text>
+         id="tspan8988-2-59-0">MD</tspan></text>
     <text
        xml:space="preserve"
        x="877.57422"
@@ -1097,7 +1766,7 @@
          sodipodi:role="line"
          x="877.57422"
          y="390.08749"
-         id="tspan8988-2-59-0-7">DE 3</tspan></text>
+         id="tspan8988-2-59-0-7">DE</tspan></text>
     <text
        xml:space="preserve"
        x="872.40625"
@@ -1107,7 +1776,7 @@
          sodipodi:role="line"
          x="872.40625"
          y="365.0289"
-         id="tspan8988-2-59-0-7-1">NJ 14</tspan></text>
+         id="tspan8988-2-59-0-7-1">NJ</tspan></text>
     <text
        xml:space="preserve"
        x="877.65625"
@@ -1117,7 +1786,7 @@
          sodipodi:role="line"
          x="877.65625"
          y="340.08749"
-         id="tspan8988-2-59-0-7-1-7">CT 7</tspan></text>
+         id="tspan8988-2-59-0-7-1-7">CT</tspan></text>
     <text
        xml:space="preserve"
        x="879.8125"
@@ -1127,7 +1796,7 @@
          sodipodi:role="line"
          x="879.8125"
          y="315.08749"
-         id="tspan8988-2-59-0-7-1-7-7">RI 4</tspan></text>
+         id="tspan8988-2-59-0-7-1-7-7">RI</tspan></text>
     <text
        xml:space="preserve"
        x="871.55078"
@@ -1137,7 +1806,7 @@
          sodipodi:role="line"
          x="871.55078"
          y="290.10703"
-         id="tspan8988-2-59-0-7-1-7-7-5">MA 11</tspan></text>
+         id="tspan8988-2-59-0-7-1-7-7-5">MA</tspan></text>
     <text
        xml:space="preserve"
        x="878.05078"
@@ -1147,7 +1816,7 @@
          sodipodi:role="line"
          x="878.05078"
          y="265.08749"
-         id="tspan8988-2-59-0-7-1-7-7-5-9">VT 3</tspan></text>
+         id="tspan8988-2-59-0-7-1-7-7-5-9">VT</tspan></text>
     <text
        xml:space="preserve"
        x="875.70312"
@@ -1157,7 +1826,7 @@
          sodipodi:role="line"
          x="875.70312"
          y="240.08749"
-         id="tspan8988-2-59-0-7-1-7-7-5-9-1">NH 4</tspan></text>
+         id="tspan8988-2-59-0-7-1-7-7-5-9-1">NH</tspan></text>
     <text
        xml:space="preserve"
        x="260.15173"
@@ -1167,6 +1836,6 @@
          sodipodi:role="line"
          x="260.15173"
          y="568.63818"
-         id="tspan8988-2-59-0-0">HI 4</tspan></text>
+         id="tspan8988-2-59-0-0">HI</tspan></text>
   </g>
 </svg>

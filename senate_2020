@@ -1,53 +1,54 @@
-Democrat #000000 #ffffff #aaaaaa
-Republican #999999 #888888 #444444
+d Democrat #1c408c #577ccc #8aafff
+r Republican #bf1d29 #ff5865 #ff8b98
+i Independent #1c8c28 #50c85e #8aff97
 !
-AL
-AK
-AZ
-AR
-CA
-CO
-CT
-DE
-FL
-GA
-HI
-ID
-IL
-IN
-IA
-KS
-KY
-LA
-ME
-MD
-MA
-MI
-MN
-MS
-MO
-MT
-NE
-NV
-NH
-NJ
-NM
-NY
-NC
-ND
-OH
-OK
-OR
-PA
-RI
-SC
-SD
-TN
-TX
-UT
-VT
-VA
-WA
-WV
-WI
-WY
+AL o r
+AK o r
+AZ o d
+AR o r
+CA d d
+CO o d
+CT d d
+DE o d
+FL d r
+GA o r
+HI d d
+ID o r
+IL o d
+IN d r
+IA o r
+KS o r
+KY o r
+LA o r
+ME o i
+MD d d
+MA o d
+MI o d
+MN o d
+MS o r
+MO r r
+MT o d
+NE o r
+NV d d
+NH o d
+NJ o d
+NM o d
+NY d d
+NC o r
+ND r r
+OH r d
+OK o r
+OR o d
+PA r d
+RI o d
+SC o r
+SD o r
+TN o r
+TX o r
+UT r r
+VT d i
+VA o d
+WA d d
+WV o d
+WI r d
+WY o r

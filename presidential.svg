@@ -43,9 +43,9 @@
      id="namedview3848"
      showgrid="true"
      inkscape:pagecheckerboard="true"
-     inkscape:zoom="2.3048695"
-     inkscape:cx="881.37463"
-     inkscape:cy="245.90292"
+     inkscape:zoom="1.1524348"
+     inkscape:cx="316.10289"
+     inkscape:cy="125.64681"
      inkscape:window-x="0"
      inkscape:window-y="0"
      inkscape:window-maximized="1"
@@ -84,7 +84,7 @@
     <color-profile
        name="sRGB"
        xlink:href="/usr/share/color/icc/colord/sRGB.icc"
-       id="color-profile5" />
+       id="color-profile13" />
     <inkscape:tag
        id="Set 3"
        inkscape:expanded="true">
@@ -583,7 +583,7 @@
        inkscape:connector-curvature="0"
        style="fill:#ffffff;fill-opacity:1" />
     <rect
-       style="opacity:1;fill:#fffff3;fill-opacity:1;stroke:#000000;stroke-width:1.99999988;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       style="opacity:1;fill:#fffff3;fill-opacity:1;"
        id="DC"
        width="52.999996"
        height="19.999998"
@@ -604,7 +604,7 @@
          x="770"
          y="363.39062" /></text>
     <rect
-       style="opacity:1;fill:#fffff3;fill-opacity:1;stroke:#000000;stroke-width:1.99999988;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       style="opacity:1;fill:#fffff3;fill-opacity:1;"
        id="MD-button"
        width="52.999996"
        height="19.999998"
@@ -614,7 +614,7 @@
        ry="3"
        rx="3" />
     <rect
-       style="opacity:1;fill:#fffff3;fill-opacity:1;stroke:#000000;stroke-width:1.99999988;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       style="opacity:1;fill:#fffff3;fill-opacity:1;"
        id="DE-button"
        width="52.999996"
        height="19.999998"
@@ -624,7 +624,7 @@
        ry="3"
        rx="3" />
     <rect
-       style="opacity:1;fill:#fffff3;fill-opacity:1;stroke:#000000;stroke-width:1.99999988;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       style="opacity:1;fill:#fffff3;fill-opacity:1;"
        id="NJ-button"
        width="52.999996"
        height="19.999998"
@@ -634,7 +634,7 @@
        ry="3"
        rx="3" />
     <rect
-       style="opacity:1;fill:#fffff3;fill-opacity:1;stroke:#000000;stroke-width:1.99999988;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       style="opacity:1;fill:#fffff3;fill-opacity:1;"
        id="CT-button"
        width="52.999996"
        height="19.999998"
@@ -644,7 +644,7 @@
        ry="3"
        rx="3" />
     <rect
-       style="opacity:1;fill:#fffff3;fill-opacity:1;stroke:#000000;stroke-width:1.99999988;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       style="opacity:1;fill:#fffff3;fill-opacity:1;"
        id="RI-button"
        width="52.999996"
        height="19.999998"
@@ -654,7 +654,7 @@
        ry="3"
        rx="3" />
     <rect
-       style="opacity:1;fill:#fffff3;fill-opacity:1;stroke:#000000;stroke-width:1.99999988;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       style="opacity:1;fill:#fffff3;fill-opacity:1;"
        id="MA-button"
        width="52.999996"
        height="19.999998"
@@ -664,7 +664,7 @@
        ry="3"
        rx="3" />
     <rect
-       style="opacity:1;fill:#fffff3;fill-opacity:1;stroke:#000000;stroke-width:1.99999988;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:0.94214872"
+       style="opacity:1;fill:#fffff3;fill-opacity:1;"
        id="VT-button"
        width="52.999996"
        height="19.999998"
@@ -674,7 +674,7 @@
        ry="3"
        rx="3" />
     <rect
-       style="opacity:1;fill:#fffff3;fill-opacity:1;stroke:#000000;stroke-width:1.99999988;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       style="opacity:1;fill:#fffff3;fill-opacity:1;"
        id="NH-button"
        width="52.999996"
        height="19.999998"
@@ -684,7 +684,7 @@
        ry="3"
        rx="3" />
     <rect
-       style="opacity:1;fill:#fffff3;fill-opacity:1;stroke:#000000;stroke-width:2;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       style="opacity:1;fill:#fffff3;fill-opacity:1;"
        id="HI-button"
        width="50"
        height="19.999998"
@@ -694,7 +694,7 @@
        ry="3"
        rx="3" />
     <rect
-       style="opacity:1;fill:#fffff3;fill-opacity:1;stroke:#000000;stroke-width:2;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       style="opacity:1;fill:#fffff3;fill-opacity:1;"
        id="ME-AL"
        width="74.290161"
        height="90.290161"
@@ -704,7 +704,7 @@
        ry="7"
        rx="7" />
     <rect
-       style="opacity:1;fill:#fffff3;fill-opacity:1;stroke:#000000;stroke-width:2;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:0.95454544"
+       style="opacity:1;fill:#fffff3;fill-opacity:1;"
        id="ME-D1"
        width="60"
        height="19.999998"
@@ -714,7 +714,7 @@
        rx="3"
        ry="3" />
     <rect
-       style="opacity:1;fill:#fffff3;fill-opacity:1;stroke:#000000;stroke-width:2;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:0.95454544"
+       style="opacity:1;fill:#fffff3;fill-opacity:1;"
        id="ME-D2"
        width="60"
        height="19.999998"
@@ -724,7 +724,7 @@
        rx="3"
        ry="3" />
     <rect
-       style="opacity:1;fill:#fffff1;fill-opacity:1;stroke:#000000;stroke-width:2;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       style="opacity:1;fill:#fffff1;fill-opacity:1;"
        id="NE-AL"
        width="141"
        height="61.035789"
@@ -734,7 +734,7 @@
        ry="6.9999995"
        rx="6.9999995" />
     <rect
-       style="opacity:1;fill:#fffffb;fill-opacity:1;stroke:#000000;stroke-width:2;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       style="opacity:1;fill:#fffffb;fill-opacity:1;"
        id="NE-D1"
        width="60"
        height="19.999998"
@@ -744,7 +744,7 @@
        ry="3"
        rx="3" />
     <rect
-       style="opacity:1;fill:#fffffa;fill-opacity:1;stroke:#000000;stroke-width:2;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:0.97520662"
+       style="opacity:1;fill:#fffffa;fill-opacity:1;"
        id="NE-D2"
        width="60"
        height="19.999998"
@@ -754,7 +754,7 @@
        rx="3"
        ry="3" />
     <rect
-       style="opacity:1;fill:#fffff6;fill-opacity:1;stroke:#000000;stroke-width:2;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       style="opacity:1;fill:#fffff6;fill-opacity:1;"
        id="NE-D3"
        width="60"
        height="19.999998"

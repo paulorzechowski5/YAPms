@@ -1,8 +1,24 @@
 
+function blockPresetNotify() {
+	var notification = document.getElementById('notification');
+	notification.style.display = 'inline';
+	var message = notification.querySelector('#notification-message');
+	var notificationText = 'Presets cannot be changed for this map';
+	message.innerHTML = notificationText;
+	var title = notification.querySelector('#notification-title');
+	title.innerHTML = 'Sorry';
+}
+
 // clear the candidate list, and map
-function loadPresetEmpty() {
+function loadPresetTossup() {
+	if(blockPresets) {
+		blockPresetNotify();
+		return;
+	}
+
 	initCandidates();
-	clearMap();
+	
+	verifyMap();
 	verifyPaintIndex();
 	countVotes();
 	updateChart();
@@ -13,6 +29,11 @@ function loadPresetEmpty() {
 
 // republicans vs democrats
 function loadPresetClassic() {
+	if(blockPresets) {
+		blockPresetNotify();
+		return;
+	}
+
 	initCandidates();
 	var republican = new Candidate('Republican', 
 		['#BF1D29', '#FF5865', '#FF8B98']);
@@ -33,6 +54,11 @@ function loadPresetClassic() {
 
 // republican vs democrat vs libertarian
 function loadPresetLibertarian() {
+	if(blockPresets) {
+		blockPresetNotify();
+		return;	
+	}
+
 	initCandidates();
 	var republican = new Candidate('Republican', 
 		['#BF1D29', '#FF5865', '#FF8B98']);
@@ -57,6 +83,11 @@ function loadPresetLibertarian() {
 
 // republican vs democrat vs green
 function loadPresetGreen() {
+	if(blockPresets) {
+		blockPresetNotify();
+		return;
+	}
+
 	initCandidates();
 	var republican = new Candidate('Republican', 
 		['#BF1D29', '#FF5865', '#FF8B98']);
@@ -80,6 +111,11 @@ function loadPresetGreen() {
 
 // republican vs democrat vs green vs libertarian
 function loadPresetMajors() {
+	if(blockPresets) {
+		blockPresetNotify();
+		return;
+	}
+
 	initCandidates();
 	var republican = new Candidate('Republican', 
 		['#BF1D29', '#FF5865', '#FF8B98']);

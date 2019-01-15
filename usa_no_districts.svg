@@ -44,8 +44,8 @@
      showgrid="true"
      inkscape:pagecheckerboard="true"
      inkscape:zoom="2.3048696"
-     inkscape:cx="872.79422"
-     inkscape:cy="160.47311"
+     inkscape:cx="471.47"
+     inkscape:cy="112.74807"
      inkscape:window-x="0"
      inkscape:window-y="0"
      inkscape:window-maximized="1"
@@ -84,7 +84,7 @@
     <color-profile
        name="sRGB"
        xlink:href="/usr/share/color/icc/colord/sRGB.icc"
-       id="color-profile567" />
+       id="color-profile1380" />
     <inkscape:tag
        id="Set 3"
        inkscape:expanded="true">
@@ -575,7 +575,7 @@
        inkscape:connector-curvature="0"
        style="fill:#ffffff;fill-opacity:1" />
     <rect
-       style="opacity:1;fill:#fffff3;fill-opacity:1;stroke:#000000;stroke-width:2;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       style="opacity:1;fill:#fffff3;fill-opacity:1;"
        id="DC"
        width="53"
        height="19.999998"
@@ -596,7 +596,7 @@
          x="770"
          y="363.39062" /></text>
     <rect
-       style="opacity:1;fill:#fffff3;fill-opacity:1;stroke:#000000;stroke-width:2;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       style="opacity:1;fill:#fffff3;fill-opacity:1;"
        id="MD-button"
        width="53"
        height="19.999998"
@@ -606,7 +606,7 @@
        ry="3"
        rx="3" />
     <rect
-       style="opacity:1;fill:#fffff3;fill-opacity:1;stroke:#000000;stroke-width:2;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       style="opacity:1;fill:#fffff3;fill-opacity:1;"
        id="DE-button"
        width="53"
        height="19.999998"
@@ -616,7 +616,7 @@
        ry="3"
        rx="3" />
     <rect
-       style="opacity:1;fill:#fffff3;fill-opacity:1;stroke:#000000;stroke-width:2;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       style="opacity:1;fill:#fffff3;fill-opacity:1;"
        id="NJ-button"
        width="53"
        height="19.999998"
@@ -626,7 +626,7 @@
        ry="3"
        rx="3" />
     <rect
-       style="opacity:1;fill:#fffff3;fill-opacity:1;stroke:#000000;stroke-width:2;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       style="opacity:1;fill:#fffff3;fill-opacity:1;"
        id="CT-button"
        width="53"
        height="19.999998"
@@ -636,7 +636,7 @@
        ry="3"
        rx="3" />
     <rect
-       style="opacity:1;fill:#fffff3;fill-opacity:1;stroke:#000000;stroke-width:2;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       style="opacity:1;fill:#fffff3;fill-opacity:1;"
        id="RI-button"
        width="53"
        height="19.999998"
@@ -646,7 +646,7 @@
        ry="3"
        rx="3" />
     <rect
-       style="opacity:1;fill:#fffff3;fill-opacity:1;stroke:#000000;stroke-width:2;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       style="opacity:1;fill:#fffff3;fill-opacity:1;"
        id="MA-button"
        width="53"
        height="19.999998"
@@ -656,7 +656,7 @@
        ry="3"
        rx="3" />
     <rect
-       style="opacity:1;fill:#fffff3;fill-opacity:1;stroke:#000000;stroke-width:2;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:0.94214872"
+       style="opacity:1;fill:#fffff3;fill-opacity:1;"
        id="VT-button"
        width="53"
        height="19.999998"
@@ -666,7 +666,7 @@
        ry="3"
        rx="3" />
     <rect
-       style="opacity:1;fill:#fffff3;fill-opacity:1;stroke:#000000;stroke-width:2;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       style="opacity:1;fill:#fffff3;fill-opacity:1;"
        id="NH-button"
        width="53"
        height="19.999998"
@@ -676,7 +676,7 @@
        ry="3"
        rx="3" />
     <rect
-       style="opacity:1;fill:#fffff3;fill-opacity:1;stroke:#000000;stroke-width:2;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       style="opacity:1;fill:#fffff3;fill-opacity:1;"
        id="HI-button"
        width="50"
        height="19.999998"

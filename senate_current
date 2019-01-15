@@ -1,0 +1,54 @@
+d Democrat #1c408c #577ccc #8aafff
+r Republican #bf1d29 #ff5865 #ff8b98
+i Independent #1c8c28 #50c85e #8aff97
+!
+AL d r
+AK r r
+AZ r r
+AR r r
+CA d d
+CO r d
+CT d d
+DE d d
+FL d r
+GA r r
+HI d d
+ID r r
+IL d d
+IN d r
+IA r r
+KS r r
+KY r r
+LA r r
+ME r i
+MD d d
+MA d d
+MI d d
+MN d d
+MS r r
+MO r r
+MT r d
+NE r r
+NV d d
+NH d d
+NJ d d
+NM d d
+NY d d
+NC r r
+ND r r
+OH r d
+OK r r
+OR d d
+PA r d
+RI d d
+SC r r
+SD r r
+TN r r
+TX r r
+UT r r
+VT d i
+VA d d
+WA d d
+WV r d
+WI r d
+WY r r
