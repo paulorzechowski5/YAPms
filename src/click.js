@@ -1,4 +1,9 @@
 function buttonClick(clickElement) {
+	if(blockClick) {
+		blockClick = false;
+		return;
+	}
+
 	if(mode === 'paint') {
 		buttonClickPaint(clickElement);
 	} else if(mode === 'ec') {
@@ -7,6 +12,7 @@ function buttonClick(clickElement) {
 }
 
 function buttonClickPaint(clickElement) {
+
 	var id = clickElement.getAttribute('id');
 	var split = id.split('-');
 	var state = states.find(state => state.name === split[0]);
@@ -32,6 +38,11 @@ function buttonClickEC(clickElement) {
 }
 
 function landClick(clickElement) {
+	if(blockClick) {
+		blockClick = false;
+		return;
+	}
+
 	var id = clickElement.getAttribute('id');
 	var split = id.split('-');
 	var stateName = split[0];
@@ -72,6 +83,11 @@ function landClick(clickElement) {
 }
 
 function districtClick(clickElement) {
+	if(blockClick) {
+		blockClick = false;
+		return;
+	}
+
 	var id = clickElement.getAttribute('id');
 	var split = id.split('-');
 	var district = states.find(state => state.name === id);
@@ -131,6 +147,11 @@ function districtClick(clickElement) {
 
 //called when a state is clicked
 function stateClick(clickElement, e) {
+	if(blockClick) {
+		blockClick = false;
+		return;
+	}
+
 	var id = clickElement.getAttribute('id');
 	// first element is the state
 	// second element might be button
@@ -159,6 +180,11 @@ function stateClick(clickElement, e) {
 }
 
 function specialClick(clickElement, e) {
+	if(blockClick) {
+		blockClick = false;
+		return;
+	}
+	
 	var id = clickElement.getAttribute('id');
 	var state = states.find(state => state.name === id);
 
@@ -173,6 +199,11 @@ function specialClick(clickElement, e) {
 // when a button on the legend is clicked, it saves the selected candidate
 // to a variable, so that you can paint with it
 function legendClick(candidate, button) {
+	if(blockClick) {
+		blockClick = false;
+		return;
+	}
+	
 	if(mode === 'paint') {
 		paintIndex = candidate;
 	} else if(mode === 'candidate' && candidate !== 'Tossup') {

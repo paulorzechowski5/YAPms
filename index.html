@@ -8,6 +8,7 @@
 	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.min.js"></script>
 	<script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@0.5.0"></script> 
+	<script src="https://cdn.jsdelivr.net/npm/svg-pan-zoom@3.5.0/dist/svg-pan-zoom.min.js"></script>
 	<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
 	<script src="src/click.js"></script>
 	<script src="src/data.js"></script>
@@ -18,6 +19,12 @@
 </head>
 
 <body id="body">
+
+<div id="map-div">
+	<?php //echo file_get_contents("usa.svg"); ?>
+	<?php //echo file_get_contents("lte.svg"); ?>
+</div>
+
 <div id="menu-div">
 
 	<div id="menu-left">
@@ -52,7 +59,7 @@
 				<a onclick='loadMap("../res/usa_no_districts.svg", 16, 1, "usa_no_districts_ec", "presidential", "open")'>Presidential Take All</a>
 				<a onclick='loadMap("../res/usa_senate.svg", 16, 1.5, "usa_senate", "senatorial", "open")'>Senatorial<br>Open</a>
 				<a onclick='loadMap("../res/usa_gubernatorial.svg", 16, 1, "usa_gubernatorial", "gubernatorial", "open")'>Gubernatorial<br>Open</a>
-				<a onclick='loadMap("../res/canada_states.svg", 16, 3, "canada_ec", "presidential", "open");'>Canada</a>
+				<a onclick='loadMap("../res/canada_states.svg", 38, 3, "canada_ec", "presidential", "open");'>Canada</a>
 				<a onclick='loadMap("../res/lte.svg", 35, 1, "lte_ec", "presidential", "open");'>LTE Discord</a>
 			</div>
 		</div>
@@ -130,16 +137,14 @@
 	</span>
 	<div id="menu-right">
 
-		<!--
 		<div class="dropdown" class="right-justify">
 			<button class="dropdown-button">
 				Misc
 			</button>
 			<div class="dropdown-content">
-				<a onclick='toggleLegendCounter()'>Legend Counter</a>
-				<a onclick='toggleChartLabels()'>Chart Labels</a>
+				<a onclick="lockMap(this)">Lock Map</a>
 			</div>
-		</div> -->
+		</div>
 
 	</div>
 </div>
@@ -148,16 +153,14 @@
 
 </div>
 
-<div id="application">
-	<div id="chart-div">
-		<canvas id="chart" width="100" height="100"></canvas>
-	</div>
-
-	<div id="map-div">
-		<?php //echo file_get_contents("usa.svg"); ?>
-		<?php //echo file_get_contents("lte.svg"); ?>
-	</div>
+<div id="chart-div">
+	<canvas id="chart" width="100" height="100"></canvas>
 </div>
+
+<div id="application">
+
+</div>
+
 
 <div id="ecedit" class="popup">
 	<h3 id="ecedit-message"></h3>

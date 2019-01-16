@@ -26,6 +26,9 @@ var chartRadarScales;
 
 var chartLeans = true;
 
+// pan object
+var panobject;
+
 // paint data
 var paintIndex = 'Tossup';
 var maxColorValue = 2;
@@ -53,6 +56,8 @@ var loadConfig = {
 
 var strokeMultiplier = 1;
 
+var blockClick = false;
+
 var previousPalette = function() {
 	lightPalette();	
 };
@@ -79,13 +84,26 @@ function loadMap(filename, fontsize, strokewidth, dataid, type, year) {
 	console.log('Loading ' + filename);
 	map = dataid;
 	$('#map-div').load(filename, function() {
+		panObject = svgPanZoom('#svgdata', {
+			fit: true,
+			center: true,
+			contain: false,
+			dblClickZoomEnabled: false,
+			zoomScaleSensitivity: 0.03,
+			beforePan: function() {
+			},
+			onPan: function() {
+				blockClick = true;
+			}
+
+		});
+
 		console.log('Done loading ' + filename);
 
 		var textHTML = document.getElementById('text');
 		if(textHTML !== null) {
 			textHTML.style.fontSize = fontsize;
 		}
-		console.log(typeof (''+strokewidth));
 
 		initData(dataid);
 		
@@ -469,10 +487,7 @@ function initChart() {
 
 	chart.generateLegend();
 	
-	var htmldiv = document.getElementById('chart-div');
 	var html = document.getElementById('chart');
-	htmldiv.style.position = 'absolute';
-	html.style.display = 'none';
 }
 
 // empty the list of candidates and insert the tossup candidate
@@ -546,12 +561,10 @@ function setEC(e) {
 
 // dynamically change the chart from one form to another
 function setChart(type) {
-	var htmldiv = document.getElementById('chart-div');
 	var html = document.getElementById('chart');
 	var ctx = html.getContext('2d');
 
 	if(type === 'none') {
-		htmldiv.style.position = 'absolute';
 		html.style.display = 'none';
 		return;
 	}
@@ -567,7 +580,6 @@ function setChart(type) {
 
 	chartType = type;
 
-	htmldiv.style.position = 'relative';
 	html.style.display = 'inline-block';
 
 	// set the proper scales
@@ -785,7 +797,7 @@ function verifyMap() {
 
 // sets all states to white
 function clearMap() {
-	loadMap(loadConfig.filename, loadConfig.dataid, loadConfig.fontsize, loadConfig.type, loadConfig.year);
+	loadMap(loadConfig.filename, loadConfig.fontsize, loadConfig.strokewidth, loadConfig.dataid, loadConfig.type, loadConfig.year);
 }
 
 // iterate over each state and delegate votes to the candidate
@@ -919,13 +931,25 @@ function updateLegend() {
 	}
 }
 
+function lockMap(html) {
+	if(html.innerHTML === 'Lock Map') {
+		html.innerHTML = 'Unlock Map';
+		panObject.disablePan();
+		panObject.disableZoom();
+	} else {
+		html.innerHTML = 'Lock Map';
+		panObject.enablePan();
+		panObject.enableZoom();
+	}
+}
+
 function start() {
 	initCandidates();
 	initChart();
-	loadMap('../res/presidential.svg', 16, 1.5, 'usa_ec',"presidential", "open");
+	loadMap('../res/presidential.svg', 16, 1, 'usa_ec',"presidential", "open");
 
 	displayNotification('Welcome!', 'This software is in beta, so please bear with us as we work out the bugs.  Thank you! <br><br>' +
-	'<b>New Stuff:</b> Senatorial and Gubernatorial maps!<br>Canada!');
+	'<b>New Stuff:</b> Click, drag and zoom the map!<br> Lock and unlock the map in the Misc menu at the top right.');
 }
 
 start();
