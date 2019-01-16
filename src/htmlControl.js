@@ -279,18 +279,20 @@ function setTossupColor(color) {
 function setMapStyle(color, strokeWidth) {
 	var outlines = document.getElementById('outlines');
 	outlines.style.stroke = color;
-	outlines.style.strokeWidth = strokeWidth;
+	outlines.style.strokeWidth = strokeWidth * strokeMultiplier;
 
 	var special = document.getElementById('special');
 	if(special != null) {
 		special.style.stroke = color;
-		special.style.strokeWidth = strokeWidth;
+		special.style.strokeWidth = strokeWidth * strokeMultiplier;
 	}
 }
 
 function setTextStyle(color, weight) {
 	var text = document.getElementById('text');
-	text.style.strokeWidth = 0;
-	text.style.fontWeight = weight;
-	text.style.fill = color;
+	if(text !== null) {
+		text.style.strokeWidth = 0;
+		text.style.fontWeight = weight;
+		text.style.fill = color;
+	}
 }

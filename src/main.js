@@ -44,29 +44,34 @@ var legendCounter = true;
 
 var loadConfig = {
 	filename: '', 
-	dataid: '', 
 	fontsize: 16, 
+	strokewidth: 1.5,
+	dataid: '', 
 	type: '',
 	year: ''
 };
+
+var strokeMultiplier = 1;
 
 var previousPalette = function() {
 	lightPalette();	
 };
 
 // loads the svg element into the HTML
-function loadMap(filename, dataid, fontsize, type, year) {
+function loadMap(filename, fontsize, strokewidth, dataid, type, year) {
 	var mapHTML = document.getElementById('map-div');
 	mapHTML.style.visibility = 'hidden';
 
 	mapType = type;
 	mapYear = year;
+	strokeMultiplier = strokewidth;
 	var dataname = '../data/' + type + '_' + year;
 
 	loadConfig = {
 		filename: filename,
-		dataid: dataid,
 		fontsize: fontsize,
+		strokewidth: strokewidth,
+		dataid: dataid,
 		type: type,
 		year: year
 	}
@@ -77,7 +82,10 @@ function loadMap(filename, dataid, fontsize, type, year) {
 		console.log('Done loading ' + filename);
 
 		var textHTML = document.getElementById('text');
-		textHTML.style.fontSize = fontsize;
+		if(textHTML !== null) {
+			textHTML.style.fontSize = fontsize;
+		}
+		console.log(typeof (''+strokewidth));
 
 		initData(dataid);
 		
@@ -98,6 +106,7 @@ function loadMap(filename, dataid, fontsize, type, year) {
 		} else {
 			mapHTML.style.visibility = 'visible';
 		}
+		
 	});
 }
 
@@ -913,10 +922,10 @@ function updateLegend() {
 function start() {
 	initCandidates();
 	initChart();
-	loadMap('../res/presidential.svg', 'usa_ec', 16, "presidential", "open");
+	loadMap('../res/presidential.svg', 16, 1.5, 'usa_ec',"presidential", "open");
 
 	displayNotification('Welcome!', 'This software is in beta, so please bear with us as we work out the bugs.  Thank you! <br><br>' +
-	'<b>New Stuff:</b> Senatorial and Gubernatorial maps!');
+	'<b>New Stuff:</b> Senatorial and Gubernatorial maps!<br>Canada!');
 }
 
 start();
