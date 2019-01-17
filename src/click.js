@@ -1,10 +1,7 @@
 function buttonClick(clickElement) {
-	if(blockClick) {
-		blockClick = false;
+	if(mode === 'move') {
 		return;
-	}
-
-	if(mode === 'paint') {
+	} else if(mode === 'paint') {
 		buttonClickPaint(clickElement);
 	} else if(mode === 'ec') {
 		buttonClickEC(clickElement);
@@ -38,8 +35,8 @@ function buttonClickEC(clickElement) {
 }
 
 function landClick(clickElement) {
-	if(blockClick) {
-		blockClick = false;
+
+	if(mode === 'move') {
 		return;
 	}
 
@@ -83,16 +80,14 @@ function landClick(clickElement) {
 }
 
 function districtClick(clickElement) {
-	if(blockClick) {
-		blockClick = false;
-		return;
-	}
 
 	var id = clickElement.getAttribute('id');
 	var split = id.split('-');
 	var district = states.find(state => state.name === id);
 
-	if(mode === 'paint') {
+	if(mode === 'move') {
+
+	} else if(mode === 'paint') {
 		//var state = states.find(state => state.name === split[0]);
 		//state.setColor('tossup', 1);
 		district.incrementCandidateColor(paintIndex);
@@ -147,10 +142,6 @@ function districtClick(clickElement) {
 
 //called when a state is clicked
 function stateClick(clickElement, e) {
-	if(blockClick) {
-		blockClick = false;
-		return;
-	}
 
 	var id = clickElement.getAttribute('id');
 	// first element is the state
@@ -158,8 +149,9 @@ function stateClick(clickElement, e) {
 	var split = id.split('-');
 	// get state where state.name equals the id attribute
 	var state = states.find(state => state.name === split[0]);
-	
-	if(mode === 'ec') {
+	if(mode === 'move') {
+
+	} if(mode === 'ec') {
 		var ecedit = document.getElementById('ecedit');
 		var eceditText = document.getElementById('ecedit-message');
 		var input = document.getElementById('state-ec');
@@ -180,15 +172,12 @@ function stateClick(clickElement, e) {
 }
 
 function specialClick(clickElement, e) {
-	if(blockClick) {
-		blockClick = false;
-		return;
-	}
 	
 	var id = clickElement.getAttribute('id');
 	var state = states.find(state => state.name === id);
+	if(mode === 'move') {
 
-	if(mode === 'paint') {
+	} else if(mode === 'paint') {
 		state.incrementCandidateColor(paintIndex);
 		countVotes();
 		updateChart();
@@ -199,13 +188,12 @@ function specialClick(clickElement, e) {
 // when a button on the legend is clicked, it saves the selected candidate
 // to a variable, so that you can paint with it
 function legendClick(candidate, button) {
-	if(blockClick) {
-		blockClick = false;
-		return;
-	}
-	
-	if(mode === 'paint') {
+
+	if(mode === 'move') {
+
+	} else if(mode === 'paint') {
 		paintIndex = candidate;
+		selectCandidateDisplay(button);
 	} else if(mode === 'candidate' && candidate !== 'Tossup') {
 		var candidateedit = document.getElementById('candidateedit');
 		candidateedit.style.display = 'inline';

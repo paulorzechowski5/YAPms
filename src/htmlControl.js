@@ -85,6 +85,7 @@ function darkPalette() {
 	setMapStyle('black', 1.5);
 	setTextStyle('black', 'normal');
 	setChartBorderStyle(2, 'black');
+	setSideBarColor('#2b2e33');
 	
 	chartOptions.plugins.datalabels.borderWidth = 2;
 	chartOptions.plugins.datalabels.borderRadius = 4;
@@ -102,6 +103,7 @@ function dark2Palette() {
 	setDisableColor('#212326');
 	setTextStyle('white', 'bold');
 	setTossupColor('#665544');
+	setSideBarColor('#2b2e33');
 	setChartBorderStyle(2, '#ffffff');
 	setMapStyle('white', 1.5);
 	setChart(chart.config.type);
@@ -126,6 +128,7 @@ function terminalPalette() {
 	setChartBorderStyle(2, '#ffffff');
 	setTextStyle('white', 'bold');
 	setMapStyle('white', 1.5);
+	setSideBarColor('#888888');
 	
 	chartOptions.plugins.datalabels.borderWidth = 2;
 	chartOptions.plugins.datalabels.borderRadius = 4;
@@ -155,7 +158,9 @@ function lightPalette() {
 	setDisableColor('#212326');
 	setTossupColor('#bbb7b2');
 	setMapStyle('black', 1.5);
-	
+
+	setSideBarColor('#2b2e33');
+
 	setTextStyle('black', 'normal');
 	setChartBorderStyle(2, 'black');
 	
@@ -185,7 +190,8 @@ function contrastPalette() {
 	setMapStyle('black', 1.5);
 	setTextStyle('black', 'normal');
 	setChartBorderStyle(2, 'black');
-	
+	setSideBarColor('#bababa');
+
 	chartOptions.plugins.datalabels.borderWidth = 2;
 	chartOptions.plugins.datalabels.borderRadius = 4;
 
@@ -212,7 +218,8 @@ function metallicPalette() {
 	setMapStyle('black', 1.5);
 	setTextStyle('black', 'normal');
 	setChartBorderStyle(2, 'black');
-	
+	setSideBarColor('#33353b');
+
 	chartOptions.plugins.datalabels.borderWidth = 2;
 	chartOptions.plugins.datalabels.borderRadius = 4;
 	
@@ -240,6 +247,7 @@ function toWinPalette() {
 	setMapStyle('white', 1);
 	setTextStyle('white', 'bold');
 	setChartBorderStyle(2, 'white');
+	setSideBarColor('#ffffff');
 
 	chartOptions.plugins.datalabels.borderWidth = 0;
 	chartOptions.plugins.datalabels.borderRadius = 2;
@@ -286,6 +294,11 @@ function setMapStyle(color, strokeWidth) {
 		special.style.stroke = color;
 		special.style.strokeWidth = strokeWidth * strokeMultiplier;
 	}
+}
+
+function setSideBarColor(color) {
+	var sidebar = document.getElementById('chart-div');
+	sidebar.style.background = color;
 }
 
 function setTextStyle(color, weight) {

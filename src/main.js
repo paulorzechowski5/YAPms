@@ -56,16 +56,19 @@ var loadConfig = {
 
 var strokeMultiplier = 1;
 
-var blockClick = false;
-
 var previousPalette = function() {
 	lightPalette();	
 };
+
+var panObject = null;
 
 // loads the svg element into the HTML
 function loadMap(filename, fontsize, strokewidth, dataid, type, year) {
 	var mapHTML = document.getElementById('map-div');
 	mapHTML.style.visibility = 'hidden';
+
+
+	/* TURNING OFF LABELS BREAKS THE LEANS ON THE GRAPH */
 
 	mapType = type;
 	mapYear = year;
@@ -84,27 +87,42 @@ function loadMap(filename, fontsize, strokewidth, dataid, type, year) {
 	console.log('Loading ' + filename);
 	map = dataid;
 	$('#map-div').load(filename, function() {
+		console.log('Done loading ' + filename);
+
+		var enablePan;
+		var enableZoom
+		if(panObject != null) {
+			enablePan = panObject.isPanEnabled();
+			enableZoom = panObject.isZoomEnabled();
+		} else {
+			enablePan = false;
+			enableZoom = false;
+		}
+
 		panObject = svgPanZoom('#svgdata', {
 			fit: true,
 			center: true,
 			contain: false,
+			panEnabled: enablePan,
+			zoomEnabled: enableZoom,
 			dblClickZoomEnabled: false,
-			zoomScaleSensitivity: 0.03,
-			beforePan: function() {
-			},
-			onPan: function() {
-				blockClick = true;
-			}
-
+			zoomScaleSensitivity: 0.03
 		});
 
-		console.log('Done loading ' + filename);
+		console.log(panObject.getSizes());
+
+		panObject.resize();
+		panObject.fit();
+		panObject.zoomBy(0.8);
+		panObject.center();
+		panObject.pan({x:75, y:panObject.getPan().y});
 
 		var textHTML = document.getElementById('text');
 		if(textHTML !== null) {
 			textHTML.style.fontSize = fontsize;
 		}
 
+     //transform="translate(-959.79,0.708441)"
 		initData(dataid);
 		
 		previousPalette();
@@ -118,18 +136,18 @@ function loadMap(filename, fontsize, strokewidth, dataid, type, year) {
 		blockPresets = false;
 
 		if(type === 'senatorial') {
+			setMode('paint');
 			loadSenateFile(dataname);
 		} else if(type === 'gubernatorial') {
+			setMode('paint');
 			loadGubernatorialFile(dataname);
 		} else {
 			mapHTML.style.visibility = 'visible';
 		}
-		
 	});
 }
 
 function loadGubernatorialFile(gubernatorialfile) {
-	setMode('paint');
 
 	if(gubernatorialfile.includes('open') == false) {
 		blockPresets = true;
@@ -179,7 +197,6 @@ function loadGubernatorialFile(gubernatorialfile) {
 }
 
 function loadSenateFile(senatefile) {
-	setMode('paint');
 
 	if(senatefile.includes('open') == false) {
 		blockPresets = true;
@@ -330,7 +347,7 @@ function initChart() {
 				legendElement.setAttribute('id', candidate.name);
 				legendElement.setAttribute('class', 'legend-button');
 				legendElement.setAttribute(
-					'onclick', 'legendClick("' + key + '", this); selectCandidateDisplay(this);');
+					'onclick', 'legendClick("' + key + '", this);');
 				legendElement.style.backgroundColor = candidate.colors[0];
 
 				// if its the 0th candidate, make sure its purple
@@ -470,7 +487,7 @@ function initChart() {
 
 	// create the chart
 	chart = new Chart(ctx, {
-		type: 'pie',
+		type: 'doughnut',
 		data: {
 			labels:[],
 			datasets: [{
@@ -694,34 +711,44 @@ function setMode(set) {
 	
 	console.log('allowed');
 
-
 	mode = set;
 
 	var modeHTML = document.getElementById('menu-middle');
 	var modeText;
 	var notificationText;
-	if(set == 'paint') {
+
+	panObject.disablePan();
+	panObject.disableZoom();
+
+	if(set === 'paint') {
 		modeText = 'Mode - Paint';
-	} else if(set == 'ec') {
-		modeText = 'Mode - EC Edit';
+	} else if(set === 'move') {
+		modeText = 'Mode - Move (click drag and scroll)';
+//		notificationText = "Click and drag to pan. Scroll to zoom";
+		panObject.enablePan();
+		panObject.enableZoom();
+	} else if(set === 'ec') {
+		modeText = 'Mode - EC Edit (change EC of states)';
 		notificationText = "Click on a state to set its electoral college";
-	} else if(set == 'delete') {
-		modeText = 'Mode - Delete';
+	} else if(set === 'delete') {
+		modeText = 'Mode - Delete (remove states from map)';
 		notificationText = "Click on a state to delete it";
-	} else if(set == 'candidate') {
-		modeText = 'Mode - Candidate Edit';
+	} else if(set === 'candidate') {
+		modeText = 'Mode - Candidate Edit (change candidates name and colors)';
 		notificationText = "Click on a candidate in the legend to edit its name and color";
 	}
 
 	modeHTML.innerHTML = modeText;
 
+	var split = modeText.split(' ');
+
 	var notification = document.getElementById('notification');
-	if(mode === 'paint') {
+	if(mode === 'paint' || mode === 'move') {
 		notification.style.display = 'none';
 	} else if(mode !== 'paint') {
 		notification.style.display = 'inline';
 		var title = notification.querySelector('#notification-title');
-		title.innerHTML = modeText;
+		title.innerHTML = split[0] + ' ' + split[1] + ' ' + split[2];
 		var message = notification.querySelector('#notification-message');
 		message.innerHTML = notificationText;
 	}
@@ -931,16 +958,12 @@ function updateLegend() {
 	}
 }
 
-function lockMap(html) {
-	if(html.innerHTML === 'Lock Map') {
-		html.innerHTML = 'Unlock Map';
-		panObject.disablePan();
-		panObject.disableZoom();
-	} else {
-		html.innerHTML = 'Lock Map';
-		panObject.enablePan();
-		panObject.enableZoom();
-	}
+function centerMap() {
+	panObject.resize();
+	panObject.fit();
+	panObject.zoomBy(0.8);
+	panObject.center();
+	panObject.pan({x:75, y:panObject.getPan().y});
 }
 
 function start() {
@@ -948,8 +971,8 @@ function start() {
 	initChart();
 	loadMap('../res/presidential.svg', 16, 1, 'usa_ec',"presidential", "open");
 
-	displayNotification('Welcome!', 'This software is in beta, so please bear with us as we work out the bugs.  Thank you! <br><br>' +
-	'<b>New Stuff:</b> Click, drag and zoom the map!<br> Lock and unlock the map in the Misc menu at the top right.');
+	displayNotification('Welcome to YAPms! (yet another political map simulator)', 'This software is in alpha, please bear with us as we continue to add features and eliminate bugs. Thank you! <br><br><b>Supported Browsers:</b> Chrome and Firefox<br><br>' +
+	'<b>New Stuff:</b> Switch to move mode to move the map around!');
 }
 
 start();

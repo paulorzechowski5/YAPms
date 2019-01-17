@@ -2,7 +2,12 @@
 <html class="noSelect">
 
 <head>
-	<title>LTE Map</title>
+	<meta charset="UTF-8">
+	<meta name="description" content="Free political map simulator">
+	<meta name="keywords" content="Maps,Political,Simulator,Election,President,Governor,Senator,Interactive">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<title>YAPms (Yet Another Political Map Simulator)</title>
 	<link rel="stylesheet" type="text/css" href="style/style.css">
 	<link rel="stylesheet" type="text/css" href="style/menu.css">
 	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
@@ -18,12 +23,7 @@
 	<script src="src/presets.js"></script>
 </head>
 
-<body id="body">
-
-<div id="map-div">
-	<?php //echo file_get_contents("usa.svg"); ?>
-	<?php //echo file_get_contents("lte.svg"); ?>
-</div>
+<body id="body" onresize="centerMap()">
 
 <div id="menu-div">
 
@@ -111,6 +111,7 @@
 			</button>
 			<div class="dropdown-content">
 				<a onclick='setMode("paint")'>Paint</a>
+				<a onclick='setMode("move")'>Move</a>
 				<a onclick='setMode("delete")'>Delete</a>
 				<a onclick='setMode("ec")'>EC Edit</a>
 				<a onclick='setMode("candidate")'>Candidate Edit</a>
@@ -132,9 +133,12 @@
 		</div>
 
 	</div>
+
 	<span id="menu-middle">
-		Mode - Paint 
+		Mode - Paint
 	</span>
+
+	<!--
 	<div id="menu-right">
 
 		<div class="dropdown" class="right-justify">
@@ -142,25 +146,27 @@
 				Misc
 			</button>
 			<div class="dropdown-content">
-				<a onclick="lockMap(this)">Lock Map</a>
+				<a onclick="window.print()">Nothing :)</a>
 			</div>
 		</div>
 
 	</div>
+	-->
 </div>
 
 <div id="legend-div">
 
 </div>
 
-<div id="chart-div">
-	<canvas id="chart" width="100" height="100"></canvas>
-</div>
-
 <div id="application">
+	<div id="chart-div">
+		<canvas id="chart" width="100" height="100"></canvas>
+	</div>
 
+	<div id="map-div">
+
+	</div>
 </div>
-
 
 <div id="ecedit" class="popup">
 	<h3 id="ecedit-message"></h3>
@@ -176,7 +182,7 @@
 	Solid:<input id="candidate-solid" type="color"><br>
 	Likely:<input id="candidate-likely" type="color"><br>
 	Lean:<input id="candidate-lean" type="color"><br>
-	<input id="candidate-originalName" type="hidden">
+	<input id="candidate-or:EiginalName" type="hidden">
 	<button onclick="setCandidate(this)">set</button>
 </div>
 
