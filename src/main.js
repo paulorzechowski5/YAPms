@@ -24,7 +24,7 @@ var chartBarScales;
 var chartPolarScales;
 var chartRadarScales;
 
-var chartLeans = false;
+var chartLeans = true;
 
 // pan object
 var panobject;
