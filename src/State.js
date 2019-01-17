@@ -10,7 +10,9 @@ class State {
 	}
 
 	resetVoteCount() {
-		if(this.dataid === 'senate') {
+		if(this.dataid === 'congressional') {
+			this.voteCount = 1;
+		} else if(this.dataid === 'senate') {
 			this.voteCount = 2;
 		} else {
 			this.voteCount = data[this.dataid][this.name];

@@ -106,10 +106,9 @@ function loadMap(filename, fontsize, strokewidth, dataid, type, year) {
 			panEnabled: enablePan,
 			zoomEnabled: enableZoom,
 			dblClickZoomEnabled: false,
-			zoomScaleSensitivity: 0.03
+			maxZoom: 70,
+			zoomScaleSensitivity: 0.11
 		});
-
-		console.log(panObject.getSizes());
 
 		panObject.resize();
 		panObject.fit();
@@ -122,7 +121,6 @@ function loadMap(filename, fontsize, strokewidth, dataid, type, year) {
 			textHTML.style.fontSize = fontsize;
 		}
 
-     //transform="translate(-959.79,0.708441)"
 		initData(dataid);
 		
 		previousPalette();
@@ -135,10 +133,10 @@ function loadMap(filename, fontsize, strokewidth, dataid, type, year) {
 		
 		blockPresets = false;
 
-		if(type === 'senatorial') {
+		if(type === 'senatorial' && year !== 'open') {
 			setMode('paint');
 			loadSenateFile(dataname);
-		} else if(type === 'gubernatorial') {
+		} else if(type === 'gubernatorial' && year !== 'open') {
 			setMode('paint');
 			loadGubernatorialFile(dataname);
 		} else {
@@ -281,6 +279,7 @@ function initData(dataid) {
 	// iterate over each element
 	for(var index = 0; index < htmlElements.length; ++index) {
 		var htmlElement = htmlElements[index];
+		htmlElement.setAttribute('style', 'inherit');
 		var name = htmlElement.getAttribute('id');
 		if(name.includes('text')) {
 			// dont include text as states
@@ -302,7 +301,18 @@ function initData(dataid) {
 			htmlElement.style.fill = '#bbb7b2';
 			states.push(new State(name, htmlElement, dataid));
 
-		} else if(name.length == 2) {
+		} else if(name.length == 5) {
+			// set click function
+			htmlElement.setAttribute('onclick', 
+				'districtClick(this)');
+			htmlElement.style.fill = '#bbb7b2';
+
+			var state = new State(name, htmlElement, dataid);
+
+			// add the state to the list
+			states.push(state);
+
+		} else if(name.length == 2 || name.length == 5 ) {
 			// set click function
 			htmlElement.setAttribute('onclick', 
 				'stateClick(this)');
@@ -972,7 +982,7 @@ function start() {
 	loadMap('../res/presidential.svg', 16, 1, 'usa_ec',"presidential", "open");
 
 	displayNotification('Welcome to YAPms! (yet another political map simulator)', 'This software is in alpha, please bear with us as we continue to add features and eliminate bugs. Thank you! <br><br><b>Supported Browsers:</b> Chrome and Firefox<br><br>' +
-	'<b>New Stuff:</b> Switch to move mode to move the map around!');
+	'<b>New Stuff:</b> Congressional Map! Move Mode, pan and zoom the map!');
 }
 
 start();

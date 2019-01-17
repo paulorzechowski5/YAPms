@@ -97,20 +97,6 @@ function darkPalette() {
 	previousPalette = darkPalette;
 }
 
-function dark2Palette() {
-	darkPalette();
-
-	setDisableColor('#212326');
-	setTextStyle('white', 'bold');
-	setTossupColor('#665544');
-	setSideBarColor('#2b2e33');
-	setChartBorderStyle(2, '#ffffff');
-	setMapStyle('white', 1.5);
-	setChart(chart.config.type);
-	verifyMap();
-	previousPalette = dark2Palette;
-}
-
 function terminalPalette() {
 	var body = document.getElementById('body');
 	body.style.backgroundColor = '#000000';
@@ -288,6 +274,11 @@ function setMapStyle(color, strokeWidth) {
 	var outlines = document.getElementById('outlines');
 	outlines.style.stroke = color;
 	outlines.style.strokeWidth = strokeWidth * strokeMultiplier;
+	
+	if(mapType === 'congressional') {
+		console.log('test');
+		outlines.style.strokeWidth = 0.1;
+	}
 
 	var special = document.getElementById('special');
 	if(special != null) {
