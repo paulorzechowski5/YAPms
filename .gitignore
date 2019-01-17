@@ -1,0 +1,7 @@
+/logs
+*.swp
+.vim
+.viminfo
+.htaccess
+.bash_history
+google_sitemap.xml.gz
