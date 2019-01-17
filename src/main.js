@@ -24,7 +24,7 @@ var chartBarScales;
 var chartPolarScales;
 var chartRadarScales;
 
-var chartLeans = true;
+var chartLeans = false;
 
 // pan object
 var panobject;
@@ -61,6 +61,26 @@ var previousPalette = function() {
 };
 
 var panObject = null;
+
+document.addEventListener('keydown', function(event) {
+	switch(event.key) {
+		case 'p':
+			setMode('paint');
+			break;
+		case 'm':
+			setMode('move');
+			break;
+		case 'd':
+			setMode('delete');
+			break;
+		case 'e':
+			setMode('ec');
+			break;
+		case 'c':
+			setMode('candidate');
+			break;
+	}
+});
 
 // loads the svg element into the HTML
 function loadMap(filename, fontsize, strokewidth, dataid, type, year) {
@@ -675,12 +695,11 @@ function toggleChartLabels() {
 
 function toggleChartLeans() {
 	chartLeans = !chartLeans;
-	//rebuildChart();
+	rebuildChart();
 	updateChart();
 }
 
 function setMode(set) {
-
 	console.log('mode ' +  mode + ' | set ' + set + 
 		' | mapType ' + mapType + ' | mapYear ' + mapYear);
 
@@ -716,6 +735,16 @@ function setMode(set) {
 			console.log('denied');
 			return;
 
+		}
+	}
+
+	if(mapType === 'congressional') {
+		if(set === 'delete' || set === 'ec') {
+			title.innerHTML = 'Sorry';
+			message.innerHTML = 'This mode is not available while editing a congressional map';
+			notification.style.display = 'inline';
+			console.log('denied');
+			return;
 		}
 	}
 	
@@ -982,7 +1011,7 @@ function start() {
 	loadMap('../res/presidential.svg', 16, 1, 'usa_ec',"presidential", "open");
 
 	displayNotification('Welcome to YAPms! (yet another political map simulator)', 'This software is in alpha, please bear with us as we continue to add features and eliminate bugs. Thank you! <br><br><b>Supported Browsers:</b> Chrome and Firefox<br><br>' +
-	'<b>New Stuff:</b> Congressional Map! Move Mode, pan and zoom the map!');
+	'<b>New Stuff:</b> Congressional Map! Move Mode, pan and zoom the map! Use the first letter of each mode as a keyboard shortcut.<br>(m for move, p for paint, etc..)');
 }
 
 start();
