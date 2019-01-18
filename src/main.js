@@ -63,6 +63,7 @@ var previousPalette = function() {
 var panObject = null;
 
 document.addEventListener('keydown', function(event) {
+	return;
 	switch(event.key) {
 		case 'p':
 			setMode('paint');
@@ -1011,7 +1012,7 @@ function start() {
 	loadMap('../res/presidential.svg', 16, 1, 'usa_ec',"presidential", "open");
 
 	displayNotification('Welcome to YAPms! (yet another political map simulator)', 'This software is in alpha, please bear with us as we continue to add features and eliminate bugs. Thank you! <br><br><b>Supported Browsers:</b> Chrome and Firefox<br>Mobile is <b>not</b> supported<br><br>' +
-	'<b>New Stuff:</b> Congressional Map! Move Mode, pan and zoom the map! Use the first letter of each mode as a keyboard shortcut.<br>(m for move, p for paint, etc..)');
+	'<b>New Stuff:</b> Congressional Map! Move Mode, pan and zoom the map!');
 }
 
 start();
