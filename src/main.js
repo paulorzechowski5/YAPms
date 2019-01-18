@@ -133,9 +133,8 @@ function loadMap(filename, fontsize, strokewidth, dataid, type, year) {
 
 		panObject.resize();
 		panObject.fit();
-		panObject.zoomBy(0.8);
 		panObject.center();
-		panObject.pan({x:25, y:panObject.getPan().y});
+		panObject.zoomBy(0.9);
 
 		var textHTML = document.getElementById('text');
 		if(textHTML !== null) {
@@ -1000,9 +999,8 @@ function updateLegend() {
 function centerMap() {
 	panObject.resize();
 	panObject.fit();
-	panObject.zoomBy(0.8);
 	panObject.center();
-	panObject.pan({x:25, y:panObject.getPan().y});
+	panObject.zoomBy(0.9);
 }
 
 function toggleLTELogo() {
