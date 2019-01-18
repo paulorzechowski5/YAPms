@@ -95,7 +95,7 @@ function loadMap(filename, fontsize, strokewidth, dataid, type, year) {
 	mapType = type;
 	mapYear = year;
 	strokeMultiplier = strokewidth;
-	var dataname = '../data/' + type + '_' + year;
+	var dataname = 'app/data/' + type + '_' + year;
 
 	loadConfig = {
 		filename: filename,
@@ -1088,7 +1088,7 @@ function setColors(palette) {
 function start() {
 	initCandidates();
 	initChart();
-	loadMap('../res/presidential.svg', 16, 1, 'usa_ec',"presidential", "open");
+	loadMap('app/res/presidential.svg', 16, 1, 'usa_ec',"presidential", "open");
 
 	displayNotification('Welcome to YAPms! (yet another political map simulator)', 'This software is in alpha, please bear with us as we continue to add features and eliminate bugs. Thank you! <br><br><b>Supported Browsers:</b> Chrome and Firefox<br>Mobile is <b>not</b> supported<br><br>' +
 	'<b>New Stuff:</b> Congressional Map! Move Mode, pan and zoom the map!');
