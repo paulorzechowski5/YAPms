@@ -1,3 +1,5 @@
+var totalVotes = 0;
+
 class State {
 	constructor(name, htmlElement, dataid) {
 		this.name = name;
@@ -6,6 +8,7 @@ class State {
 		this.candidate = 'Tossup';
 		this.dataid = dataid;
 		this.resetVoteCount();
+		totalVotes += this.voteCount;
 		this.disabled = false;
 	}
 

@@ -88,6 +88,7 @@ function loadMap(filename, fontsize, strokewidth, dataid, type, year) {
 	var mapHTML = document.getElementById('map-div');
 	mapHTML.style.visibility = 'hidden';
 
+	totalVotes = 0;
 
 	/* TURNING OFF LABELS BREAKS THE LEANS ON THE GRAPH */
 
@@ -613,18 +614,28 @@ function setChart(type) {
 	var battlechart = document.getElementById('battlechart');
 	battlechart.style.display = '';
 	
-	chartType = type;
-
 	if(type === 'none') {
 		html.style.display = 'none';
+		chartType = type;
 		return;
 	} else if(type === 'battle') {
+
+		if(Object.keys(candidates).length > 3) {
+		
+			displayNotification('Sorry',
+				'There are too many candidates for this chart to display any information');
+			return;
+		}
+
 		html.style.display = 'none';
 		var battlechart = document.getElementById('battlechart');
 		battlechart.style.display = 'flex';
+		chartType = type;
 		updateChart();
 		return;
 	}
+		
+	chartType = type;
 	
 	chartData = {
 		labels:[],
@@ -899,6 +910,12 @@ function countVotes() {
 }
 
 function updateBattleChart() {
+
+	if(Object.keys(candidates).length > 3) {
+		setChart('doughnut');
+		return;
+	}
+
 	var tossup = document.getElementById('tossupbar');
 	var topbar = document.getElementById('topbar');
 	var bottombar = document.getElementById('bottombar');
@@ -913,12 +930,12 @@ function updateBattleChart() {
 		var candidate = candidates[key];
 
 		if(candidateIndex == 0) {
-			tossup.style.flexBasis = '' + (candidate.voteCount / 538) * 100 + '%';
+			tossup.style.flexBasis = '' + (candidate.voteCount / totalVotes) * 100 + '%';
 		} else if(candidateIndex == 1) {
-			topbar.style.flexBasis = '' + (candidate.voteCount / 538) * 100 + '%';
+			topbar.style.flexBasis = '' + (candidate.voteCount / totalVotes) * 100 + '%';
 
 		} else if(candidateIndex == 2) {
-			bottombar.style.flexBasis = '' + (candidate.voteCount / 538) * 100 + '%';
+			bottombar.style.flexBasis = '' + (candidate.voteCount / totalVotes) * 100 + '%';
 
 		}
 	}
