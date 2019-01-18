@@ -610,9 +610,19 @@ function setEC(e) {
 function setChart(type) {
 	var html = document.getElementById('chart');
 	var ctx = html.getContext('2d');
+	var battlechart = document.getElementById('battlechart');
+	battlechart.style.display = '';
+	
+	chartType = type;
 
 	if(type === 'none') {
 		html.style.display = 'none';
+		return;
+	} else if(type === 'battle') {
+		html.style.display = 'none';
+		var battlechart = document.getElementById('battlechart');
+		battlechart.style.display = 'flex';
+		updateChart();
 		return;
 	}
 	
@@ -625,7 +635,6 @@ function setChart(type) {
 		}]
 	};
 
-	chartType = type;
 
 	html.style.display = 'inline-block';
 
@@ -889,8 +898,39 @@ function countVotes() {
 	}
 }
 
+function updateBattleChart() {
+	var tossup = document.getElementById('tossupbar');
+	var topbar = document.getElementById('topbar');
+	var bottombar = document.getElementById('bottombar');
+
+	var candidateIndex = -1;
+	for(var key in candidates) {
+		++candidateIndex;
+		if(candidateIndex == 3) {
+			break;
+		}
+
+		var candidate = candidates[key];
+
+		if(candidateIndex == 0) {
+			tossup.style.flexBasis = '' + (candidate.voteCount / 538) * 100 + '%';
+		} else if(candidateIndex == 1) {
+			topbar.style.flexBasis = '' + (candidate.voteCount / 538) * 100 + '%';
+
+		} else if(candidateIndex == 2) {
+			bottombar.style.flexBasis = '' + (candidate.voteCount / 538) * 100 + '%';
+
+		}
+	}
+}
+
 // updates the information of the chart (so the numbers change)
 function updateChart() {
+
+	if(chartType === 'battle') {
+		updateBattleChart();
+		return;
+	}
 
 	if(chartType === 'horizontalBar') {
 		updateBarChart();

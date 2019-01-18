@@ -78,6 +78,38 @@ button {
 	z-index: 1;
 }
 
+#battlechart {
+	display: none;
+	flex-direction: column;
+	width: 25%;
+	border: 2px solid black;
+	border-radius: 10px;
+	overflow: hidden;
+	flex: 1 1;
+	margin: 15px;
+}
+
+#topbar {
+	flex: 1 1;
+	flex-basis: 0%;
+	background: #bf1d29;
+	transition: flex-basis 1s;
+}
+
+#tossupbar {
+	flex: 1 1;
+	flex-basis: 100%;
+	background: #bbb7b2;
+	transition: flex-basis 1s;
+}
+
+#bottombar {
+	flex: 1 1;
+	flex-basis: 0%;
+	background: #1c408c;
+	transition: flex-basis 1s;
+}
+
 #logo {
 	display: none;
 	width: 50%;
