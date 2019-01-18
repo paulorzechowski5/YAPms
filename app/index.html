@@ -22,19 +22,19 @@
 		}
 	</script>
 
-	<link rel="stylesheet" type="text/css" href="app/style/style.css">
-	<link rel="stylesheet" type="text/css" href="app/style/menu.css">
+	<link rel="stylesheet" type="text/css" href="./style/style.css">
+	<link rel="stylesheet" type="text/css" href="./style/menu.css">
 	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.min.js"></script>
 	<script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@0.5.0"></script> 
 	<script src="https://cdn.jsdelivr.net/npm/svg-pan-zoom@3.5.0/dist/svg-pan-zoom.min.js"></script>
 	<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
-	<script src="app/src/click.js"></script>
-	<script src="app/src/data.js"></script>
-	<script src="app/src/State.js"></script>
-	<script src="app/src/htmlControl.js"></script>
-	<script src="app/src/Candidate.js"></script>
-	<script src="app/src/presets.js"></script>
+	<script src="./src/click.js"></script>
+	<script src="./src/data.js"></script>
+	<script src="./src/State.js"></script>
+	<script src="./src/htmlControl.js"></script>
+	<script src="./src/Candidate.js"></script>
+	<script src="./src/presets.js"></script>
 </head>
 
 <body id="body" onresize="centerMap()">
@@ -65,16 +65,16 @@
 			</button>
 
 			<div class="dropdown-content">
-				<a onclick='loadMap("app/res/presidential.svg", 16, 1, "usa_ec", "presidential", "open");'>Presidential</a>
-				<a onclick='loadMap("app/res/usa_senate.svg", 16, 1, "usa_senate", "senatorial", "2020")'>Senatorial<br>2020</a>
-				<a onclick='loadMap("app/res/usa_gubernatorial.svg", 16, 1, "usa_gubernatorial", "gubernatorial", "2020")'>Gubernatorial 2020</a>
-				<!--<a onclick='loadMap("../res/usa_gubernatorial.svg", 16, 1, "usa_gubernatorial", "gubernatorial", "2018")'>Gubernatorial 2018</a>-->
-				<a onclick='loadMap("app/res/usa_no_districts.svg", 16, 1, "usa_no_districts_ec", "presidential", "open")'>Presidential Take All</a>
-				<a onclick='loadMap("app/res/usa_senate.svg", 16, 1.5, "usa_senate", "senatorial", "open")'>Senatorial<br>Open</a>
-				<a onclick='loadMap("app/res/usa_congressional_2018.svg", 16, 1, "congressional", "congressional", "open")'>Congressional 2018 Open</a>
-				<a onclick='loadMap("app/res/usa_gubernatorial.svg", 16, 1, "usa_gubernatorial", "gubernatorial", "open")'>Gubernatorial<br>Open</a>
-				<a onclick='loadMap("app/res/canada_states.svg", 38, 3, "canada_ec", "presidential", "open");'>Canada</a>
-				<a onclick='loadMap("app/res/lte.svg", 35, 1, "lte_ec", "presidential", "open");'>LTE Discord</a>
+				<a onclick='loadMap("./res/presidential.svg", 16, 1, "usa_ec", "presidential", "open");'>Presidential</a>
+				<a onclick='loadMap("./res/usa_senate.svg", 16, 1, "usa_senate", "senatorial", "2020")'>Senatorial<br>2020</a>
+				<a onclick='loadMap("./res/usa_gubernatorial.svg", 16, 1, "usa_gubernatorial", "gubernatorial", "2020")'>Gubernatorial 2020</a>
+				<!--<a onclick='loadMap("./res/usa_gubernatorial.svg", 16, 1, "usa_gubernatorial", "gubernatorial", "2018")'>Gubernatorial 2018</a>-->
+				<a onclick='loadMap("./res/usa_no_districts.svg", 16, 1, "usa_no_districts_ec", "presidential", "open")'>Presidential Take All</a>
+				<a onclick='loadMap("./res/usa_senate.svg", 16, 1.5, "usa_senate", "senatorial", "open")'>Senatorial<br>Open</a>
+				<a onclick='loadMap("./res/usa_congressional_2018.svg", 16, 1, "congressional", "congressional", "open")'>Congressional 2018 Open</a>
+				<a onclick='loadMap("./res/usa_gubernatorial.svg", 16, 1, "usa_gubernatorial", "gubernatorial", "open")'>Gubernatorial<br>Open</a>
+				<a onclick='loadMap("./res/canada_states.svg", 38, 3, "canada_ec", "presidential", "open");'>Canada</a>
+				<a onclick='loadMap("./res/lte.svg", 35, 1, "lte_ec", "presidential", "open");'>LTE Discord</a>
 			</div>
 		</div>
 		
@@ -218,6 +218,6 @@
 
 </body>
 
-<script src="app/src/main.js"></script>
+<script src="./src/main.js"></script>
 
 </html>
