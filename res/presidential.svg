@@ -42,13 +42,13 @@
      id="namedview3848"
      showgrid="true"
      inkscape:pagecheckerboard="true"
-     inkscape:zoom="1.1524348"
-     inkscape:cx="316.10289"
-     inkscape:cy="125.64681"
+     inkscape:zoom="4.6097392"
+     inkscape:cx="694.96196"
+     inkscape:cy="44.120005"
      inkscape:window-x="0"
      inkscape:window-y="0"
      inkscape:window-maximized="1"
-     inkscape:current-layer="outlines"
+     inkscape:current-layer="text"
      inkscape:snap-center="true"
      inkscape:snap-grids="false"
      inkscape:snap-object-midpoints="true"
@@ -83,7 +83,7 @@
     <color-profile
        name="sRGB"
        xlink:href="/usr/share/color/icc/colord/sRGB.icc"
-       id="color-profile13" />
+       id="color-profile4323" />
     <inkscape:tag
        id="Set 3"
        inkscape:expanded="true">
@@ -1307,7 +1307,7 @@
          sodipodi:role="line"
          x="742.71875"
          y="32.799999"
-         id="tspan8988-2-59-0-7-1-7-7-5-9-1-5">MEAL 2 </tspan></text>
+         id="tspan8988-2-59-0-7-1-7-7-5-9-1-5">ME-AL 2 </tspan></text>
     <text
        xml:space="preserve"
        x="742.71875"
@@ -1317,7 +1317,7 @@
          sodipodi:role="line"
          x="742.71875"
          y="59.707001"
-         id="tspan8988-2-59-0-7-1-7-7-5-9-1-5-6">ME-1 1 </tspan></text>
+         id="tspan8988-2-59-0-7-1-7-7-5-9-1-5-6">ME-01 1 </tspan></text>
     <text
        xml:space="preserve"
        x="742.71875"
@@ -1327,7 +1327,7 @@
          sodipodi:role="line"
          x="742.71875"
          y="86.765503"
-         id="tspan8988-2-59-0-7-1-7-7-5-9-1-5-5">ME-2 1 </tspan></text>
+         id="tspan8988-2-59-0-7-1-7-7-5-9-1-5-5">ME-02 1 </tspan></text>
     <text
        xml:space="preserve"
        x="593.03076"
@@ -1337,7 +1337,7 @@
          sodipodi:role="line"
          x="593.03076"
          y="32.707001"
-         id="tspan8988-2-59-0-7-1-7-7-5-9-1-5-1">NEAL 2 </tspan></text>
+         id="tspan8988-2-59-0-7-1-7-7-5-9-1-5-1">NE-AL 2 </tspan></text>
     <text
        xml:space="preserve"
        x="660.03076"
@@ -1347,7 +1347,7 @@
          sodipodi:role="line"
          x="660.03076"
          y="32.707001"
-         id="tspan8988-2-59-0-7-1-7-7-5-9-1-5-1-8">NE-1 1 </tspan></text>
+         id="tspan8988-2-59-0-7-1-7-7-5-9-1-5-1-8">NE-01 1 </tspan></text>
     <text
        xml:space="preserve"
        x="593.03076"
@@ -1357,7 +1357,7 @@
          sodipodi:role="line"
          x="593.03076"
          y="59.765499"
-         id="tspan8988-2-59-0-7-1-7-7-5-9-1-5-1-0">NE-2 1 </tspan></text>
+         id="tspan8988-2-59-0-7-1-7-7-5-9-1-5-1-0">NE-02 1 </tspan></text>
     <text
        xml:space="preserve"
        x="660.03076"
@@ -1367,6 +1367,6 @@
          sodipodi:role="line"
          x="660.03076"
          y="59.84375"
-         id="tspan8988-2-59-0-7-1-7-7-5-9-1-5-1-04">NE-3 1 </tspan></text>
+         id="tspan8988-2-59-0-7-1-7-7-5-9-1-5-1-04">NE-03 1 </tspan></text>
   </g>
 </svg>
