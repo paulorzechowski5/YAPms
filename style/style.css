@@ -54,7 +54,18 @@ button {
 	display: flex;
 	justify-content: center;
 	align-items: center;
+	flex-direction: column;
 	z-index: 1;
+}
+
+#logo {
+	display: none;
+	width: 45%;
+	height: auto;
+	margin-top: 50px;
+	border: 2px solid black;
+	border-radius: 10px;
+	box-shadow: 1px 1px 3px black;
 }
 
 #svgdata {

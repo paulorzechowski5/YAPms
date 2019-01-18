@@ -1006,6 +1006,15 @@ function centerMap() {
 	panObject.pan({x:75, y:panObject.getPan().y});
 }
 
+function toggleLTELogo() {
+	var lteLogo = document.getElementById('logo');
+	if(lteLogo.style.display === '') {
+		lteLogo.style.display = 'inline';
+	} else if(lteLogo.style.display === 'inline') {
+		lteLogo.style.display = '';
+	}
+}
+
 function start() {
 	initCandidates();
 	initChart();
