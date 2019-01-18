@@ -6,6 +6,19 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 	<title>YAPms - Yet Another Political Map Simulator</title>
+	
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-132710089-1"></script>
+	<script>
+		var host = window.location.hostname;
+		if(host !== 'localhost') {
+			console.log(host);
+			window.dataLayer = window.dataLayer || [];
+			function gtag(){dataLayer.push(arguments);}
+			gtag('js', new Date());
+			gtag('config', 'UA-132710089-1');
+		}
+	</script>
 
 	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
 	<link rel="stylesheet" type="text/css" href="style.css">
