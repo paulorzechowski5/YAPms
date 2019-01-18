@@ -275,7 +275,6 @@ function setMapStyle(color, strokeWidth) {
 	outlines.style.strokeWidth = strokeWidth * strokeMultiplier;
 	
 	if(mapType === 'congressional') {
-		console.log('test');
 		outlines.style.strokeWidth = 0.1;
 	}
 
