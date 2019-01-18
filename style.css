@@ -1,0 +1,106 @@
+html, body {
+	background: #3d4147;
+	font-family: 'Roboto';
+	padding: 0px;
+	margin: 0px;
+}
+
+body {
+	text-align: center;
+}
+
+#info {
+	background: white;
+	width: 75%;
+	margin: auto;
+	margin-top: 15px;
+	align-items: center;
+	display: flex;
+	flex-direction: column;
+	border: 2px solid black;
+	border-radius: 5px;
+	box-shadow: 0px 1px 2px black;
+	padding-bottom: 20px;
+	z-index: 1;
+}
+
+#topbar {
+	width: 100%;
+	text-align: center;
+	color: white;
+	background: #202225;
+}
+
+.infobox {
+	width: 100%;
+	font-size: 20px;
+	text-align: center;
+}
+
+#welcome {
+}
+
+#whatsnew {
+}
+
+a {
+	color: inherit;
+	text-decoration: none;
+}
+
+#start {
+	display: inline-block;
+	margin: auto;
+	margin-top: 25px;
+	padding-left: 10px;
+	padding-right: 10px;
+	background: white;
+	font-size: 50px;
+	text-align: center;
+	border: 2px solid black;
+	border-radius: 10px;
+	box-shadow: 1px 1px 2px black;
+}
+
+#start:hover {
+	background-color: #c0cccf;
+	transition: background-color 0.5s;
+}
+
+#pictures {
+	margin-top: 25px;
+	display: flex;
+	justify-content: center;
+}
+
+#pictures .cell {
+	display: table-cell;
+	height: 200px;
+	margin: 20px;
+}
+
+#pictures .cell img {
+	border: 2px solid black;
+	border-radius: 5px;
+	height: 100%;
+}
+
+#bottombar {
+	font-size: 16px;
+	text-align: right;
+	text-decoration: none;
+	background: #202225;
+	position: fixed;
+	width: 100%;
+	bottom: 0%;
+	border-top: 1px solid black;
+	box-shadow: 1px 0px 4px black;
+	z-index: 1;
+}
+
+#bottombar a {
+	background: white;
+	padding-left: 5px;
+	padding-right: 5px;
+	border-left: 1px solid black;
+}

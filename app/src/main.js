@@ -132,10 +132,7 @@ function loadMap(filename, fontsize, strokewidth, dataid, type, year) {
 			zoomScaleSensitivity: 0.05
 		});
 
-		panObject.resize();
-		panObject.fit();
-		panObject.center();
-		panObject.zoomBy(0.9);
+		centerMap();
 
 		var textHTML = document.getElementById('text');
 		if(textHTML !== null) {
@@ -1057,7 +1054,7 @@ function centerMap() {
 	panObject.resize();
 	panObject.fit();
 	panObject.center();
-	panObject.zoomBy(0.9);
+	panObject.zoomBy(0.85);
 }
 
 function toggleLTELogo() {
@@ -1090,8 +1087,8 @@ function start() {
 	initChart();
 	loadMap('app/res/presidential.svg', 16, 1, 'usa_ec',"presidential", "open");
 
-	displayNotification('Welcome to YAPms! (yet another political map simulator)', 'This software is in alpha, please bear with us as we continue to add features and eliminate bugs. Thank you! <br><br><b>Supported Browsers:</b> Chrome and Firefox<br>Mobile is <b>not</b> supported<br><br>' +
-	'<b>New Stuff:</b> Congressional Map! Move Mode, pan and zoom the map!');
+//	displayNotification('Welcome to YAPms! (yet another political map simulator)', 'This software is in alpha, please bear with us as we continue to add features and eliminate bugs. Thank you! <br><br><b>Supported Browsers:</b> Chrome and Firefox<br>Mobile is <b>not</b> supported<br><br>' +
+//	'<b>New Stuff:</b> Congressional Map! Move Mode, pan and zoom the map!');
 }
 
 start();
