@@ -128,7 +128,7 @@ function loadMap(filename, fontsize, strokewidth, dataid, type, year) {
 			zoomEnabled: enableZoom,
 			dblClickZoomEnabled: false,
 			maxZoom: 70,
-			zoomScaleSensitivity: 0.11
+			zoomScaleSensitivity: 0.05
 		});
 
 		panObject.resize();
