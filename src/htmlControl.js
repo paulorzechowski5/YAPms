@@ -1,8 +1,7 @@
 var textOn = true;
 
-function showAddCandidate() {
+function toggleAddCandidate() {
 	var html = document.getElementById('addCandidateDropdown');
-
 	if(html.style.display === '') {
 		html.style.display = 'block';
 	} else {

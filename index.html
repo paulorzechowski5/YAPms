@@ -7,7 +7,7 @@
 	<meta name="keywords" content="Maps,Political,Simulator,Election,President,Governor,Senator,Congress,Interactive">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-	<title>YAPms (Yet Another Political Map Simulator)</title>
+	<title>YAPms - Yet Another Political Map Simulator</title>
 
 	<!-- Global site tag (gtag.js) - Google Analytics -->
 	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-132710089-1"></script>
@@ -131,11 +131,13 @@
 		</div>
 
 		<div>
-			<button class="click-button" onclick="showAddCandidate()">
+			<button class="click-button" onclick="toggleAddCandidate()">
 				Add Candidate
 			</button>
 			<div id="addCandidateDropdown" class="dropdown-content">
 				<a>Name <input id="name" type="text"></a>
+				<a onclick='setColors("republican")'>Republican Colors</a>
+				<a onclick='setColors("democrat")'>Democrat Colors</a>
 				<a>Solid <input id="solid" type="color"></a>
 				<a>Likely <input id="likely" type="color"></a>
 				<a>Leaning <input id="leaning" type="color"></a>

@@ -135,7 +135,7 @@ function loadMap(filename, fontsize, strokewidth, dataid, type, year) {
 		panObject.fit();
 		panObject.zoomBy(0.8);
 		panObject.center();
-		panObject.pan({x:75, y:panObject.getPan().y});
+		panObject.pan({x:25, y:panObject.getPan().y});
 
 		var textHTML = document.getElementById('text');
 		if(textHTML !== null) {
@@ -811,9 +811,7 @@ function addCandidate() {
 	var solid = document.getElementById('solid').value;
 	var likely = document.getElementById('likely').value;
 	var leaning = document.getElementById('leaning').value;
-
 	var img = document.getElementById('image-upload').files[0];
-
 	var candidate = new Candidate(name, [solid, likely, leaning], img);
 	candidates[name] = candidate;
 
@@ -824,6 +822,7 @@ function addCandidate() {
 	chart.generateLegend();
 	updateLegend();
 	verifyTextToggle();
+	toggleAddCandidate();
 }
 
 
@@ -1003,7 +1002,7 @@ function centerMap() {
 	panObject.fit();
 	panObject.zoomBy(0.8);
 	panObject.center();
-	panObject.pan({x:75, y:panObject.getPan().y});
+	panObject.pan({x:25, y:panObject.getPan().y});
 }
 
 function toggleLTELogo() {
@@ -1012,6 +1011,22 @@ function toggleLTELogo() {
 		lteLogo.style.display = 'inline';
 	} else if(lteLogo.style.display === 'inline') {
 		lteLogo.style.display = '';
+	}
+}
+
+function setColors(palette) {
+	var solid = document.getElementById('solid');
+	var likely = document.getElementById('likely');
+	var leaning =  document.getElementById('leaning');
+
+	if(palette === 'republican') {
+		solid.value = '#bf1d29';
+		likely.value = '#ff5865';
+		leaning.value = '#ff8b98';
+	} else if(palette === 'democrat') {
+		solid.value = '#1c408c';
+		likely.value = '#577ccc';
+		leaning.value = '#8aafff';
 	}
 }
 
