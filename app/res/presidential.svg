@@ -42,13 +42,13 @@
      id="namedview3848"
      showgrid="true"
      inkscape:pagecheckerboard="true"
-     inkscape:zoom="4.6097392"
-     inkscape:cx="694.96196"
-     inkscape:cy="44.120005"
+     inkscape:zoom="3.2595778"
+     inkscape:cx="720.45631"
+     inkscape:cy="23.939231"
      inkscape:window-x="0"
      inkscape:window-y="0"
      inkscape:window-maximized="1"
-     inkscape:current-layer="text"
+     inkscape:current-layer="outlines"
      inkscape:snap-center="true"
      inkscape:snap-grids="false"
      inkscape:snap-object-midpoints="true"
@@ -83,7 +83,7 @@
     <color-profile
        name="sRGB"
        xlink:href="/usr/share/color/icc/colord/sRGB.icc"
-       id="color-profile4323" />
+       id="color-profile5310" />
     <inkscape:tag
        id="Set 3"
        inkscape:expanded="true">
@@ -582,7 +582,7 @@
        inkscape:connector-curvature="0"
        style="fill:#ffffff;fill-opacity:1" />
     <rect
-       style="opacity:1;fill:#fffff3;fill-opacity:1;"
+       style="opacity:1;fill:#fffff3;fill-opacity:1"
        id="DC"
        width="52.999996"
        height="19.999998"
@@ -603,7 +603,7 @@
          x="770"
          y="363.39062" /></text>
     <rect
-       style="opacity:1;fill:#fffff3;fill-opacity:1;"
+       style="opacity:1;fill:#fffff3;fill-opacity:1"
        id="MD-button"
        width="52.999996"
        height="19.999998"
@@ -613,7 +613,7 @@
        ry="3"
        rx="3" />
     <rect
-       style="opacity:1;fill:#fffff3;fill-opacity:1;"
+       style="opacity:1;fill:#fffff3;fill-opacity:1"
        id="DE-button"
        width="52.999996"
        height="19.999998"
@@ -623,7 +623,7 @@
        ry="3"
        rx="3" />
     <rect
-       style="opacity:1;fill:#fffff3;fill-opacity:1;"
+       style="opacity:1;fill:#fffff3;fill-opacity:1"
        id="NJ-button"
        width="52.999996"
        height="19.999998"
@@ -633,7 +633,7 @@
        ry="3"
        rx="3" />
     <rect
-       style="opacity:1;fill:#fffff3;fill-opacity:1;"
+       style="opacity:1;fill:#fffff3;fill-opacity:1"
        id="CT-button"
        width="52.999996"
        height="19.999998"
@@ -643,7 +643,7 @@
        ry="3"
        rx="3" />
     <rect
-       style="opacity:1;fill:#fffff3;fill-opacity:1;"
+       style="opacity:1;fill:#fffff3;fill-opacity:1"
        id="RI-button"
        width="52.999996"
        height="19.999998"
@@ -653,7 +653,7 @@
        ry="3"
        rx="3" />
     <rect
-       style="opacity:1;fill:#fffff3;fill-opacity:1;"
+       style="opacity:1;fill:#fffff3;fill-opacity:1"
        id="MA-button"
        width="52.999996"
        height="19.999998"
@@ -663,7 +663,7 @@
        ry="3"
        rx="3" />
     <rect
-       style="opacity:1;fill:#fffff3;fill-opacity:1;"
+       style="opacity:1;fill:#fffff3;fill-opacity:1"
        id="VT-button"
        width="52.999996"
        height="19.999998"
@@ -673,7 +673,7 @@
        ry="3"
        rx="3" />
     <rect
-       style="opacity:1;fill:#fffff3;fill-opacity:1;"
+       style="opacity:1;fill:#fffff3;fill-opacity:1"
        id="NH-button"
        width="52.999996"
        height="19.999998"
@@ -683,7 +683,7 @@
        ry="3"
        rx="3" />
     <rect
-       style="opacity:1;fill:#fffff3;fill-opacity:1;"
+       style="opacity:1;fill:#fffff3;fill-opacity:1"
        id="HI-button"
        width="50"
        height="19.999998"
@@ -693,74 +693,74 @@
        ry="3"
        rx="3" />
     <rect
-       style="opacity:1;fill:#fffff3;fill-opacity:1;"
+       style="opacity:1;fill:#fffff3;fill-opacity:1;stroke-width:1"
        id="ME-AL"
-       width="74.290161"
+       width="81"
        height="90.290161"
-       x="733.01764"
+       x="736.01794"
        y="10.035334"
        inkscape:label="med1"
        ry="7"
-       rx="7" />
+       rx="7.000001" />
     <rect
-       style="opacity:1;fill:#fffff3;fill-opacity:1;"
+       style="opacity:1;fill-opacity:1;stroke-width:0.99999994"
        id="ME-D1"
-       width="60"
+       width="69"
        height="19.999998"
-       x="740"
+       x="742.00012"
        y="44"
        inkscape:label="med2"
-       rx="3"
+       rx="2.9999998"
        ry="3" />
     <rect
-       style="opacity:1;fill:#fffff3;fill-opacity:1;"
+       style="opacity:1;fill-opacity:1;stroke-width:0.99999994"
        id="ME-D2"
-       width="60"
+       width="69"
        height="19.999998"
-       x="740"
+       x="742.00012"
        y="71"
        inkscape:label="med3"
-       rx="3"
+       rx="2.9999998"
        ry="3" />
     <rect
-       style="opacity:1;fill:#fffff1;fill-opacity:1;"
+       style="opacity:1;fill:#fffff1;fill-opacity:1;stroke-width:1"
        id="NE-AL"
-       width="141"
+       width="147"
        height="61.035789"
        x="582.02216"
        y="9.9642096"
        inkscape:label="ned1"
        ry="6.9999995"
-       rx="6.9999995" />
+       rx="6.9999986" />
     <rect
-       style="opacity:1;fill:#fffffb;fill-opacity:1;"
+       style="opacity:1;fill-opacity:1;stroke-width:0.99999994"
        id="NE-D1"
-       width="60"
+       width="67"
        height="19.999998"
-       x="656"
+       x="657.99994"
        y="17"
        inkscape:label="ned2"
        ry="3"
-       rx="3" />
+       rx="2.9999995" />
     <rect
-       style="opacity:1;fill:#fffffa;fill-opacity:1;"
+       style="opacity:1;fill-opacity:1;stroke-width:0.99999994"
        id="NE-D2"
-       width="60"
+       width="67"
        height="19.999998"
-       x="589"
+       x="587"
        y="44.000004"
        inkscape:label="ned3"
-       rx="3"
+       rx="2.9999995"
        ry="3" />
     <rect
-       style="opacity:1;fill:#fffff6;fill-opacity:1;"
+       style="opacity:1;fill-opacity:1;stroke-width:0.99999994"
        id="NE-D3"
-       width="60"
+       width="67"
        height="19.999998"
-       x="656"
+       x="657.99994"
        y="44"
        inkscape:label="ned4"
-       rx="3"
+       rx="2.9999995"
        ry="3" />
     <path
        style="opacity:1;fill:#ffffff;fill-opacity:1"
@@ -1301,71 +1301,71 @@
     <text
        xml:space="preserve"
        x="742.71875"
-       y="32.799999"
+       y="30.799999"
        id="ME-AL-text"
        inkscape:label="med1text"><tspan
          sodipodi:role="line"
          x="742.71875"
-         y="32.799999"
+         y="30.799999"
          id="tspan8988-2-59-0-7-1-7-7-5-9-1-5">ME-AL 2 </tspan></text>
     <text
        xml:space="preserve"
-       x="742.71875"
+       x="744.71875"
        y="59.707001"
        id="ME-D1-text"
        inkscape:label="med2text"><tspan
          sodipodi:role="line"
-         x="742.71875"
+         x="744.71875"
          y="59.707001"
          id="tspan8988-2-59-0-7-1-7-7-5-9-1-5-6">ME-01 1 </tspan></text>
     <text
        xml:space="preserve"
-       x="742.71875"
+       x="744.71875"
        y="86.765503"
        id="ME-D2-text"
        inkscape:label="med3text"><tspan
          sodipodi:role="line"
-         x="742.71875"
+         x="744.71875"
          y="86.765503"
          id="tspan8988-2-59-0-7-1-7-7-5-9-1-5-5">ME-02 1 </tspan></text>
     <text
        xml:space="preserve"
-       x="593.03076"
+       x="591.03076"
        y="32.707001"
        id="NE-AL-text"
        inkscape:label="ned1text"><tspan
          sodipodi:role="line"
-         x="593.03076"
+         x="591.03076"
          y="32.707001"
          id="tspan8988-2-59-0-7-1-7-7-5-9-1-5-1">NE-AL 2 </tspan></text>
     <text
        xml:space="preserve"
-       x="660.03076"
+       x="662.03076"
        y="32.707001"
        id="NE-D1-text"
        inkscape:label="ned1text"><tspan
          sodipodi:role="line"
-         x="660.03076"
+         x="662.03076"
          y="32.707001"
          id="tspan8988-2-59-0-7-1-7-7-5-9-1-5-1-8">NE-01 1 </tspan></text>
     <text
        xml:space="preserve"
-       x="593.03076"
+       x="591.03076"
        y="59.765499"
        id="NE-D2-text"
        inkscape:label="ned1text"><tspan
          sodipodi:role="line"
-         x="593.03076"
+         x="591.03076"
          y="59.765499"
          id="tspan8988-2-59-0-7-1-7-7-5-9-1-5-1-0">NE-02 1 </tspan></text>
     <text
        xml:space="preserve"
-       x="660.03076"
+       x="662.03076"
        y="59.84375"
        id="NE-D3-text"
        inkscape:label="ned1text"><tspan
          sodipodi:role="line"
-         x="660.03076"
+         x="662.03076"
          y="59.84375"
          id="tspan8988-2-59-0-7-1-7-7-5-9-1-5-1-04">NE-03 1 </tspan></text>
   </g>
