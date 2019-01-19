@@ -7,12 +7,13 @@ class State {
 		this.htmlElement = htmlElement;
 		this.candidate = 'Tossup';
 		this.dataid = dataid;
+		this.voteCount = 0;
 		this.resetVoteCount();
-		totalVotes += this.voteCount;
 		this.disabled = false;
 	}
 
 	resetVoteCount() {
+		totalVotes -= this.voteCount;
 		if(this.dataid === 'congressional') {
 			this.voteCount = 1;
 		} else if(this.dataid === 'senate') {
@@ -20,6 +21,7 @@ class State {
 		} else {
 			this.voteCount = data[this.dataid][this.name];
 		}
+		totalVotes += this.voteCount;
 	}
 
 	getCandidate() { 
@@ -39,7 +41,9 @@ class State {
 	}
 
 	setVoteCount(value) {
+		var diff = value - this.voteCount;
 		this.voteCount = value;
+		totalVotes += diff;
 	}
 
 	getHtml() { 
@@ -226,6 +230,8 @@ class State {
 	}
 
 	setVoteCount(value) {
+		var diff = value - this.voteCount;
+		totalVotes += diff;
 		this.voteCount = value;
 		countVotes();
 		updateChart();

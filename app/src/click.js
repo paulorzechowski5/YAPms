@@ -140,15 +140,54 @@ function districtClick(clickElement) {
 	}
 }
 
-//called when a state is clicked
 function stateClick(clickElement, e) {
-
 	var id = clickElement.getAttribute('id');
 	// first element is the state
 	// second element might be button
 	var split = id.split('-');
 	// get state where state.name equals the id attribute
 	var state = states.find(state => state.name === split[0]);
+
+	switch(mode) {
+		case 'paint':
+			stateClickPaint(state, id);
+			break;
+		case 'ec':
+			stateClickEC(state, id);
+			break;
+		case 'delete':
+			stateClickDelete(state, id);
+			break;
+	}
+}
+
+function stateClickPaint(state, id) {
+	state.incrementCandidateColor(paintIndex);
+	countVotes();
+	updateChart();
+	updateLegend();
+}
+
+function stateClickDelete(state, id) {
+	state.hide();
+	state.setVoteCount(0);
+}
+
+function stateClickEC(state, id) {
+	var ecedit = document.getElementById('ecedit');
+	var eceditText = document.getElementById('ecedit-message');
+	var input = document.getElementById('state-ec');
+	var stateId = document.getElementById('state-id');
+	eceditText.innerHTML = 'Set ' + id + ' electoral college';
+	input.value = state.voteCount;
+	stateId.value = id;
+	ecedit.style.display = 'inline';
+}
+
+/*
+//called when a state is clicked
+function stateClick(clickElement, e) {
+
 	if(mode === 'move') {
 
 	} if(mode === 'ec') {
@@ -169,7 +208,7 @@ function stateClick(clickElement, e) {
 		updateChart();
 		updateLegend();
 	}
-}
+}*/
 
 function specialClick(clickElement, e) {
 	
