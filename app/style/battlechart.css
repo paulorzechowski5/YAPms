@@ -1,0 +1,119 @@
+#battlechart {
+	display: none;
+	width: 35%;
+	flex: 1 1;
+	margin: 15px;
+}
+
+#battlechartleft {
+	margin: auto;
+}
+
+#battlechartright {
+	display: flex;
+	flex-direction: column;
+	border: 1px solid black;
+	border-radius: 5px;
+	box-shadow: 1px 1px 2px black;
+	overflow: hidden;
+	flex: 1 1;
+	margin: 0px;
+}
+
+#battlechart p {
+	margin: auto;
+}
+
+#battlechart div {
+	display: flex;
+}
+
+#topbar {
+	flex-direction: column;
+	flex: 1 1;
+	flex-basis: 0%;
+	background: #bf1d29;
+	transition: flex-basis 1s;
+	border-bottom: 1px solid black;
+	box-shadow: 0px 1px 3px black;
+	z-index: 1;
+	min-height: 0;
+}
+
+#topbar-solid {
+	overflow: hidden;
+	background: #bf1d29;
+	flex: 1 1 auto;
+	flex-basis: 0%;
+	transition: flex-basis 1s;
+	min-height: 0;
+}
+
+#topbar-likely {
+	overflow: hidden;
+	background: #ff5865;
+	flex: 1 1 auto;
+	flex-basis: 0%;
+	transition: flex-basis 1s;
+	min-height: 0;
+}
+
+#topbar-lean {
+	overflow: hidden;
+	background: #ff8b98;
+	flex: 1 1 auto;
+	flex-basis: 0%;
+	transition: flex-basis 1s;
+	min-height: 0;
+}
+
+#tossupbar {
+	flex: 1 1;
+	flex-basis: 0%;
+	background: #bbb7b2;
+	transition: flex-basis 1s;
+	overflow: hidden;
+}
+
+#bottombar {
+	display: flex;
+	flex-direction: column;
+	flex: 1 1;
+	flex-basis: 0%;
+	background: #1c408c;
+	transition: flex-basis 1s;
+	border-top: 1px solid black;
+	box-shadow: 0px -1px 3px black;
+	z-index: 1;
+	min-height: 0;
+	overflow: visible;
+}
+
+#bottombar-solid {
+	display: flex;
+	overflow: hidden;
+	background: #1c408c;
+	flex: 1 1;
+	flex-basis: 0%;
+	transition: flex-basis 1s;
+	min-height: 0;
+	vertical-align: bottom;
+}
+
+#bottombar-likely {
+	overflow: hidden;
+	background: #577ccc;
+	flex: 1 1;
+	flex-basis: 0%;
+	transition: flex-basis 1s;
+	min-height: 0;
+}
+
+#bottombar-lean {
+	overflow: hidden;
+	background: #8aafff;
+	flex: 1 1;
+	flex-basis: 0%;
+	transition: flex-basis 1s;
+	min-height: 0;
+}

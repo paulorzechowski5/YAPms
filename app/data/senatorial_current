@@ -1,5 +1,4 @@
 d Democrat #1c408c #577ccc #8aafff
-i Independent #1c8c28 #50c85e #8aff97
 r Republican #bf1d29 #ff5865 #ff8b98
 !
 AL d r
@@ -20,7 +19,7 @@ IA r r
 KS r r
 KY r r
 LA r r
-ME r i
+ME r d
 MD d d
 MA d d
 MI d d
@@ -46,7 +45,7 @@ SD r r
 TN r r
 TX r r
 UT r r
-VT d i
+VT d d
 VA d d
 WA d d
 WV r d

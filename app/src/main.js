@@ -620,7 +620,7 @@ function setChart(type) {
 		if(Object.keys(candidates).length > 3) {
 		
 			displayNotification('Sorry',
-				'There are too many candidates for this chart to display any information');
+				'This chart requires that there be two candidates');
 			return;
 		}
 
@@ -906,38 +906,6 @@ function countVotes() {
 	}
 }
 
-function updateBattleChart() {
-
-	if(Object.keys(candidates).length > 3) {
-		setChart('doughnut');
-		return;
-	}
-
-	var tossup = document.getElementById('tossupbar');
-	var topbar = document.getElementById('topbar');
-	var bottombar = document.getElementById('bottombar');
-
-	var candidateIndex = -1;
-	for(var key in candidates) {
-		++candidateIndex;
-		if(candidateIndex == 3) {
-			break;
-		}
-
-		var candidate = candidates[key];
-
-		if(candidateIndex == 0) {
-			tossup.style.flexBasis = '' + (candidate.voteCount / totalVotes) * 100 + '%';
-		} else if(candidateIndex == 1) {
-			topbar.style.flexBasis = '' + (candidate.voteCount / totalVotes) * 100 + '%';
-
-		} else if(candidateIndex == 2) {
-			bottombar.style.flexBasis = '' + (candidate.voteCount / totalVotes) * 100 + '%';
-
-		}
-	}
-}
-
 // updates the information of the chart (so the numbers change)
 function updateChart() {
 
@@ -1086,9 +1054,7 @@ function start() {
 	initCandidates();
 	initChart();
 	loadMap('./res/presidential.svg', 16, 1, 'usa_ec',"presidential", "open");
-
-//	displayNotification('Welcome to YAPms! (yet another political map simulator)', 'This software is in alpha, please bear with us as we continue to add features and eliminate bugs. Thank you! <br><br><b>Supported Browsers:</b> Chrome and Firefox<br>Mobile is <b>not</b> supported<br><br>' +
-//	'<b>New Stuff:</b> Congressional Map! Move Mode, pan and zoom the map!');
+	setChart('battle');
 }
 
 start();

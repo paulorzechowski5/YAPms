@@ -24,6 +24,7 @@
 
 	<link rel="stylesheet" type="text/css" href="./style/style.css">
 	<link rel="stylesheet" type="text/css" href="./style/menu.css">
+	<link rel="stylesheet" type="text/css" href="./style/battlechart.css">
 	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.min.js"></script>
 	<script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@0.5.0"></script> 
@@ -34,6 +35,7 @@
 	<script src="./src/State.js"></script>
 	<script src="./src/htmlControl.js"></script>
 	<script src="./src/Candidate.js"></script>
+	<script src="./src/battlechart.js"></script>
 	<script src="./src/presets.js"></script>
 </head>
 
@@ -83,11 +85,11 @@
 				Charts
 			</button>
 			<div class="dropdown-content">
+				<a onclick='setChart("battle")'>Battle</a>
 				<a onclick='setChart("pie")'>Pie</a>
 				<a onclick='setChart("doughnut")'>Doughnut</a>
 				<a onclick='setChart("horizontalBar")'>Bar</a>
 				<a onclick='setChart("polarArea")'>Polar</a>
-				<a onclick='setChart("battle")'>Battle (beta)</a>
 				<a onclick='setChart("none")'>None</a>
 			</div>
 		</div>
@@ -176,12 +178,32 @@
 		<canvas id="chart" width="100" height="100"></canvas>
 
 		<div id="battlechart">
-		<div id="topbar">
-		</div>
-		<div id="tossupbar">
-		</div>
-		<div id="bottombar">
-		</div>
+			<div id="battlechartleft">
+				<svg width="20" height="20">
+					<polygon points="0,0 0,20 20,10"
+		     				style="fill:lime; stroke:black; stroke-width:2"/>
+				</svg>
+			</div>
+			<div id="battlechartright">
+				<div id="topbar">
+					<div id="topbar-solid">
+					</div>
+					<div id="topbar-likely">
+					</div>
+					<div id="topbar-lean">
+					</div>
+				</div>
+				<div id="tossupbar">
+				</div>
+				<div id="bottombar">
+					<div id="bottombar-lean">
+					</div>
+					<div id="bottombar-likely">
+					</div>
+					<div id="bottombar-solid">
+					</div>
+				</div>
+			</div>
 		</div>
 
 		<img id="logo" src="/app/res/lte.png">

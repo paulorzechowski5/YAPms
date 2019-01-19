@@ -49,7 +49,7 @@
 
 		<div id="whatsnew" class="infobox">
 			<b>New Stuff:</b>
-			Congressional Map! Move mode, pan and zoom the map!
+			Battle chart! Easily visualize each candidate on their race to 270!
 		</div>
 	</div>
 	

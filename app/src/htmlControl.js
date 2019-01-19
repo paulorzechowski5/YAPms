@@ -91,7 +91,7 @@ function darkPalette() {
 
 	chartBarScales.yAxes[0].ticks.fontColor = '#ffffff';
 	chartBarScales.xAxes[0].ticks.fontColor = '#ffffff';
-	setChart(chart.config.type);
+	setChart(chartType);
 	verifyMap();
 	previousPalette = darkPalette;
 }
@@ -120,8 +120,7 @@ function terminalPalette() {
 	
 	chartBarScales.yAxes[0].ticks.fontColor = '#ffffff';
 	chartBarScales.xAxes[0].ticks.fontColor = '#ffffff';
-	setChart(chart.config.type);
-	setChart(chart.config.type);
+	setChart(chartType);
 	verifyMap();
 	previousPalette = terminalPalette;
 }
@@ -154,7 +153,7 @@ function lightPalette() {
 	
 	chartBarScales.yAxes[0].ticks.fontColor = '#ffffff';
 	chartBarScales.xAxes[0].ticks.fontColor = '#ffffff';
-	setChart(chart.config.type);
+	setChart(chartType);
 	verifyMap();
 	previousPalette = lightPalette;
 }
@@ -182,7 +181,7 @@ function contrastPalette() {
 
 	chartBarScales.yAxes[0].ticks.fontColor = '#000000';
 	chartBarScales.xAxes[0].ticks.fontColor = '#000000';
-	setChart(chart.config.type);
+	setChart(chartType);
 	verifyMap();
 	previousPalette = contrastPalette;
 }
@@ -210,7 +209,7 @@ function metallicPalette() {
 	
 	chartBarScales.yAxes[0].ticks.fontColor = '#ffffff';
 	chartBarScales.xAxes[0].ticks.fontColor = '#ffffff';
-	setChart(chart.config.type);
+	setChart(chartType);
 	verifyMap();
 	previousPalette = metallicPalette;
 }
@@ -239,10 +238,9 @@ function toWinPalette() {
 
 	chartBarScales.yAxes[0].ticks.fontColor = '#000000';
 	chartBarScales.xAxes[0].ticks.fontColor = '#000000';
-	setChart(chart.config.type);
+	setChart(chartType);
 	verifyMap();
 	previousPalette = toWinPalette;
-	console.log(this);
 }
 
 function setChartBorderStyle(width, color) {
