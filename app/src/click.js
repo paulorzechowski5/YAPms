@@ -150,7 +150,11 @@ function stateClick(clickElement, e) {
 
 	switch(mode) {
 		case 'paint':
-			stateClickPaint(state, id);
+			if(mapType === 'demprimary') {
+				stateClickPaintDemPrimary(state, id);
+			} else {
+				stateClickPaint(state, id);
+			}
 			break;
 		case 'ec':
 			stateClickEC(state, id);
@@ -166,6 +170,10 @@ function stateClickPaint(state, id) {
 	countVotes();
 	updateChart();
 	updateLegend();
+}
+
+function stateClickPaintDemPrimary(state, id) {
+	console.log('DEM PRIMARY');
 }
 
 function stateClickDelete(state, id) {

@@ -273,7 +273,7 @@ function setMapStyle(color, strokeWidth) {
 	outlines.style.strokeWidth = strokeWidth * strokeMultiplier;
 	
 	if(mapType === 'congressional') {
-		outlines.style.strokeWidth = 0.1;
+	//	outlines.style.strokeWidth = 0.1;
 	}
 
 	var special = document.getElementById('special');

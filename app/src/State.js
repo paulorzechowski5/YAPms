@@ -18,7 +18,9 @@ class State {
 			this.voteCount = 1;
 		} else if(this.dataid === 'senate') {
 			this.voteCount = 2;
-		} else {
+		} else if(this.dataid === 'ltesenate') {
+			this.voteCount = 1;	
+		}else {
 			this.voteCount = data[this.dataid][this.name];
 		}
 		totalVotes += this.voteCount;
