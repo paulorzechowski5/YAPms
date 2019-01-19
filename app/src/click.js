@@ -100,6 +100,9 @@ function districtClick(clickElement) {
 		countVotes();
 		updateChart();
 		updateLegend();
+		if(loadConfig.filename === './res/lte_house.svg') {
+			updateLTEHouse();
+		}
 	} else if(mode === 'delete') {
 		// delete all districts and text
 
@@ -170,6 +173,7 @@ function stateClickPaint(state, id) {
 	countVotes();
 	updateChart();
 	updateLegend();
+	updateLTEHouse();
 }
 
 function stateClickPaintDemPrimary(state, id) {

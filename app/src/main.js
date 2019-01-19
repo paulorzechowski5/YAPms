@@ -109,7 +109,6 @@ function loadMap(filename, fontsize, strokewidth, dataid, type, year) {
 	}
 
 	console.log('Loading ' + filename);
-	map = dataid;
 	$('#map-div').load(filename, function(a) {
 		console.log('Done loading ' + filename);
 		
@@ -150,6 +149,10 @@ function loadMap(filename, fontsize, strokewidth, dataid, type, year) {
 		countVotes();
 		updateChart();
 		updateLegend();
+		
+		if(loadConfig.filename === './res/lte_house.svg') {
+			updateLTEHouse();
+		}
 		
 		blockPresets = false;
 
@@ -876,7 +879,10 @@ function verifyMap() {
 			}
 		}
 	});
-				
+	
+	if(loadConfig.filename === './res/lte_house.svg') {
+		updateLTEHouse();
+	}
 }
 
 // sets all states to white
@@ -906,6 +912,65 @@ function countVotes() {
 			}
 		}
 	}
+}
+
+// change the colors of the districts so that they are the
+// color of the majority
+function updateLTEHouse() {
+	var outlines = document.getElementById('outlines');
+
+	var children = outlines.children;
+
+	var districts = [];
+
+	for(var index = 0; index < children.length; ++index) {
+		var child = children[index];
+
+		if(child.id.includes('-LTEHOUSE')) {
+			districts.push(child);	
+		}
+	}
+
+	districts.forEach(function(element) {
+		var districtname = element.id.split('-')[0];
+		var count = {};
+
+		// loop through each district seat (because they are states)
+		for(var index = 0; index < states.length; ++index) {
+			var seat = states[index];
+			// if the name of the district isnt in the seat skip it
+			if(seat.name.includes(districtname) == false) {
+				continue;
+			}
+			// look at the candidate and count it
+			var candidate = seat.getCandidate();
+			if(candidate in count) {
+				count[candidate] += 1;
+			} else {
+				count[candidate] = 1;
+			}
+		}
+		
+		var majorCandidate = 'Tossup';
+		var majorCount = 0;
+	
+		// find the candidate with the most seats
+		for(var key in count) {
+			if(count[key] > majorCount) {
+				majorCandidate = key;
+				majorCount = count[key];
+			} else if(count[key] == majorCount) {
+				majorCandidate = 'Tossup';
+			}
+		}
+	
+		// set the fill of the district
+		if(majorCandidate === 'Tossup') {
+			element.style.fill = candidates[majorCandidate].colors[2];
+		} else {
+			element.style.fill = candidates[majorCandidate].colors[0];
+		}
+	});
 }
 
 // updates the information of the chart (so the numbers change)
