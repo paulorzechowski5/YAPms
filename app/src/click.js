@@ -173,7 +173,37 @@ function stateClickPaint(state, id) {
 }
 
 function stateClickPaintDemPrimary(state, id) {
-	console.log('DEM PRIMARY');
+	var demdel = document.getElementById('demdel');
+	demdel.style.display = 'inline';
+
+	var message = document.getElementById('demdel-message');
+	message.innerHTML = state.name;
+	var ranges = document.getElementById('demdel-ranges');
+
+	// remove old sliders
+	while(ranges.firstChild) {
+		ranges.removeChild(ranges.firstChild);
+	}
+
+	for(var key in candidates) {
+		// create 
+		var range = document.createElement('INPUT');
+		range.setAttribute('type', 'range');
+		var display = document.createElement('DIV');
+		display.setAttribute('id', 'display-' + key);
+
+		// this is how you reference the display DOM
+		// im not sure exactly what this is but its weird
+		range.oninput = (function() {
+			var refdisplay = display;
+			return function() {
+				refdisplay.innerHTML = this.value;
+			}
+		})();
+
+		ranges.appendChild(display);
+		ranges.appendChild(range);
+	}
 }
 
 function stateClickDelete(state, id) {

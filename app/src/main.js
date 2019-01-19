@@ -97,6 +97,8 @@ function loadMap(filename, fontsize, strokewidth, dataid, type, year) {
 	strokeMultiplier = strokewidth;
 	var dataname = './data/' + type + '_' + year;
 
+	console.log(dataname);
+
 	loadConfig = {
 		filename: filename,
 		fontsize: fontsize,

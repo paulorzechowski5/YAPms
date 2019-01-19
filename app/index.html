@@ -78,7 +78,7 @@
 				<a onclick='loadMap("./res/lte.svg", 35, 1, "lte_ec", "presidential", "open");'>LTE Discord</a>
 				<a onclick='loadMap("./res/lte_senate.svg", 35, 1, "ltesenate", "senatorial", "open")'>LTE Senate</a>
 				<a onclick='loadMap("./res/lte_house.svg", 35, 1, "congressional", "congressional", "open")'>LTE House</a>
-				<a onclick='//loadMap("./res/usa_no_districs.svg", 16, 1, "dem_primary", "demprimary", "2020");'>Democratic Primary o jk</a>
+				<a onclick='//loadMap("./res/usa_no_districts.svg", 16, 1, "dem_primary", "demprimary", "2020");'>Democratic Primary o jk</a>
 			</div>
 		</div>
 		
@@ -216,9 +216,16 @@
 	</div>
 </div>
 
+<div id="demdel" class="popup">
+	<h3 id="demdel-message"></h3>
+	<div id="demdel-ranges">
+	</div>
+	<button onclick="setDel(this)">set</button>
+</div>
+
 <div id="ecedit" class="popup">
 	<h3 id="ecedit-message"></h3>
-	<input id="state-ec" type="number" name="value" min="1" max="9999">
+	<input id="state-ec" type="number" name="value" min="1" max="10" step="1">
 	<input id="state-id" type="hidden">
 	<button onclick="setEC(this)">set</button>
 </div>
