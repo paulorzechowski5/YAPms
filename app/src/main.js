@@ -611,14 +611,19 @@ function setEC(e) {
 
 // dynamically change the chart from one form to another
 function setChart(type) {
+	var chartdiv = document.getElementById('chart-div');
 	var html = document.getElementById('chart');
 	var ctx = html.getContext('2d');
 	var battlechart = document.getElementById('battlechart');
 	battlechart.style.display = '';
 	
+	chartdiv.style.display = 'flex';
+	
 	if(type === 'none') {
 		html.style.display = 'none';
+		chartdiv.style.display = 'none';
 		chartType = type;
+		centerMap();
 		return;
 	} else if(type === 'battle') {
 
