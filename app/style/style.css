@@ -79,14 +79,13 @@ button {
 }
 
 #logo {
+	width: 35%;
 	display: none;
-	width: 40%;
-	height: auto;
-	margin-top: 30px;
-	margin-bottom: 50px;
+	background: orange;
 	border: 2px solid black;
 	border-radius: 10px;
 	box-shadow: 1px 1px 3px black;
+	margin-bottom: 25px;
 }
 
 #svgdata {
