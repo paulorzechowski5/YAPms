@@ -76,6 +76,8 @@ button {
 	align-items: center;
 	flex-direction: column;
 	z-index: 1;
+	transition: width 1s;
+	overflow: hidden;
 }
 
 #logo {
