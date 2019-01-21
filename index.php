@@ -1,8 +1,8 @@
 <html>
 <head>
 	<meta charset="UTF-8">
-	<meta name="description" content="Presidential, Senatorial, Congressional and Guberntorial political map simulator.">
-	<meta name="keywords" content="Maps,Political,Simulator,Election,President,Governor,Senator,Congress,Interactive">
+	<meta name="description" content="Presidential, Senatorial, Congressional, Guberntorial and Democratic Primary political map simulator.">
+	<meta name="keywords" content="Maps,Political,Simulator,Election,President,Governor,Senator,Congress,Primary,Interactive">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 	<title>YAPms - Yet Another Political Map Simulator</title>
