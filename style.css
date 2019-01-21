@@ -55,8 +55,6 @@ a {
 	font-size: 50px;
 	text-align: center;
 	border: 2px solid black;
-	border-radius: 10px;
-	box-shadow: 1px 1px 2px black;
 }
 
 #start:hover {
