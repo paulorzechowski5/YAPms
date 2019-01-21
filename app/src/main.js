@@ -372,6 +372,58 @@ function setCandidate(e) {
 	updateChart();
 }
 
+function setDelegates(e) {
+	e.parentElement.style.display = '';
+	var stateid = document.getElementById('demdel-state-name').value;
+	var state = states.find(state => state.name === stateid);
+	// keep the total delegates
+	var total = state.voteCount;
+	for(var key in candidates) {
+		if(key === 'Tossup')
+			continue;
+		var range = document.getElementById('range-' + key);
+		state.delegates[key] = parseInt(range.value);
+		// subtract the delegates for each candidate
+		total -= parseInt(range.value);
+	}
+	// set the tossup delegates to the remaining
+	state.delegates['Tossup'] = total;
+
+	var majorityCandidate = 'Tossup';
+	var majorityVoteCount = 0;
+	for(var key in state.delegates) {
+		if(state.delegates[key] > majorityVoteCount) {
+			majorityCandidate = key;
+			majorityVoteCount = state.delegates[key];
+		} else if(state.delegates[key] === majorityVoteCount) {
+			majorityCandidate = 'Tossup';
+			console.log('Tossup');
+		}
+	}
+	
+	if(majorityCandidate !== 'Tossup') {
+		state.htmlElement.style.fill = candidates[majorityCandidate].colors[0];
+	}
+	else {
+		state.htmlElement.style.fill = candidates[majorityCandidate].colors[2];
+	}
+
+	countVotes();
+	updateChart();
+	updateLegend();
+}
+
+function clearDelegates() {
+	for(var index = 0; index < states.length; ++index) {
+		state = states[index];
+		state.delegates = {};
+	}
+
+	countVotes();
+	updateChart();
+	updateLegend();
+}
+
 function setEC(e) {
 	// hide the popup window
 	e.parentElement.style.display = 'none';
@@ -628,6 +680,7 @@ function closeNotification(e) {
 // add candidate to the list
 // update map, chart and legend
 function addCandidate() {
+	clearDelegates();
 	var name = document.getElementById('name').value;
 
 	// ignore white space candidates
@@ -698,23 +751,45 @@ function clearMap() {
 
 // iterate over each state and delegate votes to the candidate
 function countVotes() {
-	// iterate over every candidate
-	//candidates.forEach(function(candidate, candidateIndex) {
-	var candidateIndex = -1;
-	for(var key in candidates) {
-		var candidate = candidates[key];
-		++candidateIndex;
-		candidate.voteCount = 0;
-		candidate.probVoteCounts = [0,0,0];
-		// iterate over every state
-		for(var stateIndex = 0; stateIndex < states.length; ++stateIndex) {
-			var state = states[stateIndex];
-			// if the candidate value of the state
-			// equals the index value of the candidate
-			// add the vote count to the candidate 
-			if(state.candidate === key) {
-				candidate.voteCount += state.voteCount;
-				candidate.probVoteCounts[state.colorValue] += state.voteCount;
+	if(mapType === 'demprimary') {
+		for(var key in candidates) {
+			var candidate = candidates[key];
+			candidate.voteCount = 0;
+			candidate.probVoteCounts = [0,0,0];
+			for(var stateIndex = 0; stateIndex < states.length; ++stateIndex) {
+				var state = states[stateIndex];
+				if(typeof state.delegates === 'undefined') {
+					state.delegates = {};
+				}
+				if(typeof state.delegates[key] === 'undefined') {
+					state.delegates[key] = 0;
+					if(key === 'Tossup') {
+						state.delegates[key] = state.voteCount;	
+					}
+				}
+				candidate.voteCount += state.delegates[key];
+				candidate.probVoteCounts[0] += state.delegates[key];
+			}
+		}
+	} else {
+		// iterate over every candidate
+		//candidates.forEach(function(candidate, candidateIndex) {
+		var candidateIndex = -1;
+		for(var key in candidates) {
+			var candidate = candidates[key];
+			++candidateIndex;
+			candidate.voteCount = 0;
+			candidate.probVoteCounts = [0,0,0];
+			// iterate over every state
+			for(var stateIndex = 0; stateIndex < states.length; ++stateIndex) {
+				var state = states[stateIndex];
+				// if the candidate value of the state
+				// equals the index value of the candidate
+				// add the vote count to the candidate 
+				if(state.candidate === key) {
+					candidate.voteCount += state.voteCount;
+					candidate.probVoteCounts[state.colorValue] += state.voteCount;
+				}
 			}
 		}
 	}
@@ -889,6 +964,9 @@ function updateLegend() {
 }
 
 function centerMap() {
+	if(panObject === null)
+		return;
+
 	panObject.resize();
 	panObject.fit();
 	panObject.center();
@@ -909,14 +987,22 @@ function setColors(palette) {
 	var likely = document.getElementById('likely');
 	var leaning =  document.getElementById('leaning');
 
-	if(palette === 'republican') {
+	if(palette === 'red') {
 		solid.value = '#bf1d29';
 		likely.value = '#ff5865';
 		leaning.value = '#ff8b98';
-	} else if(palette === 'democrat') {
+	} else if(palette === 'blue') {
 		solid.value = '#1c408c';
 		likely.value = '#577ccc';
 		leaning.value = '#8aafff';
+	} else if(palette === 'green') {
+		solid.value = '#1c8c28';
+		likely.value = '#50c85e';
+		leaning.value = '#8aff97';
+	} else if(palette === 'yellow') {
+		solid.value = '#e6b700';
+		likely.value = '#e8c84d';
+		leaning.value = '#ffe78a';
 	}
 }
 

@@ -15,6 +15,8 @@ function loadPreset(value) {
 		return;
 	}
 	
+	clearDelegates();
+	
 	initCandidates();
 
 	switch(value) {

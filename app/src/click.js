@@ -9,7 +9,6 @@ function buttonClick(clickElement) {
 }
 
 function buttonClickPaint(clickElement) {
-
 	var id = clickElement.getAttribute('id');
 	var split = id.split('-');
 	var state = states.find(state => state.name === split[0]);
@@ -179,9 +178,14 @@ function stateClickPaint(state, id) {
 function stateClickPaintDemPrimary(state, id) {
 	var demdel = document.getElementById('demdel');
 	demdel.style.display = 'inline';
-
 	var message = document.getElementById('demdel-message');
-	message.innerHTML = state.name;
+	if(state.name !== 'SU') {
+		message.innerHTML = state.name + ' - ' + state.voteCount + ' delegates';
+	} else {
+		message.innerHTML = 'Super - ' + state.voteCount + ' delegates';
+	}
+	var hidden = document.getElementById('demdel-state-name');
+	hidden.value = state.name;
 	var ranges = document.getElementById('demdel-ranges');
 
 	// remove old sliders
@@ -189,25 +193,61 @@ function stateClickPaintDemPrimary(state, id) {
 		ranges.removeChild(ranges.firstChild);
 	}
 
+	var max  = state.voteCount;
+	var total = 0;
+
+	var displayTossup = document.createElement('DIV');
+	displayTossup.setAttribute('id', 'display-Tossup');
+
 	for(var key in candidates) {
-		// create 
+		if(key === 'Tossup')
+			continue;
+		// create slider, set their max to the states delegate count
 		var range = document.createElement('INPUT');
+		range.setAttribute('id', 'range-' + key);
 		range.setAttribute('type', 'range');
+		range.setAttribute('max', max);
+		range.value = state.delegates[key];
+		total += state.delegates[key];
+		// create display for slider
 		var display = document.createElement('DIV');
 		display.setAttribute('id', 'display-' + key);
+		display.innerHTML = key + ' - ' + range.value;
 
 		// this is how you reference the display DOM
 		// im not sure exactly what this is but its weird
 		range.oninput = (function() {
+			var refkey = key;
 			var refdisplay = display;
-			return function() {
-				refdisplay.innerHTML = this.value;
+			var refdisplayTossup = displayTossup;
+			var prevvalue = parseInt(range.value);
+			return function(b) {
+				total -= prevvalue;
+				total += parseInt(this.value);
+
+				if(total > max) {
+					// if total distributed is greater than max
+					// reset the slider back
+					total -= parseInt(this.value);
+					total += prevvalue;
+					this.value = prevvalue;
+				} else {
+					prevvalue = parseInt(this.value);
+				}
+
+				displayTossup.innerHTML = 'Tossup - ' + (max - total);
+				
+				// update the display	
+				refdisplay.innerHTML = refkey + ' - ' + this.value;
 			}
 		})();
 
 		ranges.appendChild(display);
 		ranges.appendChild(range);
 	}
+
+	displayTossup.innerHTML = 'Tossup - ' + (max - total);
+	ranges.appendChild(displayTossup);
 }
 
 function stateClickDelete(state, id) {
@@ -225,32 +265,6 @@ function stateClickEC(state, id) {
 	stateId.value = id;
 	ecedit.style.display = 'inline';
 }
-
-/*
-//called when a state is clicked
-function stateClick(clickElement, e) {
-
-	if(mode === 'move') {
-
-	} if(mode === 'ec') {
-		var ecedit = document.getElementById('ecedit');
-		var eceditText = document.getElementById('ecedit-message');
-		var input = document.getElementById('state-ec');
-		var stateId = document.getElementById('state-id');
-		eceditText.innerHTML = 'Set ' + id + ' electoral college';
-		input.value = state.voteCount;
-		stateId.value = id;
-		ecedit.style.display = 'inline';
-	} else if(mode === 'delete') {
-		state.hide();
-		state.setVoteCount(0);
-	} else if(mode === 'paint') {
-		state.incrementCandidateColor(paintIndex);
-		countVotes();
-		updateChart();
-		updateLegend();
-	}
-}*/
 
 function specialClick(clickElement, e) {
 	

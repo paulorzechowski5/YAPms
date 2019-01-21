@@ -3,7 +3,7 @@
 
 <head>
 	<meta charset="UTF-8">
-	<meta name="description" content="Presidential, Senatorial, Congressional and Guberntorial political map simulator.">
+	<meta name="description" content="Presidential, Senatorial, Congressional, Guberntorial, and Democratic Primary, political map simulator.">
 	<meta name="keywords" content="Maps,Political,Simulator,Election,President,Governor,Senator,Congress,Interactive">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -71,6 +71,7 @@
 				<a onclick='loadMap("./res/presidential.svg", 16, 1, "usa_ec", "presidential", "open");'>Presidential</a>
 				<a onclick='loadMap("./res/usa_senate.svg", 16, 1, "usa_senate", "senatorial", "2020")'>Senatorial<br>2020</a>
 				<a onclick='loadMap("./res/usa_gubernatorial.svg", 16, 1, "usa_gubernatorial", "gubernatorial", "2020")'>Gubernatorial 2020</a>
+				<a onclick='loadMap("./res/usa_dem_primary.svg", 16, 1, "dem_primary", "demprimary", "2020");'>Democratic Primary</a>
 				<a onclick='loadMap("./res/usa_no_districts.svg", 16, 1, "usa_no_districts_ec", "presidential", "open")'>Presidential Take All</a>
 				<a onclick='loadMap("./res/usa_senate.svg", 16, 1.5, "usa_senate", "senatorial", "open")'>Senatorial<br>Open</a>
 				<a onclick='loadMap("./res/usa_congressional_2018.svg", 16, 0.075, "congressional", "congressional", "open")'>Congressional 2018 Open</a>
@@ -79,7 +80,6 @@
 				<a onclick='loadMap("./res/lte.svg", 35, 1, "lte_ec", "presidential", "open");'>LTE Discord</a>
 				<a onclick='loadMap("./res/lte_senate.svg", 35, 1, "ltesenate", "senatorial", "open")'>LTE Senate</a>
 				<a onclick='loadMap("./res/lte_house.svg", 35, 1, "congressional", "congressional", "open")'>LTE House</a>
-				<a onclick='//loadMap("./res/usa_no_districts.svg", 16, 1, "dem_primary", "demprimary", "2020");'>Democratic Primary o jk</a>
 			</div>
 		</div>
 		
@@ -141,8 +141,10 @@
 			</button>
 			<div id="addCandidateDropdown" class="dropdown-content">
 				<a>Name <input id="name" type="text"></a>
-				<a onclick='setColors("republican")'>Republican Colors</a>
-				<a onclick='setColors("democrat")'>Democrat Colors</a>
+				<a onclick='setColors("red")'>Red Colors</a>
+				<a onclick='setColors("blue")'>Blue Colors</a>
+				<a onclick='setColors("green")'>Green Colors</a>
+				<a onclick='setColors("yellow")'>Yellow Colors</a>
 				<a>Solid <input id="solid" type="color"></a>
 				<a>Likely <input id="likely" type="color"></a>
 				<a>Leaning <input id="leaning" type="color"></a>
@@ -221,7 +223,8 @@
 	<h3 id="demdel-message"></h3>
 	<div id="demdel-ranges">
 	</div>
-	<button onclick="setDel(this)">set</button>
+	<input id="demdel-state-name" type="hidden">
+	<button onclick="setDelegates(this)">set</button>
 </div>
 
 <div id="ecedit" class="popup">

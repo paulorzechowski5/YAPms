@@ -49,7 +49,8 @@
 
 		<div id="whatsnew" class="infobox">
 			<b>New Stuff:</b>
-			Battle chart! Easily visualize each candidate on their race to 270!
+			Battle chart! Easily visualize each candidate on their race to 270! <br>
+			Democratic Primary Map! Stil in the works, but hopefully functional!
 		</div>
 	</div>
 	
