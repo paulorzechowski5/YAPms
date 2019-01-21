@@ -2,7 +2,11 @@ function buttonClick(clickElement) {
 	if(mode === 'move') {
 		return;
 	} else if(mode === 'paint') {
-		buttonClickPaint(clickElement);
+		if(mapType === 'demprimary') {
+			buttonClickPaintDemPrimary(clickElement);
+		} else {
+			buttonClickPaint(clickElement);
+		}
 	} else if(mode === 'ec') {
 		buttonClickEC(clickElement);
 	}
@@ -17,6 +21,10 @@ function buttonClickPaint(clickElement) {
 	countVotes();
 	updateChart();
 	updateLegend();
+}
+
+function buttonClickPaintDemPrimary(clickElement) {
+	stateClick(clickElement);
 }
 
 function buttonClickEC(clickElement) {

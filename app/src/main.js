@@ -401,11 +401,13 @@ function setDelegates(e) {
 		}
 	}
 	
-	if(majorityCandidate !== 'Tossup') {
-		state.htmlElement.style.fill = candidates[majorityCandidate].colors[0];
+	if(majorityCandidate === 'Tossup') {
+		//state.htmlElement.style.fill = candidates[majorityCandidate].colors[0];
+		state.setColor('Tossup', 2);
 	}
 	else {
-		state.htmlElement.style.fill = candidates[majorityCandidate].colors[2];
+		state.setColor(majorityCandidate, 0);
+		//state.htmlElement.style.fill = candidates[majorityCandidate].colors[2];
 	}
 
 	countVotes();
