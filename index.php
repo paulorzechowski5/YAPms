@@ -41,7 +41,7 @@
 		<div id="support" class="infobox">
 			<p>
 				<b>Supported Browsers:</b>
-				Chrome and Firefox
+				Chrome, Firefox and Opera
 				</br>
 				Mobile is <b>not</b> supported
 			</p>
@@ -50,7 +50,7 @@
 		<div id="whatsnew" class="infobox">
 			<b>New Stuff:</b>
 			Battle chart! Easily visualize each candidate on their race to 270! <br>
-			Democratic Primary Map! Stil in the works, but hopefully functional!
+			Democratic Primary Map! Still in the works, but hopefully functional!
 		</div>
 	</div>
 	
@@ -73,6 +73,7 @@
 		<a href="https://privacypolicies.com/privacy/view/5e9b5eee7febd2d29c0ec896e1ac90ef">Privacy</a>
 	</div>
 
+</body>
 	<script>	
 		document.getElementById('harris').innerHTML =
 		'<img src="./res/harris.jpg">';
@@ -81,5 +82,4 @@
 		document.getElementById('sanders').innerHTML =
 		'<img src="./res/sanders.jpg">';
 	</script>
-</body>
 </html>
