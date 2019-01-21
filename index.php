@@ -60,26 +60,9 @@
 		</div>
 	</a>
 
-	<div id="pictures">
-		<div class="cell" id="harris">
-		</div>
-		<div class="cell" id="trump">
-		</div>
-		<div class="cell" id="sanders">
-		</div>
-	</div>
-
 	<div id="bottombar">
 		<a href="https://privacypolicies.com/privacy/view/5e9b5eee7febd2d29c0ec896e1ac90ef">Privacy</a>
 	</div>
 
 </body>
-	<script>	
-		document.getElementById('harris').innerHTML =
-		'<img src="./res/harris.jpg">';
-		document.getElementById('trump').innerHTML =
-		'<img src="./res/trump.jpg">';
-		document.getElementById('sanders').innerHTML =
-		'<img src="./res/sanders.jpg">';
-	</script>
 </html>
