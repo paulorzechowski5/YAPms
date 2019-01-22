@@ -50,6 +50,10 @@
 			Mobile version! With battlechart, tap the chart to change it!<br>
 			Democratic Primary Map! Still in the works, but hopefully functional!
 		</div>
+
+		<div class="infobox">
+			<br>If you would like to submit ideas, or report bugs, please send an email to <a style="color:blue;" href="mailto:bugreport@yapms.com">bugreport@yapms.com</a>
+		</div>
 	</div>
 	
 	<a href="./app">
