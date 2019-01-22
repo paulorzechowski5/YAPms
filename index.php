@@ -47,7 +47,7 @@
 
 		<div id="whatsnew" class="infobox">
 			<b>New Stuff:</b>
-			Mobile version! <br>
+			Mobile version! With battlechart, tap the chart to change it!<br>
 			Democratic Primary Map! Still in the works, but hopefully functional!
 		</div>
 	</div>
