@@ -234,14 +234,12 @@ function stateClickPaintDemPrimary(state, id) {
 				total += parseInt(this.value);
 
 				if(total > max) {
-					// if total distributed is greater than max
-					// reset the slider back
-					total -= parseInt(this.value);
-					total += prevvalue;
-					this.value = prevvalue;
-				} else {
-					prevvalue = parseInt(this.value);
+					var diff = total - max;
+					total -= diff;
+					this.value -= diff;
 				}
+				
+				prevvalue = parseInt(this.value);
 
 				displayTossup.innerHTML = 'Tossup - ' + (max - total);
 				
