@@ -24,12 +24,15 @@
 
 	<link rel="stylesheet" type="text/css" href="./style/menu.css">
 	<?php 
-	if($_GET["m"] === 'true')
+	if($_GET["m"] === 'true') {
 		echo '<link rel="stylesheet" type="text/css" href="./style/mobile.css">';
-	else
+		echo '<link rel="stylesheet" type="text/css" href="./style/battlechartmobile.css">';
+	}
+	else {
 		echo '<link rel="stylesheet" type="text/css" href="./style/style.css">';
+		echo '<link rel="stylesheet" type="text/css" href="./style/battlechart.css">';
+	}
 	?>
-	<link rel="stylesheet" type="text/css" href="./style/battlechart.css">
 	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.min.js"></script>
 	<script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@0.5.0"></script> 
@@ -192,7 +195,7 @@
 
 		<div id="battlechart">
 			<div id="battlechartleft">
-				<svg width="20" height="20">
+				<svg id="battlechartmid" width="20" height="20">
 					<polygon points="0,0 0,20 20,10"
 		     				style="fill:lime; stroke:black; stroke-width:2"/>
 				</svg>

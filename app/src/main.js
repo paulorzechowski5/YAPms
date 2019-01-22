@@ -445,42 +445,43 @@ function setEC(e) {
 
 function incrementChart() {
 	switch(chartType) {
+		case 'battle':
+			setChart('pie');
+			break;
 		case 'pie':
-			setChart('doughnut');
-			break;
-		case 'doughnut':
-			setChart('horizontalBar');
-			break;
-		case 'horizontalBar':
 			setChart('none');
 			break;
 		case 'none':
-			setChart('pie');
-		break;
+			setChart('battle');
+			break;
 	}
+	onResize();
 }
 
 // dynamically change the chart from one form to another
 function setChart(type) {
 	console.log('Set Chart - ' + type);
-	var chartdiv = document.getElementById('chart-div');
+	var sidebar = document.getElementById('chart-div');
+	var chartHTML = document.getElementById('chart');
 	var html = document.getElementById('chart-canvas');
 	var ctx = html.getContext('2d');
 	var battlechart = document.getElementById('battlechart');
-	battlechart.style.display = '';
-	chartdiv.style.display = 'flex';
+	chartHTML.style.display = 'inline-block';
+	battlechart.style.display = 'none';
+	sidebar.style.display = 'flex';
+	
 	if(mobile) {
-		chartdiv.style.height = '20%';
+		sidebar.style.height = '20%';
 	} else {
-		chartdiv.style.width = '28vw';
+		sidebar.style.width = '28vw';
 	}
 
 	if(type === 'none') {
 		html.style.display = 'none';
 		if(mobile) {
-			chartdiv.style.height = '5%';	
+			sidebar.style.height = '5%';	
 		} else {
-			chartdiv.style.width = '4vw';
+			sidebar.style.width = '4vw';
 		}
 		chartType = type;
 		centerMap();
@@ -495,6 +496,7 @@ function setChart(type) {
 		}
 
 		html.style.display = 'none';
+		chartHTML.style.display = 'none';
 		battlechart.style.display = 'flex';
 		chartType = type;
 		updateChart();
@@ -1036,10 +1038,8 @@ function onResize() {
 function start() {
 	initCandidates();
 	initChart();
-	if(mobile === false) {
-		setChart('battle');
-	} else {
-		setChart('pie');
+	setChart('battle');
+	if(mobile) {
 		toggleChartLabels();
 		document.addEventListener('click', function() {
 			var el = document.documentElement;
@@ -1048,6 +1048,7 @@ function start() {
 				el.mozRequestFullScreen ||
 				el.msRequestFullScreen;
 			rfs.call(el);
+			console.log('FULLSCREEN');
 		});
 	}
 	loadMap('./res/presidential.svg', 16, 1, 'usa_ec',"presidential", "open");
