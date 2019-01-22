@@ -42,21 +42,27 @@
 			<p>
 				<b>Supported Browsers:</b>
 				Chrome, Firefox and Opera
-				</br>
-				Mobile is <b>not</b> supported
 			</p>
 		</div>
 
 		<div id="whatsnew" class="infobox">
 			<b>New Stuff:</b>
-			Battle chart! Easily visualize each candidate on their race to 270! <br>
+			Mobile version! <br>
 			Democratic Primary Map! Still in the works, but hopefully functional!
 		</div>
 	</div>
 	
 	<a href="./app">
-		<div id="start">
-			start
+		<div id="desktop" class="start">
+			Desktop
+		</div>
+	</a>
+
+	<br>
+
+	<a href="./app?m=true">
+		<div id="mobile" class="start">
+			Mobile Beta
 		</div>
 	</a>
 

@@ -45,7 +45,7 @@ a {
 	text-decoration: none;
 }
 
-#start {
+.start {
 	display: inline-block;
 	margin: auto;
 	margin-top: 25px;
@@ -57,9 +57,13 @@ a {
 	border: 2px solid black;
 }
 
-#start:hover {
+.start:hover {
 	background-color: #c0cccf;
 	transition: background-color 0.5s;
+}
+
+#mobile { 
+	margin-bottom: 200px;
 }
 
 #bottombar {

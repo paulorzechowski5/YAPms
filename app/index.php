@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<?php echo '<?xml version="1.0" encoding="UTF-8" standalone="no"?>' ?>
 <html class="noSelect">
 
 <head>
@@ -22,14 +22,20 @@
 		}
 	</script>
 
-	<link rel="stylesheet" type="text/css" href="./style/style.css">
 	<link rel="stylesheet" type="text/css" href="./style/menu.css">
+	<?php 
+	if($_GET["m"] === 'true')
+		echo '<link rel="stylesheet" type="text/css" href="./style/mobile.css">';
+	else
+		echo '<link rel="stylesheet" type="text/css" href="./style/style.css">';
+	?>
 	<link rel="stylesheet" type="text/css" href="./style/battlechart.css">
 	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.min.js"></script>
 	<script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@0.5.0"></script> 
 	<script src="https://cdn.jsdelivr.net/npm/svg-pan-zoom@3.5.0/dist/svg-pan-zoom.min.js"></script>
 	<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/hammer.js/2.0.8/hammer.min.js"></script>
 	<script src="./src/loadmap.js"></script>
 	<script src="./src/click.js"></script>
 	<script src="./src/data.js"></script>
@@ -40,7 +46,7 @@
 	<script src="./src/presets.js"></script>
 </head>
 
-<body id="body" onresize="centerMap()">
+<body id="body" onresize="onResize()">
 
 <div id="menu-div">
 
@@ -85,7 +91,7 @@
 			</div>
 		</div>
 		
-		<div class="dropdown">
+		<div id="chartbutton" class="dropdown">
 			<button class="dropdown-button">
 				Charts
 			</button>
@@ -99,7 +105,7 @@
 			</div>
 		</div>
 
-		<div class="dropdown">
+		<div id="counterbutton" class="dropdown">
 			<button class="dropdown-button">
 				Counters
 			</button>
@@ -110,7 +116,7 @@
 			</div>
 		</div>
 
-		<div class="dropdown">
+		<div id="themebutton" class="dropdown">
 			<button class="dropdown-button">
 				Themes
 			</button>
@@ -130,7 +136,7 @@
 			</button>
 			<div class="dropdown-content">
 				<a onclick='setMode("paint")'><u>P</u>aint</a>
-				<a onclick='setMode("move")'><u>M</u>ove</a>
+				<a id="movebutton" onclick='setMode("move")'><u>M</u>ove</a>
 				<a onclick='setMode("delete")'><u>D</u>elete</a>
 				<a onclick='setMode("ec")'><u>E</u>C Edit</a>
 				<a onclick='setMode("candidate")'><u>C</u>andidate Edit</a>
@@ -138,7 +144,7 @@
 		</div>
 
 		<div>
-			<button class="click-button" onclick="toggleAddCandidate()">
+			<button id="addcandidatebutton" class="click-button" onclick="toggleAddCandidate()">
 				Add Candidate
 			</button>
 			<div id="addCandidateDropdown" class="dropdown-content">
@@ -150,7 +156,7 @@
 				<a>Solid <input id="solid" type="color"></a>
 				<a>Likely <input id="likely" type="color"></a>
 				<a>Leaning <input id="leaning" type="color"></a>
-				<a>Image <input id="image-upload" type="file" accept="image/*"></a>
+				<!--<a>Image <input id="image-upload" type="file" accept="image/*"></a>-->
 				<a onclick="addCandidate()">Add</a>
 			</div>
 		</div>
@@ -158,11 +164,11 @@
 	</div>
 
 	<span id="menu-middle">
-		Mode - Paint
+		Paint
 	</span>
 
 	<div id="menu-right">
-		<div class="dropdown" class="right-justify">
+		<div id="miscbutton" class="dropdown" class="right-justify">
 			<button class="dropdown-button">
 				Misc
 			</button>
@@ -180,7 +186,9 @@
 	</div>
 
 	<div id="chart-div">
-		<canvas id="chart" width="100" height="100"></canvas>
+		<div id="chart">
+		<canvas id="chart-canvas" width="100" height="100"></canvas>
+		</div>
 
 		<div id="battlechart">
 			<div id="battlechartleft">
@@ -254,11 +262,25 @@
 
 </body>
 
+<?php
+	if($_GET["m"] === 'true') {
+		echo '<script>var mobile = true</script>';
+	}
+	else {
+		echo '<script>var mobile = false</script>';
+	}
+?>
+
 <script src="./src/main.js"></script>
 
 <script>
 	document.getElementById('logo-div').innerHTML =
 	'<img id="logo" src="./res/lte.jpg">';
 </script>
+
+<?php
+if($_GET["m"] === 'true')
+	echo '<script src="./src/mobile.js"></script>';
+?>
 
 </html>

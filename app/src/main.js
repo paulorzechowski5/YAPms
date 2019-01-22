@@ -310,8 +310,8 @@ function initChart() {
 	Chart.defaults.global.elements.rectangle.borderWidth = 2;
 	
 	// get the context
-	var ctx = document.getElementById('chart').getContext('2d');
-	ctx.height = 600;
+	var ctx = document.getElementById('chart-canvas').getContext('2d');
+	ctx.height = 200;
 
 	// create the chart
 	chart = new Chart(ctx, {
@@ -331,8 +331,8 @@ function initChart() {
 	});
 
 	chart.generateLegend();
-	
-	var html = document.getElementById('chart');
+
+	chartType = 'doughnut';
 }
 
 // empty the list of candidates and insert the tossup candidate
@@ -460,8 +460,9 @@ function setEC(e) {
 
 // dynamically change the chart from one form to another
 function setChart(type) {
+	console.log('Set Chart - ' + type);
 	var chartdiv = document.getElementById('chart-div');
-	var html = document.getElementById('chart');
+	var html = document.getElementById('chart-canvas');
 	var ctx = html.getContext('2d');
 	var battlechart = document.getElementById('battlechart');
 	battlechart.style.display = '';
@@ -540,7 +541,7 @@ function setChart(type) {
 
 function rebuildChart() {
 
-	var html = document.getElementById('chart');
+	var html = document.getElementById('chart-canvas');
 	var ctx = html.getContext('2d');
 	//var type = chart.config.type;
 	chart.destroy();
@@ -552,7 +553,8 @@ function rebuildChart() {
 	
 	// dont display the chart if its a battle chart
 	if(chartType === 'battle') {	
-		html.style.display = 'none';
+		var chartcontainer = document.getElementById('chart');
+		chartcontainer.style.display = 'none';
 	}
 
 	updateChart();
@@ -639,23 +641,25 @@ function setMode(set) {
 	var modeText;
 	var notificationText;
 
-	panObject.disablePan();
-	panObject.disableZoom();
+	if(mobile === false) {
+		panObject.disablePan();
+		panObject.disableZoom();
+	}
 
 	if(set === 'paint') {
-		modeText = 'Mode - Paint';
+		modeText = 'Paint';
 	} else if(set === 'move') {
-		modeText = 'Mode - Move (click drag and scroll)';
+		modeText = 'Move';
 		panObject.enablePan();
 		panObject.enableZoom();
 	} else if(set === 'ec') {
-		modeText = 'Mode - EC Edit (change EC of states)';
+		modeText = 'EC Edit';
 		notificationText = "Click on a state to set its electoral college";
 	} else if(set === 'delete') {
-		modeText = 'Mode - Delete (remove states from map)';
+		modeText = 'Delete';
 		notificationText = "Click on a state to delete it";
 	} else if(set === 'candidate') {
-		modeText = 'Mode - Candidate Edit (change candidates name and colors)';
+		modeText = 'Candidate Edit';
 		notificationText = "Click on a candidate in the legend to edit its name and color";
 	}
 
@@ -669,7 +673,10 @@ function setMode(set) {
 	} else if(mode !== 'paint') {
 		notification.style.display = 'inline';
 		var title = notification.querySelector('#notification-title');
-		title.innerHTML = split[0] + ' ' + split[1] + ' ' + split[2];
+		title.innerHTML = split[0];
+		if(typeof split[1] !== 'undefined') {
+			title.innerHTML += ' ' + split[1];
+		}
 		var message = notification.querySelector('#notification-message');
 		message.innerHTML = notificationText;
 	}
@@ -1008,11 +1015,32 @@ function setColors(palette) {
 	}
 }
 
+function onResize() {
+	centerMap();
+	if(mobile === true) {
+		var chart = document.getElementById('chart');
+		chart.style.width = chart.offsetHeight;
+	}
+}
+
 function start() {
 	initCandidates();
 	initChart();
+	if(mobile === false) {
+		setChart('battle');
+	} else {
+		setChart('pie');
+		toggleChartLabels();
+		document.addEventListener('click', function() {
+			var el = document.documentElement;
+			rfs = el.requestFullScreen ||
+				el.webkitRequestFullScreen ||
+				el.mozRequestFullScreen ||
+				el.msRequestFullScreen;
+			rfs.call(el);
+		});
+	}
 	loadMap('./res/presidential.svg', 16, 1, 'usa_ec',"presidential", "open");
-	setChart('battle');
 }
 
 start();
