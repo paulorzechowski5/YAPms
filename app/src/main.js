@@ -443,6 +443,23 @@ function setEC(e) {
 	updateLegend();
 }
 
+function incrementChart() {
+	switch(chartType) {
+		case 'pie':
+			setChart('doughnut');
+			break;
+		case 'doughnut':
+			setChart('horizontalBar');
+			break;
+		case 'horizontalBar':
+			setChart('none');
+			break;
+		case 'none':
+			setChart('pie');
+		break;
+	}
+}
+
 // dynamically change the chart from one form to another
 function setChart(type) {
 	console.log('Set Chart - ' + type);
@@ -452,10 +469,19 @@ function setChart(type) {
 	var battlechart = document.getElementById('battlechart');
 	battlechart.style.display = '';
 	chartdiv.style.display = 'flex';
+	if(mobile) {
+		chartdiv.style.height = '20%';
+	} else {
+		chartdiv.style.width = '28vw';
+	}
 
 	if(type === 'none') {
 		html.style.display = 'none';
-		chartdiv.style.display = 'none';
+		if(mobile) {
+			chartdiv.style.height = '5%';	
+		} else {
+			chartdiv.style.width = '4vw';
+		}
 		chartType = type;
 		centerMap();
 		return;

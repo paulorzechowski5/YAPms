@@ -69,7 +69,6 @@ button {
 	height: 20%;
 	padding-left: 15px;
 	padding-right: 15px;
-	pointer-events: none;
 	border: 1px solid black;
 	box-shadow: 1px 0px 4px #000000;
 	display: flex;

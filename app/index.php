@@ -185,7 +185,7 @@
 
 	</div>
 
-	<div id="chart-div">
+	<div id="chart-div" onclick='incrementChart()'>
 		<div id="chart">
 		<canvas id="chart-canvas" width="100" height="100"></canvas>
 		</div>
