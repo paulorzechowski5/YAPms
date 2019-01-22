@@ -1,7 +1,7 @@
 function updateBattleChart() {
 
 	if(Object.keys(candidates).length > 3) {
-		setChart('doughnut');
+		setChart('pie');
 		return;
 	}
 

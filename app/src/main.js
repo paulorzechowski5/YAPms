@@ -452,10 +452,13 @@ function incrementChart() {
 			setChart('none');
 			break;
 		case 'none':
-			setChart('battle');
+			if(Object.keys(candidates).length > 3) {
+				setChart('pie');
+			} else {
+				setChart('battle');
+			}
 			break;
 	}
-	onResize();
 }
 
 // dynamically change the chart from one form to another
@@ -550,6 +553,10 @@ function setChart(type) {
 	chart = new Chart(ctx, {type: type, data: chartData, options: chartOptions});
 	countVotes();
 	updateChart();
+
+	if(mobile) {
+		onResize();
+	}
 }
 
 function rebuildChart() {
@@ -1048,7 +1055,6 @@ function start() {
 				el.mozRequestFullScreen ||
 				el.msRequestFullScreen;
 			rfs.call(el);
-			console.log('FULLSCREEN');
 		});
 	}
 	loadMap('./res/presidential.svg', 16, 1, 'usa_ec',"presidential", "open");
