@@ -198,21 +198,6 @@ function initChart() {
 				legendText.setAttribute('class', 'legend-button-text');
 				legendText.innerHTLM = candidate.name;
 				legendElement.appendChild(legendText);
-
-				if(typeof candidate.img !== 'undefined') { 
-					var img = document.createElement('IMG');
-					var reader = new FileReader();
-
-					reader.onload = function(event) {
-						url = event.target.result;
-						img.src = url;
-						img.style.width = '60';
-						img.style.height = '60';
-						legendElement.append(img);
-					}
-
-					reader.readAsDataURL(candidate.img);
-				}
 			}
 		},
 		// do not display the build in legend for the chart
@@ -700,8 +685,7 @@ function addCandidate() {
 	var solid = document.getElementById('solid').value;
 	var likely = document.getElementById('likely').value;
 	var leaning = document.getElementById('leaning').value;
-	var img = document.getElementById('image-upload').files[0];
-	var candidate = new Candidate(name, [solid, likely, leaning], img);
+	var candidate = new Candidate(name, [solid, likely, leaning]);
 	candidates[name] = candidate;
 
 	verifyMap();
