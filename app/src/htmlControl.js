@@ -296,3 +296,186 @@ function setTextStyle(color, weight) {
 		text.style.fill = color;
 	}
 }
+
+function setBattleHorizontal() {
+	var application = document.getElementById('application');
+	application.style.flexDirection = 'column-reverse';
+
+	var map = document.getElementById('map-div');
+	map.style.height = '80%';
+
+	var sidebar = document.getElementById('chart-div');
+	sidebar.style.flexDirection = 'row';
+	sidebar.style.width = '100%';	
+	sidebar.style.height = '20%';
+
+	var battlechart = document.getElementById('battlechart');
+	battlechart.style.flexDirection = 'column';
+	battlechart.style.height = '55%';
+	battlechart.style.marginLeft = '50px';
+	battlechart.style.marginRight = '50px';
+	var battlechartmid = document.getElementById('battlechartmid');
+	battlechartmid.style.transform = 'rotate(90deg)';	
+	var battlechartright = document.getElementById('battlechartright');
+	battlechartright.style.flexDirection = 'row';
+	var topbar = document.getElementById('topbar');
+	topbar.style.boxShadow = '1px 0px 3px black';
+	topbar.style.borderBottom = '';
+	topbar.style.borderRight = '1px solid black';
+	topbar.style.flexDirection = 'row';
+	topbar.style.minWidth = '0';
+
+	var bottombar = document.getElementById('bottombar');
+	bottombar.style.boxShadow = '-1px 0px 3px black';
+	bottombar.style.borderTop = '';
+	bottombar.style.borderLeft = '1px solid black';	
+	bottombar.style.flexDirection = 'row';
+	bottombar.style.minWidth = '0';
+}
+
+function unsetBattleHorizontal() {
+	var application = document.getElementById('application');
+	application.style.flexDirection = 'row';
+	
+	var map = document.getElementById('map-div');
+	map.style.height = '100%';
+
+	var sidebar = document.getElementById('chart-div');
+	sidebar.style.flexDirection = 'column';
+	sidebar.style.width = '28vw';	
+	sidebar.style.height = '100%';
+
+	var battlechart = document.getElementById('battlechart');
+	battlechart.style.flexDirection = 'row';
+	battlechart.style.height = '100%';
+	battlechart.style.marginLeft = '50px';
+	battlechart.style.marginRight = '50px';
+	var battlechartmid = document.getElementById('battlechartmid');
+	battlechartmid.style.transform = '';	
+	var battlechartright = document.getElementById('battlechartright');
+	battlechartright.style.flexDirection = 'column';
+
+	var topbar = document.getElementById('topbar');
+	topbar.style.boxShadow = '0px -1px 3px black';
+	topbar.style.borderRight = '';
+	topbar.style.borderBottom = '1px solid black';
+	topbar.style.flexDirection = 'column';
+	topbar.style.minWidth = '0';
+
+	var bottombar = document.getElementById('bottombar');
+	bottombar.style.boxShadow = '0px 1px 3px black';
+	bottombar.style.borderLeft = '';
+	bottombar.style.borderTop = '1px solid black';
+	bottombar.style.flexDirection = 'column';
+	bottombar.style.minWidth = '0';
+
+}
+
+// dynamically change the chart from one form to another
+function setChart(type) {
+	console.log('Set Chart - ' + type);
+	var sidebar = document.getElementById('chart-div');
+	var chartHTML = document.getElementById('chart');
+	var html = document.getElementById('chart-canvas');
+	var ctx = html.getContext('2d');
+	var battlechart = document.getElementById('battlechart');
+	chartHTML.style.display = 'inline-block';
+	battlechart.style.display = 'none';
+	sidebar.style.display = 'flex';
+	
+	if(mobile) {
+		sidebar.style.height = '20%';
+	} else {
+		sidebar.style.width = '28vw';
+	}
+
+	if(type === 'none') {
+
+		html.style.display = 'none';
+
+		if(mobile) {
+			sidebar.style.height = '5%';	
+		} else {
+			unsetBattleHorizontal();
+			sidebar.style.width = '4vw';
+		}
+
+		chartType = type;
+		centerMap();
+		return;
+	} else if(type === 'horizontalbattle' || type === 'verticalbattle') {
+		if(Object.keys(candidates).length > 3) {
+		
+			displayNotification('Sorry',
+				'This chart requires that there be two candidates');
+			return;
+		}
+		if(mobile === false) {
+			if(type === 'horizontalbattle') {
+				setBattleHorizontal();
+			}
+			else {
+				unsetBattleHorizontal();
+				sidebar.style.width = '20vw';	
+			}
+		}
+
+		html.style.display = 'none';
+		chartHTML.style.display = 'none';
+		battlechart.style.display = 'flex';
+		chartType = type;
+		updateChart();
+		centerMap();
+		return;
+	}
+
+	if(mobile === false) {
+		unsetBattleHorizontal();
+	}
+
+	centerMap();
+		
+	chartType = type;
+	
+	chartData = {
+		labels:[],
+		datasets: [{
+			borderColor: chartBorderColor,
+			borderWidth: chartBorderWidth,
+			data:[]
+		}]
+	};
+
+
+	html.style.display = 'inline-block';
+
+	// set the proper scales
+	if(type === 'horizontalBar') {
+		chartOptions.scales = chartBarScales;
+		delete chartOptions.scale;
+		// horizontal bar needs multiple datasets
+		for(var i = 0; i < 3; ++i) {
+			chartData.datasets.push({
+				borderColor: chartBorderColor,
+				borderWidth: chartBorderWidth,
+				data:[]
+			});
+		}
+	} else if(type === 'pie' || type === 'doughnut') {
+		chartOptions.scales = chartPieScales;
+		delete chartOptions.scale;
+	}
+
+	// first destroy the chart
+	chart.destroy();
+	// then rebuild
+	chart = new Chart(ctx, {type: type, data: chartData, options: chartOptions});
+	countVotes();
+	updateChart();
+
+	if(mobile) {
+		onResize();
+	}
+}
+
+

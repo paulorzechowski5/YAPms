@@ -444,8 +444,9 @@ function setEC(e) {
 }
 
 function incrementChart() {
+	console.log(chartType);
 	switch(chartType) {
-		case 'battle':
+		case 'horizontalbattle':
 			setChart('pie');
 			break;
 		case 'pie':
@@ -455,107 +456,9 @@ function incrementChart() {
 			if(Object.keys(candidates).length > 3) {
 				setChart('pie');
 			} else {
-				setChart('battle');
+				setChart('horizontalbattle');
 			}
 			break;
-	}
-}
-
-// dynamically change the chart from one form to another
-function setChart(type) {
-	console.log('Set Chart - ' + type);
-	var sidebar = document.getElementById('chart-div');
-	var chartHTML = document.getElementById('chart');
-	var html = document.getElementById('chart-canvas');
-	var ctx = html.getContext('2d');
-	var battlechart = document.getElementById('battlechart');
-	chartHTML.style.display = 'inline-block';
-	battlechart.style.display = 'none';
-	sidebar.style.display = 'flex';
-	
-	if(mobile) {
-		sidebar.style.height = '20%';
-	} else {
-		sidebar.style.width = '28vw';
-	}
-
-	if(type === 'none') {
-		html.style.display = 'none';
-		if(mobile) {
-			sidebar.style.height = '5%';	
-		} else {
-			sidebar.style.width = '4vw';
-		}
-		chartType = type;
-		centerMap();
-		return;
-	} else if(type === 'battle') {
-
-		if(Object.keys(candidates).length > 3) {
-		
-			displayNotification('Sorry',
-				'This chart requires that there be two candidates');
-			return;
-		}
-
-		html.style.display = 'none';
-		chartHTML.style.display = 'none';
-		battlechart.style.display = 'flex';
-		chartType = type;
-		updateChart();
-		centerMap();
-		return;
-	}
-
-	centerMap();
-		
-	chartType = type;
-	
-	chartData = {
-		labels:[],
-		datasets: [{
-			borderColor: chartBorderColor,
-			borderWidth: chartBorderWidth,
-			data:[]
-		}]
-	};
-
-
-	html.style.display = 'inline-block';
-
-	// set the proper scales
-	if(type === 'horizontalBar') {
-		chartOptions.scales = chartBarScales;
-		delete chartOptions.scale;
-		// horizontal bar needs multiple datasets
-		for(var i = 0; i < 3; ++i) {
-			chartData.datasets.push({
-				borderColor: chartBorderColor,
-				borderWidth: chartBorderWidth,
-				data:[]
-			});
-		}
-	} else if(type === 'pie' || type === 'doughnut') {
-		chartOptions.scales = chartPieScales;
-		delete chartOptions.scale;
-	} else if(type === 'polarArea') {
-		chartOptions.scales = chartPolarScales;	
-		chartOptions.scale =  {
-			display: false
-		}
-	} else if(type === 'radar') {
-		chartOptions.scale = chartRadarScales;	
-	}
-
-	// first destroy the chart
-	chart.destroy();
-	// then rebuild
-	chart = new Chart(ctx, {type: type, data: chartData, options: chartOptions});
-	countVotes();
-	updateChart();
-
-	if(mobile) {
-		onResize();
 	}
 }
 
@@ -885,7 +788,8 @@ function updateLTEHouse() {
 // updates the information of the chart (so the numbers change)
 function updateChart() {
 
-	if(chartType === 'battle') {
+	if(chartType === 'verticalbattle' ||
+		chartType === 'horizontalbattle') {
 		updateBattleChart();
 		return;
 	} else if(chartType === 'horizontalBar') {
@@ -1045,7 +949,7 @@ function onResize() {
 function start() {
 	initCandidates();
 	initChart();
-	setChart('battle');
+	setChart('horizontalbattle');
 	if(mobile) {
 		toggleChartLabels();
 		document.addEventListener('click', function() {
@@ -1058,6 +962,7 @@ function start() {
 		});
 	}
 	loadMap('./res/presidential.svg', 16, 1, 'usa_ec',"presidential", "open");
+
 }
 
 start();

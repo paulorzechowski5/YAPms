@@ -40,8 +40,8 @@
 	flex-basis: 0%;
 	background: #bf1d29;
 	transition: flex-basis 1s;
-	border-bottom: 1px solid black;
-	box-shadow: 0px 1px 3px black;
+	border-right: 1px solid black;
+	box-shadow: 1px 0px 3px black;
 	z-index: 1;
 	min-height: 0;
 	min-width: 0;
@@ -89,8 +89,8 @@
 	flex-basis: 0%;
 	background: #1c408c;
 	transition: flex-basis 1s;
-	border-top: 1px solid black;
-	box-shadow: 0px -1px 3px black;
+	border-left: 1px solid black;
+	box-shadow: -1px 0px 3px black;
 	z-index: 1;
 	min-height: 0;
 	min-width: 0;

@@ -25,11 +25,11 @@
 	<link rel="stylesheet" type="text/css" href="./style/menu.css">
 	<?php 
 	if($_GET["m"] === 'true') {
-		echo '<link rel="stylesheet" type="text/css" href="./style/mobile.css">';
+		echo '<link id="appstyle" rel="stylesheet" type="text/css" href="./style/mobile.css">';
 		echo '<link rel="stylesheet" type="text/css" href="./style/battlechartmobile.css">';
 	}
 	else {
-		echo '<link rel="stylesheet" type="text/css" href="./style/style.css">';
+		echo '<link id="appstyle" rel="stylesheet" type="text/css" href="./style/style.css">';
 		echo '<link rel="stylesheet" type="text/css" href="./style/battlechart.css">';
 	}
 	?>
@@ -99,11 +99,11 @@
 				Charts
 			</button>
 			<div class="dropdown-content">
-				<a onclick='setChart("battle")'>Battle</a>
+				<a onclick='setChart("horizontalbattle")'>Horizontal Battle</a>
+				<a onclick='setChart("verticalbattle")'>Vertical Battle</a>
 				<a onclick='setChart("pie")'>Pie</a>
 				<a onclick='setChart("doughnut")'>Doughnut</a>
 				<a onclick='setChart("horizontalBar")'>Bar</a>
-				<a onclick='setChart("polarArea")'>Polar</a>
 				<a onclick='setChart("none")'>None</a>
 			</div>
 		</div>
@@ -241,7 +241,7 @@
 
 <div id="ecedit" class="popup">
 	<h3 id="ecedit-message"></h3>
-	<input id="state-ec" type="number" name="value" min="1" max="10" step="1">
+	<input id="state-ec" type="number" name="value" min="1" max="10000" step="1">
 	<input id="state-id" type="hidden">
 	<button onclick="setEC(this)">set</button>
 </div>
