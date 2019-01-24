@@ -228,9 +228,9 @@
 		</div>
 	</div>
 
-	<div id="map-div">
+	<object id="map-div">
 
-	</div>
+	</object>
 </div>
 
 <div id="demdel" class="popup">
