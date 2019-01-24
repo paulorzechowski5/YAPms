@@ -144,28 +144,6 @@ button {
 	color: red;
 }
 
-.popup {
-	display: none;
-	background-color: #ffffff;
-	border: 3px solid #000000;
-	border-radius: 2px;
-
-	padding: 10px;
-
-	position: absolute;
-	left: 50%;
-	top: 50%;
-	transform: translate(-50%, -50%);
-}
-
-.popup button {
-	border: none;
-	color: black;
-	background-color: #cfcfcf;
-	box-shadow: 1px 1px 1px #000000;
-}
-
 #themeButton #chartButton #counterButton #addCandidateButton #moveButton #miscButton {
 	display = 'none';
 }
-
