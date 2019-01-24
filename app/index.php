@@ -22,7 +22,10 @@
 		}
 	</script>
 
+	
+
 	<link rel="stylesheet" type="text/css" href="./style/menu.css">
+	<link rel="stylesheet" type="text/css" href="./style/mapmenu.css">
 	<?php 
 	if($_GET["m"] === 'true') {
 		echo '<link id="appstyle" rel="stylesheet" type="text/css" href="./style/mobile.css">';
@@ -256,6 +259,45 @@
 	<input id="candidate-originalName" type="hidden">
 	<button onclick="setCandidate(this)">set</button>
 </div>
+
+<div id="mapmenu" class="popup">
+	<h2>Select Map</h2>
+	<div id="mapmenu-presidential">
+	<h3>Presidential:</h3>
+	<a onclick='loadMap("./res/presidential.svg", 16, 1, "usa_ec", "presidential", "open");'>2020</a>
+	<a onclick='loadMap("./res/usa_no_districts.svg", 16, 1, "usa_no_districts_ec", "presidential", "open")'>Take All</a>
+	</div>
+
+	<div id="mapmenu-primary">
+	<h3>Primary:</h3>	
+	<a onclick='loadMap("./res/usa_dem_primary.svg", 16, 1, "dem_primary", "demprimary", "2020");'>Democratic</a>
+	</div>
+
+	<div id="mapmenu-senatorial">
+	<h3>Senatorial:</h3>
+	<a onclick='loadMap("./res/usa_senate.svg", 16, 1, "usa_senate", "senatorial", "2020")'>2020</a>
+	<a onclick='loadMap("./res/usa_senate.svg", 16, 1.5, "usa_senate", "senatorial", "open")'>Open</a>
+	</div>
+
+	<div id="mapmenu-congressional">
+	<h3>Congressional:</h3>
+	<a onclick='loadMap("./res/usa_congressional_2018.svg", 16, 0.075, "congressional", "congressional", "open")'>Open</a>
+	</div>
+	
+	<div id="mapmenu-gubernatorial">
+	<h3>Gubernatorial:</h3>
+	<a onclick='loadMap("./res/usa_gubernatorial.svg", 16, 1, "usa_gubernatorial", "gubernatorial", "2020")'>2020</a>
+	<a onclick='loadMap("./res/usa_gubernatorial.svg", 16, 1, "usa_gubernatorial", "gubernatorial", "open")'>Open</a>
+	</div>
+	
+	<div id="mapmenu-other">
+	<h3>Other:</h3>
+	<a onclick='loadMap("./res/canada_states.svg", 38, 3, "canada_ec", "presidential", "open");'>Canada</a>
+	<a onclick='loadMap("./res/lte.svg", 35, 1, "lte_ec", "presidential", "open");'>LTE Discord</a>
+	<a onclick='loadMap("./res/lte_senate.svg", 35, 1, "ltesenate", "senatorial", "open")'>LTE Senate</a>
+	<a onclick='loadMap("./res/lte_house.svg", 35, 1, "congressional", "congressional", "open")'>LTE House</a>
+	</div>
+</div> 
 
 <div id="notification" class="popup">
 	<h3 id="notification-title"></h3>

@@ -1,0 +1,28 @@
+#mapmenu {
+	display: flex;
+	flex-direction: column;
+}
+
+#mapmenu h2 {
+	text-align: center;
+	margin: 3px;
+}
+
+#mapmenu div {
+	display: flex;
+	flex-direction: row;
+	justify-content: left;
+	align-items: center;
+}
+
+#mapmenu a {
+	border: 2px solid black;
+	border-radius: 2px;
+	padding: 3px;
+	margin-left: 5px;
+}
+
+#mapmenu a:hover {
+	background-color: #eeeeee;
+}
+

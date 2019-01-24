@@ -68,6 +68,10 @@ function displayNotification(title, text) {
 	titleHTML.innerHTML = title;
 }
 
+function displayMapMenu(type) {
+
+}
+
 function darkPalette() {
 	var body = document.getElementById('body');
 	body.style.backgroundColor = '#181922';
