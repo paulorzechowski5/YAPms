@@ -43,8 +43,6 @@ function loadMap(filename, fontsize, strokewidth, dataid, type, year) {
 		if(textHTML !== null) {
 			textHTML.style.fontSize = fontsize;
 		}
-		
-		previousPalette();
 
 		initData(dataid);
 
@@ -53,6 +51,8 @@ function loadMap(filename, fontsize, strokewidth, dataid, type, year) {
 		countVotes();
 		updateChart();
 		updateLegend();
+		
+		previousPalette();
 		
 		if(loadConfig.filename === './res/lte_house.svg') {
 			updateLTEHouse();
