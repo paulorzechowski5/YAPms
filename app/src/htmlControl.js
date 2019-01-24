@@ -314,6 +314,8 @@ function setBattleHorizontal() {
 	battlechart.style.height = '55%';
 	battlechart.style.marginLeft = '50px';
 	battlechart.style.marginRight = '50px';
+	battlechart.style.marginTop = '0px';
+	battlechart.style.marginBottom = '0';
 	var battlechartmid = document.getElementById('battlechartmid');
 	battlechartmid.style.transform = 'rotate(90deg)';	
 	var battlechartright = document.getElementById('battlechartright');
@@ -350,6 +352,9 @@ function unsetBattleHorizontal() {
 	battlechart.style.height = '100%';
 	battlechart.style.marginLeft = '50px';
 	battlechart.style.marginRight = '50px';
+	battlechart.style.marginTop = '20px';
+	battlechart.style.marginBottom = '20px';
+
 	var battlechartmid = document.getElementById('battlechartmid');
 	battlechartmid.style.transform = '';	
 	var battlechartright = document.getElementById('battlechartright');
