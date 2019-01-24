@@ -84,6 +84,15 @@ document.addEventListener('keydown', function(event) {
 });
 
 
+window.onerror = function(message, source, lineno, colno, error) {
+	//alert(message + ' ' + source + ' ' + lineno + ' ' + colno);
+	if(typeof ga !== 'undefined') {
+		ga('send', 'exception', {
+			'exDescription': message + ' ' + source + ' ' + lineno + ' ' + colno
+		});
+	}
+}
+
 // reads through the SVG and sets up states and buttons
 function initData(dataid) {
 	// clear any previously loaded data
