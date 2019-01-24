@@ -17,12 +17,13 @@
 
 #mapmenu a {
 	border: 2px solid black;
-	border-radius: 2px;
+	border-radius: 8px;
 	padding: 3px;
 	margin-left: 5px;
 }
 
 #mapmenu a:hover {
 	background-color: #eeeeee;
+	cursor: pointer;
 }
 

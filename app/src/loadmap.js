@@ -1,5 +1,8 @@
 // loads the svg element into the HTML
 function loadMap(filename, fontsize, strokewidth, dataid, type, year) {
+	var mapmenu = document.getElementById('mapmenu');
+	mapmenu.style.display = 'none';
+
 	var mapHTML = document.getElementById('map-div');
 	mapHTML.style.visibility = 'hidden';
 

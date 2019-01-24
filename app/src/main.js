@@ -962,10 +962,6 @@ function start() {
 		});
 	}
 	loadMap('./res/presidential.svg', 16, 1, 'usa_ec',"presidential", "open");
-
-	var a = document.getElementById('mapmenu');
-	a.style.display = 'inline';
-
 }
 
 start();

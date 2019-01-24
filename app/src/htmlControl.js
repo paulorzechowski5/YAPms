@@ -69,7 +69,8 @@ function displayNotification(title, text) {
 }
 
 function displayMapMenu(type) {
-
+	var mapmenu = document.getElementById('mapmenu');
+	mapmenu.style.display = 'flex';
 }
 
 function darkPalette() {
