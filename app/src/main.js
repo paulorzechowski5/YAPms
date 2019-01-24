@@ -967,7 +967,9 @@ function start() {
 				el.webkitRequestFullScreen ||
 				el.mozRequestFullScreen ||
 				el.msRequestFullScreen;
-			rfs.call(el);
+			if(typeof rfs !== 'undefined') {
+				rfs.call(el);
+			}
 		});
 	}
 	loadMap('./res/presidential.svg', 16, 1, 'usa_ec',"presidential", "open");
