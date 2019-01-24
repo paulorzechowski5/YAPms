@@ -23,7 +23,7 @@
 	</script>
 
 	<link rel="stylesheet" type="text/css" href="./style/menu.css">
-	<link rel="stylesheet" type="text/css" href="./style/mapmenu.css">
+<!--	<link rel="stylesheet" type="text/css" href="./style/mapmenu.css"> -->
 	<link rel="stylesheet" type="text/css" href="./style/popup.css">
 	<?php 
 	if($_GET["m"] === 'true') {
