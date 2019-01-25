@@ -220,7 +220,8 @@ function stateClickPaintDemPrimary(state, id) {
 		// create display for slider
 		var display = document.createElement('DIV');
 		display.setAttribute('id', 'display-' + key);
-		display.innerHTML = key + ' - ' + range.value;
+		display.innerHTML = key + ' - ' + range.value + ' - ' +
+			((state.delegates[key] / max) * 100).toFixed(2) + '%';
 
 		// this is how you reference the display DOM
 		// im not sure exactly what this is but its weird
@@ -241,10 +242,12 @@ function stateClickPaintDemPrimary(state, id) {
 				
 				prevvalue = parseInt(this.value);
 
-				displayTossup.innerHTML = 'Tossup - ' + (max - total);
+				displayTossup.innerHTML = 'Tossup - ' + (max - total) + ' - ' +
+					(( (max - total) / max) * 100).toFixed(2) + '%';
 				
 				// update the display	
-				refdisplay.innerHTML = refkey + ' - ' + this.value;
+				refdisplay.innerHTML = refkey + ' - ' + this.value + ' - ' + 
+					((this.value / max) * 100).toFixed(2) + '%';
 			}
 		})();
 
@@ -252,7 +255,7 @@ function stateClickPaintDemPrimary(state, id) {
 		ranges.appendChild(range);
 	}
 
-	displayTossup.innerHTML = 'Tossup - ' + (max - total);
+	displayTossup.innerHTML = 'Tossup - ' + (max - total) + ' - ' + (( (max - total) / max) * 100).toFixed(2) + '%';
 	ranges.appendChild(displayTossup);
 }
 
