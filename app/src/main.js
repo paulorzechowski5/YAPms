@@ -86,9 +86,14 @@ document.addEventListener('keydown', function(event) {
 
 window.onerror = function(message, source, lineno, colno, error) {
 	//alert(message + ' ' + source + ' ' + lineno + ' ' + colno);
-	if(typeof ga !== 'undefined') {
-		ga('send', 'exception', {
-			'exDescription': message + ' ' + source + ' ' + lineno + ' ' + colno
+	if(typeof gtag !== 'undefined') {
+		console.log('Error');
+		gtag('event', 'exception', {
+			'description': message + ' ' + source + ' ' + lineno + ' ' + colno
+		});
+		gtag('event', 'error', {
+			'event_category': 'error',
+			'event_label': message + ' ' + source + ' ' + lineno + ' ' + colno
 		});
 	}
 }
