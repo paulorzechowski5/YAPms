@@ -11,7 +11,7 @@
    version="1.1"
    id="svgdata"
    sodipodi:docname="lte_house.svg"
-   inkscape:version="0.92.1 r15371"
+   inkscape:version="0.92.3 (2405546, 2018-03-11)"
    inkscape:export-filename="/home/jacob/Programming/270/usa.png"
    inkscape:export-xdpi="96"
    inkscape:export-ydpi="96"
@@ -37,15 +37,15 @@
      guidetolerance="10"
      inkscape:pageopacity="0"
      inkscape:pageshadow="2"
-     inkscape:window-width="1600"
-     inkscape:window-height="838"
+     inkscape:window-width="1920"
+     inkscape:window-height="1043"
      id="namedview3848"
      showgrid="true"
      inkscape:pagecheckerboard="true"
-     inkscape:zoom="4.9264141"
-     inkscape:cx="481.79699"
-     inkscape:cy="-135.83609"
-     inkscape:window-x="0"
+     inkscape:zoom="8.3808845"
+     inkscape:cx="481.63094"
+     inkscape:cy="-119.66207"
+     inkscape:window-x="1920"
      inkscape:window-y="0"
      inkscape:window-maximized="1"
      inkscape:current-layer="text"
@@ -369,8 +369,8 @@
        id="WE-03"
        width="40"
        height="40"
-       x="126.02452"
-       y="119.90722"
+       x="158.03255"
+       y="105.84091"
        rx="64"
        ry="52.176186"
        style="stroke-width:1;enable-background:new"
@@ -449,8 +449,8 @@
        id="NE-01"
        width="40"
        height="40"
-       x="828.6275"
-       y="89.834396"
+       x="826.80066"
+       y="80.090996"
        rx="64"
        ry="52.176186"
        style="stroke-width:1;enable-background:new"
@@ -459,8 +459,8 @@
        id="NE-02"
        width="40"
        height="40"
-       x="860.75525"
-       y="122.19248"
+       x="861.97314"
+       y="108.18636"
        rx="64"
        ry="52.176186"
        style="stroke-width:1;enable-background:new"
@@ -469,8 +469,8 @@
        id="NE-03"
        width="40"
        height="40"
-       x="845.5752"
-       y="164.17433"
+       x="858.56641"
+       y="151.79208"
        rx="64"
        ry="52.176186"
        style="stroke-width:1;enable-background:new"
@@ -479,8 +479,8 @@
        id="NE-04"
        width="40"
        height="40"
-       x="783.3938"
-       y="98.405602"
+       x="781.9729"
+       y="88.662209"
        rx="64"
        ry="52.176186"
        style="stroke-width:1;enable-background:new"
@@ -489,8 +489,8 @@
        id="NE-05"
        width="40"
        height="40"
-       x="770.10748"
-       y="141.27525"
+       x="775.58813"
+       y="168.88153"
        rx="64"
        ry="52.176186"
        style="stroke-width:1;enable-background:new"
@@ -499,8 +499,8 @@
        id="NE-06"
        width="40"
        height="40"
-       x="800.60919"
-       y="176.57481"
+       x="821.3139"
+       y="182.05547"
        rx="64"
        ry="52.176186"
        style="stroke-width:1;enable-background:new"
@@ -555,6 +555,26 @@
        ry="52.176186"
        style="stroke-width:1;enable-background:new"
        inkscape:label="ov01" />
+    <rect
+       id="NE-07"
+       width="40"
+       height="40"
+       x="755.81787"
+       y="127.70204"
+       rx="64"
+       ry="52.176186"
+       style="fill:#d3d3d3;stroke-width:1;enable-background:new"
+       inkscape:label="ne07" />
+    <rect
+       id="WE-04"
+       width="40"
+       height="40"
+       x="109.03686"
+       y="133.82516"
+       rx="64"
+       ry="52.176186"
+       style="fill:#d3d3d3;stroke-width:1;enable-background:new"
+       inkscape:label="we03" />
   </g>
   <g
      inkscape:groupmode="layer"
@@ -562,13 +582,13 @@
      inkscape:label="text">
     <text
        xml:space="preserve"
-       x="454.09723"
-       y="194.12494"
+       x="456.09723"
+       y="196.12494"
        id="text4959"><tspan
          sodipodi:role="line"
          id="tspan4957"
-         x="454.09723"
-         y="194.12494">1</tspan></text>
+         x="456.09723"
+         y="196.12494">1</tspan></text>
     <text
        xml:space="preserve"
        x="503.12167"
@@ -607,12 +627,12 @@
          y="247.00018">5</tspan></text>
     <text
        xml:space="preserve"
-       x="644.0069"
+       x="646.0069"
        y="347.80084"
        id="text4979"><tspan
          sodipodi:role="line"
          id="tspan4977"
-         x="644.0069"
+         x="646.0069"
          y="347.80084">1</tspan></text>
     <text
        xml:space="preserve"
@@ -643,13 +663,13 @@
          y="412.42896">4</tspan></text>
     <text
        xml:space="preserve"
-       x="649.45276"
-       y="396.69794"
+       x="647.45276"
+       y="398.69794"
        id="text4995"><tspan
          sodipodi:role="line"
          id="tspan4993"
-         x="649.45276"
-         y="396.69794">5</tspan></text>
+         x="647.45276"
+         y="398.69794">5</tspan></text>
     <text
        xml:space="preserve"
        x="273.01807"
@@ -661,13 +681,13 @@
          y="367.13141">1</tspan></text>
     <text
        xml:space="preserve"
-       x="326.80972"
-       y="407.32294"
+       x="328.49716"
+       y="407.06982"
        id="text5003"><tspan
          sodipodi:role="line"
          id="tspan5001"
-         x="326.80972"
-         y="407.32294">2</tspan></text>
+         x="328.49716"
+         y="407.06982">2</tspan></text>
     <text
        xml:space="preserve"
        x="88.009979"
@@ -688,67 +708,67 @@
          y="89.797874">2</tspan></text>
     <text
        xml:space="preserve"
-       x="135.73489"
-       y="152.1787"
+       x="167.74292"
+       y="138.11238"
        id="text5015"><tspan
          sodipodi:role="line"
          id="tspan5013"
-         x="135.73489"
-         y="152.1787">3</tspan></text>
+         x="167.74292"
+         y="138.11238">3</tspan></text>
     <text
        xml:space="preserve"
-       x="792.51208"
-       y="131.32971"
+       x="791.29419"
+       y="120.97736"
        id="text5019"><tspan
          sodipodi:role="line"
          id="tspan5017"
-         x="792.51208"
-         y="131.32971">1</tspan></text>
+         x="791.29419"
+         y="120.97736">1</tspan></text>
     <text
        xml:space="preserve"
-       x="839.97382"
-       y="121.41465"
+       x="838.14697"
+       y="111.67125"
        id="text5023"><tspan
          sodipodi:role="line"
          id="tspan5021"
-         x="839.97382"
-         y="121.41465">2</tspan></text>
+         x="838.14697"
+         y="111.67125">2</tspan></text>
     <text
        xml:space="preserve"
-       x="872.27167"
-       y="155.70511"
+       x="873.48956"
+       y="141.69897"
        id="text5027"><tspan
          sodipodi:role="line"
          id="tspan5025"
-         x="872.27167"
-         y="155.70511">3</tspan></text>
+         x="873.48956"
+         y="141.69897">3</tspan></text>
     <text
        xml:space="preserve"
-       x="856.88544"
-       y="196.46579"
+       x="868.58484"
+       y="184.08354"
        id="text5031"><tspan
          sodipodi:role="line"
          id="tspan5029"
-         x="856.88544"
-         y="196.46579">4</tspan></text>
+         x="868.58484"
+         y="184.08354">4</tspan></text>
     <text
        xml:space="preserve"
-       x="810.08789"
-       y="209.26843"
+       x="830.7926"
+       y="214.74908"
        id="text5035"><tspan
          sodipodi:role="line"
          id="tspan5033"
-         x="810.08789"
-         y="209.26843">5</tspan></text>
+         x="830.7926"
+         y="214.74908">5</tspan></text>
     <text
        xml:space="preserve"
-       x="778.61884"
-       y="173.98593"
+       x="784.09949"
+       y="201.59221"
        id="text5039"><tspan
          sodipodi:role="line"
          id="tspan5037"
-         x="778.61884"
-         y="173.98593">6</tspan></text>
+         x="784.09949"
+         y="201.59221">6</tspan></text>
     <text
        xml:space="preserve"
        x="826.21991"
@@ -787,12 +807,41 @@
          y="480.60736">4</tspan></text>
     <text
        xml:space="preserve"
-       x="845.05945"
-       y="485.99548"
+       x="843.76764"
+       y="485.85196"
        id="text5059"><tspan
          sodipodi:role="line"
          id="tspan5057"
-         x="845.05945"
-         y="485.99548">5</tspan></text>
+         x="843.76764"
+         y="485.85196">5</tspan></text>
+    <text
+       style="enable-background:new"
+       xml:space="preserve"
+       x="765.62616"
+       y="160.92049"
+       id="text5039-3"><tspan
+         sodipodi:role="line"
+         id="tspan5037-5"
+         x="765.62616"
+         y="160.92049">7</tspan></text>
+    <text
+       xml:space="preserve"
+       x="119.35802"
+       y="164.36528"
+       id="text5015-2"><tspan
+         sodipodi:role="line"
+         id="tspan5013-9"
+         x="119.35802"
+         y="174.98247" /></text>
+    <text
+       style="enable-background:new"
+       xml:space="preserve"
+       x="118.05932"
+       y="166.17548"
+       id="text5015-1"><tspan
+         sodipodi:role="line"
+         id="tspan5013-2"
+         x="118.05932"
+         y="166.17548">4</tspan></text>
   </g>
 </svg>
