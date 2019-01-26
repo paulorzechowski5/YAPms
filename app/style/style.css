@@ -1,7 +1,11 @@
 html {
 	background-color: black;
+	font-family: 'Roboto';
 	height: 100vh;
 	width: 100vw;
+}
+
+canvas {
 }
 
 body {
@@ -11,14 +15,12 @@ body {
 	height: 100%;
 	width: 100%;
 	
-	font-family: 'Roboto';
 	font-size: 18px;
 	display: flex;
 	flex-flow: column;
 }
 
 button {
-	font-family: inherit;
 	font-size: inherit;
 }
 
@@ -31,12 +33,20 @@ button {
 	user-select: none;
 }
 
+#shareurl {
+	-webkit-touch-callout: all;
+	-webkit-user-select: all;
+        -khtml-user-select: all;
+	-moz-user-select: all;
+	-ms-user-select: all;
+	user-select: all;
+}
+
 #outlines {
 	stroke-width: 1.5px;;
 }
 
 #text {
-	font-family: 'Roboto';
 	font-size: 16px;
 	font-weight: medium;
 	pointer-events: none;
@@ -106,7 +116,6 @@ button {
 }
 
 .legend-button {
-	font-family: 'Roboto';
 	font-weight: '1000';
 	display: inline-block;
 	cursor: pointer;

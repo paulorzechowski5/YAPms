@@ -68,13 +68,18 @@ function displayNotification(title, text) {
 	titleHTML.innerHTML = title;
 }
 
+function displayShare() {
+	var share = document.getElementById('share');
+	share.style.display = 'inline';
+}
+
 function displayMapMenu(type) {
 	var mapmenu = document.getElementById('mapmenu');
 	mapmenu.style.display = 'flex';
 }
 
 function darkPalette() {
-	var body = document.getElementById('body');
+	var body = document.getElementById('application');
 	body.style.backgroundColor = '#181922';
 	body.style.backgroundImage  = '';
 
@@ -102,7 +107,7 @@ function darkPalette() {
 }
 
 function terminalPalette() {
-	var body = document.getElementById('body');
+	var body = document.getElementById('application');
 	body.style.backgroundColor = '#000000';
 	body.style.backgroundImage  = '';
 	
@@ -131,7 +136,7 @@ function terminalPalette() {
 }
 
 function lightPalette() {
-	var body = document.getElementById('body');
+	var body = document.getElementById('application');
 	//body.style.backgroundColor = '#30353f';
 	//body.style.backgroundColor = '#3a3f45';
 	body.style.backgroundColor = '#3d4147';
@@ -164,7 +169,7 @@ function lightPalette() {
 }
 
 function contrastPalette() {
-	var body = document.getElementById('body');
+	var body = document.getElementById('application');
 	body.style.backgroundColor = '#dbdbdb';
 	body.style.backgroundImage  = '';
 
@@ -192,7 +197,7 @@ function contrastPalette() {
 }
 
 function metallicPalette() {
-	var body = document.getElementById('body');
+	var body = document.getElementById('application');
 	//body.style.backgroundImage  = 'radial-gradient(#2f3136, #181922)';
 	body.style.backgroundImage  = 'linear-gradient(#333333, #000000)';
 
@@ -220,7 +225,7 @@ function metallicPalette() {
 }
 
 function toWinPalette() {
-	var body = document.getElementById('body');
+	var body = document.getElementById('application');
 	//body.style.backgroundImage  = 'radial-gradient(#2f3136, #181922)';
 	body.style.backgroundColor = '#ffffff';
 	body.style.backgroundImage  = '';
@@ -261,14 +266,14 @@ function setDisableColor(color) {
 
 function setTossupColor(color) {
 	TOSSUP.colors[2] = color;
-	var tossupLegend = document.getElementById('Tossup');
-	tossupLegend.style.background = color;
+	var tossupText = document.getElementById('Tossup-text');
+	tossupText.style.backgroundColor = color;
 	//verifyMap();
 
 	if(color === 'black') {
-		tossupLegend.style.color = 'white';
+		tossupText.style.color = 'white';
 	} else {
-		tossupLegend.style.color = 'black';
+		tossupText.style.color = 'black';
 	}
 }
 

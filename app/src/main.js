@@ -62,27 +62,70 @@ var previousPalette = function() {
 
 var panObject = null;
 
-document.addEventListener('keydown', function(event) {
-	return;
-	switch(event.key) {
-		case 'p':
-			setMode('paint');
-			break;
-		case 'm':
-			setMode('move');
-			break;
-		case 'd':
-			setMode('delete');
-			break;
-		case 'e':
-			setMode('ec');
-			break;
-		case 'c':
-			setMode('candidate');
-			break;
-	}
-});
+function share() {
+	var svg = document.getElementById('svgdata');
+	var mapwidth = document.getElementById('map-div').offsetWidth;
+	var mapheight = document.getElementById('map-div').offsetHeight;
+	
+	svg.setAttribute('width', mapwidth);
+	svg.setAttribute('height', mapheight);
 
+	var svgtext = document.getElementById('text');
+	// set font size and family to something that will render
+	svgtext.style.fontFamily = 'arial';
+	var oldfontsize = svgtext.style.fontSize;
+	svgtext.style.fontSize = '15px';
+
+	var chartdiv = document.getElementById('chart-div');
+	var oldborder = chartdiv.style.border;
+	chartdiv.style.border = 'none';
+
+	var applicationWidth = document.getElementById('application').offsetWidth;
+	var applicationHeight = document.getElementById('application').offsetHeight;
+
+	html2canvas(document.getElementById('application'), {async: false, logging: true}).then(function(canvas) {
+		notification.appendChild(canvas);
+		//canvas.style.width = applicationWidth / 3;
+		//canvas.style.height = applicationHeight / 3;
+		// set the text back
+		svgtext.style.fontFamily = '';
+		svgtext.style.fontSize = oldfontsize;
+		canvas.style.width = 0;
+		canvas.style.height = 0;	
+		canvas.style.display = 'none';
+		var img = canvas.toDataURL('image/jpeg', 0.7);
+		var i = document.getElementById('screenshotimg');
+		i.src = img;
+		i.style.width = '40vw';
+		i.style.height = 'auto';
+
+
+		var formData = new FormData();
+		formData.append("fileToUpload", img);	
+		$.ajax({
+			url: "./upload.php",
+			type: "POST",
+			data: formData,
+			processData: false,
+			contentType: false,
+			success: function (a,b,c) {
+				console.log(a);
+				console.log(b);
+				console.log(c);
+				var shareurl = document.getElementById('shareurl');
+				shareurl.innerHTML = a;
+			},
+			error: function(a, b, c) {
+				console.log('bad');
+				console.log(a);
+				console.log(b);
+				console.log(c);
+			}
+		});
+	});
+	
+	displayShare();
+}
 
 window.onerror = function(message, source, lineno, colno, error) {
 	//alert(message + ' ' + source + ' ' + lineno + ' ' + colno);
@@ -190,26 +233,25 @@ function initChart() {
 				legendElement.setAttribute('class', 'legend-button');
 				legendElement.setAttribute(
 					'onclick', 'legendClick("' + key + '", this);');
-				legendElement.style.backgroundColor = candidate.colors[0];
-
-				// if its the 0th candidate, make sure its purple
+				legendElement.style.background = 'none';
+				legendDiv.appendChild(legendElement);
+			
+				var legendText = document.createElement('div');
+				legendText.setAttribute('id', candidate.name + '-text');	
+				legendText.setAttribute('class', 'legend-button-text');	
+				legendText.style.backgroundColor = candidate.colors[0];
 				if(index == 0) {
 					var color = candidate.colors[tossupColor];
-					legendElement.style.backgroundColor = color;
+					legendText.style.backgroundColor = color;
 					if(color === '#000000' ||
 						color === 'black') {
-						legendElement.style.color = 'white';
+						legendText.style.color = 'white';
 					} else {
-						legendElement.style.color = 'black';
+						legendText.style.color = 'black';
 
 					}
 				}
-				legendElement.style.padding = 5;
-				legendDiv.appendChild(legendElement);
-
-				var legendText = document.createElement('div');
-				legendText.setAttribute('id', candidate.name + '-text');	
-				legendText.setAttribute('class', 'legend-button-text');
+				legendText.style.padding = '5px';
 				legendText.innerHTLM = candidate.name;
 				legendElement.appendChild(legendText);
 			}

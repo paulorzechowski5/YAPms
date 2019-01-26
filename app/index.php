@@ -6,6 +6,14 @@
 	<meta name="description" content="Presidential, Senatorial, Congressional, Guberntorial, and Democratic Primary, political map simulator.">
 	<meta name="keywords" content="Maps,Political,Simulator,Election,President,Governor,Senator,Congress,Primary,Interactive">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta property="og:site_name" content="yapms.com">
+	<meta property="og:title" content="YAPms - Yet another political map simulator">
+	<meta property="og:image:type" content="image/jpeg">
+	<?php 
+	$f = filter_input(INPUT_GET, 'i');
+	echo '<meta property="og:image" content="https:://www.yapms.com/app/uploads/' . $f . '.jpeg">';
+	?>
+
 
 	<title>YAPms - Yet Another Political Map Simulator</title>
 
@@ -45,6 +53,7 @@
 	<script src="./src/Candidate.js"></script>
 	<script src="./src/battlechart.js"></script>
 	<script src="./src/presets.js"></script>
+	<script src="./src/html2canvas.min.js"></script>
 </head>
 
 <body id="body" onresize="onResize()">
@@ -169,6 +178,12 @@
 	</span>
 
 	<div id="menu-right">
+		<div>
+			<button class="click-button" onclick="share()">
+				Share
+			</button>
+		</div>
+
 		<div id="miscbutton" class="dropdown" class="right-justify">
 			<button class="dropdown-button">
 				Misc
@@ -298,7 +313,15 @@
 <div id="notification" class="popup">
 	<h3 id="notification-title"></h3>
 	<p id="notification-message"></p>
+	<br>
 	<button onclick="closeNotification(this)">Ok</button>
+</div>
+
+<div id="share" class="popup">
+	<h3>Share</h3>
+	Temp Link:
+	<div id="shareurl"></div>
+	<img id="screenshotimg"/>
 </div>
 
 </body>
