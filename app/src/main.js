@@ -93,6 +93,7 @@ function share() {
 			svgtext.style.fontFamily = '';
 			svgtext.style.fontSize = oldfontsize;
 		}
+		chartdiv.style.border = '1px solid black';
 		canvas.style.width = 0;
 		canvas.style.height = 0;	
 		canvas.style.display = 'none';
