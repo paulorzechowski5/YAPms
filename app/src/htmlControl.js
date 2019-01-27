@@ -123,7 +123,7 @@ function terminalPalette() {
 	setChartBorderStyle(2, '#ffffff');
 	setTextStyle('white', 'bold');
 	setMapStyle('white', 1.5);
-	setSideBarColor('#888888');
+	setSideBarColor('#eeeeee');
 	
 	chartOptions.plugins.datalabels.borderWidth = 2;
 	chartOptions.plugins.datalabels.borderRadius = 4;
@@ -170,7 +170,7 @@ function lightPalette() {
 
 function contrastPalette() {
 	var body = document.getElementById('application');
-	body.style.backgroundColor = '#dbdbdb';
+	body.style.backgroundColor = '#f9f9fa';
 	body.style.backgroundImage  = '';
 
 	var menu = document.getElementById('menu-div');
@@ -180,11 +180,11 @@ function contrastPalette() {
 	legend.style.borderColor = '#151515';
 	
 	setDisableColor('#212326');
-	setTossupColor('#bbb7b2');
+	setTossupColor('#ded9d3');
 	setMapStyle('black', 1.5);
 	setTextStyle('black', 'normal');
 	setChartBorderStyle(2, 'black');
-	setSideBarColor('#bababa');
+	setSideBarColor('#cdcdcd');
 
 	chartOptions.plugins.datalabels.borderWidth = 2;
 	chartOptions.plugins.datalabels.borderRadius = 4;

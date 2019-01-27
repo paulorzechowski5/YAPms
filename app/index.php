@@ -17,9 +17,11 @@
 	<meta name="twitter:description" content="Interactive political maps">
 
 	<?php 
-		echo '<meta property="og:image" content="http://www.yapms.com/app/uploads/' . $_GET["i"] . '.png">';
-		echo '<meta property="og:image:secure_url" content="https://www.yapms.com/app/uploads/' . $_GET["i"] . '.png">';
-		echo '<meta name="twitter:image" content="https://www.yapms.com/app/uploads/' . $_GET["i"] . '.png">';
+		if(isset($_GET["i"]) && !empty($_GET["i"])) {
+			echo '<meta property="og:image" content="http://www.yapms.com/app/uploads/' . $_GET["i"] . '.png">';
+			echo '<meta property="og:image:secure_url" content="https://www.yapms.com/app/uploads/' . $_GET["i"] . '.png">';
+			echo '<meta name="twitter:image" content="https://www.yapms.com/app/uploads/' . $_GET["i"] . '.png">';
+		}
 	?>
 
 	<title>YAPms - Yet Another Political Map Simulator</title>
@@ -38,7 +40,7 @@
 <!--	<link rel="stylesheet" type="text/css" href="./style/mapmenu.css"> -->
 	<link rel="stylesheet" type="text/css" href="./style/popup.css">
 	<?php 
-	if($_GET["m"] === 'true') {
+	if(isset($_GET["m"]) && $_GET["m"] === 'true') {
 		echo '<link id="appstyle" rel="stylesheet" type="text/css" href="./style/mobile.css">';
 		echo '<link rel="stylesheet" type="text/css" href="./style/battlechartmobile.css">';
 	}
@@ -337,7 +339,7 @@
 </body>
 
 <?php
-	if($_GET["m"] === 'true') {
+	if(isset($_GET["m"]) && $_GET["m"] === 'true') {
 		echo '<script>var mobile = true</script>';
 	}
 	else {
@@ -353,8 +355,9 @@
 </script>
 
 <?php
-if($_GET["m"] === 'true')
-	echo '<script src="./src/mobile.js"></script>';
+	if(isset($_GET["m"]) && $_GET["m"] === 'true') {
+		echo '<script src="./src/mobile.js"></script>';
+	}
 ?>
 
 </html>
