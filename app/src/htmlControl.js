@@ -330,15 +330,16 @@ function setBattleHorizontal() {
 	battlechartmid.style.transform = 'rotate(90deg)';	
 	var battlechartright = document.getElementById('battlechartright');
 	battlechartright.style.flexDirection = 'row';
+
 	var topbar = document.getElementById('topbar');
-	topbar.style.boxShadow = '1px 0px 3px black';
+	//topbar.style.boxShadow = '1px 0px 3px black';
 	topbar.style.borderBottom = '';
 	topbar.style.borderRight = '1px solid black';
 	topbar.style.flexDirection = 'row';
 	topbar.style.minWidth = '0';
 
 	var bottombar = document.getElementById('bottombar');
-	bottombar.style.boxShadow = '-1px 0px 3px black';
+	//bottombar.style.boxShadow = '-1px 0px 3px black';
 	bottombar.style.borderTop = '';
 	bottombar.style.borderLeft = '1px solid black';	
 	bottombar.style.flexDirection = 'row';
@@ -371,14 +372,14 @@ function unsetBattleHorizontal() {
 	battlechartright.style.flexDirection = 'column';
 
 	var topbar = document.getElementById('topbar');
-	topbar.style.boxShadow = '0px -1px 3px black';
+	//topbar.style.boxShadow = '0px -1px 3px black';
 	topbar.style.borderRight = '';
 	topbar.style.borderBottom = '1px solid black';
 	topbar.style.flexDirection = 'column';
 	topbar.style.minWidth = '0';
 
 	var bottombar = document.getElementById('bottombar');
-	bottombar.style.boxShadow = '0px 1px 3px black';
+	//bottombar.style.boxShadow = '0px 1px 3px black';
 	bottombar.style.borderLeft = '';
 	bottombar.style.borderTop = '1px solid black';
 	bottombar.style.flexDirection = 'column';

@@ -57,7 +57,7 @@ var loadConfig = {
 var strokeMultiplier = 1;
 
 var previousPalette = function() {
-	lightPalette();	
+	contrastPalette();	
 };
 
 var panObject = null;
