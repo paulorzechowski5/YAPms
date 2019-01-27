@@ -326,7 +326,7 @@
 
 <div id="share" class="popup">
 	<h3>Share</h3>
-	Temp Link:
+	Link:
 	<div id="shareurl"></div>
 	<img id="screenshotimg"/>
 	<br>
