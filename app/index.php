@@ -6,14 +6,22 @@
 	<meta name="description" content="Presidential, Senatorial, Congressional, Guberntorial, and Democratic Primary, political map simulator.">
 	<meta name="keywords" content="Maps,Political,Simulator,Election,President,Governor,Senator,Congress,Primary,Interactive">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<meta property="og:site_name" content="yapms.com">
-	<meta property="og:title" content="YAPms - Yet another political map simulator">
-	<meta property="og:image:type" content="image/jpeg">
-	<?php 
-	$f = filter_input(INPUT_GET, 'i');
-	echo '<meta property="og:image" content="https:://www.yapms.com/app/uploads/' . $f . '.jpeg">';
-	?>
 
+	<meta property="og:title" content="YAPms - Yet another political map simulator">
+	<meta property="og:description" content="Interactive political maps">
+	<meta property="og:image:type" content="image/jpeg">
+	<meta property="og:site_name" content="yapms.com">
+
+	<meta name="twitter:card" content="summary_large_image">
+	<meta name="twitter:title" content="yapms.com">
+	<meta name="twitter:description" content="Interactive political maps">
+
+	<meta property="og:image:secure_url" content="https://testing.yapms.com/app/uploads/17242221.jpeg">
+	<?php 
+		echo '<meta property="og:image" content="http://testing.yapms.com/app/uploads/' . $_GET["i"] . '.jpeg">';
+		echo '<meta property="og:image:secure_url" content="https://testing.yapms.com/app/uploads/' . $_GET["i"] . '.jpeg">';
+		echo '<meta name="twitter:image" content="https://testing.yapms.com/app/uploads/' . $_GET["i"] . '.jpeg">';
+	?>
 
 	<title>YAPms - Yet Another Political Map Simulator</title>
 
@@ -322,6 +330,8 @@
 	Temp Link:
 	<div id="shareurl"></div>
 	<img id="screenshotimg"/>
+	<br>
+	<button onclick="closeShare(this)">Ok</button>
 </div>
 
 </body>

@@ -93,7 +93,7 @@ function share() {
 		canvas.style.width = 0;
 		canvas.style.height = 0;	
 		canvas.style.display = 'none';
-		var img = canvas.toDataURL('image/jpeg', 0.7);
+		var img = canvas.toDataURL('image/jpeg', 0.85);
 		var i = document.getElementById('screenshotimg');
 		i.src = img;
 		i.style.width = '40vw';
@@ -113,6 +113,7 @@ function share() {
 				console.log(b);
 				console.log(c);
 				var shareurl = document.getElementById('shareurl');
+				shareurl.setAttribute('href', a);
 				shareurl.innerHTML = a;
 			},
 			error: function(a, b, c) {
@@ -662,6 +663,10 @@ function setMode(set) {
 }
 
 function closeNotification(e) {
+	e.parentElement.style.display = 'none';
+}
+
+function closeShare(e) {
 	e.parentElement.style.display = 'none';
 }
 

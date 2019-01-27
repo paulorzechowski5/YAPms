@@ -30,6 +30,15 @@ button {
 	user-select: none;
 }
 
+#shareurl {
+	-webkit-touch-callout: all;
+	-webkit-user-select: all;
+        -khtml-user-select: all;
+	-moz-user-select: all;
+	-ms-user-select: all;
+	user-select: all;
+}
+
 #outlines {
 	stroke-width: 1.5px;;
 }
