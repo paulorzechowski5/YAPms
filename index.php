@@ -34,6 +34,14 @@
 			gtag('config', 'UA-132710089-1');
 		}
 	</script>
+	
+	<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+	<script>
+		(adsbygoogle = window.adsbygoogle || []).push({
+			google_ad_client: "ca-pub-1660456925957249",
+			enable_page_level_ads: true
+		});	
+	</script>
 
 	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
 	<link rel="stylesheet" type="text/css" href="style.css">
@@ -49,7 +57,7 @@
 
 		<div id="welcome" class="infobox">
 			<p>
-				This software is currently in alpha, please bear with us as we continue to add features and eliminate bugs. Thank you!
+				YAPms is a tool for creating political maps that can be shared with friends
 			</p>
 		</div>
 
@@ -70,17 +78,17 @@
 		</div>
 	</div>
 	
+	<a href="./app?m=true">
+		<div id="mobile" class="start">
+			Mobile
+		</div>
+	</a>
+	
+	<br>
+	
 	<a href="./app">
 		<div id="desktop" class="start">
 			Desktop
-		</div>
-	</a>
-
-	<br>
-
-	<a href="./app?m=true">
-		<div id="mobile" class="start">
-			Mobile Beta
 		</div>
 	</a>
 
