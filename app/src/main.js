@@ -71,10 +71,13 @@ function share() {
 	svg.setAttribute('height', mapheight);
 
 	var svgtext = document.getElementById('text');
+	var oldfontsize;
 	// set font size and family to something that will render
-	svgtext.style.fontFamily = 'arial';
-	var oldfontsize = svgtext.style.fontSize;
-	svgtext.style.fontSize = '15px';
+	if(svgtext !== null) {
+		svgtext.style.fontFamily = 'arial';
+		oldfontsize = svgtext.style.fontSize;
+		svgtext.style.fontSize = '15px';
+	}
 
 	var chartdiv = document.getElementById('chart-div');
 	var oldborder = chartdiv.style.border;
@@ -85,20 +88,19 @@ function share() {
 
 	html2canvas(document.getElementById('application'), {async: false, logging: true}).then(function(canvas) {
 		notification.appendChild(canvas);
-		//canvas.style.width = applicationWidth / 3;
-		//canvas.style.height = applicationHeight / 3;
 		// set the text back
-		svgtext.style.fontFamily = '';
-		svgtext.style.fontSize = oldfontsize;
+		if(svgtext !== null) {
+			svgtext.style.fontFamily = '';
+			svgtext.style.fontSize = oldfontsize;
+		}
 		canvas.style.width = 0;
 		canvas.style.height = 0;	
 		canvas.style.display = 'none';
-		var img = canvas.toDataURL('image/jpeg', 0.85);
+		var img = canvas.toDataURL('image/png');
 		var i = document.getElementById('screenshotimg');
 		i.src = img;
 		i.style.width = '40vw';
 		i.style.height = 'auto';
-
 
 		var formData = new FormData();
 		formData.append("fileToUpload", img);	

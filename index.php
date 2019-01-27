@@ -4,6 +4,21 @@
 	<meta name="description" content="Presidential, Senatorial, Congressional, Guberntorial and Democratic Primary political map simulator.">
 	<meta name="keywords" content="Maps,Political,Simulator,Election,President,Governor,Senator,Congress,Primary,Interactive">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	
+	<meta property="og:title" content="YAPms - Yet another political map simulator">
+	<meta property="og:description" content="Interactive political maps">
+	<meta property="og:image:type" content="image/jpeg">
+	<meta property="og:site_name" content="yapms.com">
+
+	<meta name="twitter:card" content="summary_large_image">
+	<meta name="twitter:title" content="yapms.com">
+	<meta name="twitter:description" content="Interactive political maps">
+
+	<?php 
+		echo '<meta property="og:image" content="http://www.yapms.com/app/uploads/' . $_GET["i"] . '.png">';
+		echo '<meta property="og:image:secure_url" content="https://www.yapms.com/app/uploads/' . $_GET["i"] . '.png">';
+		echo '<meta name="twitter:image" content="https://www.yapms.com/app/uploads/' . $_GET["i"] . '.png">';
+	?>
 
 	<title>YAPms - Yet Another Political Map Simulator</title>
 	
@@ -47,8 +62,7 @@
 
 		<div id="whatsnew" class="infobox">
 			<b>New Stuff:</b>
-			Mobile version! With battlechart, tap the chart to change it!<br>
-			Democratic Primary Map! Still in the works, but hopefully functional!
+			Share your maps with friends! Click share and copy the image or link!<br>
 		</div>
 
 		<div class="infobox">
