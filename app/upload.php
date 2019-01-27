@@ -6,7 +6,7 @@
 	//move_uploaded_file($decode, "./uploads/test.jpeg");
 	//file_put_contents('./uploads/test.jpeg', $decode);
 
-	$filename = "" . rand(1,30) . rand(1,30) . rand(1,30) . rand(1,30);
+	$filename = "" . rand(0,9) . rand(0,9) . rand(0,9) . rand(0,9);
 
 	echo "https://www.yapms.com/app/?i=" . $filename;
 	

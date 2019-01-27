@@ -16,11 +16,11 @@
 	<meta name="twitter:title" content="yapms.com">
 	<meta name="twitter:description" content="Interactive political maps">
 
-	<meta property="og:image:secure_url" content="https://testing.yapms.com/app/uploads/17242221.jpeg">
+	<meta property="og:image:secure_url" content="https://www.yapms.com/app/uploads/17242221.jpeg">
 	<?php 
-		echo '<meta property="og:image" content="http://testing.yapms.com/app/uploads/' . $_GET["i"] . '.jpeg">';
-		echo '<meta property="og:image:secure_url" content="https://testing.yapms.com/app/uploads/' . $_GET["i"] . '.jpeg">';
-		echo '<meta name="twitter:image" content="https://testing.yapms.com/app/uploads/' . $_GET["i"] . '.jpeg">';
+		echo '<meta property="og:image" content="http://www.yapms.com/app/uploads/' . $_GET["i"] . '.jpeg">';
+		echo '<meta property="og:image:secure_url" content="https://www.yapms.com/app/uploads/' . $_GET["i"] . '.jpeg">';
+		echo '<meta name="twitter:image" content="https://www.yapms.com/app/uploads/' . $_GET["i"] . '.jpeg">';
 	?>
 
 	<title>YAPms - Yet Another Political Map Simulator</title>
