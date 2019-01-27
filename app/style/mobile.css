@@ -77,7 +77,6 @@ button {
 	padding-left: 15px;
 	padding-right: 15px;
 	border: 1px solid black;
-	box-shadow: 1px 0px 4px #000000;
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -92,7 +91,6 @@ button {
 	background: orange;
 	border: 2px solid black;
 	border-radius: 10px;
-	box-shadow: 1px 1px 3px black;
 	margin-top: 25px;
 	margin-bottom: 25px;
 }
@@ -125,7 +123,7 @@ button {
 	margin-right: 3px;
 	vertical-align: top;
 	
-	box-shadow: 0px 2px 4px #000000;
+	box-shadow: 0px 2px 2px #000000;
 	min-width: 16px;
 	min-height: 16px;
 	
