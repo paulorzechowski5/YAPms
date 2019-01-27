@@ -39,6 +39,7 @@
 	<link rel="stylesheet" type="text/css" href="./style/menu.css">
 <!--	<link rel="stylesheet" type="text/css" href="./style/mapmenu.css"> -->
 	<link rel="stylesheet" type="text/css" href="./style/popup.css">
+	<link rel="stylesheet" type="text/css" href="./style/legend.css">
 	<?php 
 	if(isset($_GET["m"]) && $_GET["m"] === 'true') {
 		echo '<link id="appstyle" rel="stylesheet" type="text/css" href="./style/mobile.css">';

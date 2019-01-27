@@ -14,10 +14,15 @@ function selectCandidateDisplay(html) {
 
 	for(var index = 0; index < legendButtons.length; ++index) {
 		var button = legendButtons[index];
-		button.style.borderStyle = 'none';
+		var text = button.childNodes[0];
+		//button.style.borderStyle = 'none';
+		text.style.borderWidth = '1px';
+		text.style.boxShadow = 'none';
 	}
-
-	html.style.borderStyle = 'solid';
+	
+	//html.style.borderStyle = 'solid';
+	html.childNodes[0].style.borderWidth = '2px';
+	html.childNodes[0].style.boxShadow = '0px 0px 5px black';
 }
 
 function toggleText() {

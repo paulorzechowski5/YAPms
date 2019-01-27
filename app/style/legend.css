@@ -1,0 +1,30 @@
+#legend-div {
+	position: absolute;
+	border-color: #2f3136;
+	z-index: 2;
+	pointer-events: none;
+	top: 0;
+}
+
+.legend-button {
+	font-weight: '1000';
+	display: inline-block;
+	cursor: pointer;
+	margin-top: 4px;
+	margin-left: 3px;
+	margin-right: 3px;
+	vertical-align: top;
+	
+	min-width: 16px;
+	min-height: 16px;
+	
+	pointer-events: auto;
+}
+
+.legend-button-text {
+	border: 1px solid black;
+	box-shadow: 0px 0px 5px black;
+	border-radius: 12px;
+	transition: all 175ms;
+	transition-timing-function: linear;
+}
