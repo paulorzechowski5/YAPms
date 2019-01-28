@@ -311,6 +311,17 @@ function setTextStyle(color, weight) {
 		text.style.strokeWidth = 0;
 		text.style.fontWeight = weight;
 		text.style.fill = color;
+		text.style.textAlign = 'center';
+		
+		for(key in text.children) {
+			var child = text.children[key];
+			try {
+				child.setAttribute('text-anchor', 'middle');
+				child.setAttribute('alignment-baseline', 'central');
+			} catch(e) {
+
+			}
+		} 
 	}
 }
 

@@ -147,7 +147,7 @@
 				<a onclick='lightPalette()'>Light</a>
 				<a onclick='contrastPalette()'>Contrast</a>
 				<a onclick='metallicPalette()'>Metallic</a>
-				<a onclick='toWinPalette()'>270</a>
+				<a onclick='toWinPalette()'>Default</a>
 			</div>
 		</div>
 

@@ -11,7 +11,7 @@
    version="1.1"
    id="svgdata"
    sodipodi:docname="lte.svg"
-   inkscape:version="0.92.1 r15371"
+   inkscape:version="0.92.3 (2405546, 2018-03-11)"
    inkscape:export-filename="/home/jacob/Programming/270/usa.png"
    inkscape:export-xdpi="96"
    inkscape:export-ydpi="96"
@@ -37,15 +37,15 @@
      guidetolerance="10"
      inkscape:pageopacity="0"
      inkscape:pageshadow="2"
-     inkscape:window-width="1600"
-     inkscape:window-height="838"
+     inkscape:window-width="1920"
+     inkscape:window-height="1043"
      id="namedview3848"
      showgrid="true"
      inkscape:pagecheckerboard="true"
      inkscape:zoom="1.3245003"
-     inkscape:cx="712.93638"
-     inkscape:cy="212.85593"
-     inkscape:window-x="0"
+     inkscape:cx="493.60838"
+     inkscape:cy="-170.68494"
+     inkscape:window-x="1920"
      inkscape:window-y="0"
      inkscape:window-maximized="1"
      inkscape:current-layer="text"
@@ -304,63 +304,63 @@
      inkscape:label="text">
     <text
        xml:space="preserve"
-       x="91.825081"
-       y="160.56787"
+       x="129.82507"
+       y="166.56787"
        id="WE-text"
        inkscape:label="wetext"><tspan
          sodipodi:role="line"
          id="tspan5327"
-         x="91.825081"
-         y="160.56787">WE 4</tspan></text>
+         x="129.82507"
+         y="166.56787">WE 4</tspan></text>
     <text
        xml:space="preserve"
-       x="310.71048"
-       y="401.8757"
+       x="348.71048"
+       y="407.8757"
        id="SW-text"
        inkscape:label="swtext"><tspan
          sodipodi:role="line"
-         x="310.71048"
-         y="401.8757"
+         x="348.71048"
+         y="407.8757"
          id="tspan5369">SW 3 </tspan></text>
     <text
        xml:space="preserve"
-       x="658.79163"
-       y="387.99512"
+       x="696.79163"
+       y="393.99512"
        id="SE-text"
        inkscape:label="setext"><tspan
          sodipodi:role="line"
          id="tspan5335"
-         x="658.79163"
-         y="387.99512">SE 6</tspan></text>
+         x="696.79163"
+         y="393.99512">SE 6</tspan></text>
     <text
        xml:space="preserve"
-       x="464.46411"
-       y="220.36096"
+       x="502.46411"
+       y="226.36096"
        id="MW-text"
        inkscape:label="mwtext"><tspan
          sodipodi:role="line"
          id="tspan5339"
-         x="464.46411"
-         y="220.36096">MW 6</tspan></text>
+         x="502.46411"
+         y="226.36096">MW 6</tspan></text>
     <text
        xml:space="preserve"
-       x="797.86951"
-       y="167.24677"
+       x="835.86951"
+       y="173.24677"
        id="NE-text"
        inkscape:label="netext"><tspan
          sodipodi:role="line"
          id="tspan5343"
-         x="797.86951"
-         y="167.24677">NE 7</tspan></text>
+         x="835.86951"
+         y="173.24677">NE 7</tspan></text>
     <text
        xml:space="preserve"
-       x="835.2702"
-       y="450.7532"
+       x="873.2702"
+       y="456.7532"
        id="OV-text"
        inkscape:label="ovtext"><tspan
          sodipodi:role="line"
          id="tspan5335-8"
-         x="835.2702"
-         y="450.7532">OV 6</tspan></text>
+         x="873.2702"
+         y="456.7532">OV 6</tspan></text>
   </g>
 </svg>

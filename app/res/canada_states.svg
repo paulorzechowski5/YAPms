@@ -15,7 +15,7 @@
    viewBox="0 0 1304 1263"
    id="svgdata"
    sodipodi:docname="canada_states.svg"
-   inkscape:version="0.92.1 r15371">
+   inkscape:version="0.92.3 (2405546, 2018-03-11)">
   <metadata
      id="metadata112">
     <rdf:RDF>
@@ -24,7 +24,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -37,14 +37,14 @@
      guidetolerance="10"
      inkscape:pageopacity="0"
      inkscape:pageshadow="2"
-     inkscape:window-width="1600"
-     inkscape:window-height="838"
+     inkscape:window-width="1920"
+     inkscape:window-height="1043"
      id="namedview110"
      showgrid="false"
-     inkscape:zoom="2.8039604"
-     inkscape:cx="302.82785"
-     inkscape:cy="137.58269"
-     inkscape:window-x="0"
+     inkscape:zoom="1.4019802"
+     inkscape:cx="229.64159"
+     inkscape:cy="253.37127"
+     inkscape:window-x="1920"
      inkscape:window-y="0"
      inkscape:window-maximized="1"
      inkscape:current-layer="text"
@@ -330,144 +330,144 @@
      inkscape:label="text">
     <text
        xml:space="preserve"
-       x="71.791939"
+       x="107.79194"
        y="554.52161"
        id="YT-text"
        inkscape:label="yttext"><tspan
          sodipodi:role="line"
-         x="71.791939"
+         x="107.79194"
          y="554.52161"
-         id="tspan8988-2-6"
-         style="stroke-width:2">YT 1</tspan></text>
+         style="stroke-width:2"
+         id="tspan4731">YT 1</tspan></text>
     <text
        xml:space="preserve"
-       x="260.31464"
+       x="304.31464"
        y="621.02631"
        id="NT-text"
        inkscape:label="nttext"><tspan
          sodipodi:role="line"
-         x="260.31464"
+         x="304.31464"
          y="621.02631"
-         id="tspan8988-2-6-1"
-         style="stroke-width:2">NT 1</tspan></text>
+         style="stroke-width:2"
+         id="tspan4733">NT 1</tspan></text>
     <text
        xml:space="preserve"
-       x="103.39375"
+       x="147.39375"
        y="810.04462"
        id="BC-text"
        inkscape:label="bctext"><tspan
          sodipodi:role="line"
-         x="103.39375"
+         x="147.39375"
          y="810.04462"
-         id="tspan8988-2-6-5"
-         style="stroke-width:2">BC 1</tspan></text>
+         style="stroke-width:2"
+         id="tspan4737">BC 1</tspan></text>
     <text
        xml:space="preserve"
-       x="246.04912"
+       x="290.04913"
        y="867.82007"
        id="AB-text"
        inkscape:label="abtext"><tspan
          sodipodi:role="line"
-         x="246.04912"
+         x="290.04913"
          y="867.82007"
-         id="tspan8988-2-6-6"
-         style="stroke-width:2">AB 1</tspan></text>
+         style="stroke-width:2"
+         id="tspan4739">AB 1</tspan></text>
     <text
        xml:space="preserve"
-       x="516.94037"
+       x="560.94037"
        y="903.48395"
        id="MB-text"
        inkscape:label="mbtext"><tspan
          sodipodi:role="line"
-         x="516.94037"
+         x="560.94037"
          y="903.48395"
-         id="tspan8988-2-6-17"
-         style="stroke-width:2">MB 1</tspan></text>
+         style="stroke-width:2"
+         id="tspan4743">MB 1</tspan></text>
     <text
        xml:space="preserve"
-       x="375.15222"
+       x="419.15222"
        y="897.90338"
        id="SK-text"
        inkscape:label="sktext"><tspan
          sodipodi:role="line"
-         x="375.15222"
+         x="419.15222"
          y="897.90338"
-         id="tspan8988-2-6-57"
-         style="stroke-width:2">SK 1</tspan></text>
+         style="stroke-width:2"
+         id="tspan4741">SK 1</tspan></text>
     <text
        xml:space="preserve"
-       x="545.7511"
+       x="581.7511"
        y="645.58563"
        id="NU-text"
        inkscape:label="nutext"><tspan
          sodipodi:role="line"
-         x="545.7511"
+         x="581.7511"
          y="645.58563"
-         id="tspan8988-2-6-18"
-         style="stroke-width:2">NU 1</tspan></text>
+         style="stroke-width:2"
+         id="tspan4735">NU 1</tspan></text>
     <text
        xml:space="preserve"
-       x="651.87537"
+       x="695.87537"
        y="1021.3286"
        id="ON-text"
        inkscape:label="ontext"><tspan
          sodipodi:role="line"
-         x="651.87537"
+         x="695.87537"
          y="1021.3286"
-         id="tspan8988-2-6-9"
-         style="stroke-width:2">ON 1</tspan></text>
+         style="stroke-width:2"
+         id="tspan4745">ON 1</tspan></text>
     <text
-       xml:space="preserve"
-       x="895.13098"
+       x="939.13098"
        y="986.93732"
        id="QC-text"
-       inkscape:label="qctext"><tspan
+       inkscape:label="qctext"
+       xml:space="preserve"><tspan
          sodipodi:role="line"
-         x="895.13098"
+         x="939.13098"
          y="986.93732"
-         id="tspan8988-2-6-3"
-         style="stroke-width:2">QC 1</tspan></text>
+         style="stroke-width:2"
+         id="tspan4747">QC 1</tspan></text>
     <text
        xml:space="preserve"
-       x="1074.6172"
+       x="1118.6172"
        y="879.85309"
        id="NL-text"
        inkscape:label="nltext"><tspan
          sodipodi:role="line"
-         x="1074.6172"
+         x="1118.6172"
          y="879.85309"
-         id="tspan8988-2-6-0"
-         style="stroke-width:2">NL 1</tspan></text>
+         style="stroke-width:2"
+         id="tspan4751">NL 1</tspan></text>
     <text
        xml:space="preserve"
-       x="1193.6445"
+       x="1237.6445"
        y="1147.1448"
        id="PE-text"
        inkscape:label="petext"><tspan
          sodipodi:role="line"
-         x="1193.6445"
+         x="1237.6445"
          y="1147.1448"
          id="tspan8988-2-6-31"
          style="stroke-width:2">PE 1</tspan></text>
     <text
        xml:space="preserve"
-       x="1193.6445"
+       x="1237.6445"
        y="1197.9659"
        id="NS-text"
        inkscape:label="nstext"><tspan
          sodipodi:role="line"
-         x="1193.6445"
+         x="1237.6445"
          y="1197.9659"
          id="tspan8988-2-6-38"
          style="stroke-width:2">NS 1</tspan></text>
     <text
        xml:space="preserve"
-       x="1193.6445"
+       x="1237.6445"
        y="1248.2521"
        id="NB-text"
        inkscape:label="nbtext"><tspan
          sodipodi:role="line"
-         x="1193.6445"
+         x="1237.6445"
          y="1248.2521"
          id="tspan8988-2-6-64"
          style="stroke-width:2">NB 1</tspan></text>

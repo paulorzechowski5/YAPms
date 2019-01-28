@@ -11,7 +11,7 @@
    version="1.1"
    id="svgdata"
    sodipodi:docname="lte_congressional.svg"
-   inkscape:version="0.92.1 r15371"
+   inkscape:version="0.92.3 (2405546, 2018-03-11)"
    inkscape:export-filename="/home/jacob/Programming/270/usa.png"
    inkscape:export-xdpi="96"
    inkscape:export-ydpi="96"
@@ -24,7 +24,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -37,15 +37,15 @@
      guidetolerance="10"
      inkscape:pageopacity="0"
      inkscape:pageshadow="2"
-     inkscape:window-width="1600"
-     inkscape:window-height="838"
+     inkscape:window-width="1920"
+     inkscape:window-height="1043"
      id="namedview3848"
      showgrid="true"
      inkscape:pagecheckerboard="true"
      inkscape:zoom="1.3245003"
-     inkscape:cx="563.44604"
-     inkscape:cy="212.85593"
-     inkscape:window-x="0"
+     inkscape:cx="617.42866"
+     inkscape:cy="-86.12475"
+     inkscape:window-x="1920"
      inkscape:window-y="0"
      inkscape:window-maximized="1"
      inkscape:current-layer="text"
