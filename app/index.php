@@ -202,6 +202,7 @@
 			<div class="dropdown-content">
 				<a onclick="centerMap()">Center Map</a>
 				<a onclick="toggleLTELogo()">LTE Logo</a>
+				<a href="https://commons.wikimedia.org/wiki/File:Blank_US_Map_(states_only).svg" target="_blank">Map Src</a>
 			</div>
 		</div>
 	</div>
