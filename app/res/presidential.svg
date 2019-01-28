@@ -42,9 +42,9 @@
      id="namedview3848"
      showgrid="true"
      inkscape:pagecheckerboard="true"
-     inkscape:zoom="4.6097391"
-     inkscape:cx="931.64768"
-     inkscape:cy="29.745254"
+     inkscape:zoom="2.3048696"
+     inkscape:cx="609.44519"
+     inkscape:cy="-367.07173"
      inkscape:window-x="1920"
      inkscape:window-y="0"
      inkscape:window-maximized="1"
@@ -83,7 +83,7 @@
     <color-profile
        name="sRGB"
        xlink:href="/usr/share/color/icc/colord/sRGB.icc"
-       id="color-profile759" />
+       id="color-profile5" />
     <inkscape:tag
        id="Set 3"
        inkscape:expanded="true">
@@ -790,30 +790,30 @@
      inkscape:label="text">
     <text
        xml:space="preserve"
-       x="814.16394"
+       x="818.16394"
        y="153.05663"
        id="NY-text"
        inkscape:label="nytext"><tspan
          sodipodi:role="line"
          id="tspan4864"
-         x="814.16394"
+         x="818.16394"
          y="153.05663">NY </tspan><tspan
          sodipodi:role="line"
-         x="814.16394"
+         x="818.16394"
          y="168.05663"
          id="tspan350">29</tspan></text>
     <text
        xml:space="preserve"
-       x="776.07806"
+       x="782.07806"
        y="209.66608"
        id="PA-text"
        inkscape:label="patext"><tspan
          sodipodi:role="line"
-         x="776.07806"
+         x="782.07806"
          y="209.66608"
          id="tspan8878">PA </tspan><tspan
          sodipodi:role="line"
-         x="776.07806"
+         x="782.07806"
          y="224.66608"
          id="tspan348">20</tspan></text>
     <text
@@ -832,59 +832,59 @@
          id="tspan330">18</tspan></text>
     <text
        xml:space="preserve"
-       x="783.45361"
-       y="284.26245"
+       x="787.45361"
+       y="282.26245"
        id="VA-text"
        inkscape:label="vatext"><tspan
          sodipodi:role="line"
-         x="783.45361"
-         y="284.26245"
+         x="787.45361"
+         y="282.26245"
          id="tspan8922">VA </tspan><tspan
          sodipodi:role="line"
-         x="783.45361"
-         y="299.26245"
+         x="787.45361"
+         y="297.26245"
          id="tspan326">13</tspan></text>
     <text
        xml:space="preserve"
-       x="782.30316"
+       x="788.30316"
        y="332.69342"
        id="NC-text"
        inkscape:label="nctext"><tspan
          sodipodi:role="line"
-         x="782.30316"
+         x="788.30316"
          y="332.69342"
          id="tspan8922-1">NC </tspan><tspan
          sodipodi:role="line"
-         x="782.30316"
+         x="788.30316"
          y="347.69342"
          id="tspan324">15</tspan></text>
     <text
        xml:space="preserve"
-       x="754.30951"
-       y="379.11313"
+       x="760.30951"
+       y="377.11313"
        id="SC-text"
        inkscape:label="sctext"><tspan
          sodipodi:role="line"
-         x="754.30951"
-         y="379.11313"
+         x="760.30951"
+         y="377.11313"
          id="tspan8966">SC </tspan><tspan
          sodipodi:role="line"
-         x="754.30951"
-         y="394.11313"
+         x="760.30951"
+         y="392.11313"
          id="tspan322">9</tspan></text>
     <text
        xml:space="preserve"
-       x="711.9754"
-       y="411.59967"
+       x="715.9754"
+       y="409.59967"
        id="GA-text"
        inkscape:label="gatext"><tspan
          sodipodi:role="line"
-         x="711.9754"
-         y="411.59967"
+         x="715.9754"
+         y="409.59967"
          id="tspan8988">GA </tspan><tspan
          sodipodi:role="line"
-         x="711.9754"
-         y="426.59967"
+         x="715.9754"
+         y="424.59967"
          id="tspan318">16</tspan></text>
     <text
        xml:space="preserve"
@@ -902,30 +902,30 @@
          id="tspan320">29</tspan></text>
     <text
        xml:space="preserve"
-       x="647.29108"
-       y="409.86169"
+       x="653.29108"
+       y="413.86169"
        id="AL-text"
        inkscape:label="altext"><tspan
          sodipodi:role="line"
-         x="647.29108"
-         y="409.86169"
+         x="653.29108"
+         y="413.86169"
          id="tspan8988-2-7">AL </tspan><tspan
          sodipodi:role="line"
-         x="647.29108"
-         y="424.86169"
+         x="653.29108"
+         y="428.86169"
          id="tspan316">9</tspan></text>
     <text
        xml:space="preserve"
-       x="595.49976"
+       x="599.49976"
        y="417.56348"
        id="MS-text"
        inkscape:label="mstext"><tspan
          sodipodi:role="line"
-         x="595.49976"
+         x="599.49976"
          y="417.56348"
          id="tspan8988-2-9">MS </tspan><tspan
          sodipodi:role="line"
-         x="595.49976"
+         x="599.49976"
          y="432.56348"
          id="tspan314">6</tspan></text>
     <text
@@ -1196,72 +1196,72 @@
          id="tspan306">7</tspan></text>
     <text
        xml:space="preserve"
-       x="536.90167"
+       x="542.90167"
        y="374.47449"
        id="AR-text"
        inkscape:label="artext"><tspan
          sodipodi:role="line"
-         x="536.90167"
+         x="542.90167"
          y="374.47449"
          id="tspan8988-2-88">AR </tspan><tspan
          sodipodi:role="line"
-         x="536.90167"
+         x="542.90167"
          y="389.47449"
          id="tspan344">6</tspan></text>
     <text
        xml:space="preserve"
-       x="538.75464"
+       x="542.75464"
        y="296.88016"
        id="MO-text"
        inkscape:label="motext"><tspan
          sodipodi:role="line"
-         x="538.75464"
+         x="542.75464"
          y="296.88016"
          id="tspan8988-2-31">MO </tspan><tspan
          sodipodi:role="line"
-         x="538.75464"
+         x="542.75464"
          y="311.88016"
          id="tspan342">10</tspan></text>
     <text
        xml:space="preserve"
-       x="518.0625"
+       x="524.0625"
        y="215.34053"
        id="IA-text"
        inkscape:label="iatext"><tspan
          sodipodi:role="line"
-         x="518.0625"
+         x="524.0625"
          y="215.34053"
          id="tspan8988-2-92">IA </tspan><tspan
          sodipodi:role="line"
-         x="518.0625"
+         x="524.0625"
          y="230.34053"
          id="tspan340">6</tspan></text>
     <text
        xml:space="preserve"
-       x="498.05328"
-       y="122.9517"
+       x="504.05328"
+       y="126.9517"
        id="MN-text"
        inkscape:label="mntext"><tspan
          sodipodi:role="line"
-         x="498.05328"
-         y="122.9517"
+         x="504.05328"
+         y="126.9517"
          id="tspan8988-2-68">MN </tspan><tspan
          sodipodi:role="line"
-         x="498.05328"
-         y="137.95169"
+         x="504.05328"
+         y="141.95169"
          id="tspan278">10</tspan></text>
     <text
        xml:space="preserve"
-       x="576.27698"
+       x="578.27698"
        y="161.49774"
        id="WI-text"
        inkscape:label="witext"><tspan
          sodipodi:role="line"
-         x="576.27698"
+         x="578.27698"
          y="161.49774"
          id="tspan8988-2-26">WI </tspan><tspan
          sodipodi:role="line"
-         x="576.27698"
+         x="578.27698"
          y="176.49774"
          id="tspan276">10</tspan></text>
     <text
@@ -1294,16 +1294,16 @@
          id="tspan332">11</tspan></text>
     <text
        xml:space="preserve"
-       x="679.9621"
+       x="681.9621"
        y="298.74237"
        id="KY-text"
        inkscape:label="kytext"><tspan
          sodipodi:role="line"
-         x="679.9621"
+         x="681.9621"
          y="298.74237"
          id="tspan8988-2-87">KY </tspan><tspan
          sodipodi:role="line"
-         x="679.9621"
+         x="681.9621"
          y="313.74237"
          id="tspan334">8</tspan></text>
     <text
@@ -1336,31 +1336,31 @@
          id="tspan346">16</tspan></text>
     <text
        xml:space="preserve"
-       x="737.71716"
-       y="275.22974"
+       x="741.71716"
+       y="273.22974"
        id="WV-text"
        inkscape:label="wvtext"><tspan
          sodipodi:role="line"
-         x="737.71716"
-         y="275.22974"
+         x="741.71716"
+         y="273.22974"
          id="tspan8988-2-106">WV </tspan><tspan
          sodipodi:role="line"
-         x="737.71716"
-         y="290.22974"
+         x="741.71716"
+         y="288.22974"
          id="tspan328">5</tspan></text>
     <text
        xml:space="preserve"
-       x="889.76605"
-       y="79.755493"
+       x="891.76605"
+       y="77.755493"
        id="ME-text"
        inkscape:label="metext"><tspan
          sodipodi:role="line"
-         x="889.76605"
-         y="79.755493"
+         x="891.76605"
+         y="77.755493"
          id="tspan8988-2-59-0-7-1-7-7-5-9-9">ME </tspan><tspan
          sodipodi:role="line"
-         x="889.76605"
-         y="94.755493"
+         x="891.76605"
+         y="92.755493"
          id="tspan352">4</tspan></text>
     <text
        xml:space="preserve"
@@ -1532,5 +1532,19 @@
          x="694.03076"
          y="59.84375"
          id="tspan8988-2-59-0-7-1-7-7-5-9-1-5-1-04">NE-03 1 </tspan></text>
+    <text
+       inkscape:label="altext"
+       id="text321"
+       y="413.86169"
+       x="653.29108"
+       xml:space="preserve"><tspan
+         id="tspan317"
+         y="413.86169"
+         x="653.29108"
+         sodipodi:role="line">AL </tspan><tspan
+         id="tspan319"
+         y="428.86169"
+         x="653.29108"
+         sodipodi:role="line">9</tspan></text>
   </g>
 </svg>
