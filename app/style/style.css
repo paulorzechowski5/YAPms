@@ -43,7 +43,11 @@ button {
 }
 
 #outlines {
-	stroke-width: 1.5px;;
+	stroke-width: 1.5px;
+}
+
+#outlines path {
+	transition: all 125ms linear;
 }
 
 #text {

@@ -16,11 +16,13 @@ function selectCandidateDisplay(html) {
 		var button = legendButtons[index];
 		var text = button.childNodes[0];
 		//button.style.borderStyle = 'none';
-		text.style.borderWidth = '1px';
 		text.style.boxShadow = 'none';
+		text.style.borderWidth = '1px';
+		text.style.padding = '5px';
 	}
 	
 	//html.style.borderStyle = 'solid';
+	html.childNodes[0].style.padding = '7px';
 	html.childNodes[0].style.borderWidth = '2px';
 	html.childNodes[0].style.boxShadow = '0px 0px 5px black';
 }
