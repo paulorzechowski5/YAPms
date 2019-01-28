@@ -49,7 +49,7 @@ a {
 .start {
 	display: inline-block;
 	margin: auto;
-	margin-top: 25px;
+	margin-bottom: 15px;
 	padding-left: 10px;
 	padding-right: 10px;
 	background: white;
@@ -69,6 +69,11 @@ a {
 	
 	transition-timing-function: linear;
 	transition: all 125ms;
+}
+
+#amazon {
+	margin: auto;
+	width: 95%;
 }
 
 #mobile { 
