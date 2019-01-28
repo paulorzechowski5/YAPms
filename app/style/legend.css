@@ -22,8 +22,7 @@
 }
 
 .legend-button-text {
-	border: 1px solid black;
-	box-shadow: 0px 0px 5px black;
+	border: 2px solid black;
 	border-radius: 12px;
 	transition: all 175ms;
 	transition-timing-function: linear;

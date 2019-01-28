@@ -25,11 +25,7 @@ function updateBattleChart() {
 
 		if(candidateIndex == 0) {
 			tossup.style.background = candidate.colors[2];
-			if(candidate.colors[2] === 'black') {
-				tossup.style.color = 'white';
-			} else {
-				tossup.style.color = 'black';
-			}
+			
 			tossup.style.flexBasis = '' + (candidate.voteCount / totalVotes) * 100 + '%';
 			tossup.innerHTML = '<p>' + candidate.voteCount + '</p>';
 		} else if(candidateIndex == 1) {

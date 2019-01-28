@@ -16,15 +16,11 @@ function selectCandidateDisplay(html) {
 		var button = legendButtons[index];
 		var text = button.childNodes[0];
 		//button.style.borderStyle = 'none';
-		text.style.boxShadow = 'none';
-		text.style.borderWidth = '1px';
 		text.style.padding = '5px';
 	}
 	
 	//html.style.borderStyle = 'solid';
-	html.childNodes[0].style.padding = '7px';
-	html.childNodes[0].style.borderWidth = '2px';
-	html.childNodes[0].style.boxShadow = '0px 0px 5px black';
+	html.childNodes[0].style.padding = '8px';
 }
 
 function toggleText() {
@@ -234,7 +230,7 @@ function metallicPalette() {
 function toWinPalette() {
 	var body = document.getElementById('application');
 	//body.style.backgroundImage  = 'radial-gradient(#2f3136, #181922)';
-	body.style.backgroundColor = '#ffffff';
+	body.style.backgroundColor = '#fffbf2';
 	body.style.backgroundImage  = '';
 
 	var menu = document.getElementById('menu-div');
@@ -245,10 +241,10 @@ function toWinPalette() {
 
 	setDisableColor('#dddddd');
 	setTossupColor('#bbaa90');
-	setMapStyle('white', 1);
+	setMapStyle('#fffbf2', 1);
 	setTextStyle('white', 'bold');
 	setChartBorderStyle(2, 'white');
-	setSideBarColor('#ffffff');
+	setSideBarColor('#f2eee6');
 
 	chartOptions.plugins.datalabels.borderWidth = 0;
 	chartOptions.plugins.datalabels.borderRadius = 2;
@@ -263,6 +259,11 @@ function toWinPalette() {
 function setChartBorderStyle(width, color) {
 	chartBorderWidth = width;
 	chartBorderColor = color;
+
+	var battlechart = document.getElementById('battlechartright');
+	
+	battlechart.style.border = '1px solid ' + color;	
+
 	updateChart();
 }
 
@@ -323,6 +324,10 @@ function setTextStyle(color, weight) {
 			}
 		} 
 	}
+
+	var battlechart = document.getElementById('battlechart');
+	battlechart.style.color = color;
+	battlechart.style.fontWeight = weight;
 }
 
 function setBattleHorizontal() {
@@ -351,15 +356,15 @@ function setBattleHorizontal() {
 
 	var topbar = document.getElementById('topbar');
 	//topbar.style.boxShadow = '1px 0px 3px black';
+	topbar.style.borderRight = topbar.style.borderBottom;
 	topbar.style.borderBottom = '';
-	topbar.style.borderRight = '1px solid black';
 	topbar.style.flexDirection = 'row';
 	topbar.style.minWidth = '0';
 
 	var bottombar = document.getElementById('bottombar');
 	//bottombar.style.boxShadow = '-1px 0px 3px black';
+	bottombar.style.borderLeft = bottombar.style.borderTop;	
 	bottombar.style.borderTop = '';
-	bottombar.style.borderLeft = '1px solid black';	
 	bottombar.style.flexDirection = 'row';
 	bottombar.style.minWidth = '0';
 }
@@ -391,18 +396,17 @@ function unsetBattleHorizontal() {
 
 	var topbar = document.getElementById('topbar');
 	//topbar.style.boxShadow = '0px -1px 3px black';
+	topbar.style.borderBottom = topbar.style.borderRight;
 	topbar.style.borderRight = '';
-	topbar.style.borderBottom = '1px solid black';
 	topbar.style.flexDirection = 'column';
 	topbar.style.minWidth = '0';
 
 	var bottombar = document.getElementById('bottombar');
 	//bottombar.style.boxShadow = '0px 1px 3px black';
+	bottombar.style.borderTop = bottombar.style.borderLeft;
 	bottombar.style.borderLeft = '';
-	bottombar.style.borderTop = '1px solid black';
 	bottombar.style.flexDirection = 'column';
 	bottombar.style.minWidth = '0';
-
 }
 
 // dynamically change the chart from one form to another
