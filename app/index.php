@@ -1,5 +1,5 @@
 <?php echo '<?xml version="1.0" encoding="UTF-8" standalone="no"?>' ?>
-<html class="noSelect">
+<html class="noSelect" lang="en">
 
 <head>
 	<meta charset="UTF-8">
@@ -291,7 +291,7 @@
 </div>
 
 <div id="mapmenu" class="popup">
-	<svg id="notificationclose" onclick="closeNotification(this)" width="24" height="24">
+	<svg id="mapmenuclose" onclick="closeNotification(this)" width="24" height="24">
 		<circle cx="12" cy="12" r="10" stroke="black" stroke-width="2"/>
 		<line x1="7" y1="7" x2="17" y2="17" stroke="#dddddd" stroke-width="2"/>
 		<line x1="17" y1="7" x2="7" y2="17" stroke="#dddddd" stroke-width="2"/>
@@ -346,7 +346,7 @@
 </div>
 
 <div id="share" class="popup">
-	<svg id="notificationclose" onclick="closeNotification(this)" width="24" height="24">
+	<svg id="shareclose" onclick="closeNotification(this)" width="24" height="24">
 		<circle cx="12" cy="12" r="10" stroke="black" stroke-width="2"/>
 		<line x1="7" y1="7" x2="17" y2="17" stroke="#dddddd" stroke-width="2"/>
 		<line x1="17" y1="7" x2="7" y2="17" stroke="#dddddd" stroke-width="2"/>
