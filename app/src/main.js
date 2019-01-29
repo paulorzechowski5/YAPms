@@ -80,8 +80,8 @@ function share() {
 	}
 
 	var chartdiv = document.getElementById('chart-div');
-	var oldborder = chartdiv.style.border;
-	chartdiv.style.border = 'none';
+	//var oldborder = chartdiv.style.border;
+	//chartdiv.style.border = 'none';
 
 	var applicationWidth = document.getElementById('application').offsetWidth;
 	var applicationHeight = document.getElementById('application').offsetHeight;
@@ -93,7 +93,7 @@ function share() {
 			svgtext.style.fontFamily = '';
 			svgtext.style.fontSize = oldfontsize;
 		}
-		chartdiv.style.border = '1px solid black';
+	//	chartdiv.style.border = '1px solid black';
 		canvas.style.width = 0;
 		canvas.style.height = 0;	
 		canvas.style.display = 'none';

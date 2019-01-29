@@ -1,5 +1,5 @@
 #mapmenu {
-	display: flex;
+	display: none;
 	flex-direction: column;
 }
 
@@ -18,12 +18,13 @@
 #mapmenu a {
 	border: 2px solid black;
 	border-radius: 8px;
+	background-color: #f2eee6;
 	padding: 3px;
 	margin-left: 5px;
 }
 
 #mapmenu a:hover {
-	background-color: #eeeeee;
+	background-color: #aaaaaa;
 	cursor: pointer;
 }
 

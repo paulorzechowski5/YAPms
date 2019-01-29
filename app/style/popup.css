@@ -2,8 +2,9 @@
 	display: none;
 	background-color: #ffffff;
 	border: 2px solid black;
+	border-radius: 10px;
 
-	padding: 6px;	
+	padding: 8px;	
 	z-index: 10;
 
 	position: absolute;
@@ -16,4 +17,17 @@
 	border: none;
 	color: black;
 	background-color: #cfcfcf;
+}
+
+#notificationclose {
+	position: absolute;
+	left: 10px;
+	top: 10px;
+	fill: red;
+	transition: all 200ms;
+}
+
+#notificationclose:hover {
+	fill: pink;
+	transition: all 200ms;
 }

@@ -37,7 +37,7 @@
 
 
 	<link rel="stylesheet" type="text/css" href="./style/menu.css">
-<!--	<link rel="stylesheet" type="text/css" href="./style/mapmenu.css"> -->
+	<link rel="stylesheet" type="text/css" href="./style/mapmenu.css">
 	<link rel="stylesheet" type="text/css" href="./style/popup.css">
 	<link rel="stylesheet" type="text/css" href="./style/legend.css">
 	<?php 
@@ -91,11 +91,11 @@
 			</div>
 		</div>
 
-		<div class="dropdown">
-			<button class="dropdown-button">
+		<div>
+			<button class="click-button" onclick="displayMapMenu()">
 				Maps
 			</button>
-
+<!--
 			<div class="dropdown-content">
 				<a onclick='loadMap("./res/presidential.svg", 16, 1, "usa_ec", "presidential", "open");'>Presidential 2020</a>
 				<a onclick='loadMap("./res/usa_no_districts.svg", 16, 1, "usa_no_districts_ec", "presidential", "open")'>Presidential Take All</a>
@@ -110,6 +110,7 @@
 				<a onclick='loadMap("./res/lte_senate.svg", 35, 1, "ltesenate", "senatorial", "open")'>LTE Senate</a>
 				<a onclick='loadMap("./res/lte_house.svg", 35, 1, "congressional", "congressional", "open")'>LTE House</a>
 			</div>
+-->
 		</div>
 		
 		<div id="chartbutton" class="dropdown">
@@ -282,8 +283,12 @@
 	<button onclick="setCandidate(this)">set</button>
 </div>
 
-<!--
 <div id="mapmenu" class="popup">
+	<svg id="notificationclose" onclick="closeNotification(this)" width="24" height="24">
+		<circle cx="12" cy="12" r="10" stroke="black" stroke-width="2"/>
+		<line x1="7" y1="7" x2="17" y2="17" stroke="#dddddd" stroke-width="2"/>
+		<line x1="17" y1="7" x2="7" y2="17" stroke="#dddddd" stroke-width="2"/>
+	</svg>
 	<h2>Select Map</h2>
 	<div id="mapmenu-presidential">
 	<h3>Presidential:</h3>
@@ -321,21 +326,28 @@
 	<a onclick='loadMap("./res/lte_house.svg", 35, 1, "congressional", "congressional", "open")'>LTE House</a>
 	</div>
 </div> 
--->
+
 <div id="notification" class="popup">
+	<svg id="notificationclose" onclick="closeNotification(this)" width="24" height="24">
+		<circle cx="12" cy="12" r="10" stroke="black" stroke-width="2"/>
+		<line x1="7" y1="7" x2="17" y2="17" stroke="#dddddd" stroke-width="2"/>
+		<line x1="17" y1="7" x2="7" y2="17" stroke="#dddddd" stroke-width="2"/>
+	</svg>
+
 	<h3 id="notification-title"></h3>
 	<p id="notification-message"></p>
-	<br>
-	<button onclick="closeNotification(this)">Ok</button>
 </div>
 
 <div id="share" class="popup">
-	<h3>Share</h3>
-	Link:
+	<svg id="notificationclose" onclick="closeNotification(this)" width="24" height="24">
+		<circle cx="12" cy="12" r="10" stroke="black" stroke-width="2"/>
+		<line x1="7" y1="7" x2="17" y2="17" stroke="#dddddd" stroke-width="2"/>
+		<line x1="17" y1="7" x2="7" y2="17" stroke="#dddddd" stroke-width="2"/>
+	</svg>
+
+	<h3>Share Link</h3>
 	<div id="shareurl"></div>
 	<img id="screenshotimg"/>
-	<br>
-	<button onclick="closeShare(this)">Ok</button>
 </div>
 
 </body>
