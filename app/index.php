@@ -16,6 +16,8 @@
 	<meta name="twitter:title" content="yapms.com">
 	<meta name="twitter:description" content="Interactive political maps">
 
+	<meta name="theme-color" content="#ffffff"/>
+
 	<link rel="manifest" href="./manifest.json">
 
 	<?php 
