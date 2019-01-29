@@ -1,0 +1,17 @@
+{
+	"short_name": "YAPms",
+	"name": "YAPms - Yet Another Political Map Simulator",
+	
+	"icons": [
+		{
+			"src": "/res/yapms.png",
+			"type": "image/png",
+			"sizes": "192x192"	
+		}
+	],
+	"start_url": "/app/?m=true",
+	"background_color": "#0000ff",
+	"display": "standalone",
+	"scope": "/app/",
+	"theme_color": "#ff0000"
+}

@@ -16,6 +16,8 @@
 	<meta name="twitter:title" content="yapms.com">
 	<meta name="twitter:description" content="Interactive political maps">
 
+	<link rel="manifest" href="./manifest.json">
+
 	<?php 
 		if(isset($_GET["i"]) && !empty($_GET["i"])) {
 			echo '<meta property="og:image" content="http://www.yapms.com/app/uploads/' . $_GET["i"] . '.png">';
@@ -365,7 +367,7 @@
 <script>
 	if('serviceWorker' in navigator) {
 		navigator.serviceWorker
-				.register('/sw.js')
+				.register('./sw.js')
 				.then(function() {
 					console.log("Service Worker Registered");
 				}, function(err) {
