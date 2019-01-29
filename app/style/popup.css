@@ -19,7 +19,7 @@
 	background-color: #cfcfcf;
 }
 
-#notificationclose {
+.closebutton {
 	position: absolute;
 	left: 10px;
 	top: 10px;
@@ -27,7 +27,7 @@
 	transition: all 200ms;
 }
 
-#notificationclose:hover {
+.closebutton:hover {
 	fill: pink;
 	transition: all 200ms;
 }

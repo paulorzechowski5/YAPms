@@ -291,7 +291,7 @@
 </div>
 
 <div id="mapmenu" class="popup">
-	<svg id="mapmenuclose" onclick="closeNotification(this)" width="24" height="24">
+	<svg id="mapmenuclose" class="closebutton" onclick="closeNotification(this)" width="24" height="24">
 		<circle cx="12" cy="12" r="10" stroke="black" stroke-width="2"/>
 		<line x1="7" y1="7" x2="17" y2="17" stroke="#dddddd" stroke-width="2"/>
 		<line x1="17" y1="7" x2="7" y2="17" stroke="#dddddd" stroke-width="2"/>
@@ -335,7 +335,7 @@
 </div> 
 
 <div id="notification" class="popup">
-	<svg id="notificationclose" onclick="closeNotification(this)" width="24" height="24">
+	<svg id="notificationclose" class="closebutton" onclick="closeNotification(this)" width="24" height="24">
 		<circle cx="12" cy="12" r="10" stroke="black" stroke-width="2"/>
 		<line x1="7" y1="7" x2="17" y2="17" stroke="#dddddd" stroke-width="2"/>
 		<line x1="17" y1="7" x2="7" y2="17" stroke="#dddddd" stroke-width="2"/>
@@ -346,7 +346,7 @@
 </div>
 
 <div id="share" class="popup">
-	<svg id="shareclose" onclick="closeNotification(this)" width="24" height="24">
+	<svg id="shareclose" class="closebutton" onclick="closeNotification(this)" width="24" height="24">
 		<circle cx="12" cy="12" r="10" stroke="black" stroke-width="2"/>
 		<line x1="7" y1="7" x2="17" y2="17" stroke="#dddddd" stroke-width="2"/>
 		<line x1="17" y1="7" x2="7" y2="17" stroke="#dddddd" stroke-width="2"/>
@@ -360,6 +360,18 @@
 <script>
 	document.getElementById('logo-div').innerHTML =
 	'<img id="logo" src="./res/lte.jpg">';
+</script>
+
+<script>
+	if('serviceWorker' in navigator) {
+		navigator.serviceWorker
+				.register('/sw.js')
+				.then(function() {
+					console.log("Service Worker Registered");
+				}, function(err) {
+					console.log("Service Worker Registration Error: ", err);
+				});
+	}
 </script>
 
 </body>
