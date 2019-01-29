@@ -111,8 +111,5 @@
 	<div id="bottombar">
 		<a href="https://privacypolicies.com/privacy/view/5e9b5eee7febd2d29c0ec896e1ac90ef">Privacy</a>
 	</div>
-
-	<script type="text/javascript"> var infolinks_pid = 3160874; var infolinks_wsid = 0; </script> <script type="text/javascript" src="//resources.infolinks.com/js/infolinks_main.js"></script>
-
 </body>
 </html>
