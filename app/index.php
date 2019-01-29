@@ -35,23 +35,42 @@
 		gtag('config', 'UA-132710089-1');
 	</script>
 
+<!--
 	<link rel="stylesheet" type="text/css" href="./style/menu.css">
 	<link rel="stylesheet" type="text/css" href="./style/mapmenu.css">
 	<link rel="stylesheet" type="text/css" href="./style/popup.css">
 	<link rel="stylesheet" type="text/css" href="./style/legend.css">
+-->
+	<style>
+	<?php
+		include './style/menu.css';
+		include './style/mapmenu.css';
+		include './style/popup.css';
+		include './style/legend.css';
+		if(isset($_GET["m"]) && $_GET["m"] === 'true') {
+			include './style/mobile.css';
+			include './style/battlechartmobile.css';
+		} else {
+			include './style/style.css';
+			include './style/battlechart.css';
+		}
+	?>
+	</style>
+
 	<?php 
 	if(isset($_GET["m"]) && $_GET["m"] === 'true') {
-		echo '<link id="appstyle" rel="stylesheet" type="text/css" href="./style/mobile.css">';
-		echo '<link rel="stylesheet" type="text/css" href="./style/battlechartmobile.css">';
-		echo '<script async src="./src/mobile.js"></script>';
+		//echo '<link id="appstyle" rel="stylesheet" type="text/css" href="./style/mobile.css">';
+		//echo '<link rel="stylesheet" type="text/css" href="./style/battlechartmobile.css">';
+		echo '<script defer src="./src/mobile.js"></script>';
 		echo '<script>var mobile = true</script>';
 	}
 	else {
-		echo '<link id="appstyle" rel="stylesheet" type="text/css" href="./style/style.css">';
-		echo '<link rel="stylesheet" type="text/css" href="./style/battlechart.css">';
+		//echo '<link id="appstyle" rel="stylesheet" type="text/css" href="./style/style.css">';
+		//echo '<link rel="stylesheet" type="text/css" href="./style/battlechart.css">';
 		echo '<script>var mobile = false</script>';
 	}
 	?>
+
 	<link async rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
 	<script defer src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.min.js"></script>
 	<script defer src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@0.5.0"></script> 
