@@ -1,7 +1,7 @@
 self.addEventListener('install', function(event) {
 	event.waitUntil(
 		caches.open('v1').then(function(cache) {
-			console.log('Opened Cache');
+			console.log('SW: opened cache');
 			return cache.addAll([
 				'/',
 				'/index.php',
@@ -49,19 +49,47 @@ self.addEventListener('install', function(event) {
 				'/src/Candidate.js'
 			]);
 		})
+		.then(function() {
+			console.log('SW: install complete');
+		})
 	);
 });
 
 self.addEventListener('fetch', function(event) {
+	console.log('SW: fetch event');
 	event.respondWith(
 		caches.match(event.request)
-			.then(function(response) {
+			.then(function(cached) {
 				// Cache hit - return response
-				if(response) {
+				var networked = fetch(event.request);
+						.then(fetchedFromNetwork, unableToResolve)
+						.catch(unableToResolve);
+				
+				return cached || networked;
+
+				function fetchedFromNetwork(response) {
+					var cacheCopy = response.clone();
+					caches.open('v1')
+					.then(function add(cache) {
+						cache.put(event.request, cacheCopy);
+					})
+					.then(function() {
+						console.log('SW: fetch response stored in cache ', event.request.url);
+					});
 					return response;
 				}
-				return fetch(event.request);
-			}
-		)
+
+				function unableToResolve() {
+					console.log('SW: fetch request failed in both cache and network');
+			
+					return new Response('<h1>Service Unavailable</h1>', {
+						status: 503,	
+						statusText: 'Service Unavailable',
+						headers: new Headers({
+							'Content-Type': 'text/html'
+						})	
+					});
+				}
+		})
 	);
 });
