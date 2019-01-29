@@ -35,7 +35,6 @@
 		gtag('config', 'UA-132710089-1');
 	</script>
 
-
 	<link rel="stylesheet" type="text/css" href="./style/menu.css">
 	<link rel="stylesheet" type="text/css" href="./style/mapmenu.css">
 	<link rel="stylesheet" type="text/css" href="./style/popup.css">
@@ -44,27 +43,32 @@
 	if(isset($_GET["m"]) && $_GET["m"] === 'true') {
 		echo '<link id="appstyle" rel="stylesheet" type="text/css" href="./style/mobile.css">';
 		echo '<link rel="stylesheet" type="text/css" href="./style/battlechartmobile.css">';
+		echo '<script async src="./src/mobile.js"></script>';
+		echo '<script>var mobile = true</script>';
 	}
 	else {
 		echo '<link id="appstyle" rel="stylesheet" type="text/css" href="./style/style.css">';
 		echo '<link rel="stylesheet" type="text/css" href="./style/battlechart.css">';
+		echo '<script>var mobile = false</script>';
 	}
 	?>
-	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.min.js"></script>
-	<script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@0.5.0"></script> 
-	<script src="https://cdn.jsdelivr.net/npm/svg-pan-zoom@3.5.0/dist/svg-pan-zoom.min.js"></script>
-	<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/hammer.js/2.0.8/hammer.min.js"></script>
-	<script src="./src/loadmap.js"></script>
-	<script src="./src/click.js"></script>
-	<script src="./src/data.js"></script>
-	<script src="./src/State.js"></script>
-	<script src="./src/htmlControl.js"></script>
-	<script src="./src/Candidate.js"></script>
-	<script src="./src/battlechart.js"></script>
-	<script src="./src/presets.js"></script>
-	<script src="./src/html2canvas.min.js"></script>
+	<link async rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
+	<script defer src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.min.js"></script>
+	<script defer src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@0.5.0"></script> 
+	<script defer src="https://cdn.jsdelivr.net/npm/svg-pan-zoom@3.5.0/dist/svg-pan-zoom.min.js"></script>
+	<script defer src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+	<script defer src="https://cdnjs.cloudflare.com/ajax/libs/hammer.js/2.0.8/hammer.min.js"></script>
+	<script defer src="./src/loadmap.js"></script>
+	<script defer src="./src/data.js"></script>
+	<script defer src="./src/State.js"></script>
+	<script defer src="./src/htmlControl.js"></script>
+	<script defer src="./src/Candidate.js"></script>
+	<script defer src="./src/battlechart.js"></script>
+	<script defer src="./src/presets.js"></script>
+	<script defer src="./src/main.js"></script>
+	
+	<script async src="./src/click.js"></script>
+	<script async src="./src/html2canvas.min.js"></script>
 </head>
 
 <body id="body" onresize="onResize()">
@@ -95,22 +99,6 @@
 			<button class="click-button" onclick="displayMapMenu()">
 				Maps
 			</button>
-<!--
-			<div class="dropdown-content">
-				<a onclick='loadMap("./res/presidential.svg", 16, 1, "usa_ec", "presidential", "open");'>Presidential 2020</a>
-				<a onclick='loadMap("./res/usa_no_districts.svg", 16, 1, "usa_no_districts_ec", "presidential", "open")'>Presidential Take All</a>
-				<a onclick='loadMap("./res/usa_dem_primary.svg", 16, 1, "dem_primary", "demprimary", "2020");'>Democratic Primary</a>
-				<a onclick='loadMap("./res/usa_senate.svg", 16, 1, "usa_senate", "senatorial", "2020")'>Senatorial 2020</a>
-				<a onclick='loadMap("./res/usa_senate.svg", 16, 1.5, "usa_senate", "senatorial", "open")'>Senatorial Open</a>
-				<a onclick='loadMap("./res/usa_congressional_2018.svg", 16, 0.075, "congressional", "congressional", "open")'>Congressional Open</a> 
-				<a onclick='loadMap("./res/usa_gubernatorial.svg", 16, 1, "usa_gubernatorial", "gubernatorial", "2020")'>Gubernatorial 2020</a>
-				<a onclick='loadMap("./res/usa_gubernatorial.svg", 16, 1, "usa_gubernatorial", "gubernatorial", "open")'>Gubernatorial Open</a>
-				<a onclick='loadMap("./res/canada_states.svg", 38, 3, "canada_ec", "presidential", "open");'>Canada</a>
-				<a onclick='loadMap("./res/lte.svg", 35, 1, "lte_ec", "presidential", "open");'>LTE Discord</a>
-				<a onclick='loadMap("./res/lte_senate.svg", 35, 1, "ltesenate", "senatorial", "open")'>LTE Senate</a>
-				<a onclick='loadMap("./res/lte_house.svg", 35, 1, "congressional", "congressional", "open")'>LTE House</a>
-			</div>
--->
 		</div>
 		
 		<div id="chartbutton" class="dropdown">
@@ -350,28 +338,12 @@
 	<img id="screenshotimg"/>
 </div>
 
-</body>
-
-<?php
-	if(isset($_GET["m"]) && $_GET["m"] === 'true') {
-		echo '<script>var mobile = true</script>';
-	}
-	else {
-		echo '<script>var mobile = false</script>';
-	}
-?>
-
-<script src="./src/main.js"></script>
-
 <script>
 	document.getElementById('logo-div').innerHTML =
 	'<img id="logo" src="./res/lte.jpg">';
 </script>
 
-<?php
-	if(isset($_GET["m"]) && $_GET["m"] === 'true') {
-		echo '<script src="./src/mobile.js"></script>';
-	}
-?>
+</body>
+
 
 </html>
