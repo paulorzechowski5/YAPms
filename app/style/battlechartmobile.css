@@ -40,8 +40,8 @@
 	background: #bf1d29;
 	transition: flex-basis 1s;
 	z-index: 1;
-	min-height: 0;
-	min-width: 0;
+	min-height: 0px;
+	min-width: 0px;
 }
 
 #topbar-solid {
@@ -50,7 +50,7 @@
 	flex: 1 1 auto;
 	flex-basis: 0%;
 	transition: flex-basis 1s;
-	min-height: 0;
+	min-height: 0px;
 }
 
 #topbar-likely {
@@ -59,7 +59,7 @@
 	flex: 1 1 auto;
 	flex-basis: 0%;
 	transition: flex-basis 1s;
-	min-height: 0;
+	min-height: 0px;
 }
 
 #topbar-lean {
@@ -68,7 +68,7 @@
 	flex: 1 1 auto;
 	flex-basis: 0%;
 	transition: flex-basis 1s;
-	min-height: 0;
+	min-height: 0px;
 }
 
 #tossupbar {
@@ -87,8 +87,8 @@
 	background: #1c408c;
 	transition: flex-basis 1s;
 	z-index: 1;
-	min-height: 0;
-	min-width: 0;
+	min-height: 0px;
+	min-width: 0px;
 	overflow: visible;
 }
 
@@ -99,7 +99,7 @@
 	flex: 1 1;
 	flex-basis: 0%;
 	transition: flex-basis 1s;
-	min-height: 0;
+	min-height: 0px;
 	vertical-align: bottom;
 }
 
@@ -109,7 +109,7 @@
 	flex: 1 1;
 	flex-basis: 0%;
 	transition: flex-basis 1s;
-	min-height: 0;
+	min-height: 0px;
 }
 
 #bottombar-lean {
@@ -118,5 +118,5 @@
 	flex: 1 1;
 	flex-basis: 0%;
 	transition: flex-basis 1s;
-	min-height: 0;
+	min-height: 0px;
 }

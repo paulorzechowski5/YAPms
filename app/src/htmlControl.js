@@ -243,7 +243,7 @@ function toWinPalette() {
 	setTossupColor('#bbaa90');
 	setMapStyle('#fffbf2', 1);
 	setTextStyle('white', 'bold');
-	setChartBorderStyle(2, 'white');
+	setChartBorderStyle(2, '#f2eee6');
 	setSideBarColor('#f2eee6');
 
 	chartOptions.plugins.datalabels.borderWidth = 0;
@@ -421,7 +421,7 @@ function setChart(type) {
 	battlechart.style.display = 'none';
 	sidebar.style.display = 'flex';
 	
-	if(mobile) {
+	if(mobile) {	
 		sidebar.style.height = '20%';
 	} else {
 		sidebar.style.width = '28vw';

@@ -4,19 +4,19 @@
 	
 	"icons": [
 		{
-			"src": "/yapms-192.png",
+			"src": "/app/yapms-192.png",
 			"type": "image/png",
 			"sizes": "192x192"	
 		},
 		{
-			"src": "/yapms-512.png",
+			"src": "/app/yapms-512.png",
 			"type": "image/png",
 			"sizes": "512x512"	
 		}
 	],
-	"start_url": "/app/",
-	"background_color": "#0000ff",
-	"display": "standalone",
-	"scope": "/app/",
-	"theme_color": "#ff0000"
+	"start_url": "./?m=true",
+	"background_color": "#f9eacb",
+	"display": "fullscreen",
+	"scope": ".",
+	"theme_color": "#baac8f"
 }

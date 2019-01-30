@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <?php echo '<?xml version="1.0" encoding="UTF-8" standalone="no"?>' ?>
 <html class="noSelect" lang="en">
 
@@ -18,6 +19,8 @@
 
 	<meta name="theme-color" content="#ffffff"/>
 
+	<link rel="icon" href="../favicon.ico" type="image/x-icon"/>
+	<link rel="shortcut icon" href="../favicon.ico" type="image/x-icon"/>
 	<link rel="manifest" href="./manifest.json">
 
 	<?php 
@@ -214,7 +217,7 @@
 			<div class="dropdown-content">
 				<a onclick="centerMap()">Center Map</a>
 				<a onclick="toggleLTELogo()">LTE Logo</a>
-				<a href="https://commons.wikimedia.org/wiki/File:Blank_US_Map_(states_only).svg" target="_blank">Map Src</a>
+				<a href="https://commons.wikimedia.org/wiki/File:Blank_US_Map_(states_only).svg" target="_blank" rel="noreferrer">Map Src</a>
 			</div>
 		</div>
 	</div>
