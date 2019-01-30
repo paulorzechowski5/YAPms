@@ -1019,6 +1019,10 @@ function start() {
 	}
 	
 	loadMap('./res/presidential.svg', 16, 1, 'usa_ec',"presidential", "open");
+
+	if(navigator.userAgent.indexOf("Chrome") != -1) {
+		displayNotification('Test', 'Chrome');	
+	}
 }
 
 start();
