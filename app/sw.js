@@ -5,7 +5,6 @@ self.addEventListener('install', function(event) {
 			return cache.addAll([
 				'./?m=true',
 				'./index.php',
-				'./upload.php',
 				'./data/gubernatorial_2018',
 				'./data/gubernatorial_2020',
 				'./data/gubernatorial_current',

@@ -42,12 +42,6 @@
 		gtag('config', 'UA-132710089-1');
 	</script>
 
-<!--
-	<link rel="stylesheet" type="text/css" href="./style/menu.css">
-	<link rel="stylesheet" type="text/css" href="./style/mapmenu.css">
-	<link rel="stylesheet" type="text/css" href="./style/popup.css">
-	<link rel="stylesheet" type="text/css" href="./style/legend.css">
--->
 	<style>
 	<?php
 		include './style/menu.css';

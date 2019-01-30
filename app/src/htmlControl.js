@@ -15,11 +15,9 @@ function selectCandidateDisplay(html) {
 	for(var index = 0; index < legendButtons.length; ++index) {
 		var button = legendButtons[index];
 		var text = button.childNodes[0];
-		//button.style.borderStyle = 'none';
 		text.style.padding = '5px';
 	}
 	
-	//html.style.borderStyle = 'solid';
 	html.childNodes[0].style.padding = '8px';
 }
 
@@ -261,10 +259,11 @@ function setChartBorderStyle(width, color) {
 	chartBorderColor = color;
 
 	var battlechart = document.getElementById('battlechartright');
-	
 	battlechart.style.border = '1px solid ' + color;	
-
 	updateChart();
+
+	var legenddiv = document.getElementById('legend-div');
+	legenddiv.style.borderColor = color;
 }
 
 function setDisableColor(color) {
@@ -276,13 +275,6 @@ function setTossupColor(color) {
 	TOSSUP.colors[2] = color;
 	var tossupText = document.getElementById('Tossup-text');
 	tossupText.style.backgroundColor = color;
-	//verifyMap();
-
-	if(color === 'black') {
-		tossupText.style.color = 'white';
-	} else {
-		tossupText.style.color = 'black';
-	}
 }
 
 function setMapStyle(color, strokeWidth) {
@@ -328,6 +320,10 @@ function setTextStyle(color, weight) {
 	var battlechart = document.getElementById('battlechart');
 	battlechart.style.color = color;
 	battlechart.style.fontWeight = weight;
+
+	var legenddiv = document.getElementById('legend-div');
+	legenddiv.style.color = color;
+	legenddiv.style.weight = weight;
 }
 
 function setBattleHorizontal() {

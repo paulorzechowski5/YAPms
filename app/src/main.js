@@ -64,9 +64,10 @@ var panObject = null;
 
 function share() {
 	var svg = document.getElementById('svgdata');
-	var mapwidth = document.getElementById('map-div').offsetWidth;
-	var mapheight = document.getElementById('map-div').offsetHeight;
-	
+	var mapdiv = document.getElementById('map-div');
+	var mapwidth = mapdiv.offsetWidth;
+	var mapheight = mapdiv.offsetHeight;
+		
 	svg.setAttribute('width', mapwidth);
 	svg.setAttribute('height', mapheight);
 
@@ -92,6 +93,8 @@ function share() {
 		if(svgtext !== null) {
 			svgtext.style.fontFamily = '';
 			svgtext.style.fontSize = oldfontsize;
+			svg.removeAttribute('width');
+			svg.removeAttribute('height');
 		}
 	//	chartdiv.style.border = '1px solid black';
 		canvas.style.width = 0;
@@ -247,13 +250,6 @@ function initChart() {
 				if(index == 0) {
 					var color = candidate.colors[tossupColor];
 					legendText.style.backgroundColor = color;
-					if(color === '#000000' ||
-						color === 'black') {
-						legendText.style.color = 'white';
-					} else {
-						legendText.style.color = 'black';
-
-					}
 				}
 				legendText.style.padding = '5px';
 				legendText.innerHTLM = candidate.name;
