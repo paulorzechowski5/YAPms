@@ -1016,6 +1016,18 @@ function start() {
 	if(mobile) {
 		toggleChartLeans();
 		toggleChartLabels();
+
+		document.addEventListener('click', function() {
+			var el = document.documentElement;
+			rfs = el.requestFullScreen ||
+				el.webkitRequestFullScreen ||
+				el.mozRequestFullScreen ||
+				el.msRequestFullScreen;
+			
+			if(typeof rfs !== 'undefined') {
+				rfs.call(el);
+			}
+		});
 	}
 	
 	loadMap('./res/presidential.svg', 16, 1, 'usa_ec',"presidential", "open");
