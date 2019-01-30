@@ -43,7 +43,7 @@ button {
 }
 
 #outlines {
-	stroke-width: 1.5px;
+	stroke-width: 1.5;
 }
 
 #outlines path {
@@ -59,6 +59,7 @@ button {
 #application {
 	position: relative;
 	flex: 1 1 auto;
+	height: 100%;
 	display: flex;
 	justify-content: center;
 	align-items: center;

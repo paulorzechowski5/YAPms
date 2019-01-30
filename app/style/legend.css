@@ -3,11 +3,10 @@
 	border-color: #2f3136;
 	z-index: 2;
 	pointer-events: none;
-	top: 0;
+	top: 0px;
 }
 
 .legend-button {
-	font-weight: '1000';
 	display: inline-block;
 	cursor: pointer;
 	margin-top: 4px;
