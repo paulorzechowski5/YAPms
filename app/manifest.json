@@ -34,7 +34,7 @@
 			"sizes": "512x512"	
 		}
 	],
-	"start_url": "./?m=true",
+	"start_url": ".",
 	"background_color": "#f9eacb",
 	"display": "fullscreen",
 	"scope": ".",

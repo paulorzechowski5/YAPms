@@ -22,8 +22,18 @@
 	<link rel="icon" href="../favicon.ico" type="image/x-icon"/>
 	<link rel="shortcut icon" href="../favicon.ico" type="image/x-icon"/>
 	<link rel="manifest" href="./manifest.json">
+	
+	<?php
+		$m = false;
 
-	<?php 
+		if(strpos($_SERVER['HTTP_USER_AGENT'], 'Mobi')) {
+			$m = true;	
+			echo '<script>var mobile = true</script>';
+		} else {
+			$m = false;	
+			echo '<script>var mobile = false</script>';
+		};
+		
 		if(isset($_GET["i"]) && !empty($_GET["i"])) {
 			echo '<meta property="og:image" content="http://www.yapms.com/app/uploads/' . $_GET["i"] . '.png">';
 			echo '<meta property="og:image:secure_url" content="https://www.yapms.com/app/uploads/' . $_GET["i"] . '.png">';
@@ -43,33 +53,26 @@
 	</script>
 
 	<style>
-	<?php
-		include './style/menu.css';
-		include './style/mapmenu.css';
-		include './style/popup.css';
-		include './style/legend.css';
-		if(isset($_GET["m"]) && $_GET["m"] === 'true') {
-			include './style/mobile.css';
-			include './style/battlechartmobile.css';
-		} else {
-			include './style/style.css';
-			include './style/battlechart.css';
-		}
-	?>
+		<?php
+			include './style/menu.css';
+			include './style/mapmenu.css';
+			include './style/popup.css';
+			include './style/legend.css';
+
+			if($m === true) {
+				include './style/mobile.css';
+				include './style/battlechartmobile.css';
+			} else {
+				include './style/style.css';
+				include './style/battlechart.css';
+			}
+		?>
 	</style>
 
 	<?php 
-	if(isset($_GET["m"]) && $_GET["m"] === 'true') {
-		//echo '<link id="appstyle" rel="stylesheet" type="text/css" href="./style/mobile.css">';
-		//echo '<link rel="stylesheet" type="text/css" href="./style/battlechartmobile.css">';
-		echo '<script defer src="./src/mobile.js"></script>';
-		echo '<script>var mobile = true</script>';
-	}
-	else {
-		//echo '<link id="appstyle" rel="stylesheet" type="text/css" href="./style/style.css">';
-		//echo '<link rel="stylesheet" type="text/css" href="./style/battlechart.css">';
-		echo '<script>var mobile = false</script>';
-	}
+		if($m === true) {
+			echo '<script defer src="./src/mobile.js"></script>';
+		}
 	?>
 
 	<link async rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
@@ -344,6 +347,7 @@
 
 	<h3 id="notification-title"></h3>
 	<p id="notification-message"></p>
+
 </div>
 
 <div id="share" class="popup">

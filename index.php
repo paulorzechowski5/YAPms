@@ -94,17 +94,9 @@
 		<script src="//z-na.amazon-adsystem.com/widgets/onejs?MarketPlace=US"></script>
 	</div>
 	
-	<a href="./app?m=true">
-		<div id="mobile" class="start">
-			Mobile
-		</div>
-	</a>
-	
-	<br>
-	
 	<a href="./app">
-		<div id="desktop" class="start">
-			Desktop
+		<div id="start" class="start">
+			Start	
 		</div>
 	</a>
 

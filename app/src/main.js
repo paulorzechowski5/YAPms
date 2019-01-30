@@ -1031,10 +1031,6 @@ function start() {
 	}
 	
 	loadMap('./res/presidential.svg', 16, 1, 'usa_ec',"presidential", "open");
-
-	if(navigator.userAgent.indexOf("Safari") != -1) {
-		displayNotification('Safari Unsupported', 'Safari is unsupported. Consider using Chrome or Firefox before reporting bugs.');	
-	}
 }
 
 start();

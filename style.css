@@ -71,17 +71,13 @@ a {
 	transition: all 125ms;
 }
 
+.start {
+	margin-bottom: 200px;
+}
+
 #amazon {
 	margin: auto;
 	width: 95%;
-}
-
-#mobile { 
-
-}
-
-#desktop {
-	margin-bottom: 200px;
 }
 
 #bottombar {
