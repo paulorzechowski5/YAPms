@@ -1,9 +1,15 @@
+var currentCache = 'v0.1';
+
+function swLog(message) {
+	console.log('SW' + currentCache + ': ' + message);
+}
+
 self.addEventListener('install', function(event) {
 	event.waitUntil(
-		caches.open('v1').then(function(cache) {
-			console.log('SW: installing');
+		caches.open(currentCache).then(function(cache) {
+			swLog('installing');
 			return cache.addAll([
-				'./?m=true',
+				'./',
 				'./index.php',
 				'./data/gubernatorial_2018',
 				'./data/gubernatorial_2020',
@@ -45,47 +51,51 @@ self.addEventListener('install', function(event) {
 				'./src/click.js',
 				'./src/battlechart.js',
 				'./src/State.js',
-				'./src/Candidate.js'
+				'./src/Candidate.js',
+
+				'https://fonts.googleapis.com/css?family=Roboto',
+				'https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.min.js',
+				'https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@0.5.0',
+				'https://cdn.jsdelivr.net/npm/svg-pan-zoom@3.5.0/dist/svg-pan-zoom.min.js',
+				'https://code.jquery.com/jquery-3.3.1.min.js',
+				'https://cdnjs.cloudflare.com/ajax/libs/hammer.js/2.0.8/hammer.min.js'
 			]);
 		})
 	);
 });
 
+// first see if request is in cache, then check web
 self.addEventListener('fetch', function(event) {
-	console.log('SW: fetching ' + event.request.url);
 	event.respondWith(
 		caches.match(event.request)
 			.then(function(response) {
 
-				fetch(event.request).then(
-					function(response) {
-						if(!response || response.status !== 200 || response.type !== 'basic') {
-							return;	
-						}
-						
-						caches.open('v1')
-						.then(function(cache) {
-							console.log('SW: updated cache ' + event.request.url);
-							cache.put(event.request, response.clone());
-						});
-					}
-				);
-				
 				if(response) {
-					console.log('SW: fetch return cache ' + event.request.url);
+					swLog('fetch cache ' + event.request.url);
 					return response;
 				} else {
-					console.log('SW: fetch return web ' + event.request.url);
+					swLog('fetch web ' + event.request.url);
 					return fetch(event.request);
 				}
 			})
 			.catch(function(err) {
-				console.log('SW: error ' + err + ' ' + event.request.url);
+				swLog('error ' + err + ' ' + event.request.url);
 			})
 		);
 	}
 );
 
+// clear old versions of the cache
 self.addEventListener('activate', function(event) {
-	console.log('SW: activate');
+	swLog('activate cache ' + currentCache);
+	event.waitUntil(
+		caches.keys().then(function(cacheNames) {
+			cacheNames.forEach(function(cacheName) {
+				if(cacheName !== currentCache) {
+					swLog('clear cache ' + cacheName);
+					return caches.delete(cacheName);
+				}
+			});
+		})
+	);
 });

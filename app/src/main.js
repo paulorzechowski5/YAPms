@@ -1032,7 +1032,7 @@ function start() {
 			if(typeof rfs !== 'undefined') {
 				rfs.call(el);
 			}
-		});
+		}, {passive: true});
 	}
 	
 	loadMap('./res/presidential.svg', 16, 1, 'usa_ec',"presidential", "open");

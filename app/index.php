@@ -361,8 +361,6 @@
 	<h3>Share Link</h3>
 	<div id="shareurl"></div>
 	<img id="screenshotimg"/>
-	<br>	
-	<a href="https://www.amazon.com/gp/product/B07B3JQZCL/ref=as_li_ss_il?ie=UTF8&linkCode=li2&tag=yapms-20&linkId=d92364958bfd22437097c73f32deda40" target="_blank"><img border="0" src="//ws-na.amazon-adsystem.com/widgets/q?_encoding=UTF8&ASIN=B07B3JQZCL&Format=_SL160_&ID=AsinImage&MarketPlace=US&ServiceVersion=20070822&WS=1&tag=yapms-20" ></a><img src="https://ir-na.amazon-adsystem.com/e/ir?t=yapms-20&l=li2&o=1&a=B07B3JQZCL" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" />
 </div>
 
 <script>
@@ -373,12 +371,12 @@
 <script>
 	if('serviceWorker' in navigator) {
 		navigator.serviceWorker
-				.register('./sw.js')
-				.then(function(a) {
-					console.log("Service Worker Registered: ", a);
-				}, function(err) {
-					console.log("Service Worker Registration Error: ", err);
-				});
+		.register('./sw.js')
+		.then(function(a) {
+			console.log('SW: registered');
+		}, function(err) {
+			console.log('SW: register error... ', err);
+		});
 	}
 </script>
 
