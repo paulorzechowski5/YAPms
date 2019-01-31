@@ -742,7 +742,7 @@ function clearMap() {
 
 // iterate over each state and delegate votes to the candidate
 function countVotes() {
-	if(mapType === 'demprimary') {
+	if(mapType === 'demprimary' || mapType === 'repprimary') {
 		for(var key in candidates) {
 			var candidate = candidates[key];
 			candidate.voteCount = 0;

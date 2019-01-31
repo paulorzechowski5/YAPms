@@ -41,7 +41,8 @@ function loadMap(filename, fontsize, strokewidth, dataid, type, year) {
 
 		var textHTML = document.getElementById('text');
 		if(textHTML !== null) {
-			textHTML.style.fontSize = fontsize;
+			// convert font size to string with px
+			textHTML.style.fontSize = '' + fontsize + 'px';
 		}
 
 		initData(dataid);
@@ -59,6 +60,11 @@ function loadMap(filename, fontsize, strokewidth, dataid, type, year) {
 		}
 		
 		blockPresets = false;
+
+
+		if(type === 'demprimary' || type === 'repprimary' || type === 'congressional') {
+			setMode('paint');
+		}
 
 		if(type === 'senatorial' && year !== 'open') {
 			setMode('paint');

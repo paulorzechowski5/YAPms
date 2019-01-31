@@ -310,6 +310,7 @@
 	<div id="mapmenu-primary">
 	<h3>Primary:</h3>	
 	<a onclick='loadMap("./res/usa_dem_primary.svg", 16, 1, "dem_primary", "demprimary", "2020");'>Democratic</a>
+	<a onclick='loadMap("./res/usa_rep_primary.svg", 16, 1, "rep_primary", "repprimary", "2020");'>Republican</a>
 	</div>
 
 	<div id="mapmenu-senatorial">

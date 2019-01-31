@@ -2,8 +2,9 @@ function buttonClick(clickElement) {
 	if(mode === 'move') {
 		return;
 	} else if(mode === 'paint') {
-		if(mapType === 'demprimary') {
-			buttonClickPaintDemPrimary(clickElement);
+		if(mapType === 'demprimary' ||
+			mapType === 'repprimary') {
+			buttonClickPaintPrimary(clickElement);
 		} else {
 			buttonClickPaint(clickElement);
 		}
@@ -23,7 +24,7 @@ function buttonClickPaint(clickElement) {
 	updateLegend();
 }
 
-function buttonClickPaintDemPrimary(clickElement) {
+function buttonClickPaintPrimary(clickElement) {
 	stateClick(clickElement);
 }
 
@@ -160,8 +161,9 @@ function stateClick(clickElement, e) {
 
 	switch(mode) {
 		case 'paint':
-			if(mapType === 'demprimary') {
-				stateClickPaintDemPrimary(state, id);
+			if(mapType === 'demprimary' ||
+				mapType === 'repprimary') {
+				stateClickPaintPrimary(state, id);
 			} else {
 				stateClickPaint(state, id);
 			}
@@ -183,7 +185,7 @@ function stateClickPaint(state, id) {
 	updateLTEHouse();
 }
 
-function stateClickPaintDemPrimary(state, id) {
+function stateClickPaintPrimary(state, id) {
 	var demdel = document.getElementById('demdel');
 	demdel.style.display = 'inline';
 	var message = document.getElementById('demdel-message');
