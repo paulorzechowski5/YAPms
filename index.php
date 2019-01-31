@@ -70,7 +70,7 @@
 
 		<div id="whatsnew" class="infobox">
 			<b>New Stuff:</b>
-			Share your maps with friends! Click share and copy the image or link!<br>
+			Republican primary map! Share your Republican primary prediction with friends<br>
 		</div>
 
 		<div class="infobox">

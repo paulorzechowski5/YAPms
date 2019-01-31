@@ -45,6 +45,10 @@
 	display: block;
 }
 
+#addcandidatebutton {
+	white-space: nowrap;
+}
+
 #addCandidateDropDown {
 	min-width: 10px;
 }

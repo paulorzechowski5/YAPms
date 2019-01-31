@@ -491,7 +491,12 @@ function setEC(e) {
 		stateId = split[0] + split[1];
 	}
 	var text = stateId + ' ' + input;
-	stateText.innerHTML = text;
+	// the text elements in an svg are inside spans
+	if(typeof stateText.childNodes[1] !== 'undefined') {
+		stateText.childNodes[1].innerHTML = ' ' + input;
+	} else {
+		stateText.childNodes[0].innerHTML = stateId + ' ' + input;
+	}
 
 	// recount the votes
 	countVotes();

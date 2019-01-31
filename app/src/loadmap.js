@@ -61,16 +61,15 @@ function loadMap(filename, fontsize, strokewidth, dataid, type, year) {
 		
 		blockPresets = false;
 
-
-		if(type === 'demprimary' || type === 'repprimary' || type === 'congressional') {
+		if(mode !== 'paint' && mode !== 'move') {
 			setMode('paint');
 		}
 
 		if(type === 'senatorial' && year !== 'open') {
-			setMode('paint');
+			blockPresets = true;
 			loadSenateFile(dataname);
 		} else if(type === 'gubernatorial' && year !== 'open') {
-			setMode('paint');
+			blockPresets = true;
 			loadGubernatorialFile(dataname);
 		} else {
 			mapHTML.style.visibility = 'visible';
@@ -81,7 +80,6 @@ function loadMap(filename, fontsize, strokewidth, dataid, type, year) {
 function loadGubernatorialFile(gubernatorialfile) {
 
 	if(gubernatorialfile.includes('open') == false) {
-		blockPresets = true;
 	}
 
 	initCandidates();
@@ -130,7 +128,7 @@ function loadGubernatorialFile(gubernatorialfile) {
 function loadSenateFile(senatefile) {
 
 	if(senatefile.includes('open') == false) {
-		blockPresets = true;
+		//blockPresets = true;
 	}
 
 	initCandidates();
