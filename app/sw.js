@@ -11,6 +11,9 @@ self.addEventListener('install', function(event) {
 			return cache.addAll([
 				'./',
 				'./index.php',
+
+				'./manifest.json',
+
 				'./data/gubernatorial_2018',
 				'./data/gubernatorial_2020',
 				'./data/gubernatorial_current',
