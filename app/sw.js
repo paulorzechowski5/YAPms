@@ -24,6 +24,7 @@ self.addEventListener('install', function(event) {
 				'./res/presidential.svg',
 				'./res/usa_congressional_2018.svg',
 				'./res/usa_dem_primary.svg',
+				'./res/usa_rep_primary.svg',
 				'./res/usa_gubernatorial.svg',
 				'./res/usa_no_districts.svg',
 				'./res/usa_senate.svg',
