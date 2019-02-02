@@ -10,7 +10,10 @@
 	position: absolute;
 	left: 50%;
 	top: 50%;
+	max-height: 80%;
 	transform: translate(-50%, -50%);
+
+	overflow-y: auto;
 }
 
 .popup button {
