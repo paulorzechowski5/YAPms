@@ -25,7 +25,7 @@
 	
 	<?php
 		$m = false;
-
+		
 		if(strpos($_SERVER['HTTP_USER_AGENT'], 'Mobi')) {
 			$m = true;	
 			echo '<script>var mobile = true</script>';
@@ -33,7 +33,7 @@
 			$m = false;	
 			echo '<script>var mobile = false</script>';
 		};
-		
+	
 		if(isset($_GET["i"]) && !empty($_GET["i"])) {
 			echo '<meta property="og:image" content="http://www.yapms.com/app/uploads/' . $_GET["i"] . '.png">';
 			echo '<meta property="og:image:secure_url" content="https://www.yapms.com/app/uploads/' . $_GET["i"] . '.png">';
@@ -59,6 +59,7 @@
 			include './style/popup.css';
 			include './style/legend.css';
 
+		/*
 			if($m === true) {
 				include './style/mobile.css';
 				include './style/battlechartmobile.css';
@@ -66,6 +67,9 @@
 				include './style/style.css';
 				include './style/battlechart.css';
 			}
+		*/			
+			include './style/style.css';
+			include './style/battlechart.css';
 		?>
 	</style>
 
@@ -83,6 +87,12 @@
 	<script defer src="./src/battlechart.js"></script>
 	<script defer src="./src/presets.js"></script>
 	<script defer src="./src/main.js"></script>
+
+	<?php 
+		if($m === true) {
+			echo '<script defer src="./src/mobile.js"></script>';
+		}
+	?>
 	
 	<script async src="./src/click.js"></script>
 	<script async src="./src/html2canvas.min.js"></script>

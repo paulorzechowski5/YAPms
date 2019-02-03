@@ -1,5 +1,8 @@
 // keep data in function scope
 (function() {
+	var moveButton = document.getElementById('movebutton');
+	moveButton.style.display = 'none';
+
 /*
 	var themeButton = document.getElementById('themebutton');
 	themeButton.style.display = 'none';
@@ -15,8 +18,5 @@
 
 	var addCandidateButton = document.getElementById('addcandidatebutton');
 	addCandidateButton.innerHTML = 'Add';
-
-	var moveButton = document.getElementById('movebutton');
-	moveButton.style.display = 'none';
 */
 })();

@@ -1,4 +1,4 @@
-var currentCache = 'v0.2';
+var currentCache = 'v0.5';
 
 function swLog(message) {
 	console.log('SW' + currentCache + ': ' + message);
@@ -25,7 +25,7 @@ self.addEventListener('install', function(event) {
 				'./style/battlechart.css',
 				'./style/battlechartmobile.css',
 				'./style/legend.css',
-				'./style/mapmenu.css',
+				'./style/selectmenu.css',
 				'./style/mobile.css',
 				'./style/popup.css',
 				'./style/style.css',

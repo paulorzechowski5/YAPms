@@ -1004,24 +1004,12 @@ function setColors(palette) {
 
 function onResize() {
 	centerMap();
-	if(mobile === true) {
-		var chart = document.getElementById('chart');
-		chart.style.width = '' + chart.offsetHeight + 'px';
-		console.log(chart.offsetHeight);
-		console.log(chart.style.width);
-	}
 }
 
 function start() {
 	initCandidates();
 	initChart();
 	setChart('horizontalbattle');
-
-	if(mobile) {
-		toggleChartLeans();
-		toggleChartLabels();
-
-	}
 	
 	loadMap('./res/presidential.svg', 16, 1, 'usa_ec',"presidential", "open");
 }
