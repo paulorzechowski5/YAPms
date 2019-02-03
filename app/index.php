@@ -91,72 +91,45 @@
 <body id="body" onresize="onResize()">
 
 <div id="menu-div">
+	<button class="click-button" onclick="clearMap()">
+		Clear
+	</button>
 
-	<div>
-		<button class="click-button" onclick="clearMap()">
-			Clear
-		</button>
-	</div>
+	<button class="click-button" onclick="displayMapMenu()">
+		Maps
+	</button>
 
-	<div>
-		<button class="click-button" onclick="displayPresetMenu()">
-			Presets
-		</button>
-	</div>
-
-	<div>
-		<button class="click-button" onclick="displayMapMenu()">
-			Maps
-		</button>
-	</div>
+	<button class="click-button" onclick="displayPresetMenu()">
+		Presets
+	</button>
 	
-	<div>
-		<button class="click-button" onclick="displayChartMenu()">
-			Charts
-		</button>
-	</div>
+	<button id="addcandidatebutton" class="click-button" onclick="displayAddCandidateMenu()">
+		Add Candidate
+	</button>
 
-	<div>
-		<button class="click-button" onclick="displayCountersMenu()">
-			Counters
-		</button>
-	</div>
+	<button id="modesbutton" class="click-button" onclick="displayModeMenu()" style="white-space: nowrap;">
+		Modes (Paint)
+	</button>
 
-	<div>
-		<button class="click-button" onclick="displayThemeMenu()">
-			Themes
-		</button>
-	</div>
+	<button class="click-button" onclick="displayChartMenu()">
+		Charts
+	</button>
 
-	<div>
-		<button class="click-button" onclick="displayModeMenu()">
-			Modes
-		</button>
-	</div>
+	<button class="click-button" onclick="displayCountersMenu()">
+		Counters
+	</button>
 
-	<div>
-		<button id="addcandidatebutton" class="click-button" onclick="displayAddCandidateMenu()">
-			Add Candidate
-		</button>
-	</div>
-	
-	<div>
-		<button class="click-button" onclick="share()">
-			Share
-		</button>
-	</div>
+	<button class="click-button" onclick="displayThemeMenu()">
+		Themes
+	</button>
 
-	<div>	
-		<button class="click-button" onclick="displayMiscMenu()">
-			Misc
-		</button>
-	</div>
+	<button class="click-button" onclick="share()">
+		Share
+	</button>
 
-<!--
-	<span id="menu-middle">
-		Paint
-	</span>
--->
+	<button class="click-button" onclick="displayMiscMenu()">
+		Misc
+	</button>
 </div>
 
 <div id="application">
@@ -234,7 +207,7 @@
 </div>
 
 <div id="miscmenu" class="popup selectmenu">
-	<svg id="mapmenuclose" class="closebutton" onclick="closeNotification(this)" width="24" height="24">
+	<svg class="closebutton" onclick="closeNotification(this)" width="24" height="24">
 		<circle cx="12" cy="12" r="10" stroke="black" stroke-width="2"/>
 		<line x1="7" y1="7" x2="17" y2="17" stroke="#dddddd" stroke-width="2"/>
 		<line x1="17" y1="7" x2="7" y2="17" stroke="#dddddd" stroke-width="2"/>
@@ -247,7 +220,7 @@
 </div>
 
 <div id="addcandidatemenu" class="popup selectmenu">
-	<svg id="mapmenuclose" class="closebutton" onclick="closeNotification(this)" width="24" height="24">
+	<svg class="closebutton" onclick="closeNotification(this)" width="24" height="24">
 		<circle cx="12" cy="12" r="10" stroke="black" stroke-width="2"/>
 		<line x1="7" y1="7" x2="17" y2="17" stroke="#dddddd" stroke-width="2"/>
 		<line x1="17" y1="7" x2="7" y2="17" stroke="#dddddd" stroke-width="2"/>
@@ -267,7 +240,7 @@
 </div>
 
 <div id="modemenu" class="popup selectmenu">
-	<svg id="mapmenuclose" class="closebutton" onclick="closeNotification(this)" width="24" height="24">
+	<svg class="closebutton" onclick="closeNotification(this)" width="24" height="24">
 		<circle cx="12" cy="12" r="10" stroke="black" stroke-width="2"/>
 		<line x1="7" y1="7" x2="17" y2="17" stroke="#dddddd" stroke-width="2"/>
 		<line x1="17" y1="7" x2="7" y2="17" stroke="#dddddd" stroke-width="2"/>
@@ -283,7 +256,7 @@
 
 
 <div id="thememenu" class="popup selectmenu">
-	<svg id="mapmenuclose" class="closebutton" onclick="closeNotification(this)" width="24" height="24">
+	<svg class="closebutton" onclick="closeNotification(this)" width="24" height="24">
 		<circle cx="12" cy="12" r="10" stroke="black" stroke-width="2"/>
 		<line x1="7" y1="7" x2="17" y2="17" stroke="#dddddd" stroke-width="2"/>
 		<line x1="17" y1="7" x2="7" y2="17" stroke="#dddddd" stroke-width="2"/>
@@ -299,7 +272,7 @@
 </div>
 
 <div id="countersmenu" class="popup selectmenu">
-	<svg id="mapmenuclose" class="closebutton" onclick="closeNotification(this)" width="24" height="24">
+	<svg class="closebutton" onclick="closeNotification(this)" width="24" height="24">
 		<circle cx="12" cy="12" r="10" stroke="black" stroke-width="2"/>
 		<line x1="7" y1="7" x2="17" y2="17" stroke="#dddddd" stroke-width="2"/>
 		<line x1="17" y1="7" x2="7" y2="17" stroke="#dddddd" stroke-width="2"/>
@@ -313,7 +286,7 @@
 </div>
 
 <div id="chartmenu" class="popup selectmenu">
-	<svg id="mapmenuclose" class="closebutton" onclick="closeNotification(this)" width="24" height="24">
+	<svg class="closebutton" onclick="closeNotification(this)" width="24" height="24">
 		<circle cx="12" cy="12" r="10" stroke="black" stroke-width="2"/>
 		<line x1="7" y1="7" x2="17" y2="17" stroke="#dddddd" stroke-width="2"/>
 		<line x1="17" y1="7" x2="7" y2="17" stroke="#dddddd" stroke-width="2"/>
@@ -329,7 +302,7 @@
 </div>
 
 <div id="presetmenu" class="popup selectmenu">
-	<svg id="mapmenuclose" class="closebutton" onclick="closeNotification(this)" width="24" height="24">
+	<svg class="closebutton" onclick="closeNotification(this)" width="24" height="24">
 		<circle cx="12" cy="12" r="10" stroke="black" stroke-width="2"/>
 		<line x1="7" y1="7" x2="17" y2="17" stroke="#dddddd" stroke-width="2"/>
 		<line x1="17" y1="7" x2="7" y2="17" stroke="#dddddd" stroke-width="2"/>
@@ -344,25 +317,25 @@
 </div>
 
 <div id="mapmenu" class="popup selectmenu">
-	<svg id="mapmenuclose" class="closebutton" onclick="closeNotification(this)" width="24" height="24">
+	<svg class="closebutton" onclick="closeNotification(this)" width="24" height="24">
 		<circle cx="12" cy="12" r="10" stroke="black" stroke-width="2"/>
 		<line x1="7" y1="7" x2="17" y2="17" stroke="#dddddd" stroke-width="2"/>
 		<line x1="17" y1="7" x2="7" y2="17" stroke="#dddddd" stroke-width="2"/>
 	</svg>
 	<h2>Select Map</h2>
-	<a onclick='loadMap("./res/presidential.svg", 16, 1, "usa_ec", "presidential", "open");'>Presidential 2020</a>
-	<a onclick='loadMap("./res/usa_no_districts.svg", 16, 1, "usa_no_districts_ec", "presidential", "open")'>Presidential Take All</a>
-	<a onclick='loadMap("./res/usa_dem_primary.svg", 16, 1, "dem_primary", "demprimary", "2020");'>Democratic Primary</a>
-	<a onclick='loadMap("./res/usa_rep_primary.svg", 16, 1, "rep_primary", "repprimary", "2020");'>Republican Primary</a>
-	<a onclick='loadMap("./res/usa_senate.svg", 16, 1, "usa_senate", "senatorial", "2020")'>Senatorial 2020</a>
-	<a onclick='loadMap("./res/usa_senate.svg", 16, 1.5, "usa_senate", "senatorial", "open")'>Senatorial Open</a>
-	<a onclick='loadMap("./res/usa_congressional_2018.svg", 16, 0.075, "congressional", "congressional", "open")'>Congressional Open</a>
-	<a onclick='loadMap("./res/usa_gubernatorial.svg", 16, 1, "usa_gubernatorial", "gubernatorial", "2020")'>Gubernatorial 2020</a>
-	<a onclick='loadMap("./res/usa_gubernatorial.svg", 16, 1, "usa_gubernatorial", "gubernatorial", "open")'>Gubernatorial Open</a>
-	<a onclick='loadMap("./res/canada_states.svg", 38, 3, "canada_ec", "presidential", "open");'>Canada</a>
-	<a onclick='loadMap("./res/lte.svg", 35, 1, "lte_ec", "presidential", "open");'>LTE Discord</a>
-	<a onclick='loadMap("./res/lte_senate.svg", 35, 1, "ltesenate", "senatorial", "open")'>LTE Senate</a>
-	<a onclick='loadMap("./res/lte_house.svg", 35, 1, "congressional", "congressional", "open")'>LTE House</a>
+	<a onclick='closeNotification(this); loadMap("./res/presidential.svg", 16, 1, "usa_ec", "presidential", "open");'>Presidential 2020</a>
+	<a onclick='closeNotification(this); loadMap("./res/usa_no_districts.svg", 16, 1, "usa_no_districts_ec", "presidential", "open")'>Presidential Take All</a>
+	<a onclick='closeNotification(this); loadMap("./res/usa_dem_primary.svg", 16, 1, "dem_primary", "demprimary", "2020");'>Democratic Primary</a>
+	<a onclick='closeNotification(this); loadMap("./res/usa_rep_primary.svg", 16, 1, "rep_primary", "repprimary", "2020");'>Republican Primary</a>
+	<a onclick='closeNotification(this); loadMap("./res/usa_senate.svg", 16, 1, "usa_senate", "senatorial", "2020")'>Senatorial 2020</a>
+	<a onclick='closeNotification(this); loadMap("./res/usa_senate.svg", 16, 1.5, "usa_senate", "senatorial", "open")'>Senatorial Open</a>
+	<a onclick='closeNotification(this); loadMap("./res/usa_congressional_2018.svg", 16, 0.075, "congressional", "congressional", "open")'>Congressional Open</a>
+	<a onclick='closeNotification(this); loadMap("./res/usa_gubernatorial.svg", 16, 1, "usa_gubernatorial", "gubernatorial", "2020")'>Gubernatorial 2020</a>
+	<a onclick='closeNotification(this); loadMap("./res/usa_gubernatorial.svg", 16, 1, "usa_gubernatorial", "gubernatorial", "open")'>Gubernatorial Open</a>
+	<a onclick='closeNotification(this); loadMap("./res/canada_states.svg", 38, 3, "canada_ec", "presidential", "open");'>Canada</a>
+	<a onclick='closeNotification(this); loadMap("./res/lte.svg", 35, 1, "lte_ec", "presidential", "open");'>LTE Discord</a>
+	<a onclick='closeNotification(this); loadMap("./res/lte_senate.svg", 35, 1, "ltesenate", "senatorial", "open")'>LTE Senate</a>
+	<a onclick='closeNotification(this); loadMap("./res/lte_house.svg", 35, 1, "congressional", "congressional", "open")'>LTE House</a>
 </div> 
 
 <div id="notification" class="popup">

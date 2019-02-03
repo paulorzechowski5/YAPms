@@ -621,7 +621,7 @@ function setMode(set) {
 
 	mode = set;
 
-	var modeHTML = document.getElementById('menu-middle');
+	var modeHTML = document.getElementById('modesbutton');
 	var modeText;
 	var notificationText;
 
@@ -647,7 +647,7 @@ function setMode(set) {
 		notificationText = "Click on a candidate in the legend to edit its name and color";
 	}
 
-	modeHTML.innerHTML = modeText;
+	modeHTML.innerHTML = 'Modes (' + modeText + ')';
 
 	var split = modeText.split(' ');
 
