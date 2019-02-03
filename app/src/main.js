@@ -698,7 +698,6 @@ function addCandidate() {
 	chart.generateLegend();
 	updateLegend();
 	verifyTextToggle();
-	toggleAddCandidate();
 }
 
 

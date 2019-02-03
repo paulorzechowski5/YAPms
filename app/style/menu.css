@@ -6,34 +6,21 @@
 	position: relative;
 
 	display: inline-flex;
-	align-items: stretch;
 	flex-direction: row;
 	width: 100%;
-}
 
-#menu-left {
-	display: inline-flex;
-}
-
-#menu-middle {
-	color: white;
-	font-size: 15px;
-	font-weight: 300;
-	text-align: center;
-	flex: 1;
-}
-
-#menu-right {
-	display: inline-flex;
-	justify-content: flex-end;
+	overflow-y: hidden;
+	overflow-x: auto;
 }
 
 .click-button {
 	background-color: #f2eee6;
+	border: none;
 	font-weight: 500;
 	color: #000000;
 	cursor: pointer;
-	border: none;
+	border-left: 1px solid #2f3136;
+	border-right: 1px solid #2f3136;
 }
 
 .click-button:hover {

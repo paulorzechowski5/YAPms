@@ -1,5 +1,6 @@
 // keep data in function scope
 (function() {
+/*
 	var themeButton = document.getElementById('themebutton');
 	themeButton.style.display = 'none';
 
@@ -17,4 +18,5 @@
 
 	var moveButton = document.getElementById('movebutton');
 	moveButton.style.display = 'none';
+*/
 })();

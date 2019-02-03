@@ -1,14 +1,5 @@
 var textOn = true;
 
-function toggleAddCandidate() {
-	var html = document.getElementById('addCandidateDropdown');
-	if(html.style.display === '') {
-		html.style.display = 'block';
-	} else {
-		html.style.display = '';
-	}
-}
-
 function selectCandidateDisplay(html) {
 	var legendButtons = html.parentElement.children;
 
@@ -77,6 +68,41 @@ function displayShare() {
 function displayMapMenu(type) {
 	var mapmenu = document.getElementById('mapmenu');
 	mapmenu.style.display = 'flex';
+}
+
+function displayPresetMenu(type) {
+	var presetmenu = document.getElementById('presetmenu');
+	presetmenu.style.display = 'flex';
+}
+
+function displayChartMenu(type) {
+	var chartmenu = document.getElementById('chartmenu');
+	chartmenu.style.display = 'flex';
+}
+
+function displayCountersMenu(type) {
+	var countersmenu = document.getElementById('countersmenu');
+	countersmenu.style.display = 'flex';
+}
+
+function displayThemeMenu(type) {
+	var thememenu = document.getElementById('thememenu');
+	thememenu.style.display = 'flex';
+}
+
+function displayModeMenu(type) {
+	var modemenu = document.getElementById('modemenu');
+	modemenu.style.display = 'flex';
+}
+
+function displayAddCandidateMenu(type) {
+	var addcandidatemenu = document.getElementById('addcandidatemenu');
+	addcandidatemenu.style.display = 'flex';
+}
+
+function displayMiscMenu(type) {
+	var miscmenu = document.getElementById('miscmenu');
+	miscmenu.style.display = 'flex';
 }
 
 function darkPalette() {
