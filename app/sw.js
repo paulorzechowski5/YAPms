@@ -1,4 +1,4 @@
-var currentCache = 'v0.5';
+var currentCache = 'v0.3.1';
 
 function swLog(message) {
 	console.log('SW' + currentCache + ': ' + message);
@@ -23,7 +23,6 @@ self.addEventListener('install', function(event) {
 				'./data/senatorial_open',
 
 				'./style/battlechart.css',
-				'./style/battlechartmobile.css',
 				'./style/legend.css',
 				'./style/selectmenu.css',
 				'./style/mobile.css',

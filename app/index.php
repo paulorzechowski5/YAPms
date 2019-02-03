@@ -58,7 +58,6 @@
 			include './style/selectmenu.css';
 			include './style/popup.css';
 			include './style/legend.css';
-
 		/*
 			if($m === true) {
 				include './style/mobile.css';
@@ -67,7 +66,7 @@
 				include './style/style.css';
 				include './style/battlechart.css';
 			}
-		*/			
+		*/	
 			include './style/style.css';
 			include './style/battlechart.css';
 		?>
@@ -147,7 +146,7 @@
 
 	</div>
 
-	<div id="chart-div" onclick='incrementChart()'>
+	<div id="chart-div">
 		<div id="chart">
 		<canvas id="chart-canvas" width="100" height="100"></canvas>
 		</div>
@@ -305,9 +304,11 @@
 	<h2>Select Chart</h2>	
 	<a onclick='setChart("horizontalbattle")'>Horizontal Battle</a>
 	<a onclick='setChart("verticalbattle")'>Vertical Battle</a>
-	<a onclick='setChart("pie")'>Pie</a>
-	<a onclick='setChart("doughnut")'>Doughnut</a>
-	<a onclick='setChart("horizontalBar")'>Bar</a>
+	<a onclick='setChart("pie")'>Side Pie</a>
+	<a onclick='setChart("pie","bottom")'>Bottom Pie</a>
+	<a onclick='setChart("doughnut")'>Side Doughnut</a>
+	<a onclick='setChart("doughnut", "bottom")'>Bottom Doughnut</a>
+	<a onclick='setChart("horizontalBar")'>Side Bar</a>
 	<a onclick='setChart("none")'>None</a>
 </div>
 

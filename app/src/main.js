@@ -19,6 +19,7 @@ var chartData = {
 }
 var chartOptions;
 var chartType;
+var chartPosition;
 var chartPieScales;
 var chartBarScales;
 var chartPolarScales;
@@ -504,25 +505,6 @@ function setEC(e) {
 	updateLegend();
 }
 
-function incrementChart() {
-	console.log(chartType);
-	switch(chartType) {
-		case 'horizontalbattle':
-			setChart('pie');
-			break;
-		case 'pie':
-			setChart('none');
-			break;
-		case 'none':
-			if(Object.keys(candidates).length > 3) {
-				setChart('pie');
-			} else {
-				setChart('horizontalbattle');
-			}
-			break;
-	}
-}
-
 function rebuildChart() {
 
 	var html = document.getElementById('chart-canvas');
@@ -1004,6 +986,14 @@ function setColors(palette) {
 
 function onResize() {
 	centerMap();
+
+	// make sure the height is maxed out if the chart is on the bottom	
+	if(chartPosition === 'bottom') {
+		var sidebarhtml = document.getElementById('chart-div');
+		var charthtml = document.getElementById('chart');
+		charthtml.style.height = 'auto';
+		charthtml.style.width = '' + (sidebarhtml.offsetHeight - 5) + 'px';
+	}
 }
 
 function start() {

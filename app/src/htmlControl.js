@@ -156,7 +156,7 @@ function darkPalette() {
 
 	chartBarScales.yAxes[0].ticks.fontColor = '#ffffff';
 	chartBarScales.xAxes[0].ticks.fontColor = '#ffffff';
-	setChart(chartType);
+	setChart(chartType, chartPosition);
 	verifyMap();
 	previousPalette = darkPalette;
 }
@@ -185,7 +185,7 @@ function terminalPalette() {
 	
 	chartBarScales.yAxes[0].ticks.fontColor = '#ffffff';
 	chartBarScales.xAxes[0].ticks.fontColor = '#ffffff';
-	setChart(chartType);
+	setChart(chartType, chartPosition);
 	verifyMap();
 	previousPalette = terminalPalette;
 }
@@ -218,7 +218,7 @@ function lightPalette() {
 	
 	chartBarScales.yAxes[0].ticks.fontColor = '#ffffff';
 	chartBarScales.xAxes[0].ticks.fontColor = '#ffffff';
-	setChart(chartType);
+	setChart(chartType, chartPosition);
 	verifyMap();
 	previousPalette = lightPalette;
 }
@@ -246,7 +246,7 @@ function contrastPalette() {
 
 	chartBarScales.yAxes[0].ticks.fontColor = '#000000';
 	chartBarScales.xAxes[0].ticks.fontColor = '#000000';
-	setChart(chartType);
+	setChart(chartType, chartPosition);
 	verifyMap();
 	previousPalette = contrastPalette;
 }
@@ -274,7 +274,7 @@ function metallicPalette() {
 	
 	chartBarScales.yAxes[0].ticks.fontColor = '#ffffff';
 	chartBarScales.xAxes[0].ticks.fontColor = '#ffffff';
-	setChart(chartType);
+	setChart(chartType, chartPosition);
 	verifyMap();
 	previousPalette = metallicPalette;
 }
@@ -303,7 +303,7 @@ function toWinPalette() {
 
 	chartBarScales.yAxes[0].ticks.fontColor = '#000000';
 	chartBarScales.xAxes[0].ticks.fontColor = '#000000';
-	setChart(chartType);
+	setChart(chartType, chartPosition);
 	verifyMap();
 	previousPalette = toWinPalette;
 }
@@ -434,8 +434,11 @@ function unsetBattleHorizontal() {
 	var battlechart = document.getElementById('battlechart');
 	battlechart.style.flexDirection = 'row';
 	battlechart.style.height = '100%';
-	battlechart.style.marginLeft = '50px';
-	battlechart.style.marginRight = '50px';
+	if(mobile) {
+		battlechart.style.width = '100%';
+	}
+	battlechart.style.marginLeft = '25px';
+	battlechart.style.marginRight = '25px';
 	battlechart.style.marginTop = '20px';
 	battlechart.style.marginBottom = '20px';
 
@@ -460,7 +463,7 @@ function unsetBattleHorizontal() {
 }
 
 // dynamically change the chart from one form to another
-function setChart(type) {
+function setChart(type, position) {
 	console.log('Set Chart - ' + type);
 	var sidebar = document.getElementById('chart-div');
 	var chartHTML = document.getElementById('chart');
@@ -471,22 +474,14 @@ function setChart(type) {
 	battlechart.style.display = 'none';
 	sidebar.style.display = 'flex';
 	
-	if(mobile) {	
-		sidebar.style.height = '20%';
-	} else {
-		sidebar.style.width = '28vw';
-	}
+	sidebar.style.width = '28vw';
 
 	if(type === 'none') {
 
 		html.style.display = 'none';
 
-		if(mobile) {
-			sidebar.style.height = '5%';	
-		} else {
-			unsetBattleHorizontal();
-			sidebar.style.width = '4vw';
-		}
+		unsetBattleHorizontal();
+		sidebar.style.width = '4vw';
 
 		chartType = type;
 		centerMap();
@@ -498,14 +493,13 @@ function setChart(type) {
 				'This chart requires that there be two candidates');
 			return;
 		}
-		if(mobile === false) {
-			if(type === 'horizontalbattle') {
-				setBattleHorizontal();
-			}
-			else {
-				unsetBattleHorizontal();
-				sidebar.style.width = '20vw';	
-			}
+		
+		if(type === 'horizontalbattle') {
+			setBattleHorizontal();
+		}
+		else {
+			unsetBattleHorizontal();
+			sidebar.style.width = '20vw';	
 		}
 
 		html.style.display = 'none';
@@ -515,11 +509,42 @@ function setChart(type) {
 		updateChart();
 		centerMap();
 		return;
+	} 
+	
+	unsetBattleHorizontal();
+
+	chartPosition = position;	
+	if(position === 'bottom') {
+		var application = document.getElementById('application');
+		application.style.flexDirection = 'column-reverse';
+		
+		var map = document.getElementById('map-div');
+		map.style.height = '80%';
+
+		var sidebar = document.getElementById('chart-div');
+		sidebar.style.flexDirection = 'row';
+		sidebar.style.width = '100%';	
+		sidebar.style.height = '20%';
+	
+		var charthtml = document.getElementById('chart');
+		charthtml.style.height = 'auto';
+		charthtml.style.width = '' + (sidebar.offsetHeight - 5) + 'px';
+	} else {
+		var application = document.getElementById('application');
+		application.style.flexDirection = 'row';
+
+		var map = document.getElementById('map-div');
+		map.style.height = '100%';
+
+		var sidebar = document.getElementById('chart-div');
+		sidebar.style.flexDirection = 'column';
+		sidebar.style.width = '28vw';	
+		sidebar.style.height = '100%';
+		
+		var charthtml = document.getElementById('chart');
+		charthtml.style.width = '100%';
 	}
 
-	if(mobile === false) {
-		unsetBattleHorizontal();
-	}
 
 	centerMap();
 		
@@ -560,10 +585,6 @@ function setChart(type) {
 	chart = new Chart(ctx, {type: type, data: chartData, options: chartOptions});
 	countVotes();
 	updateChart();
-
-	if(mobile) {
-		onResize();
-	}
 }
 
 

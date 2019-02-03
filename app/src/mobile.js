@@ -3,6 +3,12 @@
 	var moveButton = document.getElementById('movebutton');
 	moveButton.style.display = 'none';
 
+	var clickButtons = document.getElementsByClassName('click-button');
+	for(var index = 0; index < clickButtons.length; ++index) {
+		console.log('testsfafdasdfadfasdf');
+		clickButtons[index].style.padding = '7px';
+	}
+
 /*
 	var themeButton = document.getElementById('themebutton');
 	themeButton.style.display = 'none';

@@ -49,6 +49,7 @@ function loadMap(filename, fontsize, strokewidth, dataid, type, year) {
 
 		// count the votes and update the displayed
 		// numbers on the chart and legend
+
 		countVotes();
 		updateChart();
 		updateLegend();
