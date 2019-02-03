@@ -73,43 +73,59 @@ function displayNotification(title, text) {
 }
 
 function displayShare() {
+	closeAllPopups();
 	var share = document.getElementById('share');
 	share.style.display = 'inline';
 }
 
 function displayMapMenu(type) {
+	closeAllPopups();
 	var mapmenu = document.getElementById('mapmenu');
 	mapmenu.style.display = 'flex';
 }
 
 function displayPresetMenu(type) {
+	closeAllPopups();
 	var presetmenu = document.getElementById('presetmenu');
 	presetmenu.style.display = 'flex';
 }
 
 function displayChartMenu(type) {
+	closeAllPopups();
 	var chartmenu = document.getElementById('chartmenu');
 	chartmenu.style.display = 'flex';
 }
 
 function displayCountersMenu(type) {
+	closeAllPopups();
 	var countersmenu = document.getElementById('countersmenu');
 	countersmenu.style.display = 'flex';
 }
 
 function displayThemeMenu(type) {
+	closeAllPopups();
 	var thememenu = document.getElementById('thememenu');
 	thememenu.style.display = 'flex';
 }
 
 function displayModeMenu(type) {
+	closeAllPopups();
 	var modemenu = document.getElementById('modemenu');
 	modemenu.style.display = 'flex';
 }
 
 function displayAddCandidateMenu(type) {
+	closeAllPopups();
 	var addcandidatemenu = document.getElementById('addcandidatemenu');
 	addcandidatemenu.style.display = 'flex';
+}
+
+function closeAllPopups() {
+	var popups = document.getElementsByClassName('popup');
+	for(var index = 0; index < popups.length; ++index) {
+		var popup = popups[index];
+		popup.style.display = 'none';
+	}
 }
 
 function displayMiscMenu(type) {
