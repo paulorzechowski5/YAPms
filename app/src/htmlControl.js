@@ -12,6 +12,18 @@ function selectCandidateDisplay(html) {
 	html.childNodes[0].style.padding = '8px';
 }
 
+function enableFullscreen() {
+	var el = document.documentElement;
+	rfs = el.requestFullScreen ||
+		el.webkitRequestFullScreen ||
+		el.mozRequestFullScreen ||
+		el.msRequestFullScreen;
+	
+	if(typeof rfs !== 'undefined') {
+		rfs.call(el);
+	}
+}
+
 function toggleText() {
 	var texts = document.querySelectorAll('[id$="text"]');
 

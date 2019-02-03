@@ -241,6 +241,7 @@
 	</svg>
 	<h2>Misc</h2>
 	<a onclick="centerMap()">Center Map</a>
+	<a onclick="enableFullscreen()">Fullscreen</a>
 	<a onclick="toggleLTELogo()">LTE Logo</a>
 	<a href="https://commons.wikimedia.org/wiki/File:Blank_US_Map_(states_only).svg" target="_blank" rel="noreferrer">Map Src</a>
 </div>
