@@ -43,8 +43,8 @@
      showgrid="true"
      inkscape:pagecheckerboard="true"
      inkscape:zoom="2.3048696"
-     inkscape:cx="609.44519"
-     inkscape:cy="-367.07173"
+     inkscape:cx="482.53996"
+     inkscape:cy="-363.60082"
      inkscape:window-x="1920"
      inkscape:window-y="0"
      inkscape:window-maximized="1"
@@ -83,7 +83,7 @@
     <color-profile
        name="sRGB"
        xlink:href="/usr/share/color/icc/colord/sRGB.icc"
-       id="color-profile5" />
+       id="color-profile6" />
     <inkscape:tag
        id="Set 3"
        inkscape:expanded="true">
@@ -1532,19 +1532,5 @@
          x="694.03076"
          y="59.84375"
          id="tspan8988-2-59-0-7-1-7-7-5-9-1-5-1-04">NE-03 1 </tspan></text>
-    <text
-       inkscape:label="altext"
-       id="text321"
-       y="413.86169"
-       x="653.29108"
-       xml:space="preserve"><tspan
-         id="tspan317"
-         y="413.86169"
-         x="653.29108"
-         sodipodi:role="line">AL </tspan><tspan
-         id="tspan319"
-         y="428.86169"
-         x="653.29108"
-         sodipodi:role="line">9</tspan></text>
   </g>
 </svg>
