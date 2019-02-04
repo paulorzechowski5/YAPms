@@ -108,7 +108,7 @@
 		Maps
 	</button>
 
-	<button class="click-button" onclick="displayPresetMenu()">
+	<button class="click-button" onclick="displayPresetMenu()" style="white-space: nowrap;">
 		Preset Candidates
 	</button>
 	
