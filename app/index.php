@@ -109,11 +109,11 @@
 	</button>
 
 	<button class="click-button" onclick="displayPresetMenu()">
-		Presets
+		Preset Candidates
 	</button>
 	
 	<button id="addcandidatebutton" class="click-button" onclick="displayAddCandidateMenu()">
-		Add Candidate
+		Custom Candidates
 	</button>
 
 	<button id="modesbutton" class="click-button" onclick="displayModeMenu()" style="white-space: nowrap;">
