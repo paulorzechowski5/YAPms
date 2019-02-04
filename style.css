@@ -71,7 +71,7 @@ a {
 	transition: all 125ms;
 }
 
-.start {
+#app {
 	margin-bottom: 200px;
 }
 

@@ -89,6 +89,14 @@
 		</div>
 	</a>
 
+	<br>
+
+	<a href="https://play.google.com/apps/testing/com.fishstudio.yapms">
+		<div id="app" class="start">
+			Beta App
+		</div>
+	</a>
+
 	<div id="bottombar">
 		<a href="https://privacypolicies.com/privacy/view/5e9b5eee7febd2d29c0ec896e1ac90ef">Privacy</a>
 	</div>
