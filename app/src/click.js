@@ -1,7 +1,7 @@
 function buttonClick(clickElement) {
 	if(mode === 'move') {
 		return;
-	} else if(mode === 'paint') {
+	} else if(mode === 'paint' || mode === 'paintmove') {
 		if(mapType === 'demprimary' ||
 			mapType === 'repprimary') {
 			buttonClickPaintPrimary(clickElement);
@@ -66,7 +66,7 @@ function landClick(clickElement) {
 		}
 	});
 
-	if(mode === 'paint') {
+	if(mode === 'paint' || mode === 'paintmove') {
 		// check if each district has the same candidate and color value
 		AL.incrementCandidateColor(paintIndex);
 		districts.forEach(function(district) {
@@ -95,7 +95,7 @@ function districtClick(clickElement) {
 
 	if(mode === 'move') {
 
-	} else if(mode === 'paint') {
+	} else if(mode === 'paint' || move === 'paintmove') {
 		//var state = states.find(state => state.name === split[0]);
 		//state.setColor('tossup', 1);
 		district.incrementCandidateColor(paintIndex);
@@ -161,6 +161,7 @@ function stateClick(clickElement, e) {
 
 	switch(mode) {
 		case 'paint':
+		case 'paintmove':
 			if(mapType === 'demprimary' ||
 				mapType === 'repprimary') {
 				stateClickPaintPrimary(state, id);
@@ -283,7 +284,7 @@ function specialClick(clickElement, e) {
 	var state = states.find(state => state.name === id);
 	if(mode === 'move') {
 
-	} else if(mode === 'paint') {
+	} else if(mode === 'paint' || move === 'paintmove') {
 		state.incrementCandidateColor(paintIndex);
 		countVotes();
 		updateChart();
@@ -297,7 +298,7 @@ function legendClick(candidate, button) {
 
 	if(mode === 'move') {
 
-	} else if(mode === 'paint') {
+	} else if(mode === 'paint' || mode === 'paintmove') {
 		paintIndex = candidate;
 		selectCandidateDisplay(button);
 	} else if(mode === 'candidate' && candidate !== 'Tossup') {

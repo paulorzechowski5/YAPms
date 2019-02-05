@@ -58,15 +58,6 @@
 			include './style/selectmenu.css';
 			include './style/popup.css';
 			include './style/legend.css';
-		/*
-			if($m === true) {
-				include './style/mobile.css';
-				include './style/battlechartmobile.css';
-			} else {
-				include './style/style.css';
-				include './style/battlechart.css';
-			}
-		*/	
 			include './style/style.css';
 			include './style/battlechart.css';
 		?>
@@ -117,7 +108,7 @@
 	</button>
 
 	<button id="modesbutton" class="click-button" onclick="displayModeMenu()" style="white-space: nowrap;">
-		Modes (Paint)
+		Modes (Paint/Move)
 	</button>
 
 	<button class="click-button" onclick="displayChartMenu()">
@@ -256,11 +247,12 @@
 	</svg>
 	
 	<h2>Select Mode</h2>
-	<a onclick='setMode("paint")'><u>P</u>aint</a>
-	<a id="movebutton" onclick='setMode("move")'><u>M</u>ove</a>
-	<a onclick='setMode("delete")'><u>D</u>elete</a>
-	<a onclick='setMode("ec")'><u>E</u>C Edit</a>
-	<a onclick='setMode("candidate")'><u>C</u>andidate Edit</a>
+	<a id="paintmovebutton" onclick='setMode("paintmove")'>Paint/Move</a>
+	<a onclick='setMode("paint")'>Paint</a>
+	<a id="movebutton" onclick='setMode("move")'>Move</a>
+	<a onclick='setMode("delete")'>Delete</a>
+	<a onclick='setMode("ec")'>EC Edit</a>
+	<a onclick='setMode("candidate")'>Candidate Edit</a>
 </div>
 
 

@@ -33,6 +33,7 @@ function loadMap(filename, fontsize, strokewidth, dataid, type, year) {
 		if(mobile === true) {
 			enableInputMobile();
 		} else if(mobile === false) {
+		//	enableInputMobile();
 			enableInputDesktop();
 		}
 
@@ -62,8 +63,8 @@ function loadMap(filename, fontsize, strokewidth, dataid, type, year) {
 		
 		blockPresets = false;
 
-		if(mode !== 'paint' && mode !== 'move') {
-			setMode('paint');
+		if(mode !== 'paint' && mode !== 'move' && mode !== 'paintmove') {
+			setMode('paintmove');
 		}
 
 		if(type === 'senatorial' && year !== 'open') {
@@ -210,11 +211,13 @@ function enableInputDesktop() {
 		fit: true,
 		center: true,
 		contain: false,
-		panEnabled: enablePan,
-		zoomEnabled: enableZoom,
+		panEnabled: true,
+		zoomEnabled: true,
+		//panEnabled: enablePan,
+		//zoomEnabled: enableZoom,
 		dblClickZoomEnabled: false,
-		maxZoom: 70,
-		zoomScaleSensitivity: 0.05
+		maxZoom: 100,
+		zoomScaleSensitivity: 0.06
 	});
 }
 

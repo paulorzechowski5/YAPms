@@ -508,11 +508,10 @@ function setChart(type, position) {
 	sidebar.style.width = '28vw';
 
 	if(type === 'none') {
-
 		html.style.display = 'none';
 
 		unsetBattleHorizontal();
-		sidebar.style.width = '4vw';
+		sidebar.style.display = 'none';
 
 		chartType = type;
 		centerMap();

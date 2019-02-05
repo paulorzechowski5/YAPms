@@ -34,7 +34,7 @@ var maxColorValue = 2;
 var chartBorderWidth = 2;
 var chartBorderColor = '#000000';
 
-var mode = 'paint';
+var mode = 'paintmove';
 
 var mapType = 'presidential';
 var mapYear = 'open';
@@ -572,7 +572,11 @@ function setMode(set) {
 		panObject.disableZoom();
 	}
 
-	if(set === 'paint') {
+	if(set === 'paintmove') {
+		modeText = "Paint/Move";
+		panObject.enablePan();
+		panObject.enableZoom();
+	} else if(set === 'paint') {
 		modeText = 'Paint';
 	} else if(set === 'move') {
 		modeText = 'Move';
@@ -594,7 +598,7 @@ function setMode(set) {
 	var split = modeText.split(' ');
 
 	var notification = document.getElementById('notification');
-	if(mode === 'paint' || mode === 'move') {
+	if(mode === 'paint' || mode === 'move' || mode === 'paintmove') {
 		notification.style.display = 'none';
 	} else if(mode !== 'paint') {
 		notification.style.display = 'inline';
