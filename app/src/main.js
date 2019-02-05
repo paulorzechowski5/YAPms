@@ -2,9 +2,6 @@ var states = [];
 var lands = [];
 var buttons = [];
 
-// list of candidates
-var candidates = {};
-
 // data for the chart
 var chart;
 var chartData = {
@@ -377,43 +374,6 @@ function initChart() {
 	chartType = 'doughnut';
 }
 
-// empty the list of candidates and insert the tossup candidate
-function initCandidates() {
-	candidates = {};
-	candidates['Tossup'] = TOSSUP;
-	//new Candidate('Tossup', ['#000000', '#ff00ff', '#bbb7b2']);
-}
-
-function setCandidate(e) {
-	// hide the popup window
-	e.parentElement.style.display = 'none';
-
-	var candidateid = e.parentElement.querySelector('#candidate-originalName').value;
-	var newname = e.parentElement.querySelector('#candidate-name').value;
-	var solidColor = e.parentElement.querySelector('#candidate-solid').value;
-	var likelyColor = e.parentElement.querySelector('#candidate-likely').value;
-	var leanColor = e.parentElement.querySelector('#candidate-lean').value;
-
-	// only rename the property if the name changed
-	if(newname !== candidateid) {
-		Object.defineProperty(candidates, newname,
-			Object.getOwnPropertyDescriptor(candidates, candidateid));
-		delete candidates[candidateid];
-	}
-
-	var candidate = candidates[newname];
-	candidate.name = newname;
-	candidate.colors[0] = solidColor;
-	candidate.colors[1] = likelyColor;
-	candidate.colors[2] = leanColor;
-
-	chart.generateLegend();
-	countVotes();
-	updateLegend();
-	verifyMap();
-	updateChart();
-}
-
 function setDelegates(e) {
 	e.parentElement.style.display = '';
 	var stateid = document.getElementById('demdel-state-name').value;
@@ -656,32 +616,6 @@ function closeShare(e) {
 	e.parentElement.style.display = 'none';
 }
 
-// add candidate to the list
-// update map, chart and legend
-function addCandidate() {
-	clearDelegates();
-	var name = document.getElementById('name').value;
-
-	// ignore white space candidates
-	if(name.trim() === '') {
-		return;
-	}
-
-	var solid = document.getElementById('solid').value;
-	var likely = document.getElementById('likely').value;
-	var leaning = document.getElementById('leaning').value;
-	var candidate = new Candidate(name, [solid, likely, leaning]);
-	candidates[name] = candidate;
-
-	verifyMap();
-	verifyPaintIndex();
-	countVotes();
-	updateChart();
-	chart.generateLegend();
-	updateLegend();
-	verifyTextToggle();
-}
-
 
 // if paint index is invalid, change it to tossup
 // ( WORK IN PROGRESS)
@@ -733,7 +667,7 @@ function countVotes() {
 			var candidate = candidates[key];
 			candidate.voteCount = 0;
 			candidate.probVoteCounts = [0,0,0];
-			for(var stateIndex = 0; stateIndex < states.length; ++stateIndex) {
+			for(var stateIndex = 0, length = states.length; stateIndex < length; ++stateIndex) {
 				var state = states[stateIndex];
 				if(typeof state.delegates === 'undefined') {
 					state.delegates = {};
@@ -758,7 +692,7 @@ function countVotes() {
 			candidate.voteCount = 0;
 			candidate.probVoteCounts = [0,0,0];
 			// iterate over every state
-			for(var stateIndex = 0; stateIndex < states.length; ++stateIndex) {
+			for(var stateIndex = 0, length = states.length; stateIndex < length; ++stateIndex) {
 				var state = states[stateIndex];
 				// if the candidate value of the state
 				// equals the index value of the candidate
@@ -1000,7 +934,6 @@ function start() {
 	initCandidates();
 	initChart();
 	setChart('horizontalbattle');
-	
 	loadMap('./res/presidential.svg', 16, 1, 'usa_ec',"presidential", "open");
 }
 
