@@ -95,7 +95,7 @@ function districtClick(clickElement) {
 
 	if(mode === 'move') {
 
-	} else if(mode === 'paint' || move === 'paintmove') {
+	} else if(mode === 'paint' || mode === 'paintmove') {
 		//var state = states.find(state => state.name === split[0]);
 		//state.setColor('tossup', 1);
 		district.incrementCandidateColor(paintIndex);
