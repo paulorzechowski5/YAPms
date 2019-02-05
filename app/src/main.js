@@ -939,6 +939,9 @@ function start() {
 	initChart();
 	setChart('horizontalbattle');
 	loadMap('./res/presidential.svg', 16, 1, 'usa_ec',"presidential", "open");
+	if(mobile) {
+		setMode('paint');
+	}
 }
 
 start();
