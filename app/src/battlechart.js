@@ -1,7 +1,12 @@
 function updateBattleChart() {
 
 	if(Object.keys(candidates).length > 3) {
-		setChart('pie');
+		if(mobile) {
+			setChart('pie', 'bottom');
+		} else {
+			setChart('pie');
+		}
+
 		return;
 	}
 

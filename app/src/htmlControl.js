@@ -137,9 +137,6 @@ function darkPalette() {
 	var body = document.getElementById('application');
 	body.style.backgroundColor = '#181922';
 	body.style.backgroundImage  = '';
-
-	var menu = document.getElementById('menu-div');
-	menu.style.backgroundColor = '#2f3136'
 	
 	var legend = document.getElementById('legend-div');
 	legend.style.borderColor = '#2f3136';
@@ -150,6 +147,10 @@ function darkPalette() {
 	setTextStyle('black', 'normal');
 	setChartBorderStyle(2, 'black');
 	setSideBarColor('#2b2e33');
+	
+	setClickButtonColor('#bbb7b2');
+	setClickButtonTextColor('#000000');
+	setMenuColor('#2f3136');
 	
 	chartOptions.plugins.datalabels.borderWidth = 2;
 	chartOptions.plugins.datalabels.borderRadius = 4;
@@ -166,9 +167,6 @@ function terminalPalette() {
 	body.style.backgroundColor = '#000000';
 	body.style.backgroundImage  = '';
 	
-	var menu = document.getElementById('menu-div');
-	menu.style.backgroundColor = '#2f3136'
-	
 	var legend = document.getElementById('legend-div');
 	legend.style.borderColor = '#2f3136';
 
@@ -179,6 +177,10 @@ function terminalPalette() {
 	setTextStyle('white', 'bold');
 	setMapStyle('white', 1.5);
 	setSideBarColor('#eeeeee');
+
+	setClickButtonColor('#000000');
+	setClickButtonTextColor('#ffffff');
+	setMenuColor('#eeeeee');
 	
 	chartOptions.plugins.datalabels.borderWidth = 2;
 	chartOptions.plugins.datalabels.borderRadius = 4;
@@ -192,18 +194,12 @@ function terminalPalette() {
 
 function lightPalette() {
 	var body = document.getElementById('application');
-	//body.style.backgroundColor = '#30353f';
-	//body.style.backgroundColor = '#3a3f45';
 	body.style.backgroundColor = '#3d4147';
 	body.style.backgroundImage  = '';
-
-	var menu = document.getElementById('menu-div');
-	menu.style.backgroundColor = '#202225'
 	
 	var legend = document.getElementById('legend-div');
 	legend.style.borderColor = '#202225';
 
-	//setDisableColor('#333333');
 	setDisableColor('#212326');
 	setTossupColor('#bbb7b2');
 	setMapStyle('black', 1.5);
@@ -212,6 +208,10 @@ function lightPalette() {
 
 	setTextStyle('black', 'normal');
 	setChartBorderStyle(2, 'black');
+	
+	setClickButtonColor('#bbb7b2');
+	setClickButtonTextColor('#000000');
+	setMenuColor('#2b2e33');
 	
 	chartOptions.plugins.datalabels.borderWidth = 2;
 	chartOptions.plugins.datalabels.borderRadius = 4;
@@ -228,9 +228,6 @@ function contrastPalette() {
 	body.style.backgroundColor = '#f9f9fa';
 	body.style.backgroundImage  = '';
 
-	var menu = document.getElementById('menu-div');
-	menu.style.backgroundColor = '#151515'
-
 	var legend = document.getElementById('legend-div');
 	legend.style.borderColor = '#151515';
 	
@@ -240,6 +237,10 @@ function contrastPalette() {
 	setTextStyle('black', 'normal');
 	setChartBorderStyle(2, 'black');
 	setSideBarColor('#cdcdcd');
+	
+	setClickButtonColor('#ded9d3');
+	setClickButtonTextColor('#000000');
+	setMenuColor('#222222');
 
 	chartOptions.plugins.datalabels.borderWidth = 2;
 	chartOptions.plugins.datalabels.borderRadius = 4;
@@ -268,6 +269,10 @@ function metallicPalette() {
 	setTextStyle('black', 'normal');
 	setChartBorderStyle(2, 'black');
 	setSideBarColor('#33353b');
+	
+	setClickButtonColor('#bbb7b2');
+	setClickButtonTextColor('#000000');
+	setMenuColor('#33353b');
 
 	chartOptions.plugins.datalabels.borderWidth = 2;
 	chartOptions.plugins.datalabels.borderRadius = 4;
@@ -297,6 +302,10 @@ function toWinPalette() {
 	setTextStyle('white', 'bold');
 	setChartBorderStyle(2, '#f2eee6');
 	setSideBarColor('#f2eee6');
+	
+	setClickButtonColor('#f2eee6');
+	setClickButtonTextColor('#000000');
+	setMenuColor('#000000');
 
 	chartOptions.plugins.datalabels.borderWidth = 0;
 	chartOptions.plugins.datalabels.borderRadius = 2;
@@ -320,6 +329,32 @@ function setChartBorderStyle(width, color) {
 	legenddiv.style.borderColor = color;
 }
 
+function setMenuColor(color) {
+	var menu = document.getElementById('menu-div');
+	menu.style.backgroundColor = color;
+	var clickButtons = document.getElementsByClassName('click-button');
+	for(var index = 0; index < clickButtons.length; ++index) {
+		button = clickButtons[index];
+		button.style.borderColor = color;
+	}
+}
+
+function setClickButtonTextColor(color) {
+	var clickButtons = document.getElementsByClassName('click-button');
+	for(var index = 0; index < clickButtons.length; ++index) {
+		button = clickButtons[index];
+		button.style.color = color;
+	}
+}
+
+function setClickButtonColor(color) {
+	var clickButtons = document.getElementsByClassName('click-button');
+	for(var index = 0; index < clickButtons.length; ++index) {
+		button = clickButtons[index];
+		button.style.backgroundColor = color;
+	}
+}
+
 function setDisableColor(color) {
 	TOSSUP.colors[1] = color;
 	//verifyMap();
@@ -335,10 +370,6 @@ function setMapStyle(color, strokeWidth) {
 	var outlines = document.getElementById('outlines');
 	outlines.style.stroke = color;
 	outlines.style.strokeWidth = strokeWidth * strokeMultiplier;
-	
-	if(mapType === 'congressional') {
-	//	outlines.style.strokeWidth = 0.1;
-	}
 
 	var special = document.getElementById('special');
 	if(special != null) {
