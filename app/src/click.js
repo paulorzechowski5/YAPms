@@ -284,7 +284,7 @@ function specialClick(clickElement, e) {
 	var state = states.find(state => state.name === id);
 	if(mode === 'move') {
 
-	} else if(mode === 'paint' || move === 'paintmove') {
+	} else if(mode === 'paint' || mode === 'paintmove') {
 		state.incrementCandidateColor(paintIndex);
 		countVotes();
 		updateChart();
