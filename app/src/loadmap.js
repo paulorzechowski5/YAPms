@@ -64,7 +64,11 @@ function loadMap(filename, fontsize, strokewidth, dataid, type, year) {
 		blockPresets = false;
 
 		if(mode !== 'paint' && mode !== 'move' && mode !== 'paintmove') {
-			setMode('paintmove');
+			if(mobile) {
+				setMode('paint');
+			} else {
+				setMode('paintmove');
+			}
 		}
 
 		if(type === 'senatorial' && year !== 'open') {
