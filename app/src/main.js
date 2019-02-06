@@ -137,11 +137,11 @@ window.onerror = function(message, source, lineno, colno, error) {
 	if(typeof gtag !== 'undefined') {
 		console.log('Error');
 		gtag('event', 'exception', {
-			'description': message + ' ' + source + ' ' + lineno + ' ' + colno
+			'description': message + ' ' + source + ' ' + lineno + ' ' + colno + ' ' + currentCache
 		});
 		gtag('event', 'error', {
 			'event_category': 'error',
-			'event_label': message + ' ' + source + ' ' + lineno + ' ' + colno
+			'event_label': message + ' ' + source + ' ' + lineno + ' ' + colno + ' ' + currentCache
 		});
 	}
 }
