@@ -1,3 +1,5 @@
+var currentCache = 'v0.6.0';
+
 var states = [];
 var lands = [];
 var buttons = [];
@@ -935,6 +937,7 @@ function onResize() {
 }
 
 function start() {
+	asdf
 	initCandidates();
 	initChart();
 	setChart('horizontalbattle');
