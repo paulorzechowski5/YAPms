@@ -1,4 +1,4 @@
-var currentCache = 'v0.6.0';
+var currentCache = 'v0.6.1';
 
 var states = [];
 var lands = [];
@@ -937,7 +937,6 @@ function onResize() {
 }
 
 function start() {
-	asdf
 	initCandidates();
 	initChart();
 	setChart('horizontalbattle');
