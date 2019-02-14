@@ -42,9 +42,9 @@
      id="namedview3848"
      showgrid="true"
      inkscape:pagecheckerboard="true"
-     inkscape:zoom="1.0476106"
-     inkscape:cx="693.74289"
-     inkscape:cy="-282.59698"
+     inkscape:zoom="2.9630902"
+     inkscape:cx="684.86763"
+     inkscape:cy="-208.88151"
      inkscape:window-x="1920"
      inkscape:window-y="0"
      inkscape:window-maximized="1"
@@ -399,8 +399,8 @@
        id="SE-01"
        width="40"
        height="40"
-       x="716.82422"
-       y="335.58258"
+       x="722.224"
+       y="346.04468"
        rx="64"
        ry="52.176186"
        style="stroke-width:1;enable-background:new"
@@ -409,8 +409,8 @@
        id="SE-02"
        width="40"
        height="40"
-       x="683.71136"
-       y="293.91248"
+       x="697.88568"
+       y="301.33716"
        rx="64"
        ry="52.176186"
        style="stroke-width:1;enable-background:new"
@@ -419,8 +419,8 @@
        id="SE-03"
        width="40"
        height="40"
-       x="635.6123"
-       y="314.68634"
+       x="648.09924"
+       y="296.12466"
        rx="64"
        ry="52.176186"
        style="stroke-width:1;enable-background:new"
@@ -429,8 +429,8 @@
        id="SE-04"
        width="40"
        height="40"
-       x="638.39612"
-       y="365.29834"
+       x="641.77094"
+       y="381.49765"
        rx="64"
        ry="52.176186"
        style="stroke-width:1;enable-background:new"
@@ -439,8 +439,8 @@
        id="SE-05"
        width="40"
        height="40"
-       x="688.9754"
-       y="379.54288"
+       x="691.67529"
+       y="387.30505"
        rx="64"
        ry="52.176186"
        style="stroke-width:1;enable-background:new"
@@ -575,6 +575,16 @@
        ry="52.176186"
        style="fill:#d3d3d3;stroke-width:1;enable-background:new"
        inkscape:label="we03" />
+    <rect
+       id="SE-06"
+       width="40"
+       height="40"
+       x="615.14771"
+       y="337.16397"
+       rx="64"
+       ry="52.176186"
+       style="fill:#d3d3d3;stroke-width:1;enable-background:new"
+       inkscape:label="se04" />
   </g>
   <g
      inkscape:groupmode="layer"
@@ -627,49 +637,49 @@
          y="247.00018">5</tspan></text>
     <text
        xml:space="preserve"
-       x="656.0069"
-       y="347.80084"
+       x="668.49384"
+       y="329.23917"
        id="text4979"><tspan
          sodipodi:role="line"
          id="tspan4977"
-         x="656.0069"
-         y="347.80084">1</tspan></text>
+         x="668.49384"
+         y="329.23917">1</tspan></text>
     <text
        xml:space="preserve"
-       x="703.86371"
-       y="324.78763"
+       x="718.03802"
+       y="334.21231"
        id="text4983"><tspan
          sodipodi:role="line"
          id="tspan4981"
-         x="703.86371"
-         y="324.78763">2</tspan></text>
+         x="718.03802"
+         y="334.21231">2</tspan></text>
     <text
        xml:space="preserve"
-       x="736.77649"
-       y="368.09113"
+       x="742.17627"
+       y="378.55322"
        id="text4987"><tspan
          sodipodi:role="line"
          id="tspan4985"
-         x="736.77649"
-         y="368.09113">3</tspan></text>
+         x="742.17627"
+         y="378.55322">3</tspan></text>
     <text
        xml:space="preserve"
-       x="708.16974"
-       y="412.42896"
+       x="710.86963"
+       y="420.19113"
        id="text4991"><tspan
          sodipodi:role="line"
          id="tspan4989"
-         x="708.16974"
-         y="412.42896">4</tspan></text>
+         x="710.86963"
+         y="420.19113">4</tspan></text>
     <text
        xml:space="preserve"
-       x="657.45276"
-       y="398.69794"
+       x="660.82758"
+       y="414.89725"
        id="text4995"><tspan
          sodipodi:role="line"
          id="tspan4993"
-         x="657.45276"
-         y="398.69794">5</tspan></text>
+         x="660.82758"
+         y="414.89725">5</tspan></text>
     <text
        xml:space="preserve"
        x="283.01807"
@@ -780,12 +790,12 @@
          y="441.05963">1</tspan></text>
     <text
        xml:space="preserve"
-       x="870.84668"
+       x="872.84668"
        y="410.97672"
        id="text5047"><tspan
          sodipodi:role="line"
          id="tspan5045"
-         x="870.84668"
+         x="872.84668"
          y="410.97672">2</tspan></text>
     <text
        xml:space="preserve"
@@ -843,5 +853,14 @@
          id="tspan5013-2"
          x="128.05933"
          y="166.17548">4</tspan></text>
+    <text
+       xml:space="preserve"
+       x="634.11664"
+       y="369.52777"
+       id="text4995-5"><tspan
+         sodipodi:role="line"
+         id="tspan194"
+         x="634.11664"
+         y="369.52777">6</tspan></text>
   </g>
 </svg>
