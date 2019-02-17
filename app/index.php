@@ -343,14 +343,8 @@
 	<div id="shareurl"></div>
 	<img id="screenshotimg"/>
 </div>
-
+<!--
 <div id="ads">
-
-<?php
-	if($m === false) {
-		echo '<!--';
-	}
-?>
 <script type="text/javascript">
   ( function() {
     if (window.CHITIKA === undefined) { window.CHITIKA = { 'units' : [] }; };
@@ -361,14 +355,8 @@
 }());
 </script>
 <script type="text/javascript" src="//cdn.chitika.net/getads.js" async></script>
-
-<?php
-	if($m === false) {
-		echo '-->';
-	}
-?>
 </div>
-
+-->
 <script>
 	document.getElementById('logo-div').innerHTML =
 		'<img id="logo" src="./res/lte.jpg">';
