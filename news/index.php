@@ -5,11 +5,14 @@
 			YAPNews
 		</title>
 
-		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
 		<link rel="stylesheet" type="text/css" href="style.css">
 	</head>
 
 	<body>
+		<?php 		
+			include 'dblogin.php';
+		?>
+
 		<div id="header">
 			<div id="main-header">
 				YAPNews
