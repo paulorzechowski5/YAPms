@@ -1,0 +1,72 @@
+#application {
+	margin: 24px;
+	display: flex;
+	flex-direction: row;
+}
+
+#application-left {
+	display: flex;
+	flex-direction: column;
+	flex: 1;
+}
+
+#application-right {
+	display: flex;
+	flex-direction: column;
+	flex: 1;
+}
+
+.recent {
+	display: flex;
+	flex: 1;
+	flex-direction: column;
+}
+
+.recent .article .article-title {
+	font-size: 22px;
+}
+
+.article {
+	border-left: 1px solid #cccccc;
+	padding-left: 10px;
+	margin: 18px;
+	flex: 1;
+}
+
+.article:hover .article-snippet {
+	color: black;
+}
+
+.article-title {
+	padding-left: 3px;
+}
+
+.article-snippet {
+	padding: 13px;
+	font-size: 16px;
+	color: #444444;
+}
+
+.article-author {
+	padding-left: 3px;
+	font-size: 13px;
+	color: #444444;
+}
+
+.featured {
+	margin-top: 32px;
+	margin-bottom: 32px;
+	margin-right: 32px;
+	padding: 10px;
+	background: white;
+	border-bottom: 1px solid #cccccc;
+	border-top: 1px solid #cccccc;
+}
+
+.featured .article-title {
+	font-size: 32px;
+}
+
+.featured .article-snippet {
+	font-size: 19px;
+}

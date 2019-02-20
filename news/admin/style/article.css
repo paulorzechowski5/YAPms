@@ -1,0 +1,17 @@
+#article {
+	margin: 20px;
+}
+
+#article-title {
+	text-align: center;
+	font-size: 48px;
+}
+
+#article-author {
+	color: #444444;
+}
+
+#article-text {
+	margin: 20px;
+	font-size: 18px;
+}

@@ -1,10 +1,15 @@
 <!DOCTYPE html>
+
 <html>
 	<head>
+		<title>
+			Article Preview
+		</title>
+		
 		<link rel="stylesheet" type="text/css" href="style/common.css">
 		<link rel="stylesheet" type="text/css" href="style/article.css">
 	</head>
-
+	
 	<body>
 		<div id="header">
 			<div id="main-header">
@@ -17,28 +22,30 @@
 				Yet Another Political News Source
 			</div>
 		</div>
-
+	
 		<div id="article">
-		<?php
-			include 'dblogin.php';
+			<div id="article-title">
+			<?php
+				echo $_POST["title"];
+			?>
+			</div>
 
-			$sql = 'select * from articles where id = ' . $_GET['a']; 
-			foreach($dbh->query($sql) as $row) {
-				echo '<div id="article-title">';
-				echo $row['title'];
-				echo '</div>';
-				echo '<div id="article-author">';
-				echo 'By ' . $row['author'];
-				echo '</div>';
-				echo '<div id="article-text">';
-				echo $row['text'];
-				echo '</div>';
-			}
-		?>
+			<div id="article-author">
+			<?php
+				echo $_POST["author"];
+			?>
+			</div>
+
+			<div id="article-text">
+			<?php
+				echo $_POST["text"];
+			?>
+			</div>
 		</div>
-		
+	
 		<?php 
 			include 'footer.php';
 		?>
+		
 	</body>
 </html>
