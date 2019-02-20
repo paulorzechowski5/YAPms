@@ -14,6 +14,10 @@
 	</head>
 
 	<body>
+		<?php 		
+			include 'dblogin.php';
+		?>
+
 		<div id="header">
 			<div id="main-header">
 				<a href="https://www.yapms.com/news">

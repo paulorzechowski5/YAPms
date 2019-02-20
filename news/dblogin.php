@@ -3,6 +3,7 @@ $username = 'dbo773751206';
 $password = 'Betazmon1';
 $database = 'db773751206';
 $hostname = 'db773751206.hosting-data.io';
+$hostname = 'https://www.yapms.com/';
 
 $dbh = null;
 
