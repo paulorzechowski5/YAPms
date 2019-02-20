@@ -7,10 +7,6 @@
 
 		<link rel="stylesheet" type="text/css" href="style/common.css">
 		<link rel="stylesheet" type="text/css" href="style/style.css">
-
-		<?php
-			include "dblogin.php";
-		?>
 	</head>
 
 	<body>
