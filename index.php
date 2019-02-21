@@ -1,7 +1,4 @@
 <html>
-<!--
-just a comment 8 (testing branch? 2) bbbbb
--->
 <head>
 	<meta charset="UTF-8">
 	<meta name="description" content="Presidential, Senatorial, Congressional, Guberntorial and Democratic Primary political map simulator.">
