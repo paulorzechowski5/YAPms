@@ -67,6 +67,20 @@
 		</div>
 	</div>
 	
+	<a href="./app">
+		<div id="start" class="start">
+			Start	
+		</div>
+	</a>
+
+	<br>
+
+	<a href="https://play.google.com/apps/testing/com.fishstudio.yapms">
+		<div id="app" class="start">
+			Beta App
+		</div>
+	</a>
+	
 	<div id="amazon">
 		<script type="text/javascript">
 		amzn_assoc_placement = "adunit0";
@@ -82,20 +96,6 @@
 		</script>
 		<script src="//z-na.amazon-adsystem.com/widgets/onejs?MarketPlace=US"></script>
 	</div>
-	
-	<a href="./app">
-		<div id="start" class="start">
-			Start	
-		</div>
-	</a>
-
-	<br>
-
-	<a href="https://play.google.com/apps/testing/com.fishstudio.yapms">
-		<div id="app" class="start">
-			Beta App
-		</div>
-	</a>
 
 	<div id="bottombar">
 		<a href="https://privacypolicies.com/privacy/view/5e9b5eee7febd2d29c0ec896e1ac90ef">Privacy</a>
