@@ -72,11 +72,11 @@ a {
 }
 
 #app {
-	margin-bottom: 200px;
 }
 
 #amazon {
 	margin: auto;
+	margin-bottom: 50px;
 	width: 95%;
 }
 
