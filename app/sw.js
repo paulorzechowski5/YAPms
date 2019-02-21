@@ -11,6 +11,7 @@ self.addEventListener('install', function(event) {
 			return cache.addAll([
 				'./',
 				'./index.php',
+				'./html/battlechart.html',
 
 				'./manifest.json',
 
@@ -29,7 +30,7 @@ self.addEventListener('install', function(event) {
 				'./style/popup.css',
 				'./style/style.css',
 
-				'./res/presidential.svg',
+				'./res/usa_presidential.svg',
 				'./res/usa_congressional_2018.svg',
 				'./res/usa_dem_primary.svg',
 				'./res/usa_rep_primary.svg',
@@ -38,7 +39,7 @@ self.addEventListener('install', function(event) {
 				'./res/usa_senate.svg',
 				'./res/canada_states.svg',
 				'./res/world.svg',
-				'./res/lte.svg',
+				'./res/lte_president.svg',
 				'./res/lte_senate.svg',
 				'./res/lte_house.svg',
 				

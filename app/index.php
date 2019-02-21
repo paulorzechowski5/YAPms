@@ -60,6 +60,7 @@
 			include './style/legend.css';
 			include './style/style.css';
 			include './style/battlechart.css';
+			include './style/yapnews.css';
 		?>
 	</style>
 
@@ -67,6 +68,8 @@
 </head>
 
 <body id="body" onresize="onResize()">
+
+<div id="yapms">
 
 <div id="menu-div">
 	<button class="click-button" onclick="clearMap()">
@@ -105,10 +108,15 @@
 		Share
 	</button>
 
+	<button class="click-button" onclick="enableFullscreen()">
+		Fullscreen	
+	</button>
+
 	<button class="click-button" onclick="displayMiscMenu()">
 		Misc
 	</button>
 </div>
+
 
 <div id="application">
 	<div id="legend-div">
@@ -120,34 +128,9 @@
 		<canvas id="chart-canvas" width="100" height="100"></canvas>
 		</div>
 
-		<div id="battlechart">
-			<div id="battlechartleft">
-				<svg id="battlechartmid" width="20" height="20">
-					<polygon points="0,0 0,20 20,10"
-		     				style="fill:lime; stroke:black; stroke-width:2"/>
-				</svg>
-			</div>
-			<div id="battlechartright">
-				<div id="topbar">
-					<div id="topbar-solid">
-					</div>
-					<div id="topbar-likely">
-					</div>
-					<div id="topbar-lean">
-					</div>
-				</div>
-				<div id="tossupbar">
-				</div>
-				<div id="bottombar">
-					<div id="bottombar-lean">
-					</div>
-					<div id="bottombar-likely">
-					</div>
-					<div id="bottombar-solid">
-					</div>
-				</div>
-			</div>
-		</div>
+		<?php
+			include 'html/battlechart.html';
+		?>
 
 		<div id="logo-div">
 		</div>
@@ -157,6 +140,21 @@
 
 	</div>
 </div>
+
+</div>
+
+<!--
+<div id="yapnews">
+	<svg id="yapnews-closebutton" onclick="closeNotification(this)" width="24" height="24">
+		<circle cx="12" cy="12" r="10" stroke="black" stroke-width="1"/>
+		<line x1="7" y1="7" x2="17" y2="17" stroke="#dddddd" stroke-width="2"/>
+		<line x1="17" y1="7" x2="7" y2="17" stroke="#dddddd" stroke-width="2"/>
+	</svg>
+	<div id="yapnews-header">
+		YAPNews
+	</div>
+</div>
+-->
 
 <div id="demdel" class="popup">
 	<h3 id="demdel-message"></h3>
@@ -192,7 +190,6 @@
 	</svg>
 	<h2>Misc</h2>
 	<a onclick="centerMap()">Center Map</a>
-	<a onclick="enableFullscreen()">Fullscreen</a>
 	<a onclick="toggleLTELogo()">LTE Logo</a>
 	<a href="https://commons.wikimedia.org/wiki/File:Blank_US_Map_(states_only).svg" target="_blank" rel="noreferrer">Map Src</a>
 </div>
@@ -304,7 +301,7 @@
 		<line x1="17" y1="7" x2="7" y2="17" stroke="#dddddd" stroke-width="2"/>
 	</svg>
 	<h2>Select Map</h2>
-	<a onclick='closeNotification(this); loadMap("./res/presidential.svg", 16, 1, "usa_ec", "presidential", "open");'>Presidential 2020</a>
+	<a onclick='closeNotification(this); loadMap("./res/usa_presidential.svg", 16, 1, "usa_ec", "presidential", "open");'>Presidential 2020</a>
 	<a onclick='closeNotification(this); loadMap("./res/usa_no_districts.svg", 16, 1, "usa_no_districts_ec", "presidential", "open")'>Presidential Take All</a>
 	<a onclick='closeNotification(this); loadMap("./res/usa_dem_primary.svg", 16, 1, "dem_primary", "demprimary", "2020");'>Democratic Primary</a>
 	<a onclick='closeNotification(this); loadMap("./res/usa_rep_primary.svg", 16, 1, "rep_primary", "repprimary", "2020");'>Republican Primary</a>
@@ -315,7 +312,7 @@
 	<a onclick='closeNotification(this); loadMap("./res/usa_gubernatorial.svg", 16, 1, "usa_gubernatorial", "gubernatorial", "open")'>Gubernatorial Open</a>
 	<a onclick='closeNotification(this); loadMap("./res/canada_states.svg", 38, 3, "canada_ec", "presidential", "open");'>Canada</a>
 	<a onclick='closeNotification(this); loadMap("./res/world.svg", 38, 0.5, "congressional", "congressional", "open");'>World</a>
-	<a onclick='closeNotification(this); loadMap("./res/lte.svg", 35, 1, "lte_ec", "presidential", "open");'>LTE Discord</a>
+	<a onclick='closeNotification(this); loadMap("./res/lte_president.svg", 35, 1, "lte_ec", "presidential", "open");'>LTE Discord</a>
 	<a onclick='closeNotification(this); loadMap("./res/lte_senate.svg", 35, 1, "ltesenate", "senatorial", "open")'>LTE Senate</a>
 	<a onclick='closeNotification(this); loadMap("./res/lte_house.svg", 35, 1, "congressional", "congressional", "open")'>LTE House</a>
 </div> 
@@ -388,6 +385,8 @@
 <?php 
 	if($m === true) {
 		echo '<script src="./src/mobile.js"></script>';
+	} else {
+		echo '<script src="./src/yapnews.js"></script>';
 	}
 ?>
 <script src="./src/click.js"></script>

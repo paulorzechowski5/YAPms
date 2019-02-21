@@ -940,7 +940,7 @@ function start() {
 	initCandidates();
 	initChart();
 	setChart('horizontalbattle');
-	loadMap('./res/presidential.svg', 16, 1, 'usa_ec',"presidential", "open");
+	loadMap('./res/usa_presidential.svg', 16, 1, 'usa_ec',"presidential", "open");
 }
 
 start();

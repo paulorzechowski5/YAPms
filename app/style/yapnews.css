@@ -1,0 +1,20 @@
+#yapnews-header {
+	font-family: Times;
+	font-size: 28px;
+	margin: 10px;
+	padding-bottom: 10px;
+	border-bottom: 1px solid #cccccc;
+}
+
+#yapnews-closebutton {
+	position: relative;
+	fill: red;
+	transition: all 200ms;
+	margin-left: 10px;
+	margin-top: 10px;
+}
+
+#yapnews-closebutton:hover {
+	fill: pink;
+	transition: all 200ms;
+}

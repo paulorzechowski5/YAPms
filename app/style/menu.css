@@ -14,12 +14,13 @@
 }
 
 .click-button {
+	font-family: Arial;
+	font-size: 18px;
 	background-color: #f2eee6;
 	border: none;
-	font-weight: 500;
 	color: #000000;
 	cursor: pointer;
-	border-right: 2px solid #2f3136;
+	margin-right: 1px;
 }
 
 .click-button:hover {

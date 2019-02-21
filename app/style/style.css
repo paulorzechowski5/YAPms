@@ -12,6 +12,23 @@ canvas {
 }
 
 body {
+	background: white;
+	text-align: center;
+	margin: 0px;
+	padding: 0px;
+	height: 100%;
+	width: 100%;
+	
+	font-size: 18px;
+	display: flex;
+	flex-flow: row;
+}
+
+button {
+	font-size: inherit;
+}
+
+#yapms {
 	background-color: #181922;
 	text-align: center;
 	margin: 0px;
@@ -24,8 +41,12 @@ body {
 	flex-flow: column;
 }
 
-button {
-	font-size: inherit;
+#yapnews {
+	display: flex;
+	flex-direction: column;
+	font-family: Times;
+	border-left: 1px solid black;
+	width: 20vw;
 }
 
 .noSelect {
