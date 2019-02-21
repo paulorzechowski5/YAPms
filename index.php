@@ -1,6 +1,6 @@
 <html>
 <!--
-just a comment
+just a comment 2
 -->
 <head>
 	<meta charset="UTF-8">
