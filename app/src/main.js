@@ -1,4 +1,4 @@
-var currentCache = 'v0.7.2';
+var currentCache = 'v0.8.2';
 
 var states = [];
 var lands = [];
