@@ -1,5 +1,5 @@
 <?php
-	$a = getenv("HTTP_TEST");
+	$a = init_get("test_value");
 	//$b = $_SERVER("HTTP_TEST");
 	//$c = $_ENV("HTTP_TEST");
 	echo $a;
