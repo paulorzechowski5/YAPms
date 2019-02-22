@@ -1,8 +1,5 @@
 <?php
-$username = 'dbo773751206';
-$password = 'Betazmon1';
-$database = 'db773751206';
-$hostname = 'db773751206.hosting-data.io';
+require '../../external/db.php';
 
 $dbh = null;
 
