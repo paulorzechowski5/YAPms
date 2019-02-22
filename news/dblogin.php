@@ -7,7 +7,7 @@
 	} 
 	catch(PDOException $e) {
 		//echo "Error: " . $e->getMessage();
-		echo "Error: failed to connect to database";
+		echo '<div class="error">Error: Failed to connect to database</div>';
 		die();
 	}
 ?>
