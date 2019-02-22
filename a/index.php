@@ -1,3 +1,4 @@
 <?php
-phpinfo();
+include '../../external/db.php';
+echo $username;
 ?>
