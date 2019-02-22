@@ -15,9 +15,11 @@
 	<meta name="twitter:description" content="Interactive political maps">
 
 	<?php 
-		echo '<meta property="og:image" content="http://www.yapms.com/app/uploads/' . $_GET["i"] . '.png">';
-		echo '<meta property="og:image:secure_url" content="https://www.yapms.com/app/uploads/' . $_GET["i"] . '.png">';
-		echo '<meta name="twitter:image" content="https://www.yapms.com/app/uploads/' . $_GET["i"] . '.png">';
+		if(isset($_GET["i"])) {
+			echo '<meta property="og:image" content="http://www.yapms.com/app/uploads/' . $_GET["i"] . '.png">';
+			echo '<meta property="og:image:secure_url" content="https://www.yapms.com/app/uploads/' . $_GET["i"] . '.png">';
+			echo '<meta name="twitter:image" content="https://www.yapms.com/app/uploads/' . $_GET["i"] . '.png">';
+		}
 	?>
 
 	<title>YAPms - Yet Another Political Map Simulator</title>
@@ -69,7 +71,7 @@
 	
 	<a href="./app">
 		<div id="start" class="start">
-			Start	
+			Start
 		</div>
 	</a>
 
