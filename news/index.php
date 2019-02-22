@@ -10,10 +10,6 @@
 	</head>
 
 	<body>
-		<?php 		
-			include 'dblogin.php';
-		?>
-
 		<div id="header">
 			<div id="main-header">
 				<a href="https://www.yapms.com/news">
@@ -28,7 +24,8 @@
 
 		<div id="application">
 		<div id="application-left">
-			<?php
+		<?php
+				require 'dblogin.php';
 				$sql = 'select * from articles where featured = true order by date desc limit 1 offset 0';
 				if($q = $dbh->query($sql)) {
 					foreach($q as $row) {

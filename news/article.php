@@ -20,17 +20,7 @@
 
 		<div id="article">
 		<?php
-			include '../../external/db.php';
-
-			$dbh = null;
-
-			try {
-				$dbh = new PDO("mysql:host=$hostname; dbname=$database;", $username, $password);
-			} 
-			catch(PDOException $e) {
-				echo "Error: " . $e->getMessage();
-				die();
-			}
+			require 'dblogin.php';	
 
 			$sql = 'select * from articles where id = ' . $_GET['a']; 
 			foreach($dbh->query($sql) as $row) {
