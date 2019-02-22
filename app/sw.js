@@ -1,4 +1,4 @@
-var currentCache = 'v0.8.3';
+var currentCache = 'v0.8.4';
 
 function swLog(message) {
 	console.log('SW' + currentCache + ': ' + message);
@@ -56,6 +56,7 @@ self.addEventListener('install', function(event) {
 				'./src/battlechart.js',
 				'./src/State.js',
 				'./src/Candidate.js',
+				'./src/yapnews.js',
 
 				'https://fonts.googleapis.com/css?family=Roboto',
 				'https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.min.js',
