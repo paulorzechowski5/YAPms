@@ -19,8 +19,8 @@
 
 	<meta name="theme-color" content="#ffffff"/>
 
-	<link rel="icon" href="../favicon.ico" type="image/x-icon"/>
-	<link rel="shortcut icon" href="../favicon.ico" type="image/x-icon"/>
+	<link rel="icon" href="../logo.ico" type="image/x-icon"/>
+	<link rel="shortcut icon" href="../logo.ico" type="image/x-icon"/>
 	<link rel="manifest" href="./manifest.json">
 	
 	<?php
