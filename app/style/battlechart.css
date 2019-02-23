@@ -37,33 +37,6 @@
 	min-height: 0px;
 }
 
-#topbar-solid {
-	overflow: hidden;
-	background: #bf1d29;
-	flex: 1 1 auto;
-	flex-basis: 0%;
-	transition: flex-basis 1s;
-	min-height: 0px;
-}
-
-#topbar-likely {
-	overflow: hidden;
-	background: #ff5865;
-	flex: 1 1 auto;
-	flex-basis: 0%;
-	transition: flex-basis 1s;
-	min-height: 0px;
-}
-
-#topbar-lean {
-	overflow: hidden;
-	background: #ff8b98;
-	flex: 1 1 auto;
-	flex-basis: 0%;
-	transition: flex-basis 1s;
-	min-height: 0px;
-}
-
 #tossupbar {
 	flex: 1 1;
 	flex-basis: 0%;
@@ -84,27 +57,7 @@
 	overflow: visible;
 }
 
-#bottombar-solid {
-	display: flex;
-	overflow: hidden;
-	background: #1c408c;
-	flex: 1 1;
-	flex-basis: 0%;
-	transition: flex-basis 1s;
-	min-height: 0;
-	vertical-align: bottom;
-}
-
-#bottombar-likely {
-	overflow: hidden;
-	background: #577ccc;
-	flex: 1 1;
-	flex-basis: 0%;
-	transition: flex-basis 1s;
-	min-height: 0;
-}
-
-#bottombar-lean {
+.bar-part {
 	overflow: hidden;
 	background: #8aafff;
 	flex: 1 1;

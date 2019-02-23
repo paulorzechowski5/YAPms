@@ -120,7 +120,8 @@ class State {
 
 		} else {
 			// if the candidate is anything else...
-			if(this.colorValue >= maxColorValue + 1) {
+			//if(this.colorValue >= maxColorValue + 1) {
+			if(this.colorValue >= 4) {
 				this.colorValue = 0;
 			}
 		}

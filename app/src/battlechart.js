@@ -16,11 +16,13 @@ function updateBattleChart() {
 	var topbarSolid = document.getElementById('topbar-solid');
 	var topbarLikely = document.getElementById('topbar-likely');
 	var topbarLean = document.getElementById('topbar-lean');
+	var topbarTilt = document.getElementById('topbar-tilt');
 
 	var bottombar = document.getElementById('bottombar');
 	var bottombarSolid = document.getElementById('bottombar-solid');
 	var bottombarLikely = document.getElementById('bottombar-likely');
 	var bottombarLean = document.getElementById('bottombar-lean');
+	var bottombarTilt = document.getElementById('bottombar-tilt');
 
 	var candidateIndex = -1;
 	for(var key in candidates) {
@@ -36,18 +38,27 @@ function updateBattleChart() {
 		} else if(candidateIndex == 1) {
 			topbar.style.flexBasis = '' + 
 				(candidate.voteCount / totalVotes) * 100 + '%';
+
 			topbarSolid.style.flexBasis = '' + 
 				(candidate.probVoteCounts[0] / candidate.voteCount) * 100 + '%';
 			topbarSolid.style.background = candidate.colors[0];
 			topbarSolid.innerHTML = '<p>' + candidate.probVoteCounts[0] + '</p>';
+
 			topbarLikely.style.flexBasis = '' + 
 				(candidate.probVoteCounts[1] / candidate.voteCount) * 100 + '%';
 			topbarLikely.style.background = candidate.colors[1];
 			topbarLikely.innerHTML = '<p>' + candidate.probVoteCounts[1] + '</p>';
+
 			topbarLean.style.flexBasis = '' + 
 				(candidate.probVoteCounts[2] / candidate.voteCount) * 100 + '%';
 			topbarLean.style.background = candidate.colors[2];
 			topbarLean.innerHTML = '<p>' + candidate.probVoteCounts[2] + '</p>';
+
+			topbarTilt.style.flexBasis = '' +
+				(candidate.probVoteCounts[3] / candidate.voteCount) * 100 + '%';
+			topbarTilt.style.background = candidate.colors[3];
+			topbarTilt.innerHTML = '<p>' + candidate.probVoteCounts[3] + '</p>';
+			console.log(candidate);
 
 		} else if(candidateIndex == 2) {
 			bottombar.style.flexBasis = '' + 
@@ -66,6 +77,11 @@ function updateBattleChart() {
 				(candidate.probVoteCounts[2] / candidate.voteCount) * 100 + '%';
 			bottombarLean.style.background = candidate.colors[2];
 			bottombarLean.innerHTML = '<p>'+candidate.probVoteCounts[2]+'</p>';
+			
+			bottombarTilt.style.flexBasis = '' +
+				(candidate.probVoteCounts[3] / candidate.voteCount) * 100 + '%';
+			bottombarTilt.style.background = candidate.colors[3];
+			bottombarTilt.innerHTML = '<p>' + candidate.probVoteCounts[3] + '</p>';
 		}
 	}
 }

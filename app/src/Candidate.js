@@ -6,12 +6,12 @@ class Candidate {
 		this.name = name;
 		this.colors = colors;
 		this.voteCount = 0;
-		this.probVoteCounts = [0,0,0];
+		this.probVoteCounts = [0,0,0,0];
 	}
 };
 
 var tossupColor = 2;
-var TOSSUP = new Candidate('Tossup', ['#000000', '#ffffff', '#bbb7b2']);
+var TOSSUP = new Candidate('Tossup', ['#000000', '#ffffff', '#bbb7b2', '#000000']);
 
 function initCandidates() {
 	candidates = {};
@@ -32,7 +32,8 @@ function addCandidate() {
 	var solid = document.getElementById('solid').value;
 	var likely = document.getElementById('likely').value;
 	var leaning = document.getElementById('leaning').value;
-	var candidate = new Candidate(name, [solid, likely, leaning]);
+	var tilt = document.getElementById('tilt').value;
+	var candidate = new Candidate(name, [solid, likely, leaning, tilt]);
 	candidates[name] = candidate;
 
 	verifyMap();
@@ -53,6 +54,7 @@ function setCandidate(e) {
 	var solidColor = e.parentElement.querySelector('#candidate-solid').value;
 	var likelyColor = e.parentElement.querySelector('#candidate-likely').value;
 	var leanColor = e.parentElement.querySelector('#candidate-lean').value;
+	var tiltcolor = e.parentElement.querySelector('#candidate-tilt').value;
 
 	// only rename the property if the name changed
 	if(newname !== candidateid) {
@@ -66,6 +68,7 @@ function setCandidate(e) {
 	candidate.colors[0] = solidColor;
 	candidate.colors[1] = likelyColor;
 	candidate.colors[2] = leanColor;
+	candidate.colors[3] = tiltcolor;
 
 	chart.generateLegend();
 	countVotes();

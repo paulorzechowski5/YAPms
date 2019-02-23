@@ -178,6 +178,7 @@
 	Solid:<input id="candidate-solid" type="color"><br>
 	Likely:<input id="candidate-likely" type="color"><br>
 	Lean:<input id="candidate-lean" type="color"><br>
+	Tilt:<input id="candidate-tilt" type="color"><br>
 	<input id="candidate-originalName" type="hidden">
 	<button onclick="setCandidate(this)">set</button>
 </div>
@@ -210,6 +211,7 @@
 	<a>Solid <input id="solid" type="color"></a>
 	<a>Likely <input id="likely" type="color"></a>
 	<a>Leaning <input id="leaning" type="color"></a>
+	<a>Tilt <input id="tilt" type="color"></a>
 	<!--<a>Image <input id="image-upload" type="file" accept="image/*"></a>-->
 	<a onclick="addCandidate(); closeNotification(this);">Add</a>
 </div>

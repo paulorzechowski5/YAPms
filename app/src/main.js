@@ -672,7 +672,7 @@ function countVotes() {
 		for(var key in candidates) {
 			var candidate = candidates[key];
 			candidate.voteCount = 0;
-			candidate.probVoteCounts = [0,0,0];
+			candidate.probVoteCounts = [0,0,0,0];
 			for(var stateIndex = 0, length = states.length; stateIndex < length; ++stateIndex) {
 				var state = states[stateIndex];
 				if(typeof state.delegates === 'undefined') {
@@ -696,7 +696,7 @@ function countVotes() {
 			var candidate = candidates[key];
 			++candidateIndex;
 			candidate.voteCount = 0;
-			candidate.probVoteCounts = [0,0,0];
+			candidate.probVoteCounts = [0,0,0,0];
 			// iterate over every state
 			for(var stateIndex = 0, length = states.length; stateIndex < length; ++stateIndex) {
 				var state = states[stateIndex];
