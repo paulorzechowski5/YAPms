@@ -1,4 +1,4 @@
-var currentCache = 'v0.8.5';
+var currentCache = 'v0.8.6';
 
 var states = [];
 var lands = [];
@@ -96,7 +96,6 @@ function share() {
 			svg.removeAttribute('width');
 			svg.removeAttribute('height');
 		}
-	//	chartdiv.style.border = '1px solid black';
 		canvas.style.width = 0;
 		canvas.style.height = 0;	
 		canvas.style.display = 'none';
@@ -773,7 +772,6 @@ function updateLTEHouse() {
 
 // updates the information of the chart (so the numbers change)
 function updateChart() {
-
 	if(chartType === 'verticalbattle' ||
 		chartType === 'horizontalbattle') {
 		updateBattleChart();
@@ -796,22 +794,43 @@ function updateBarChart() {
 	chartData.datasets[1].backgroundColor = [];
 	chartData.datasets[2].data = [];
 	chartData.datasets[2].backgroundColor = [];
+	chartData.datasets[3].data = [];
+	chartData.datasets[3].backgroundColor = [];
 	
 	// each label is a candidate
 	for(var key in candidates) {
 		chartData.labels.push(key);
 	}
 
-	for(var probIndex = 0; probIndex < 3; ++probIndex) {
+	if(chartLeans) {
+		for(var probIndex = 0; probIndex < 4; ++probIndex) {
+			for(var key in candidates) {
+				var candidate = candidates[key];
+				var name = candidate.name;
+				var count = candidate.probVoteCounts[probIndex];
+				chartData.datasets[probIndex].data.push(count);
+
+				var color = candidate.colors[probIndex];
+				chartData.datasets[probIndex].backgroundColor.push(color);
+			}
+		}
+	} else {
 		for(var key in candidates) {
 			var candidate = candidates[key];
 			var name = candidate.name;
-			var count = candidate.probVoteCounts[probIndex];
-			chartData.datasets[probIndex].data.push(count);
+			var count = candidate.voteCount;
+			chartData.datasets[0].data.push(count);
 
-			var color = candidate.colors[probIndex];
-			chartData.datasets[probIndex].backgroundColor.push(color);
+			if(key === 'Tossup') {
+				var color = candidate.colors[2];
+				chartData.datasets[0].backgroundColor.push(color);
+
+			} else {
+				var color = candidate.colors[0];
+				chartData.datasets[0].backgroundColor.push(color);
+			}
 		}
+
 	}
 }
 
@@ -840,10 +859,10 @@ function updateNonRadarChart() {
 			// change the background color of the visual
 			chartData.datasets[0].backgroundColor.push(color);
 		} else if(chartLeans) {
-			for(var probIndex = 0; probIndex < 3; ++probIndex) {
+			for(var probIndex = 0; probIndex < 4; ++probIndex) {
 				var count = candidate.probVoteCounts[probIndex];
 				color = candidate.colors[probIndex];
-				var index = (probIndex + (candidateIndex * 3)) - 2;
+				var index = (probIndex + (candidateIndex * 4)) - 3;
 				chartData.labels[index] = name;
 				chartData.datasets[0].data[index] = count;
 				chartData.datasets[0].backgroundColor.push(color);
@@ -904,23 +923,28 @@ function setColors(palette) {
 	var solid = document.getElementById('solid');
 	var likely = document.getElementById('likely');
 	var leaning =  document.getElementById('leaning');
+	var tilting = document.getElementById('tilting');
 
 	if(palette === 'red') {
 		solid.value = '#bf1d29';
 		likely.value = '#ff5865';
 		leaning.value = '#ff8b98';
+		tilting.value ='#cf8980';
 	} else if(palette === 'blue') {
 		solid.value = '#1c408c';
 		likely.value = '#577ccc';
 		leaning.value = '#8aafff';
+		tilting.value = '#949bb3';
 	} else if(palette === 'green') {
 		solid.value = '#1c8c28';
 		likely.value = '#50c85e';
 		leaning.value = '#8aff97';
+		tilting.value = '#7a997e';
 	} else if(palette === 'yellow') {
 		solid.value = '#e6b700';
 		likely.value = '#e8c84d';
 		leaning.value = '#ffe78a';
+		tilting.value = '#b8a252';
 	}
 }
 

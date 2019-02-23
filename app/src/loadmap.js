@@ -109,7 +109,7 @@ function loadGubernatorialFile(gubernatorialfile) {
 				} else {
 					var split = line.split(' ');
 					candidateNames[split[0]] = split[1];
-					var candidate = new Candidate(split[1], [split[2], split[3], split[4]]);
+					var candidate = new Candidate(split[1], [split[2], split[3], split[4], split[5]]);
 					candidates[split[1]] = candidate;
 				}
 
@@ -158,7 +158,7 @@ function loadSenateFile(senatefile) {
 				} else {
 					var split = line.split(' ');
 					candidateNames[split[0]] = split[1];
-					var candidate = new Candidate(split[1], [split[2], split[3], split[4]]);
+					var candidate = new Candidate(split[1], [split[2], split[3], split[4], split[5]]);
 					candidates[split[1]] = candidate;
 				}
 
