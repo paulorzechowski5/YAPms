@@ -1,4 +1,4 @@
-var currentCache = 'v0.8.7';
+var currentCache = 'v0.8.9';
 
 var states = [];
 var lands = [];
@@ -44,6 +44,7 @@ var mapYear = 'open';
 var blockPresets = false;
 
 var legendCounter = true;
+var legendLeans = true;
 
 var loadConfig = {
 	filename: '', 
@@ -250,9 +251,25 @@ function initChart() {
 					var color = candidate.colors[tossupColor];
 					legendText.style.backgroundColor = color;
 				}
-				legendText.style.padding = '5px';
-				legendText.innerHTLM = candidate.name;
+				legendText.style.padding = '0px';
+				legendText.innerHTML = candidate.name;
 				legendElement.appendChild(legendText);
+		
+				var legendColorDiv = document.createElement('div');
+				legendColorDiv.setAttribute('class', 'legend-color-div');
+				legendElement.appendChild(legendColorDiv);
+
+				if(key !== 'Tossup' && legendLeans) {
+					var amts = ['solid', 'likely', 'lean', 'tilt'];
+					for(var index = 0; index < amts.length; ++index) {
+						var legendColor = document.createElement('div');
+						legendColor.setAttribute('class', 'legend-color');
+						legendColor.setAttribute('id', candidate.name + amts[index]);
+						legendColor.style.backgroundColor = candidate.colors[index];
+						legendColorDiv.appendChild(legendColor);
+					}
+				}
+				
 			}
 		},
 		// do not display the build in legend for the chart
@@ -490,6 +507,12 @@ function rebuildChart() {
 
 function toggleLegendCounter() {
 	legendCounter = !legendCounter;
+	updateLegend();
+}
+
+function toggleLegendLeans() {
+	legendLeans = !legendLeans;
+	chart.generateLegend();
 	updateLegend();
 }
 

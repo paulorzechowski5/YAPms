@@ -312,6 +312,8 @@ function legendClick(candidate, button) {
 		likelyinput.value = candidates[candidate].colors[1];
 		var leaninput = document.getElementById('candidate-lean');
 		leaninput.value = candidates[candidate].colors[2];
+		var tiltinput = document.getElementById('candidate-tilt');
+		tiltinput.value = candidates[candidate].colors[3];
 		var hiddeninput = document.getElementById('candidate-originalName');
 		var message = document.getElementById('candidateedit-message');
 		message.innerHTML = 'Edit ' + candidate;

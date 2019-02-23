@@ -13,18 +13,27 @@
 	margin-left: 3px;
 	margin-right: 3px;
 	vertical-align: top;
-	
-	min-width: 16px;
-	min-height: 16px;
-	
 	pointer-events: auto;
+}
+
+
+.legend-color-div {
+	margin-top: 1px;
+	display: flex;
+	flex-direction: row;
+}
+
+.legend-color {
+	min-height: 10px;
+	min-width: 20px;
+	flex: 1;
 }
 
 .legend-button-text {
 	color: inherit;
 	border: 2px solid;
 	border-color: inherit;
-	border-radius: 12px;
+	border-radius: 5px;
 	transition: all 175ms;
 	transition-timing-function: linear;
 }

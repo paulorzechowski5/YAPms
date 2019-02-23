@@ -6,10 +6,10 @@ function selectCandidateDisplay(html) {
 	for(var index = 0; index < legendButtons.length; ++index) {
 		var button = legendButtons[index];
 		var text = button.childNodes[0];
-		text.style.padding = '5px';
+		text.style.padding = '4px';
 	}
 	
-	html.childNodes[0].style.padding = '8px';
+	html.childNodes[0].style.padding = '7px';
 }
 
 function enableFullscreen() {

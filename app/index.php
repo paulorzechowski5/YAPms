@@ -224,12 +224,12 @@
 	</svg>
 	
 	<h2>Select Mode</h2>
-	<a id="paintmovebutton" onclick='setMode("paintmove")'>Paint/Move</a>
-	<a onclick='setMode("paint")'>Paint</a>
-	<a id="movebutton" onclick='setMode("move")'>Move</a>
-	<a onclick='setMode("delete")'>Delete</a>
-	<a onclick='setMode("ec")'>EC Edit</a>
-	<a onclick='setMode("candidate")'>Candidate Edit</a>
+	<a id="paintmovebutton" onclick='closeNotification(this); setMode("paintmove")'>Paint/Move</a>
+	<a onclick='closeNotification(this); setMode("paint")'>Paint</a>
+	<a id="movebutton" onclick='closeNotification(this); setMode("move")'>Move</a>
+	<a onclick='closeNotification(this); setMode("delete")'>Delete</a>
+	<a onclick='closeNotification(this); setMode("ec")'>EC Edit</a>
+	<a onclick='closeNotification(this); setMode("candidate")'>Candidate Edit</a>
 </div>
 
 
@@ -260,6 +260,7 @@
 	<a onclick='toggleLegendCounter()'>Legend Counter</a>
 	<a onclick='toggleChartLabels()'>Chart Labels</a>
 	<a onclick='toggleChartLeans()'>Chart Leans</a>
+	<a onclick='toggleLegendLeans()'>Legend Leans</a>
 
 </div>
 
