@@ -58,7 +58,6 @@ function updateBattleChart() {
 				(candidate.probVoteCounts[3] / candidate.voteCount) * 100 + '%';
 			topbarTilt.style.background = candidate.colors[3];
 			topbarTilt.innerHTML = '<p>' + candidate.probVoteCounts[3] + '</p>';
-			console.log(candidate);
 
 		} else if(candidateIndex == 2) {
 			bottombar.style.flexBasis = '' + 
