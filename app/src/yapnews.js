@@ -1,5 +1,4 @@
-//alert('yapnews');
-
+/*
 $.ajax({
 	url: 'req_articles.php',
 	type: 'GET',
@@ -10,3 +9,4 @@ $.ajax({
 		
 	}
 });
+*/
