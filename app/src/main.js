@@ -105,7 +105,7 @@ function share() {
 		i.src = img;
 		i.style.width = '40vw';
 		i.style.height = 'auto';
-
+/*
 		var formData = new FormData();
 		formData.append("fileToUpload", img);	
 		$.ajax({
@@ -129,8 +129,10 @@ function share() {
 				console.log(c);
 			}
 		});
+*/	
+		saveMap(img);
 	});
-	
+
 	displayShare();
 }
 

@@ -1,5 +1,19 @@
+var save_filename;
+var save_dataid;
+var save_type;
+var save_year;
+var save_fontsize;
+var save_strokewidth;
+
 // loads the svg element into the HTML
 function loadMap(filename, fontsize, strokewidth, dataid, type, year) {
+	save_filename = filename;
+	save_dataid = dataid;
+	save_type = type;
+	save_year = year;
+	save_fontsize = fontsize;
+	save_strokewidth = strokewidth;
+
 //	var mapmenu = document.getElementById('mapmenu');
 //	mapmenu.style.display = 'none';
 
