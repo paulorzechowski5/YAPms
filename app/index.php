@@ -24,20 +24,31 @@
 	<link rel="manifest" href="./manifest.json">
 	
 	<?php
-		$m = false;
+		$mobile = false;
 		
 		if(strpos($_SERVER['HTTP_USER_AGENT'], 'Mobi')) {
-			$m = true;	
+			$mobile = true;	
 			echo '<script>var mobile = true</script>';
 		} else {
-			$m = false;	
+			$mobile = false;	
 			echo '<script>var mobile = false</script>';
 		};
-	
-		if(isset($_GET["i"]) && !empty($_GET["i"])) {
-			echo '<meta property="og:image" content="http://www.yapms.com/app/uploads/' . $_GET["i"] . '.png">';
-			echo '<meta property="og:image:secure_url" content="https://www.yapms.com/app/uploads/' . $_GET["i"] . '.png">';
-			echo '<meta name="twitter:image" content="https://www.yapms.com/app/uploads/' . $_GET["i"] . '.png">';
+
+		if(isset($_GET["m"]) && !empty($_GET["m"]) &&
+			is_numeric($_GET["m"])) {
+			echo '<script>' .
+				'var php_load_map = true;' .
+				'var php_load_map_id = '.$_GET["m"].';' .
+				'</script>';	
+
+			echo '<meta property="og:image" content="http://www.yapms.com/app/maps/' . $_GET["m"] . '.png">';
+			echo '<meta property="og:image:secure_url" content="https://www.yapms.com/app/maps/' . $_GET["m"] . '.png">';
+			echo '<meta name="twitter:image" content="https://www.yapms.com/app/maps/' . $_GET["m"] . '.png">';
+		} else {
+			echo '<script>' .
+				'var php_load_map = false;' .
+				'var php_load_map_id = 0;' .
+			     '</script>';
 		}
 	?>
 
@@ -378,6 +389,7 @@
 <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/hammer.js/2.0.8/hammer.min.js"></script>
 <script src="./src/loadmap.js"></script>
+<script src="./src/savemap.js"></script>
 <script src="./src/data.js"></script>
 <script src="./src/State.js"></script>
 <script src="./src/htmlControl.js"></script>
@@ -386,7 +398,7 @@
 <script src="./src/presets.js"></script>
 <script src="./src/main.js"></script>
 <?php 
-	if($m === true) {
+	if($mobile === true) {
 		echo '<script src="./src/mobile.js"></script>';
 	} else {
 		echo '<script src="./src/yapnews.js"></script>';

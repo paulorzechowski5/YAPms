@@ -1,5 +1,19 @@
+var save_filename;
+var save_dataid;
+var save_type;
+var save_year;
+var save_fontsize;
+var save_strokewidth;
+
 // loads the svg element into the HTML
-function loadMap(filename, fontsize, strokewidth, dataid, type, year) {
+function loadMap(filename, fontsize, strokewidth, dataid, type, year, onLoad) {
+	save_filename = filename;
+	save_dataid = dataid;
+	save_type = type;
+	save_year = year;
+	save_fontsize = fontsize;
+	save_strokewidth = strokewidth;
+
 //	var mapmenu = document.getElementById('mapmenu');
 //	mapmenu.style.display = 'none';
 
@@ -73,17 +87,20 @@ function loadMap(filename, fontsize, strokewidth, dataid, type, year) {
 
 		if(type === 'senatorial' && year !== 'open') {
 			blockPresets = true;
-			loadSenateFile(dataname);
+			loadSenateFile(dataname, onLoad);
 		} else if(type === 'gubernatorial' && year !== 'open') {
 			blockPresets = true;
-			loadGubernatorialFile(dataname);
+			loadGubernatorialFile(dataname, onLoad);
 		} else {
 			mapHTML.style.visibility = 'visible';
+			if(onLoad !== undefined) {
+				onLoad();
+			}
 		}
 	});
 }
 
-function loadGubernatorialFile(gubernatorialfile) {
+function loadGubernatorialFile(gubernatorialfile, onLoad) {
 
 	if(gubernatorialfile.includes('open') == false) {
 	}
@@ -127,11 +144,11 @@ function loadGubernatorialFile(gubernatorialfile) {
 			}
 		}
 
-		finishDataLoad();
+		finishDataLoad(onLoad);
 	});
 }
 
-function loadSenateFile(senatefile) {
+function loadSenateFile(senatefile, onLoad) {
 
 	if(senatefile.includes('open') == false) {
 		//blockPresets = true;
@@ -185,11 +202,16 @@ function loadSenateFile(senatefile) {
 			}
 		}
 
-		finishDataLoad();
+		finishDataLoad(onLoad);
 	});
 }
 
-function finishDataLoad() {
+function finishDataLoad(onLoad) {
+
+	if(onLoad !== undefined) {
+		onLoad();
+	}
+	
 	verifyMap();
 	verifyPaintIndex();
 	chart.generateLegend();
@@ -201,6 +223,54 @@ function finishDataLoad() {
 
 	var mapHTML = document.getElementById('map-div');
 	mapHTML.style.visibility = 'visible';
+}
+
+function loadSavedMap(data) {
+	console.log("Loading saved map...");
+	var lines = data.split('\n');
+	var meta = lines[0].split(' ');
+	loadMap(meta[0], meta[1], meta[2], meta[3], meta[4], meta[5], function() {
+		var candidateEndLine = meta[6];
+		for(var candidateIndex = 1; candidateIndex < candidateEndLine; ++candidateIndex) {
+			var candidate = lines[candidateIndex].split(' ');
+			addCandidate(candidate[0], candidate[1], candidate[2], candidate[3], candidate[4]);
+		}
+
+		for(var stateDataIndex = candidateEndLine; stateDataIndex < lines.length - 1; ++stateDataIndex) {
+			var stateIndex = stateDataIndex - candidateEndLine;
+			var stateData = lines[stateDataIndex].split(' ');
+			var state = states[stateIndex];
+			if(save_type === "demprimary" || save_type === "repprimary") {
+				var majorityCandidate = "Tossup";
+				var majorityVoteCount = 0;
+				for(var candidateIndex = 0; candidateIndex < candidateEndLine - 1; ++candidateIndex) {
+					var candidate = lines[candidateIndex + 1].split(' ')[0];
+					var delegates = stateData[4 + candidateIndex];
+					var state = states.find(state => state.name === stateData[0]);
+					state.delegates[candidate] = parseInt(delegates);
+					if(parseInt(delegates) > majorityVoteCount) {
+						majorityVoteCount = parseInt(delegates);
+						majorityCandidate = candidate;
+					}
+				}
+
+				if(majorityCandidate === 'Tossup') {
+					state.setColor('Tossup', 2);
+				}
+				else {
+					state.setColor(majorityCandidate, 0);
+				}
+
+			} else {
+				state.setColor(stateData[1], stateData[2]);
+			}
+		}
+		
+		countVotes();
+		updateChart();
+		updateLegend();
+		updateLTEHouse();
+	});
 }
 
 function enableInputDesktop() {
