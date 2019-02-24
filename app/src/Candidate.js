@@ -32,7 +32,7 @@ function addCandidate() {
 	var solid = document.getElementById('solid').value;
 	var likely = document.getElementById('likely').value;
 	var leaning = document.getElementById('leaning').value;
-	var tilt = document.getElementById('tilt').value;
+	var tilt = document.getElementById('tilting').value;
 	var candidate = new Candidate(name, [solid, likely, leaning, tilt]);
 	candidates[name] = candidate;
 
