@@ -20,19 +20,34 @@ function initCandidates() {
 
 // add candidate to the list
 // update map, chart and legend
-function addCandidate() {
+function addCandidate(name, solid, likely, leaning, tilt) {
 	clearDelegates();
-	var name = document.getElementById('name').value;
+
+	if(name === undefined) {
+		name = document.getElementById('name').value;
+	}
 
 	// ignore white space candidates
 	if(name.trim() === '') {
 		return;
 	}
 
-	var solid = document.getElementById('solid').value;
-	var likely = document.getElementById('likely').value;
-	var leaning = document.getElementById('leaning').value;
-	var tilt = document.getElementById('tilting').value;
+	if(solid === undefined) {
+		solid = document.getElementById('solid').value;
+	}
+
+	if(likely === undefined) {
+		likely = document.getElementById('likely').value;
+	}
+
+	if(leaning === undefined) {
+		leaning = document.getElementById('leaning').value;
+	}
+
+	if(tilt === undefined) {
+		tilt = document.getElementById('tilting').value;
+	}
+	
 	var candidate = new Candidate(name, [solid, likely, leaning, tilt]);
 	candidates[name] = candidate;
 

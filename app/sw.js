@@ -1,4 +1,4 @@
-var currentCache = 'v0.8.9';
+var currentCache = 'v0.8.11';
 
 function swLog(message) {
 	console.log('SW' + currentCache + ': ' + message);
@@ -49,6 +49,7 @@ self.addEventListener('install', function(event) {
 				'./src/mobile.js',
 				'./src/presets.js',
 				'./src/loadmap.js',
+				'./src/savemap.js',
 				'./src/htmlControl.js',
 				'./src/html2canvas.min.js',
 				'./src/data.js',

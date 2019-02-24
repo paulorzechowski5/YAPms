@@ -1,4 +1,4 @@
-var currentCache = 'v0.8.9';
+var currentCache = 'v0.8.11';
 
 var states = [];
 var lands = [];
@@ -105,31 +105,6 @@ function share() {
 		i.src = img;
 		i.style.width = '40vw';
 		i.style.height = 'auto';
-/*
-		var formData = new FormData();
-		formData.append("fileToUpload", img);	
-		$.ajax({
-			url: "./upload.php",
-			type: "POST",
-			data: formData,
-			processData: false,
-			contentType: false,
-			success: function (a,b,c) {
-				console.log(a);
-				console.log(b);
-				console.log(c);
-				var shareurl = document.getElementById('shareurl');
-				shareurl.setAttribute('href', a);
-				shareurl.innerHTML = a;
-			},
-			error: function(a, b, c) {
-				console.log('bad');
-				console.log(a);
-				console.log(b);
-				console.log(c);
-			}
-		});
-*/	
 		saveMap(img);
 	});
 
@@ -424,12 +399,10 @@ function setDelegates(e) {
 	}
 	
 	if(majorityCandidate === 'Tossup') {
-		//state.htmlElement.style.fill = candidates[majorityCandidate].colors[0];
 		state.setColor('Tossup', 2);
 	}
 	else {
 		state.setColor(majorityCandidate, 0);
-		//state.htmlElement.style.fill = candidates[majorityCandidate].colors[2];
 	}
 
 	countVotes();
@@ -989,7 +962,25 @@ function start() {
 	initCandidates();
 	initChart();
 	setChart('horizontalbattle');
-	loadMap('./res/usa_presidential.svg', 16, 1, 'usa_ec',"presidential", "open");
+	if(php_load_map === true) {
+		$.ajax({
+			url: "./maps/" + php_load_map_id,
+			type: "POST",
+			processData: false,
+			contentType: false,
+			success: function(a, b, c) {
+				console.log("Found saved map...");
+				loadSavedMap(a);
+			},
+			error: function(a, b, c) {
+				console.log("Did not find saved map...");
+				loadMap('./res/usa_presidential.svg', 16, 1, 'usa_ec',"presidential", "open");
+			}
+		});
+
+	} else {
+		loadMap('./res/usa_presidential.svg', 16, 1, 'usa_ec',"presidential", "open");
+	}
 }
 
 start();

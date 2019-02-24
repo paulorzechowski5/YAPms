@@ -24,15 +24,28 @@
 	<link rel="manifest" href="./manifest.json">
 	
 	<?php
-		$m = false;
+		$mobile = false;
 		
 		if(strpos($_SERVER['HTTP_USER_AGENT'], 'Mobi')) {
-			$m = true;	
+			$mobile = true;	
 			echo '<script>var mobile = true</script>';
 		} else {
-			$m = false;	
+			$mobile = false;	
 			echo '<script>var mobile = false</script>';
 		};
+
+		if(isset($_GET["m"]) && !empty($_GET["m"]) &&
+			is_numeric($_GET["m"])) {
+			echo '<script>' .
+				'var php_load_map = true;' .
+				'var php_load_map_id = '.$_GET["m"].';' .
+				'</script>';	
+		} else {
+			echo '<script>' .
+				'var php_load_map = false;' .
+				'var php_load_map_id = 0;' .
+			     '</script>';
+		}
 	
 		if(isset($_GET["i"]) && !empty($_GET["i"])) {
 			echo '<meta property="og:image" content="http://www.yapms.com/app/uploads/' . $_GET["i"] . '.png">';
@@ -387,7 +400,7 @@
 <script src="./src/presets.js"></script>
 <script src="./src/main.js"></script>
 <?php 
-	if($m === true) {
+	if($mobile === true) {
 		echo '<script src="./src/mobile.js"></script>';
 	} else {
 		echo '<script src="./src/yapnews.js"></script>';

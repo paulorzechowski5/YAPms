@@ -12,6 +12,22 @@ function saveMap(img) {
 	formData.append("fontsize", save_fontsize);
 	formData.append("strokewidth", save_strokewidth);
 
+	var candidateData = [];
+	for(var key in candidates) {
+		var candidate = candidates[key];
+		var obj = {
+			name: candidate.name,
+			solid: candidate.colors[0],
+			likely: candidate.colors[1],
+			lean: candidate.colors[2],
+			tilt: candidate.colors[3]
+		};
+		candidateData.push(obj);
+	}
+	formData.append("candidates", JSON.stringify({
+		candidate_data: candidateData
+	}));
+
 	var stateData = [];
 	for(var stateIndex = 0; stateIndex < states.length; ++stateIndex) {
 		var state = states[stateIndex];
@@ -38,13 +54,16 @@ function saveMap(img) {
 			console.log(a);
 			console.log(b);
 			console.log(c);
-			console.log('good');
+			//console.log('good');
+			var shareurl = document.getElementById('shareurl');
+			shareurl.setAttribute('href', a);
+			shareurl.innerHTML = a;
 		},
 		error: function(a,b,c) {
 			console.log(a);
 			console.log(b);
 			console.log(c);
-			console.log('bad');
+			//console.log('bad');
 		}
 	});
 }
