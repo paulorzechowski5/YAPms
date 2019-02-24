@@ -40,17 +40,15 @@
 				'var php_load_map = true;' .
 				'var php_load_map_id = '.$_GET["m"].';' .
 				'</script>';	
+
+			echo '<meta property="og:image" content="http://www.yapms.com/app/maps/' . $_GET["m"] . '.png">';
+			echo '<meta property="og:image:secure_url" content="https://www.yapms.com/app/maps/' . $_GET["m"] . '.png">';
+			echo '<meta name="twitter:image" content="https://www.yapms.com/app/maps/' . $_GET["m"] . '.png">';
 		} else {
 			echo '<script>' .
 				'var php_load_map = false;' .
 				'var php_load_map_id = 0;' .
 			     '</script>';
-		}
-	
-		if(isset($_GET["i"]) && !empty($_GET["i"])) {
-			echo '<meta property="og:image" content="http://www.yapms.com/app/uploads/' . $_GET["i"] . '.png">';
-			echo '<meta property="og:image:secure_url" content="https://www.yapms.com/app/uploads/' . $_GET["i"] . '.png">';
-			echo '<meta name="twitter:image" content="https://www.yapms.com/app/uploads/' . $_GET["i"] . '.png">';
 		}
 	?>
 
