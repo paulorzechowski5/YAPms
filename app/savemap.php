@@ -20,8 +20,15 @@ if($file) {
 	fwrite($file, $_POST["year"] . PHP_EOL);
 	fwrite($file, $_POST["fontsize"] . PHP_EOL);
 	fwrite($file, $_POST["strokewidth"] . PHP_EOL);
+
+	$state_data = json_decode($_POST["states"], true);
+
+	foreach($state_data ass $v) {
+		fwrite($file, $v . PHP_EOL);
+	}
+
 	fclose($file);
 }
 
-echo $file;
+echo "uploaded...";
 ?>
