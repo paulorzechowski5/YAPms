@@ -305,24 +305,24 @@
 		<line x1="17" y1="7" x2="7" y2="17" stroke="#dddddd" stroke-width="2"/>
 	</svg>
 	<h2>Select Map</h2>
-	<a class="selectmenu-title">USA 2020</a>
+	<a class="selectmenu-split">USA 2020</a>
 	<a onclick='closeNotification(this); loadMap("./res/usa_presidential.svg", 16, 1, "usa_ec", "presidential", "open");'>Presidential</a>
 	<a onclick='closeNotification(this); loadMap("./res/usa_senate.svg", 16, 1, "usa_senate", "senatorial", "2020")'>Senate</a>
 	<a onclick='closeNotification(this); loadMap("./res/usa_congressional_2018.svg", 16, 0.075, "congressional", "congressional", "open")'>House of Representatives</a>
 	<a onclick='closeNotification(this); loadMap("./res/usa_gubernatorial.svg", 16, 1, "usa_gubernatorial", "gubernatorial", "2020")'>Governors</a>
-	<a class="selectmenu-title">USA Primaries</a>
+	<a class="selectmenu-split">USA Primaries</a>
 	<a onclick='closeNotification(this); loadMap("./res/usa_dem_primary.svg", 16, 1, "dem_primary", "demprimary", "2020");'>Democratic Party</a>
 	<a onclick='closeNotification(this); loadMap("./res/usa_rep_primary.svg", 16, 1, "rep_primary", "repprimary", "2020");'>Republican Party</a>
-	<a class="selectmenu-title">USA Open</a>
+	<a class="selectmenu-split">USA Open</a>
 	<a onclick='closeNotification(this); loadMap("./res/usa_no_districts.svg", 16, 1, "usa_no_districts_ec", "presidential", "open")'>Presidential Take All</a>
 	<a onclick='closeNotification(this); loadMap("./res/usa_senate.svg", 16, 1.5, "usa_senate", "senatorial", "open")'>Senate</a>
 	<a onclick='closeNotification(this); loadMap("./res/usa_congressional_2018.svg", 16, 0.075, "congressional", "congressional", "open")'>House of Representatives</a><!-- HoR 2020 and HoR Open are the same -->
 	<a onclick='closeNotification(this); loadMap("./res/usa_gubernatorial.svg", 16, 1, "usa_gubernatorial", "gubernatorial", "open")'>Governors / States</a>
-	<a class="selectmenu-title">Let's Talk Elections</a>
+	<a class="selectmenu-split">Let's Talk Elections</a>
 	<a onclick='closeNotification(this); loadMap("./res/lte_president.svg", 35, 1, "lte_ec", "presidential", "open");'>President</a>
 	<a onclick='closeNotification(this); loadMap("./res/lte_senate.svg", 35, 1, "ltesenate", "senatorial", "open")'>Senate / Governors / Regions</a>
 	<a onclick='closeNotification(this); loadMap("./res/lte_house.svg", 35, 1, "congressional", "congressional", "open")'>House of Representatives</a>
-	<a class="selectmenu-title">Worldwide</a>
+	<a class="selectmenu-split">Worldwide</a>
 	<a onclick='closeNotification(this); loadMap("./res/canada_states.svg", 38, 3, "canada_ec", "presidential", "open");'>Canada Regions</a>
 	<a onclick='closeNotification(this); loadMap("./res/world.svg", 38, 0.5, "congressional", "congressional", "open");'>World Countries</a>
 </div> 
