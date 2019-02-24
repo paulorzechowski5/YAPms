@@ -19,3 +19,6 @@
 	cursor: pointer;
 }
 
+.selectmenu.title a {
+	background-color: #bbbbbb;
+}
