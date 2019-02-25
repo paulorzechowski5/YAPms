@@ -9,16 +9,17 @@
 }
 
 .selectmenu a {
-	border-top: 2px solid black;
-	background-color: #f2eee6;
-	padding: 10px;
+	border-top: 1px solid black;
+	background-color: #ffffff;
+	padding: 12px;
 }
 
-.selectmenu a:hover {
-	background-color: #aaaaaa;
+.selectmenu .selectmenu-button:hover {
+	background-color: #bbbbbb;
 	cursor: pointer;
 }
 
-.selectmenu.selectmenu-split a {
-	background-color: #bbbbbb;
+.selectmenu .selectmenu-split {
+	background-color: #000000;
+	color: white;
 }

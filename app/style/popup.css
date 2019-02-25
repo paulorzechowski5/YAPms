@@ -2,9 +2,8 @@
 	display: none;
 	background-color: #ffffff;
 	border: 2px solid black;
-	border-radius: 10px;
 
-	padding: 8px;	
+	padding: 4px;	
 	z-index: 10;
 
 	position: absolute;

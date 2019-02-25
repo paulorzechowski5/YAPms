@@ -201,9 +201,9 @@
 		<line x1="17" y1="7" x2="7" y2="17" stroke="#dddddd" stroke-width="2"/>
 	</svg>
 	<h2>Misc</h2>
-	<a onclick="centerMap()">Center Map</a>
-	<a onclick="toggleLTELogo()">LTE Logo</a>
-	<a href="https://commons.wikimedia.org/wiki/File:Blank_US_Map_(states_only).svg" target="_blank" rel="noreferrer">Map Src</a>
+	<a class="selectmenu-button" onclick="centerMap()">Center Map</a>
+	<a class="selectmenu-button" onclick="toggleLTELogo()">LTE Logo</a>
+	<a class="selectmenu-button" href="https://commons.wikimedia.org/wiki/File:Blank_US_Map_(states_only).svg" target="_blank" rel="noreferrer">Map Src</a>
 </div>
 
 <div id="addcandidatemenu" class="popup selectmenu">
@@ -214,17 +214,16 @@
 	</svg>
 	
 	<h2>Add Candidate</h2>
-	<a>Name <input id="name" type="text"></a>
-	<a onclick='setColors("red")'>Red Colors</a>
-	<a onclick='setColors("blue")'>Blue Colors</a>
-	<a onclick='setColors("green")'>Green Colors</a>
-	<a onclick='setColors("yellow")'>Yellow Colors</a>
-	<a>Solid <input id="solid" type="color"></a>
-	<a>Likely <input id="likely" type="color"></a>
-	<a>Leaning <input id="leaning" type="color"></a>
-	<a>Tilting<input id="tilting" type="color"></a>
-	<!--<a>Image <input id="image-upload" type="file" accept="image/*"></a>-->
-	<a onclick="addCandidate(); closeNotification(this);">Add</a>
+	<a class="selectmenu-button">Name <input id="name" type="text"></a>
+	<a class="selectmenu-button" onclick='setColors("red")'>Red Colors</a>
+	<a class="selectmenu-button" onclick='setColors("blue")'>Blue Colors</a>
+	<a class="selectmenu-button" onclick='setColors("green")'>Green Colors</a>
+	<a class="selectmenu-button" onclick='setColors("yellow")'>Yellow Colors</a>
+	<a class="selectmenu-button">Solid <input id="solid" type="color"></a>
+	<a class="selectmenu-button">Likely <input id="likely" type="color"></a>
+	<a class="selectmenu-button">Leaning <input id="leaning" type="color"></a>
+	<a class="selectmenu-button">Tilting<input id="tilting" type="color"></a>
+	<a class="selectmenu-button" onclick="addCandidate(); closeNotification(this);">Add</a>
 </div>
 
 <div id="modemenu" class="popup selectmenu">
@@ -235,12 +234,12 @@
 	</svg>
 	
 	<h2>Select Mode</h2>
-	<a id="paintmovebutton" onclick='closeNotification(this); setMode("paintmove")'>Paint/Move</a>
-	<a onclick='closeNotification(this); setMode("paint")'>Paint</a>
-	<a id="movebutton" onclick='closeNotification(this); setMode("move")'>Move</a>
-	<a onclick='closeNotification(this); setMode("delete")'>Delete</a>
-	<a onclick='closeNotification(this); setMode("ec")'>EC Edit</a>
-	<a onclick='closeNotification(this); setMode("candidate")'>Candidate Edit</a>
+	<a class="selectmenu-button" id="paintmovebutton" onclick='closeNotification(this); setMode("paintmove")'>Paint/Move</a>
+	<a class="selectmenu-button" onclick='closeNotification(this); setMode("paint")'>Paint</a>
+	<a class="selectmenu-button" id="movebutton" onclick='closeNotification(this); setMode("move")'>Move</a>
+	<a class="selectmenu-button" onclick='closeNotification(this); setMode("delete")'>Delete</a>
+	<a class="selectmenu-button" onclick='closeNotification(this); setMode("ec")'>EC Edit</a>
+	<a class="selectmenu-button" onclick='closeNotification(this); setMode("candidate")'>Candidate Edit</a>
 </div>
 
 
@@ -252,12 +251,12 @@
 	</svg>
 
 	<h2>Select Theme</h2>	
-	<a onclick='darkPalette()'>Dark</a>
-	<a onclick='terminalPalette()'>Terminal</a>
-	<a onclick='lightPalette()'>Light</a>
-	<a onclick='contrastPalette()'>Contrast</a>
-	<a onclick='metallicPalette()'>Metallic</a>
-	<a onclick='toWinPalette()'>Default</a>
+	<a class="selectmenu-button" onclick='darkPalette()'>Dark</a>
+	<a class="selectmenu-button" onclick='terminalPalette()'>Terminal</a>
+	<a class="selectmenu-button" onclick='lightPalette()'>Light</a>
+	<a class="selectmenu-button" onclick='contrastPalette()'>Contrast</a>
+	<a class="selectmenu-button" onclick='metallicPalette()'>Metallic</a>
+	<a class="selectmenu-button" onclick='toWinPalette()'>Default</a>
 </div>
 
 <div id="countersmenu" class="popup selectmenu">
@@ -268,10 +267,10 @@
 	</svg>
 
 	<h2>Toggle Counters</h2>	
-	<a onclick='toggleLegendCounter()'>Legend Counter</a>
-	<a onclick='toggleChartLabels()'>Chart Labels</a>
-	<a onclick='toggleChartLeans()'>Chart Leans</a>
-	<a onclick='toggleLegendLeans()'>Legend Leans</a>
+	<a class="selectmenu-button" onclick='toggleLegendCounter()'>Legend Counter</a>
+	<a class="selectmenu-button" onclick='toggleChartLabels()'>Chart Labels</a>
+	<a class="selectmenu-button" onclick='toggleChartLeans()'>Chart Leans</a>
+	<a class="selectmenu-button" onclick='toggleLegendLeans()'>Legend Leans</a>
 
 </div>
 
@@ -283,14 +282,14 @@
 	</svg>
 
 	<h2>Select Chart</h2>	
-	<a onclick='setChart("horizontalbattle")'>Horizontal Battle</a>
-	<a onclick='setChart("verticalbattle")'>Vertical Battle</a>
-	<a onclick='setChart("pie")'>Side Pie</a>
-	<a onclick='setChart("pie","bottom")'>Bottom Pie</a>
-	<a onclick='setChart("doughnut")'>Side Doughnut</a>
-	<a onclick='setChart("doughnut", "bottom")'>Bottom Doughnut</a>
-	<a onclick='setChart("horizontalBar")'>Side Bar</a>
-	<a onclick='setChart("none")'>None</a>
+	<a class="selectmenu-button" onclick='setChart("horizontalbattle")'>Horizontal Battle</a>
+	<a class="selectmenu-button" onclick='setChart("verticalbattle")'>Vertical Battle</a>
+	<a class="selectmenu-button" onclick='setChart("pie")'>Side Pie</a>
+	<a class="selectmenu-button" onclick='setChart("pie","bottom")'>Bottom Pie</a>
+	<a class="selectmenu-button" onclick='setChart("doughnut")'>Side Doughnut</a>
+	<a class="selectmenu-button" onclick='setChart("doughnut", "bottom")'>Bottom Doughnut</a>
+	<a class="selectmenu-button" onclick='setChart("horizontalBar")'>Side Bar</a>
+	<a class="selectmenu-button" onclick='setChart("none")'>None</a>
 </div>
 
 <div id="presetmenu" class="popup selectmenu">
@@ -301,11 +300,11 @@
 	</svg>
 
 	<h2>Select Preset</h2>	
-	<a onclick='loadPreset("tossup")'>None</a>
-	<a onclick='loadPreset("classic")'>Classic</a>
-	<a onclick='loadPreset("libertarian")'>Libertarian</a>
-	<a onclick='loadPreset("green")'>Green</a>
-	<a onclick='loadPreset("majors")'>Majors</a>
+	<a class="selectmenu-button" onclick='loadPreset("tossup")'>None</a>
+	<a class="selectmenu-button" onclick='loadPreset("classic")'>Classic</a>
+	<a class="selectmenu-button" onclick='loadPreset("libertarian")'>Libertarian</a>
+	<a class="selectmenu-button" onclick='loadPreset("green")'>Green</a>
+	<a class="selectmenu-button" onclick='loadPreset("majors")'>Majors</a>
 </div>
 
 <!-- Maps menu -->
@@ -317,25 +316,29 @@
 	</svg>
 	<h2>Select Map</h2>
 	<a class="selectmenu-split">USA 2020</a>
-	<a onclick='closeNotification(this); loadMap("./res/usa_presidential.svg", 16, 1, "usa_ec", "presidential", "open");'>Presidential</a>
-	<a onclick='closeNotification(this); loadMap("./res/usa_senate.svg", 16, 1, "usa_senate", "senatorial", "2020")'>Senate</a>
-	<a onclick='closeNotification(this); loadMap("./res/usa_congressional_2018.svg", 16, 0.075, "congressional", "congressional", "open")'>House of Representatives</a>
-	<a onclick='closeNotification(this); loadMap("./res/usa_gubernatorial.svg", 16, 1, "usa_gubernatorial", "gubernatorial", "2020")'>Governors</a>
+	<a class="selectmenu-button" onclick='closeNotification(this); loadMap("./res/usa_presidential.svg", 16, 1, "usa_ec", "presidential", "open");'>Presidential</a>
+	<a class="selectmenu-button" onclick='closeNotification(this); loadMap("./res/usa_senate.svg", 16, 1, "usa_senate", "senatorial", "2020")'>Senatorial</a>
+	<a class="selectmenu-button" onclick='closeNotification(this); loadMap("./res/usa_congressional_2018.svg", 16, 0.075, "congressional", "congressional", "open")'>Congressional</a>
+	<a class="selectmenu-button" onclick='closeNotification(this); loadMap("./res/usa_gubernatorial.svg", 16, 1, "usa_gubernatorial", "gubernatorial", "2020")'>Gubernatorial</a>
+
 	<a class="selectmenu-split">USA Primaries</a>
-	<a onclick='closeNotification(this); loadMap("./res/usa_dem_primary.svg", 16, 1, "dem_primary", "demprimary", "2020");'>Democratic Party</a>
-	<a onclick='closeNotification(this); loadMap("./res/usa_rep_primary.svg", 16, 1, "rep_primary", "repprimary", "2020");'>Republican Party</a>
+	<a class="selectmenu-button" onclick='closeNotification(this); loadMap("./res/usa_dem_primary.svg", 16, 1, "dem_primary", "demprimary", "2020");'>Democratic</a>
+	<a class="selectmenu-button" onclick='closeNotification(this); loadMap("./res/usa_rep_primary.svg", 16, 1, "rep_primary", "repprimary", "2020");'>Republican</a>
+
 	<a class="selectmenu-split">USA Open</a>
-	<a onclick='closeNotification(this); loadMap("./res/usa_no_districts.svg", 16, 1, "usa_no_districts_ec", "presidential", "open")'>Presidential Take All</a>
-	<a onclick='closeNotification(this); loadMap("./res/usa_senate.svg", 16, 1.5, "usa_senate", "senatorial", "open")'>Senate</a>
-	<a onclick='closeNotification(this); loadMap("./res/usa_congressional_2018.svg", 16, 0.075, "congressional", "congressional", "open")'>House of Representatives</a><!-- HoR 2020 and HoR Open are the same -->
-	<a onclick='closeNotification(this); loadMap("./res/usa_gubernatorial.svg", 16, 1, "usa_gubernatorial", "gubernatorial", "open")'>Governors / States</a>
+	<a class="selectmenu-button" onclick='closeNotification(this); loadMap("./res/usa_no_districts.svg", 16, 1, "usa_no_districts_ec", "presidential", "open")'>Presidential Take All</a>
+	<a class="selectmenu-button" onclick='closeNotification(this); loadMap("./res/usa_senate.svg", 16, 1.5, "usa_senate", "senatorial", "open")'>Senatorial</a>
+	<a class="selectmenu-button" onclick='closeNotification(this); loadMap("./res/usa_congressional_2018.svg", 16, 0.075, "congressional", "congressional", "open")'>Congressional</a><!-- HoR 2020 and HoR Open are the same -->
+	<a class="selectmenu-button" onclick='closeNotification(this); loadMap("./res/usa_gubernatorial.svg", 16, 1, "usa_gubernatorial", "gubernatorial", "open")'>Gubernatorial</a>
+
 	<a class="selectmenu-split">Let's Talk Elections</a>
-	<a onclick='closeNotification(this); loadMap("./res/lte_president.svg", 35, 1, "lte_ec", "presidential", "open");'>President</a>
-	<a onclick='closeNotification(this); loadMap("./res/lte_senate.svg", 35, 1, "ltesenate", "senatorial", "open")'>Senate / Governors / Regions</a>
-	<a onclick='closeNotification(this); loadMap("./res/lte_house.svg", 35, 1, "congressional", "congressional", "open")'>House of Representatives</a>
+	<a class="selectmenu-button" onclick='closeNotification(this); loadMap("./res/lte_president.svg", 35, 1, "lte_ec", "presidential", "open");'>Presidential</a>
+	<a class="selectmenu-button" onclick='closeNotification(this); loadMap("./res/lte_senate.svg", 35, 1, "ltesenate", "senatorial", "open")'>Senatorial</a>
+	<a class="selectmenu-button" onclick='closeNotification(this); loadMap("./res/lte_house.svg", 35, 1, "congressional", "congressional", "open")'>Congressional</a>
+
 	<a class="selectmenu-split">Worldwide</a>
-	<a onclick='closeNotification(this); loadMap("./res/canada_states.svg", 38, 3, "canada_ec", "presidential", "open");'>Canada Regions</a>
-	<a onclick='closeNotification(this); loadMap("./res/world.svg", 38, 0.5, "congressional", "congressional", "open");'>World Countries</a>
+	<a class="selectmenu-button" onclick='closeNotification(this); loadMap("./res/canada_states.svg", 38, 3, "canada_ec", "presidential", "open");'>Canada Regions</a>
+	<a class="selectmenu-button" onclick='closeNotification(this); loadMap("./res/world.svg", 38, 0.5, "congressional", "congressional", "open");'>World Countries</a>
 </div> 
 
 <div id="notification" class="popup">
