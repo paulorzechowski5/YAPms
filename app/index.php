@@ -102,7 +102,7 @@
 	</button>
 
 	<button id="modesbutton" class="click-button" onclick="displayModeMenu()" style="white-space: nowrap;">
-		<i class="fas fa-cog"></i> Modes (Paint/Move)
+		<i class="fas fa-cog"></i> Modes (<i class="fas fa-paint-brush"></i> Paint/Move)
 	</button>
 
 	<button class="click-button" onclick="displayChartMenu()">
