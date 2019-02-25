@@ -8,3 +8,4 @@
 sitemap.xml
 google_sitemap.xml.gz
 /app/uploads/*
+/app/maps
