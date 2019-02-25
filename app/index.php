@@ -18,7 +18,9 @@
 	<meta name="twitter:description" content="Interactive Political Maps">
 
 	<meta name="theme-color" content="#ffffff"/>
-
+	
+	<!-- CSSs (1st is Font Awesome) -->
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
 	<link rel="icon" href="../logo.ico" type="image/x-icon"/>
 	<link rel="shortcut icon" href="../logo.ico" type="image/x-icon"/>
 	<link rel="manifest" href="./manifest.json">
@@ -84,47 +86,47 @@
 
 <div id="menu-div">
 	<button class="click-button" onclick="clearMap()">
-		Clear
+		<i class="fas fa-window-close"></i> Clear
 	</button>
 
 	<button class="click-button" onclick="displayMapMenu()">
-		Maps
+		<i class="far fa-map"></i> Maps
 	</button>
 
 	<button class="click-button" onclick="displayPresetMenu()" style="white-space: nowrap;">
-		Preset Candidates
+		<i class="fas fa-users"></i> Preset Candidates
 	</button>
 	
 	<button id="addcandidatebutton" class="click-button" onclick="displayAddCandidateMenu()">
-		Custom Candidates
+		<i class="fas fa-user-plus"></i> Custom Candidates
 	</button>
 
 	<button id="modesbutton" class="click-button" onclick="displayModeMenu()" style="white-space: nowrap;">
-		Modes (Paint/Move)
+		<i class="fas fa-cog"></i> Modes (Paint/Move)
 	</button>
 
 	<button class="click-button" onclick="displayChartMenu()">
-		Charts
+		<i class="fas fa-chart-pie"></i> Charts
 	</button>
 
 	<button class="click-button" onclick="displayCountersMenu()">
-		Counters
+		<i class="fas fa-chart-bar"></i> Counters
 	</button>
 
 	<button class="click-button" onclick="displayThemeMenu()">
-		Themes
+		<i class="fas fa-palette"></i> Themes
 	</button>
 
 	<button class="click-button" onclick="share()">
-		Share
+		<i class="fas fa-share-alt"></i> Share
 	</button>
 
 	<button class="click-button" onclick="enableFullscreen()">
-		Fullscreen	
+		<i class="fas fa-share-alt"></i> Fullscreen	
 	</button>
 
 	<button class="click-button" onclick="displayMiscMenu()">
-		Misc
+		<i class="far fa-clipboard"></i> Misc
 	</button>
 </div>
 
@@ -234,12 +236,12 @@
 	</svg>
 	
 	<h2>Select Mode</h2>
-	<a class="selectmenu-button" id="paintmovebutton" onclick='closeNotification(this); setMode("paintmove")'>Paint/Move</a>
-	<a class="selectmenu-button" onclick='closeNotification(this); setMode("paint")'>Paint</a>
-	<a class="selectmenu-button" id="movebutton" onclick='closeNotification(this); setMode("move")'>Move</a>
-	<a class="selectmenu-button" onclick='closeNotification(this); setMode("delete")'>Delete</a>
-	<a class="selectmenu-button" onclick='closeNotification(this); setMode("ec")'>EC Edit</a>
-	<a class="selectmenu-button" onclick='closeNotification(this); setMode("candidate")'>Candidate Edit</a>
+	<a class="selectmenu-button" id="paintmovebutton" onclick='closeNotification(this); setMode("paintmove")'><i class="fas fa-paint-brush"></i> Paint/Move</a>
+	<a class="selectmenu-button" onclick='closeNotification(this); setMode("paint")'><i class="fas fa-paint-brush"></i> Paint</a>
+	<a class="selectmenu-button" id="movebutton" onclick='closeNotification(this); setMode("move")'><i class="fas fa-arrows-alt"></i> Move</a>
+	<a class="selectmenu-button" onclick='closeNotification(this); setMode("delete")'><i class="fas fa-eraser"></i> Delete</a>
+	<a class="selectmenu-button" onclick='closeNotification(this); setMode("ec")'><i class="far fa-edit"></i> EC Edit</a>
+	<a class="selectmenu-button" onclick='closeNotification(this); setMode("candidate")'><i class="fas fa-user-edit"></i> Candidate Edit</a>
 </div>
 
 
