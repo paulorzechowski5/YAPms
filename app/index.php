@@ -8,21 +8,21 @@
 	<meta name="keywords" content="Maps,Political,Simulator,Election,President,Governor,Senator,Congress,Primary,Interactive">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-	<meta property="og:title" content="YAPms - Yet another political map simulator">
-	<meta property="og:description" content="Interactive political maps">
+	<meta property="og:title" content="YAPms - Yet Another Political Map Simulator">
+	<meta property="og:description" content="Interactive Political Maps">
 	<meta property="og:image:type" content="image/jpeg">
 	<meta property="og:site_name" content="yapms.com">
 
 	<meta name="twitter:card" content="summary_large_image">
 	<meta name="twitter:title" content="yapms.com">
-	<meta name="twitter:description" content="Interactive political maps">
+	<meta name="twitter:description" content="Interactive Political Maps">
 
 	<meta name="theme-color" content="#ffffff"/>
 
 	<link rel="icon" href="../logo.ico" type="image/x-icon"/>
 	<link rel="shortcut icon" href="../logo.ico" type="image/x-icon"/>
 	<link rel="manifest" href="./manifest.json">
-	
+
 	<?php
 		$mobile = false;
 		
