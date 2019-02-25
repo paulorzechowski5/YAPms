@@ -11,13 +11,13 @@
 	<meta property="og:site_name" content="yapms.com">
 
 	<meta property="og:image" content="http://www.yapms.com/app/res/yapms-512.png">
-	<meta property="og:image:secure_url" content="https://www.yapms.com/app/res/yapms-512.png">
+	<meta property="og:image:secure_url" content="https://www.yapms.com/app/res/yapms-192.png">
 
 	<meta name="twitter:card" content="summary_large_image">
 	<meta name="twitter:title" content="yapms.com">
 	<meta name="twitter:description" content="Interactive Political Maps">
 
-	<meta property="twitter:image" content="https://www.yapms.com/app/res/yapms-512.png">
+	<meta property="twitter:image" content="https://www.yapms.com/app/res/yapms-192.png">
 
 	<title>YAPms - Yet Another Political Map Simulator</title>
 	
