@@ -1,4 +1,4 @@
-var currentCache = 'v0.8.11';
+var currentCache = 'v0.9.0';
 
 var states = [];
 var lands = [];
@@ -890,7 +890,9 @@ function updateLegend() {
 			newHTML += ' ' + candidate.voteCount;
 		}
 
-		html.innerHTML = newHTML;
+		if(html !== null) {
+			html.innerHTML = newHTML;
+		}
 
 		if(key === paintIndex) {
 			selectCandidateDisplay(html.parentElement);
