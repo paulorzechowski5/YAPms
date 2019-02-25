@@ -80,6 +80,14 @@
 
 	<br>
 
+	<a href="https://discord.gg/WQh5fHU">
+		<div id="discord" class="start">
+			Discord
+		</div>
+	</a>
+
+	<br>
+
 	<a href="https://play.google.com/apps/testing/com.fishstudio.yapms">
 		<div id="app" class="start">
 			Beta App
