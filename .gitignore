@@ -5,6 +5,4 @@
 .viminfo
 .htaccess
 .bash_history
-sitemap.xml
-google_sitemap.xml.gz
 /app/maps/*
