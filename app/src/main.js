@@ -432,7 +432,7 @@ function setEC(e) {
 	// get the state and set its new vote count
 	states.forEach(function(element) {
 		if(element.getName() === stateId) {
-			element.voteCount = parseInt(input);
+			element.setVoteCount(parseInt(input), true);
 		}
 	});
 
