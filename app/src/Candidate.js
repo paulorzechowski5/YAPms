@@ -18,13 +18,20 @@ function initCandidates() {
 	candidates['Tossup'] = TOSSUP;
 }
 
+initCandidates();
+
 // add candidate to the list
 // update map, chart and legend
-function addCandidate(name, solid, likely, leaning, tilt) {
+function addCandidate(name, solid, likely, leaning, tilting) {
 	clearDelegates();
 
 	if(name === undefined) {
-		name = document.getElementById('name').value;
+		var nameHTML = document.getElementById('name');
+		if(nameHTML !== null) {
+			name = nameHTML.value;
+		} else {
+			name = "Error";
+		}
 	}
 
 	// ignore white space candidates
@@ -33,22 +40,43 @@ function addCandidate(name, solid, likely, leaning, tilt) {
 	}
 
 	if(solid === undefined) {
-		solid = document.getElementById('solid').value;
+		var solidHTML = document.getElementById('solid');
+		if(solidHTML !== null) {
+			solid = solidHTML.value;
+		} else {
+			solid = '#000000';
+		}
 	}
 
 	if(likely === undefined) {
-		likely = document.getElementById('likely').value;
+		var likelyHTML = document.getElementById('likely');
+		if(likelyHTML !== null) {
+			likely = likelyHTML.value;
+		} else {
+			likely = '#000000';
+		}
 	}
 
 	if(leaning === undefined) {
-		leaning = document.getElementById('leaning').value;
+		var leaningHTML = document.getElementById('leaning');
+		if(leaningHTML !== null) {
+			leaning = leaningHTML.value;
+		} else {
+			leaning = '#000000';
+		}
 	}
 
-	if(tilt === undefined) {
-		tilt = document.getElementById('tilting').value;
+	if(tilting === undefined) {
+		var tiltingHTML = document.getElementById('tilting');
+		if(tiltingHTML !== null) {
+			tilting = tiltingHTML.value;
+		} else {
+			tilting = '#000000';
+		}
+		
 	}
 	
-	var candidate = new Candidate(name, [solid, likely, leaning, tilt]);
+	var candidate = new Candidate(name, [solid, likely, leaning, tilting]);
 	candidates[name] = candidate;
 
 	verifyMap();

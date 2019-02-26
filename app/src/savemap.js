@@ -36,7 +36,8 @@ function saveMap(img) {
 			candidate: state.candidate,
 			delegates: state.delegates,
 			voteCount: state.voteCount,
-			colorValue: state.colorValue
+			colorValue: state.colorValue,
+			disabled: state.disabled.toString()[0]
 		};
 		stateData.push(obj);
 	}

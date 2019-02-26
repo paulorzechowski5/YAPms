@@ -230,39 +230,78 @@ function loadSavedMap(data) {
 	var lines = data.split('\n');
 	var meta = lines[0].split(' ');
 	loadMap(meta[0], meta[1], meta[2], meta[3], meta[4], meta[5], function() {
+
+		// --- RUN THIS AFTER THE MAP HAS BEEN LOADED ---
+	
+		// parse each candidate in the file
+		// add them to the map
 		var candidateEndLine = meta[6];
 		for(var candidateIndex = 1; candidateIndex < candidateEndLine; ++candidateIndex) {
 			var candidate = lines[candidateIndex].split(' ');
-			addCandidate(candidate[0], candidate[1], candidate[2], candidate[3], candidate[4]);
+			addCandidate(candidate[0].replace(/\%/g, " "), candidate[1], candidate[2], candidate[3], candidate[4]);
 		}
 
+		// parse each state in the file
+		// change them to their candidate
 		for(var stateDataIndex = candidateEndLine; stateDataIndex < lines.length - 1; ++stateDataIndex) {
 			var stateIndex = stateDataIndex - candidateEndLine;
 			var stateData = lines[stateDataIndex].split(' ');
+			var stateName = stateData[0];
 			var state = states[stateIndex];
+			var updateText = false;
+
+			if(save_type === "presidential") {
+				updateText = true;
+			}
+			
+			var voteCount = stateData[stateData.length - 2];
+			state.setVoteCount(parseInt(voteCount), updateText);	
+			
+
+			// if its a primary map
 			if(save_type === "demprimary" || save_type === "repprimary") {
 				var majorityCandidate = "Tossup";
 				var majorityVoteCount = 0;
+				var state = states.find(state => state.name === stateData[0]);
+
 				for(var candidateIndex = 0; candidateIndex < candidateEndLine - 1; ++candidateIndex) {
-					var candidate = lines[candidateIndex + 1].split(' ')[0];
+					// get the candidate name
+					var candidateName = lines[candidateIndex + 1].split(' ')[0];
+					candidateName = candidateName.replace(/\%/g, " ");
+
+					// read in the delegate count
 					var delegates = stateData[4 + candidateIndex];
-					var state = states.find(state => state.name === stateData[0]);
-					state.delegates[candidate] = parseInt(delegates);
+
+					// set the delegate  count
+					state.delegates[candidateName] = parseInt(delegates);
 					if(parseInt(delegates) > majorityVoteCount) {
 						majorityVoteCount = parseInt(delegates);
-						majorityCandidate = candidate;
+						majorityCandidate = candidateName;
+					} else if(parseInt(delegates) === majorityVoteCount) {
+						majorityCandidate = 'Tossup';
 					}
 				}
 
+				// set the color to the candidate with the most delegates
 				if(majorityCandidate === 'Tossup') {
 					state.setColor('Tossup', 2);
 				}
 				else {
 					state.setColor(majorityCandidate, 0);
 				}
-
-			} else {
-				state.setColor(stateData[1], stateData[2]);
+				
+			}
+			// otherwise
+			else {
+				// get the candidate
+				var candidateName = stateData[1].replace(/\%/g, " ");
+				// set the proper color
+				state.setColor(candidateName, stateData[2]);
+			}
+			
+			var disable = (stateData[stateData.length - 1] === 't');
+			if(disable === true) {
+				state.toggleDisable();
 			}
 		}
 		

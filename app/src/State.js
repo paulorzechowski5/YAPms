@@ -8,6 +8,7 @@ class State {
 		this.candidate = 'Tossup';
 		this.dataid = dataid;
 		this.voteCount = 0;
+		this.voteCount_beforeDisable;
 		this.resetVoteCount();
 		this.disabled = false;
 	}
@@ -41,11 +42,28 @@ class State {
 	getVoteCount() { 
 		return this.voteCount; 
 	}
-
-	setVoteCount(value) {
+	
+	setVoteCount(value, updateText) {
 		var diff = value - this.voteCount;
 		this.voteCount = value;
 		totalVotes += diff;
+
+		// update the html text display
+		if(updateText) {
+			var stateText = document.getElementById(this.name + '-text');
+			var text = this.name + ' ' + value;
+
+			// the text elements in an svg are inside spans
+			if(typeof stateText.childNodes[1] !== 'undefined') {
+				stateText.childNodes[1].innerHTML = ' ' + value;
+			} else {
+				stateText.childNodes[0].innerHTML = this.name + ' ' + value;
+			}
+		}
+		
+		countVotes();
+		updateChart();
+		updateLegend();
 	}
 
 	getHtml() { 
@@ -60,37 +78,89 @@ class State {
 		this.htmlElement.style.fill = color;
 
 		var button = document.getElementById(this.name + '-button');
-		if(button != null) {
+		if(button !== null) {
 			button.style.fill = color;
 		}
-	}
 
-	verifyDisabledColor() {
-		if(this.disabled) {
-			this.setDisplayColor(candidates['Tossup'].colors[1]);
+		var land = document.getElementById(this.name + '-land');
+		if(land !== null) {
+			land.style.fill = color;
 		}
 	}
 
-	enable() {
-		this.disabled = false;
-		this.setColor(this.getCandidate(), this.getColorValue());
-		if(this.name.includes('-S')) {
-			this.htmlElement.style.visibility = 'visible';
+	verifyTossupColor() {
+		if(this.candidate === 'Tossup') {
+			this.setDisplayColor(TOSSUP.colors[2]);
+			//this.setColor('Tossup', 2);
 		}
 	}
 
 	toggleDisable() {
 		if(this.disabled == false) {
-			this.setDisplayColor(candidates['Tossup'].colors[1]);
+			this.voteCount_beforeDisable = this.voteCount;
+			this.setVoteCount(0, false);
+
+			this.setColor('Tossup', 2);
+
+			//this.setDisplayColor(candidates['Tossup'].colors[1]);
 			this.disabled = !this.disabled;
+			this.htmlElement.setAttribute('fill-opacity', '0.25');
+			this.htmlElement.setAttribute('stroke-opacity', '0.25');
 			if(this.name.includes('-S')) {
 				this.htmlElement.style.visibility = 'hidden';
 			}
+			var stateText = document.getElementById(this.name + '-text');
+			if(stateText !== null) {
+				stateText.setAttribute('fill-opacity', '0.25');
+			}
+
+			var land = document.getElementById(this.name + '-land');
+			if(land !== null) {
+				land.setAttribute('fill-opacity', '0.25');
+				land.setAttribute('stroke-opacity', '0.25');
+			}
+
+			var button = document.getElementById(this.name + '-button');
+			if(button !== null) {
+				button.setAttribute('fill-opacity', '0.25');
+				button.setAttribute('stroke-opacity', '0.25');
+			}
+
+			var stateLandText = document.getElementById(this.name.split("-")[0] + '-text');
+			if(stateLandText !== null) {
+				stateLandText.setAttribute('fill-opacity', '0.25');
+			}
+
 		} else if(this.disabled == true) {
+			this.voteCount = this.voteCount_beforeDisable;
+			this.setVoteCount(this.voteCount_beforeDisable, false);
+
 			this.disabled = !this.disabled;
 			this.setColor(this.getCandidate(), this.getColorValue());
+			this.htmlElement.setAttribute('fill-opacity', '1.0');
+			this.htmlElement.setAttribute('stroke-opacity', '1.0');
 			if(this.name.includes('-S')) {
 				this.htmlElement.style.visibility = 'visible';
+			}
+			var stateText = document.getElementById(this.name + '-text');
+			if(stateText !== null) {
+				stateText.setAttribute('fill-opacity', '1.0');
+			}
+			var land = document.getElementById(this.name + '-land');
+			if(land != null) {
+				land.setAttribute('fill-opacity', '1.0');
+				land.setAttribute('stroke-opacity', '1.0');
+			}
+			
+			var button = document.getElementById(this.name + '-button');
+			if(button !== null) {
+				button.setAttribute('fill-opacity', '1.0');
+				button.setAttribute('stroke-opacity', '1.0');
+			}
+			
+			var stateLandText = document.getElementById(this.name.split("-")[0] + '-text');
+			if(stateLandText !== null) {
+				stateLandText.setAttribute('fill-opacity', '1.0');
 			}
 		}
 	}
@@ -162,12 +232,11 @@ class State {
 
 		// prevent black color
 		if(candidate === 'Tossup' && colorValue == 0) {
-			colorValue = 1;
+			colorValue = 2;
 		}
 
 		this.colorValue = colorValue;
-
-
+		
 		var color = candidates[candidate]
 			.colors[colorValue];
 
@@ -182,62 +251,5 @@ class State {
 		if(button != null) {
 			button.style.fill = color;
 		}
-	}
-
-	// hide the state and its associated elements
-	hide() {
-		this.htmlElement.style.visibility = 'hidden';
-
-		var text = document.getElementById(this.getName() + '-text');
-		text.style.visibility = 'hidden';
-
-		var button = document.getElementById(this.getName() + '-button');
-		if(button != null) {
-			button.style.visibility = 'hidden';
-		}
-
-		var land = document.getElementById(this.getName() + '-land');
-		if(land != null) {
-			land.style.visibility = 'hidden';
-		}
-
-		if(this.getName().includes('-AL')) {
-			var split = this.getName().split('-');
-			var mapText = document.getElementById(split[0] + '-text');
-			mapText.style.visibility = 'hidden';
-		}
-	}
-
-	show() {
-		this.htmlElement.style.visibility = 'visible';
-		var text = document.getElementById(this.getName() + '-text');
-		if(text != null) {
-			text.style.visibility = 'visible';
-		}
-
-		var button = document.getElementById(this.getName() + '-button');
-		if(button != null) {
-			button.style.visibility = 'visible';
-		}
-
-		var land = document.getElementById(this.getName() + '-land');
-		if(land != null) {
-			land.style.visibility = 'visible';
-		}
-		
-		if(this.getName().includes('-AL')) {
-			var split = this.getName().split('-');
-			var mapText = document.getElementById(split[0] + '-text');
-			mapText.style.visibility = 'visible';
-		}
-	}
-
-	setVoteCount(value) {
-		var diff = value - this.voteCount;
-		totalVotes += diff;
-		this.voteCount = value;
-		countVotes();
-		updateChart();
-		updateLegend();
 	}
 };

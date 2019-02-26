@@ -1,4 +1,4 @@
-var currentCache = 'v0.9.1';
+var currentCache = 'v0.10.0';
 
 var states = [];
 var lands = [];
@@ -632,7 +632,8 @@ function verifyPaintIndex() {
 // if states have invalid colors, turn them white
 function verifyMap() {
 	states.forEach(function(state) {
-		state.verifyDisabledColor();
+		//state.verifyDisabledColor();
+		state.verifyTossupColor();
 		if(typeof candidates[state.candidate] === 'undefined') {
 			// if the current color is out of bounds set it to white
 			state.setColor('Tossup', tossupColor);

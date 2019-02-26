@@ -242,7 +242,6 @@
 	<a class="selectmenu-button" onclick='closeNotification(this); setMode("candidate")'>Candidate Edit</a>
 </div>
 
-
 <div id="thememenu" class="popup selectmenu">
 	<svg class="closebutton" onclick="closeNotification(this)" width="24" height="24">
 		<circle cx="12" cy="12" r="10" stroke="black" stroke-width="2"/>
@@ -361,23 +360,11 @@
 	</svg>
 
 	<h3>Share Link</h3>
+	<p>(This feature is still in development, your link might get deleted)</p>
 	<div id="shareurl"></div>
 	<img id="screenshotimg"/>
 </div>
-<!--
-<div id="ads">
-<script type="text/javascript">
-  ( function() {
-    if (window.CHITIKA === undefined) { window.CHITIKA = { 'units' : [] }; };
-    var unit = {"calltype":"async[2]","publisher":"Fish123","width":320,"height":50,"sid":"Chitika Default"};
-    var placement_id = window.CHITIKA.units.length;
-    window.CHITIKA.units.push(unit);
-    document.write('<div id="chitikaAdBlock-' + placement_id + '"></div>');
-}());
-</script>
-<script type="text/javascript" src="//cdn.chitika.net/getads.js" async></script>
-</div>
--->
+			
 <script>
 	document.getElementById('logo-div').innerHTML =
 		'<img id="logo" src="./res/lte.jpg">';
@@ -398,14 +385,15 @@
 <script src="https://cdn.jsdelivr.net/npm/svg-pan-zoom@3.5.0/dist/svg-pan-zoom.min.js"></script>
 <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/hammer.js/2.0.8/hammer.min.js"></script>
+<script src="./src/Candidate.js"></script>
 <script src="./src/loadmap.js"></script>
 <script src="./src/savemap.js"></script>
 <script src="./src/data.js"></script>
 <script src="./src/State.js"></script>
 <script src="./src/htmlControl.js"></script>
-<script src="./src/Candidate.js"></script>
 <script src="./src/battlechart.js"></script>
 <script src="./src/presets.js"></script>
+<script src="./src/click.js"></script>
 <script src="./src/main.js"></script>
 <?php 
 	if($mobile === true) {
@@ -414,10 +402,7 @@
 		echo '<script src="./src/yapnews.js"></script>';
 	}
 ?>
-<script src="./src/click.js"></script>
 <script src="./src/html2canvas.min.js"></script>
-
 </body>
-
 
 </html>

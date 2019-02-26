@@ -10,7 +10,13 @@ function buttonClick(clickElement) {
 		}
 	} else if(mode === 'ec') {
 		buttonClickEC(clickElement);
+	} else if(mode === 'delete') {
+		buttonClickDelete(clickElement);
 	}
+	
+	countVotes();
+	updateChart();
+	updateLegend();
 }
 
 function buttonClickPaint(clickElement) {
@@ -19,9 +25,6 @@ function buttonClickPaint(clickElement) {
 	var state = states.find(state => state.name === split[0]);
 	state.incrementCandidateColor(paintIndex);
 	clickElement.style.fill = state.getDisplayColor();
-	countVotes();
-	updateChart();
-	updateLegend();
 }
 
 function buttonClickPaintPrimary(clickElement) {
@@ -40,6 +43,14 @@ function buttonClickEC(clickElement) {
 	input.value = state.voteCount;
 	stateId.value = split[0];
 	ecedit.style.display = 'inline';
+}
+
+function buttonClickDelete(clickElement) {
+	var id = clickElement.getAttribute('id');
+	var split = id.split('-');
+	var state = states.find(state => state.name === split[0]);
+
+	state.toggleDisable();
 }
 
 function landClick(clickElement) {
@@ -73,12 +84,8 @@ function landClick(clickElement) {
 			district.setColor(AL.getCandidate(), AL.getColorValue());
 		});
 	} else if(mode === 'delete') {
-		var textHTML = document.getElementById(split[0] + '-text');
-		textHTML.style.visibility = 'hidden';
-
 		districts.forEach(function(district) {
-			district.hide();
-			district.setVoteCount(0);
+			district.toggleDisable();
 		});
 	}
 
@@ -112,42 +119,23 @@ function districtClick(clickElement) {
 			updateLTEHouse();
 		}
 	} else if(mode === 'delete') {
-		// delete all districts and text
-
-		var al = states.find(state => state.name == split[0] + '-AL');
-		if(al != null) {
-			al.hide();
-			al.setVoteCount(0);
-		}
-		
-		var d1 = states.find(state => state.name == split[0] + '-D1');
-		if(d1 != null) {
-			d1.hide();
-			d1.setVoteCount(0);
-		}
-		var d2 = states.find(state => state.name == split[0] + '-D2');
-		if(d2 != null) {
-			d2.hide();
-			d2.setVoteCount(0);
-		}
-		var d3 = states.find(state => state.name == split[0] + '-D3');
-		if(d3 != null) {
-			d3.hide();
-			d3.setVoteCount(0);
-		}
-
+		/*
+		district.toggleDisable();
 		countVotes();
 		updateChart();
 		updateLegend();
+		*/
 	} else if(mode === 'ec') {
-		var ecedit = document.getElementById('ecedit');
-		var eceditText = document.getElementById('ecedit-message');
-		var input = document.getElementById('state-ec');
-		var stateId = document.getElementById('state-id');
-		eceditText.innerHTML = 'Set ' + id + ' electoral college';
-		input.value = district.voteCount;
-		stateId.value = id;
-		ecedit.style.display = 'inline';
+		if(district.disabled === false) {
+			var ecedit = document.getElementById('ecedit');
+			var eceditText = document.getElementById('ecedit-message');
+			var input = document.getElementById('state-ec');
+			var stateId = document.getElementById('state-id');
+			eceditText.innerHTML = 'Set ' + id + ' electoral college';
+			input.value = district.voteCount;
+			stateId.value = id;
+			ecedit.style.display = 'inline';
+		}
 	}
 }
 
@@ -176,14 +164,15 @@ function stateClick(clickElement, e) {
 			stateClickDelete(state, id);
 			break;
 	}
-}
 
-function stateClickPaint(state, id) {
-	state.incrementCandidateColor(paintIndex);
 	countVotes();
 	updateChart();
 	updateLegend();
 	updateLTEHouse();
+}
+
+function stateClickPaint(state, id) {
+	state.incrementCandidateColor(paintIndex);
 }
 
 function stateClickPaintPrimary(state, id) {
@@ -263,23 +252,23 @@ function stateClickPaintPrimary(state, id) {
 }
 
 function stateClickDelete(state, id) {
-	state.hide();
-	state.setVoteCount(0);
+	state.toggleDisable();
 }
 
 function stateClickEC(state, id) {
-	var ecedit = document.getElementById('ecedit');
-	var eceditText = document.getElementById('ecedit-message');
-	var input = document.getElementById('state-ec');
-	var stateId = document.getElementById('state-id');
-	eceditText.innerHTML = 'Set ' + id + ' electoral college';
-	input.value = state.voteCount;
-	stateId.value = id;
-	ecedit.style.display = 'inline';
+	if(state.disabled === false) {
+		var ecedit = document.getElementById('ecedit');
+		var eceditText = document.getElementById('ecedit-message');
+		var input = document.getElementById('state-ec');
+		var stateId = document.getElementById('state-id');
+		eceditText.innerHTML = 'Set ' + id + ' electoral college';
+		input.value = state.voteCount;
+		stateId.value = id;
+		ecedit.style.display = 'inline';
+	}
 }
 
 function specialClick(clickElement, e) {
-	
 	var id = clickElement.getAttribute('id');
 	var state = states.find(state => state.name === id);
 	if(mode === 'move') {

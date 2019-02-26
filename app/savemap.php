@@ -26,6 +26,7 @@ if($file) {
 	$writeData .= count($candidate_data["candidate_data"]) . PHP_EOL;
 
 	foreach($candidate_data["candidate_data"] as $v) {
+		$v["name"] = str_replace(' ', '%', $v["name"]);
 		if($v["name"] !== "Tossup") {
 			$writeData .= $v["name"] . " "
 				. $v["solid"] . " "
@@ -38,6 +39,7 @@ if($file) {
 	$state_data = json_decode($_POST["states"], true);
 
 	foreach($state_data["state_data"] as $v) {
+		$v["candidate"] = str_replace(' ', '%', $v["candidate"]);
 		$writeData .= $v["name"] . " "
 			. $v["candidate"] . " "
 			. $v["colorValue"] . " ";
@@ -48,7 +50,8 @@ if($file) {
 			}
 		}
 		
-		$writeData .= $v["voteCount"] . PHP_EOL;
+		$writeData .= $v["voteCount"] . " "
+				. $v["disabled"] . PHP_EOL;
 	}
 
 	fwrite($file, $writeData);
