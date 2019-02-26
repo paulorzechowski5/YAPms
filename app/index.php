@@ -122,7 +122,7 @@
 	</button>
 
 	<button class="click-button" onclick="enableFullscreen()">
-		<i class="fas fa-share-alt"></i> Fullscreen	
+		<i class="fas fa-expand-arrows-alt"></i> Fullscreen	
 	</button>
 
 	<button class="click-button" onclick="displayMiscMenu()">
