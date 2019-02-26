@@ -85,9 +85,9 @@
 
 	<br>
 
-	<a href="https://play.google.com/apps/testing/com.fishstudio.yapms">
+	<a href="https://play.google.com/store/apps/details?id=com.fishstudio.yapms&hl=en_US">
 		<div id="app" class="start">
-			Beta App
+			Android App
 		</div>
 	</a>
 	
