@@ -572,23 +572,23 @@ function setMode(set) {
 	}
 
 	if(set === 'paintmove') {
-		modeText = "Paint/Move";
+		modeText = "<i class="fas fa-paint-brush"></i> Paint/Move";
 		panObject.enablePan();
 		panObject.enableZoom();
 	} else if(set === 'paint') {
-		modeText = 'Paint';
+		modeText = '<i class="fas fa-paint-brush"></i> Paint';
 	} else if(set === 'move') {
-		modeText = 'Move';
+		modeText = '<i class="fas fa-arrows-alt"></i> Move';
 		panObject.enablePan();
 		panObject.enableZoom();
 	} else if(set === 'ec') {
-		modeText = 'EC Edit';
+		modeText = '<i class="fas fa-eraser"></i> EC Edit';
 		notificationText = "Click on a state to set its electoral college";
 	} else if(set === 'delete') {
-		modeText = 'Delete';
+		modeText = '<i class="far fa-edit"></i> Delete';
 		notificationText = "Click on a state to delete it";
 	} else if(set === 'candidate') {
-		modeText = 'Candidate Edit';
+		modeText = '<i class="fas fa-user-edit"></i> Candidate Edit';
 		notificationText = "Click on a candidate in the legend to edit its name and color";
 	}
 
