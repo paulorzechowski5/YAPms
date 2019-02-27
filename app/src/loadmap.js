@@ -139,7 +139,8 @@ function loadGubernatorialFile(gubernatorialfile, onLoad) {
 					state.setColor('Tossup', 2);
 				} else {
 					state.setColor(candidate, 0);
-					state.toggleDisable();
+					//state.toggleDisable();
+					state.toggleLock();
 				}
 			}
 		}
@@ -189,7 +190,9 @@ function loadSenateFile(senatefile, onLoad) {
 				} else {
 					state.setColor(
 						candidateNames[split[1]], 0);
-					state.toggleDisable();
+					//state.toggleDisable();
+					state.toggleLock();
+					
 				}
 
 				if(split[2] === 'o') {
@@ -197,7 +200,8 @@ function loadSenateFile(senatefile, onLoad) {
 				} else {
 					special.setColor(
 						candidateNames[split[2]], 0);
-					special.toggleDisable();
+					//special.toggleDisable();
+					special.toggleLock();
 				}
 			}
 		}
@@ -226,10 +230,10 @@ function finishDataLoad(onLoad) {
 }
 
 function loadSavedMap(data) {
-	console.log("Loading saved map...");
 	var lines = data.split('\n');
 	var meta = lines[0].split(' ');
 	loadMap(meta[0], meta[1], meta[2], meta[3], meta[4], meta[5], function() {
+		console.log("Loading saved map...");
 
 		// --- RUN THIS AFTER THE MAP HAS BEEN LOADED ---
 	

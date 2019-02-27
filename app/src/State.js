@@ -11,6 +11,7 @@ class State {
 		this.voteCount_beforeDisable;
 		this.resetVoteCount();
 		this.disabled = false;
+		this.locked = false;
 	}
 
 	resetVoteCount() {
@@ -95,11 +96,82 @@ class State {
 		}
 	}
 
+	toggleLock() {
+		if(this.locked == false) {
+			this.disabled = true;
+			//this.setColor('Tossup', 2);
+
+			//this.setDisplayColor(candidates['Tossup'].colors[1]);
+			this.locked = !this.locked;
+			//this.disabled = !this.disabled;
+			if(this.name.includes('-S')) {
+				this.htmlElement.style.visibility = 'hidden';
+			}
+			this.setDisplayColor(TOSSUP.colors[2]);
+			this.htmlElement.setAttribute('fill-opacity', '0.2');
+			this.htmlElement.setAttribute('stroke-opacity', '0.2');
+			var stateText = document.getElementById(this.name + '-text');
+			if(stateText !== null) {
+				stateText.setAttribute('fill-opacity', '0.2');
+			}
+
+			var land = document.getElementById(this.name + '-land');
+			if(land !== null) {
+				land.setAttribute('fill-opacity', '0.2');
+				land.setAttribute('stroke-opacity', '0.2');
+			}
+
+			var button = document.getElementById(this.name + '-button');
+			if(button !== null) {
+				button.setAttribute('fill-opacity', '0.2');
+				button.setAttribute('stroke-opacity', '0.2');
+			}
+
+			var stateLandText = document.getElementById(this.name.split("-")[0] + '-text');
+			if(stateLandText !== null) {
+//				stateLandText.setAttribute('fill-opacity', '0.25');
+			}
+
+		} else if(this.locked == true) {
+			this.disabled = false;
+			this.locked = !this.locked;
+			this.setColor(this.getCandidate(), this.getColorValue());
+			this.htmlElement.setAttribute('fill-opacity', '1.0');
+			this.htmlElement.setAttribute('stroke-opacity', '1.0');
+			if(this.name.includes('-S')) {
+				this.htmlElement.style.visibility = 'visible';
+			}
+			var stateText = document.getElementById(this.name + '-text');
+			if(stateText !== null) {
+				stateText.setAttribute('fill-opacity', '1.0');
+			}
+			var land = document.getElementById(this.name + '-land');
+			if(land != null) {
+				land.setAttribute('fill-opacity', '1.0');
+				land.setAttribute('stroke-opacity', '1.0');
+			}
+			
+			var button = document.getElementById(this.name + '-button');
+			if(button !== null) {
+				button.setAttribute('fill-opacity', '1.0');
+				button.setAttribute('stroke-opacity', '1.0');
+			}
+			
+			var stateLandText = document.getElementById(this.name.split("-")[0] + '-text');
+			if(stateLandText !== null) {
+//				stateLandText.setAttribute('fill-opacity', '1.0');
+			}
+		}
+	}
+
 	toggleDisable() {
+		if(this.locked == true) {
+			return;
+		}
+
 		if(this.disabled == false) {
 			this.voteCount_beforeDisable = this.voteCount;
-			this.setVoteCount(0, false);
-
+			this.setVoteCount(0, save_type === "presidential");
 			this.setColor('Tossup', 2);
 
 			//this.setDisplayColor(candidates['Tossup'].colors[1]);
@@ -133,8 +205,8 @@ class State {
 
 		} else if(this.disabled == true) {
 			this.voteCount = this.voteCount_beforeDisable;
-			this.setVoteCount(this.voteCount_beforeDisable, false);
-
+			this.resetVoteCount();
+			this.setVoteCount(this.voteCount, save_type === "presidential");
 			this.disabled = !this.disabled;
 			this.setColor(this.getCandidate(), this.getColorValue());
 			this.htmlElement.setAttribute('fill-opacity', '1.0');
