@@ -85,47 +85,47 @@
 <div id="yapms">
 
 <div id="menu-div">
-	<button class="click-button" onclick="clearMap()">
+	<button class="click-button" onclick="clearMap()" style="white-space: nowrap;">
 		<i class="fas fa-window-close"></i> Clear
 	</button>
 
-	<button class="click-button" onclick="displayMapMenu()">
+	<button class="click-button" onclick="displayMapMenu()" style="white-space: nowrap;">
 		<i class="far fa-map"></i> Maps
 	</button>
 
 	<button class="click-button" onclick="displayPresetMenu()" style="white-space: nowrap;">
-		<i class="fas fa-users"></i> Preset Candidates
+		<i class="fas fa-users"></i> Preset Candidate
 	</button>
 	
-	<button id="addcandidatebutton" class="click-button" onclick="displayAddCandidateMenu()">
-		<i class="fas fa-user-plus"></i> Custom Candidates
+	<button id="addcandidatebutton" class="click-button" onclick="displayAddCandidateMenu()" style="white-space: nowrap;">
+		<i class="fas fa-user-plus"></i> Custom Candidate
 	</button>
 
 	<button id="modesbutton" class="click-button" onclick="displayModeMenu()" style="white-space: nowrap;">
 		<i class="fas fa-cog"></i> Modes (<i class="fas fa-paint-brush"></i> Paint/Move)
 	</button>
 
-	<button class="click-button" onclick="displayChartMenu()">
+	<button class="click-button" onclick="displayChartMenu()" style="white-space: nowrap;">
 		<i class="fas fa-chart-pie"></i> Charts
 	</button>
 
-	<button class="click-button" onclick="displayCountersMenu()">
+	<button class="click-button" onclick="displayCountersMenu()" style="white-space: nowrap;">
 		<i class="fas fa-chart-bar"></i> Counters
 	</button>
 
-	<button class="click-button" onclick="displayThemeMenu()">
+	<button class="click-button" onclick="displayThemeMenu()" style="white-space: nowrap;">
 		<i class="fas fa-palette"></i> Themes
 	</button>
 
-	<button class="click-button" onclick="share()">
+	<button class="click-button" onclick="share()" style="white-space: nowrap;">
 		<i class="fas fa-share-alt"></i> Share
 	</button>
 
-	<button class="click-button" onclick="enableFullscreen()">
+	<button class="click-button" onclick="enableFullscreen()" style="white-space: nowrap;">
 		<i class="fas fa-expand-arrows-alt"></i> Fullscreen	
 	</button>
 
-	<button class="click-button" onclick="displayMiscMenu()">
+	<button class="click-button" onclick="displayMiscMenu()" style="white-space: nowrap;">
 		<i class="far fa-clipboard"></i> Misc
 	</button>
 </div>

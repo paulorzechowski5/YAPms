@@ -1,4 +1,4 @@
-var currentCache = 'v0.10.2';
+var currentCache = 'v0.10.6';
 
 var states = [];
 var lands = [];
@@ -572,7 +572,7 @@ function setMode(set) {
 	}
 
 	if(set === 'paintmove') {
-		modeText = "<i class="fas fa-paint-brush"></i> Paint/Move";
+		modeText = '<i class="fas fa-paint-brush"></i> Paint/Move';
 		panObject.enablePan();
 		panObject.enableZoom();
 	} else if(set === 'paint') {
@@ -582,19 +582,17 @@ function setMode(set) {
 		panObject.enablePan();
 		panObject.enableZoom();
 	} else if(set === 'ec') {
-		modeText = '<i class="fas fa-eraser"></i> EC Edit';
+		modeText = '<i class="fas fa-edit"></i> EC Edit';
 		notificationText = "Click on a state to set its electoral college";
 	} else if(set === 'delete') {
-		modeText = '<i class="far fa-edit"></i> Delete';
+		modeText = '<i class="fas fa-eraser"></i> Delete';
 		notificationText = "Click on a state to delete it";
 	} else if(set === 'candidate') {
 		modeText = '<i class="fas fa-user-edit"></i> Candidate Edit';
 		notificationText = "Click on a candidate in the legend to edit its name and color";
 	}
 
-	modeHTML.innerHTML = 'Modes (' + modeText + ')';
-
-	var split = modeText.split(' ');
+	modeHTML.innerHTML = '<i class="fas fa-cog"></i> Modes (' + modeText + ')';
 
 	var notification = document.getElementById('notification');
 	if(mode === 'paint' || mode === 'move' || mode === 'paintmove') {
@@ -602,10 +600,7 @@ function setMode(set) {
 	} else if(mode !== 'paint') {
 		notification.style.display = 'inline';
 		var title = notification.querySelector('#notification-title');
-		title.innerHTML = split[0];
-		if(typeof split[1] !== 'undefined') {
-			title.innerHTML += ' ' + split[1];
-		}
+		title.innerHTML = modeText;
 		var message = notification.querySelector('#notification-message');
 		message.innerHTML = notificationText;
 	}
