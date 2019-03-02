@@ -15,17 +15,21 @@ class State {
 	}
 
 	resetVoteCount() {
-		totalVotes -= this.voteCount;
+		//totalVotes -= this.voteCount;
 		if(this.dataid === 'congressional') {
-			this.voteCount = 1;
+			this.setVoteCount(1);
+			//this.voteCount = 1;
 		} else if(this.dataid === 'senate') {
-			this.voteCount = 2;
+			this.setVoteCount(2);
+			//this.voteCount = 2;
 		} else if(this.dataid === 'ltesenate') {
-			this.voteCount = 1;	
+			this.setVoteCount(1);
+			//this.voteCount = 1;	
 		}else {
-			this.voteCount = data[this.dataid][this.name];
+			this.setVoteCount(data[this.dataid][this.name]);
+			//this.voteCount = data[this.dataid][this.name];
 		}
-		totalVotes += this.voteCount;
+		//totalVotes += this.voteCount;
 	}
 
 	getCandidate() { 
@@ -47,6 +51,7 @@ class State {
 	setVoteCount(value, updateText) {
 		var diff = value - this.voteCount;
 		this.voteCount = value;
+		console.log("DIFF: " + diff + " " + value);
 		totalVotes += diff;
 
 		// update the html text display
@@ -204,7 +209,6 @@ class State {
 			}
 
 		} else if(this.disabled == true) {
-			this.voteCount = this.voteCount_beforeDisable;
 			this.resetVoteCount();
 			this.setVoteCount(this.voteCount, save_type === "presidential");
 			this.disabled = !this.disabled;
