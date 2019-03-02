@@ -94,11 +94,7 @@
 	</button>
 
 	<button class="click-button" onclick="displayPresetMenu()" style="white-space: nowrap;">
-		<i class="fas fa-users"></i> Preset Candidate
-	</button>
-	
-	<button id="addcandidatebutton" class="click-button" onclick="displayAddCandidateMenu()" style="white-space: nowrap;">
-		<i class="fas fa-user-plus"></i> Custom Candidate
+		<i class="fas fa-users"></i> Candidates
 	</button>
 
 	<button id="modesbutton" class="click-button" onclick="displayModeMenu()" style="white-space: nowrap;">
@@ -107,10 +103,6 @@
 
 	<button class="click-button" onclick="displayChartMenu()" style="white-space: nowrap;">
 		<i class="fas fa-chart-pie"></i> Charts
-	</button>
-
-	<button class="click-button" onclick="displayCountersMenu()" style="white-space: nowrap;">
-		<i class="fas fa-chart-bar"></i> Counters
 	</button>
 
 	<button class="click-button" onclick="displayThemeMenu()" style="white-space: nowrap;">
@@ -260,21 +252,6 @@
 	<a class="selectmenu-button" onclick='toWinPalette()'>Default</a>
 </div>
 
-<div id="countersmenu" class="popup selectmenu">
-	<svg class="closebutton" onclick="closeNotification(this)" width="24" height="24">
-		<circle cx="12" cy="12" r="10" stroke="black" stroke-width="2"/>
-		<line x1="7" y1="7" x2="17" y2="17" stroke="#dddddd" stroke-width="2"/>
-		<line x1="17" y1="7" x2="7" y2="17" stroke="#dddddd" stroke-width="2"/>
-	</svg>
-
-	<h2>Toggle Counters</h2>	
-	<a class="selectmenu-button" onclick='toggleLegendCounter()'>Legend Counter</a>
-	<a class="selectmenu-button" onclick='toggleChartLabels()'>Chart Labels</a>
-	<a class="selectmenu-button" onclick='toggleChartLeans()'>Chart Leans</a>
-	<a class="selectmenu-button" onclick='toggleLegendLeans()'>Legend Leans</a>
-
-</div>
-
 <div id="chartmenu" class="popup selectmenu">
 	<svg class="closebutton" onclick="closeNotification(this)" width="24" height="24">
 		<circle cx="12" cy="12" r="10" stroke="black" stroke-width="2"/>
@@ -283,6 +260,7 @@
 	</svg>
 
 	<h2>Select Chart</h2>	
+	<a class="selectmenu-split">Charts</a>
 	<a class="selectmenu-button" onclick='setChart("horizontalbattle")'>Horizontal Battle</a>
 	<a class="selectmenu-button" onclick='setChart("verticalbattle")'>Vertical Battle</a>
 	<a class="selectmenu-button" onclick='setChart("pie")'>Side Pie</a>
@@ -291,6 +269,12 @@
 	<a class="selectmenu-button" onclick='setChart("doughnut", "bottom")'>Bottom Doughnut</a>
 	<a class="selectmenu-button" onclick='setChart("horizontalBar")'>Side Bar</a>
 	<a class="selectmenu-button" onclick='setChart("none")'>None</a>
+	
+	<a class="selectmenu-split">Chart Settings</a>
+	<a class="selectmenu-button" onclick='toggleLegendCounter()'>Legend Counter</a>
+	<a class="selectmenu-button" onclick='toggleChartLabels()'>Chart Labels</a>
+	<a class="selectmenu-button" onclick='toggleChartLeans()'>Chart Leans</a>
+	<a class="selectmenu-button" onclick='toggleLegendLeans()'>Legend Leans</a>
 </div>
 
 <div id="presetmenu" class="popup selectmenu">
@@ -300,12 +284,15 @@
 		<line x1="17" y1="7" x2="7" y2="17" stroke="#dddddd" stroke-width="2"/>
 	</svg>
 
-	<h2>Select Preset</h2>	
+	<h2>Add Candidates</h2>	
+	<a class="selectmenu-split">Custom</a>
+	<a class="selectmenu-button" onclick='displayAddCandidateMenu();'>Add Custom</a>
+	<a class="selectmenu-split">Preset</a>
 	<a class="selectmenu-button" onclick='loadPreset("tossup")'>None</a>
-	<a class="selectmenu-button" onclick='loadPreset("classic")'>Classic</a>
-	<a class="selectmenu-button" onclick='loadPreset("libertarian")'>Libertarian</a>
-	<a class="selectmenu-button" onclick='loadPreset("green")'>Green</a>
-	<a class="selectmenu-button" onclick='loadPreset("majors")'>Majors</a>
+	<a class="selectmenu-button" onclick='loadPreset("classic")'>R/D</a>
+	<a class="selectmenu-button" onclick='loadPreset("libertarian")'>R/D/L</a>
+	<a class="selectmenu-button" onclick='loadPreset("green")'>R/D/G</a>
+	<a class="selectmenu-button" onclick='loadPreset("majors")'>R/D/G/L</a>
 </div>
 
 <!-- Maps menu -->
